@@ -28,21 +28,21 @@ return {
                         --"cd $dir &&",
                         --"gcc $fileName -o $fileNameWithoutExt &&",
                         --"$dir/$fileNameWithoutExt"
-                            "cd \"$dir\" &&",
-                            "gcc \"$fileName\" -o \"$fileNameWithoutExt\" &&",
-                            "\"$dir/$fileNameWithoutExt\""
-                        },
+                        "cd \"$dir\" &&",
+                        "gcc \"$fileName\" -o \"$fileNameWithoutExt\" &&",
+                        "\"$dir/$fileNameWithoutExt\""
+                    },
                     cpp = {
-                            "cd \"$dir\" &&",
-                            "g++ \"$fileName\" -o \"$fileNameWithoutExt\" &&",
-                            "\"$dir/$fileNameWithoutExt\""
+                        "cd \"$dir\" &&",
+                        "g++ \"$fileName\" -o \"$fileNameWithoutExt\" &&",
+                        "\"$dir/$fileNameWithoutExt\""
                     },
                     go = "go run",
                     html = "q $file",
                     java = {
-                            "cd \"$dir\" &&",
-                            "javac \"$fileName\" &&",
-                            "java \"$fileNameWithoutExt\" &&",
+                        "cd \"$dir\" &&",
+                        "javac \"$fileName\" &&",
+                        "java \"$fileNameWithoutExt\" &&",
                     },
                     javascript = "node",
                     julia = "julia",
@@ -55,11 +55,11 @@ return {
                     ruby = "ruby",
                     tex = "pdflatex \"$file\"",
                     rust = {
-                            "cd \"$dir\" &&",
-                            "cargo build &&",
-                            "cargo run"
-                            --"rustc \"$fileName\" &&",
-                            --"\"$dir/$fileNameWithoutExt\""	
+                        "cd \"$dir\" &&",
+                        "cargo build &&",
+                        "cargo run"
+                        --"rustc \"$fileName\" &&",
+                        --"\"$dir/$fileNameWithoutExt\""	
                     },
                     zig = "zig run",
                 },

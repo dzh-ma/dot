@@ -1,6 +1,6 @@
 return {
     {
-		'williamboman/mason.nvim',			            -- LSP/DAP/linter/formatter installer
+        'williamboman/mason.nvim',			            -- LSP/DAP/linter/formatter installer
         dependencies = {
             'williamboman/mason-lspconfig.nvim',		    -- linker between Mason installed LSPs & LSP integration
         },

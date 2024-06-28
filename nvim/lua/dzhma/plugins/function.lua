@@ -54,7 +54,7 @@ return {
         end,
     },
 
-   {
+    {
         'stevearc/oil.nvim',					            -- file manipulation & traversal inside a buffer environment
         config = function()
             require("oil").setup({
