@@ -1,0 +1,51 @@
+return {
+    {
+        'maxmx03/fluoromachine.nvim',
+        dependencies = { 'nvim-lualine/lualine.nvim' },
+        config = function ()
+            local fm = require 'fluoromachine'
+
+            fm.setup {
+                glow = false,
+                theme = 'fluoromachine',
+                transparent = true,
+                overrides = {
+                    ['@markup.italic'] = { italic = true, fg = '#FFFF00' },
+                },
+                colors = function()
+                    return {
+                        white = '#FFFFFF',
+                        purple = '#39FF14',
+                        pink = '#FF3131',
+
+                        -- bg = '#190920',
+                        -- alt_bg = d('#190920', 20),   // use colors  function(_, d) for this
+                        -- cyan = '#49eaff',
+                        -- red = '#ff1e34',
+                        -- yellow = '#ffe756',
+                        -- orange = '#f38e21',
+                        -- pink = '#ffadff',
+                        -- purple = '#9544f7',
+
+                        -- bg = '#001100',
+                        -- alt_bg = d('#001100', 20),   -- use colors  function(_, d) for this
+                        -- cyan = '#00FF00',
+                        -- red = '#00FF00',
+                        -- yellow = '#00FF00',
+                        -- orange = '#00FF00',
+                        -- pink = '#00FF00',
+                        -- purple = '#00FF00',
+                    }
+                end,
+            }
+
+            require('lualine').setup({
+                options = {
+                    theme = 'fluoromachine'
+                }
+            })
+
+            vim.cmd.colorscheme('fluoromachine')
+        end
+    },
+}

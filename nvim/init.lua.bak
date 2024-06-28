@@ -1,0 +1,459 @@
+-- UI essentials
+vim.o.number = true             -- numbered columns (effective on current line)
+vim.o.relativenumber = true     -- relative numbered colums
+vim.o.cursorline = true         -- visually highlighted line for cursor identification
+vim.o.termguicolors = true
+vim.cmd[["syntax enable"]]
+vim.opt.wrap = false            -- disables ugly screen wrapping
+vim.opt.signcolumn = "yes"      -- prevents screen jumping right when LSP issue is raised
+
+-- leader & : ease of use
+vim.g.mapleader = " "                                           -- leader mapped to <Space>
+vim.api.nvim_set_keymap('n', ';', ':', { noremap = true })      -- colon commands mapped to semicolon for accessibility
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4                                               -- consistent tabbing
+vim.o.expandtab = true                                          -- uses spaces instead of tab
+
+-- stack pane navigation
+vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })               -- moving down a pane from normal mode
+vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })               -- moving up a pane from normal mode
+vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })               -- moving left a pane from normal mode
+vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })               -- moving right a pane from normal mode
+vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-p>', '<cmd>bprevious<CR>', { noremap = true, silent = true })
+-- exiting terminal mode
+vim.keymap.set('t', '<C-j>', '<C-\\><C-N><C-j>', { noremap = true, silent = true })
+vim.keymap.set('t', '<C-k>', '<C-\\><C-N><C-k>', { noremap = true, silent = true })
+vim.keymap.set('t', '<C-h>', '<C-\\><C-N><C-h>', { noremap = true, silent = true })
+vim.keymap.set('t', '<C-l>', '<C-\\><C-N><C-l>', { noremap = true, silent = true })
+
+-- word search and buffer cancellation
+vim.keymap.set('n', '<leader>n', '<cmd>noh<CR>', { noremap = true, silent = true})          -- cancels search highlighting
+vim.keymap.set('n', '<leader>d', '<cmd>bdelete<CR>', { noremap = true, silent = true })     -- easy way to delete buffer
+
+-- lazy
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+require('lazy').setup({
+	-- file switching
+	{
+		'nvim-telescope/telescope.nvim',		        -- file fzf + buffer navigation & error storing
+		tag = '0.1.5',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+	},
+    {
+        "nvim-treesitter/nvim-treesitter",          -- parser
+        build = ":TSUpdate",
+        config = function () 
+            local configs = require("nvim-treesitter.configs")
+            configs.setup({
+                ensure_installed = { 
+                    "c", "cpp", "css", "lua", "norg", "html", "go", "java", "javascript",
+                    "julia", "json", "markdown_inline", "ocaml", "ocaml_interface", "php",
+                    "python", "ruby", "rust", "sql", "ssh_config", "xml", "norg_meta", "zig"
+                },
+                sync_install = false,
+                highlight = { enable = true },
+                indent = { enable = true },  
+            })
+        end,
+    },
+	-- syntax highlighting
+    'norcalli/nvim-colorizer.lua',			        -- colors & hex code get visual color indicators
+    'lukas-reineke/indent-blankline.nvim',		    -- indentation levels get distinguished by lines & color
+    'Abstract-IDE/Abstract-cs',
+    'dasupradyumna/midnight.nvim',
+	-- icon pack
+    {
+        'ryanoasis/vim-devicons',
+        'nvim-tree/nvim-web-devicons',
+    },
+	-- copy/paste functionality
+	'christoomey/vim-system-copy',			        -- enables system yanking & pasting in & out of NeoVim
+	-- UI elements
+	'windwp/windline.nvim',				            -- statusbar customization
+	'MunifTanjim/nui.nvim',				            -- support function to use noice & notify
+	'folke/noice.nvim',					            -- custom designed cmd line that appears only when prompted
+	'rcarriga/nvim-notify',				            -- custom designed notifications that appears like an application would
+	'lewis6991/gitsigns.nvim',				        -- git information integration
+	-- navigation
+	'ggandor/leap.nvim',					            -- quick navigation across visible buffer using 2-character combinations
+    {
+        'ThePrimeagen/harpoon',                         -- intra buffer navigation
+        branch = 'harpoon2',
+        requires = {{ 'nvim-lua/plenary.nvim' }},
+    },
+	-- lsp
+	{
+		'williamboman/mason.nvim',			            -- LSP/DAP/linter/formatter installer
+		'williamboman/mason-lspconfig.nvim',		    -- linker between Mason installed LSPs & LSP integration
+		'neovim/nvim-lspconfig',			            -- LSP integration
+	},
+	{
+		'hrsh7th/nvim-cmp',				                -- autocomplete function
+        event = "InsertEnter",
+        dependencies = {
+            'hrsh7th/cmp-nvim-lsp',				            -- autocomplete integration
+            'hrsh7th/cmp-buffer',				            -- source of coding information for autocomplete to pull
+            'hrsh7th/cmp-path',				                -- source of file path information for autocomplete to pull
+            'hrsh7th/cmp-cmdline',				            -- autocomplete integration inside cmdline
+            'saadparwaiz1/cmp_luasnip',			            -- linker between autocomplete & LuaSnip
+            'L3MON4D3/LuaSnip',				                -- code snippets to give code information from LSP
+            'rafamadriz/friendly-snippets',			        -- snippet collection for a range of programming languages
+        },
+	},
+    'onsails/lspkind.nvim',				            -- devicon integration into LSP autocomplete
+    'hinell/lsp-timeout.nvim',				        -- memory management of LSP after inactive period
+    'windwp/nvim-autopairs',                         -- automatic addition of parentheses and quotations
+	-- linter
+    'mfussenegger/nvim-lint',				        -- linter integration using Mason linters
+	-- code compilation & execution
+    'CRAG666/code_runner.nvim',				        -- manually programmed code execution using a keyword
+    {
+        "kawre/leetcode.nvim",
+        build = ":TSUpdate html",
+        dependencies = {
+            "nvim-telescope/telescope.nvim",
+
+            -- optional
+            "nvim-treesitter/nvim-treesitter",
+            "rcarriga/nvim-notify",
+            "nvim-tree/nvim-web-devicons",
+        },
+        opts = {},
+    },
+	-- file navigation & manipulation
+    'stevearc/oil.nvim',					            -- file manipulation & traversal inside a buffer environment
+    -- note taking
+    {
+        "nvim-neorg/neorg",
+        build = ":Neorg sync-parsers", -- This is the important bit!
+        dependencies = { { "nvim-lua/plenary.nvim" }, { "nvim-neorg/neorg-telescope" } },
+        config = function()
+            require("neorg").setup {
+                load = {
+                    ["core.defaults"] = {},         -- loads default behavior
+                    ["core.concealer"] = {
+                        config = {
+                            folds = false,
+                        },
+                    },
+                    ["core.integrations.telescope"] = {},
+                }
+            }
+        end,
+    },
+})
+
+-- colorscheme
+-- vim.cmd.colorscheme("midnight")        -- setting colorscheme
+vim.cmd.colorscheme("abscs")        -- setting colorscheme
+
+-- web dev icons (required for colored buffer icons)
+vim.g.WebDevIconsUnicodeDecorateFolderNodes = 1
+vim.g.WebDevIconsUnicodeDecorateFileNodes = 1
+vim.g.WebDevIconsUnicodeDecorateOpenFolderNodes = 1
+vim.g.WebDevIconsUnicodeDecorateDefault = 0
+
+-- leap
+require('leap').add_default_mappings()
+
+-- telescope
+vim.keymap.set('n', '<Leader>f', '<cmd>Telescope find_files<CR>', { noremap = true, silent = true})     -- enables fzf file searching
+
+-- autopairs
+require("nvim-autopairs").setup()           -- enables auto pairing of (), [], {}, "", '', ``
+
+-- notify
+require("notify").setup({
+	--background_colour = "#000000",
+	render = "minimal",
+	timeout = 0,
+})
+vim.keymap.set('n', '<leader>tn', '<cmd>Telescope notify<CR>', { noremap = true, silent = true})
+
+
+-- system clipboard
+vim.o.clipboard = "unnamedplus"
+
+-- harpoon
+local harpoon = require('harpoon')
+harpoon:setup()
+vim.keymap.set('n', '<A-a>', function() harpoon:list():append() end)
+vim.keymap.set('n', '<A-e>', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+vim.keymap.set("n", "<A-h>", function() harpoon:list():select(1) end)
+vim.keymap.set("n", "<A-j>", function() harpoon:list():select(2) end)
+vim.keymap.set("n", "<A-k>", function() harpoon:list():select(3) end)
+vim.keymap.set("n", "<A-l>", function() harpoon:list():select(4) end)
+
+-- gitsigns
+require('gitsigns').setup()
+
+-- indent blankline
+local highlight = {
+    "RainbowRed",
+    "RainbowYellow",
+    "RainbowBlue",
+    "RainbowOrange",
+    "RainbowGreen",
+    "RainbowViolet",
+    "RainbowCyan",
+}local hooks = require "ibl.hooks"
+-- create the highlight groups in the highlight setup hook, so they are reset
+-- every time the colorscheme changes
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+    vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+    vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+    vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+    vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+    vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+end)
+require("ibl").setup { indent = { highlight = highlight } }
+
+-- windline
+require('wlsample.evil_line')
+
+-- lspkind
+local lspkind = require('lspkind')
+
+-- cmp
+local cmp = require'cmp'
+cmp.setup({
+	snippet = {
+		-- REQUIRED - you must specify a snippet engine
+		expand = function(args)
+			require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+		end,
+	},
+	window = {
+		-- completion = cmp.config.window.bordered(),
+		-- documentation = cmp.config.window.bordered(),
+	},
+	mapping = cmp.mapping.preset.insert({
+		['<C-b>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.abort(),
+		--['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+	}),
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' }, -- For luasnip users.
+	}, {
+		{ name = 'buffer' },
+	}),
+	formatting = {
+		format = lspkind.cmp_format({
+			mode = 'symbol', -- show only symbol annotations
+	      		maxwidth = 50, 	-- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+			     		-- can also be a function to dynamically calculate max width such as 
+			     		-- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
+	      		ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+	      		show_labelDetails = true, -- show labelDetails in menu. Disabled by default
+		}),
+	},
+    experimental = {
+        ghost_text = true,
+    },
+})
+-- Set configuration for specific filetype.
+cmp.setup.filetype('gitcommit', {
+	sources = cmp.config.sources({
+		{ name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
+	}, {
+		{ name = 'buffer' },
+	})
+})
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = {
+		{ name = 'buffer' }
+	}
+})
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+	mapping = cmp.mapping.preset.cmdline(),
+	sources = cmp.config.sources({
+		{ name = 'path' }
+	}, {
+		{ name = 'cmdline' }
+	})
+})
+
+-- noice
+require("noice").setup({
+    lsp = {
+        -- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+        override = {
+        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+        ["vim.lsp.util.stylize_markdown"] = true,
+        ["cmp.entry.get_documentation"] = true,
+        },
+    },
+    presets = {
+        -- you can enable a preset by setting it to true, or a table that will override the preset config
+        -- you can also add custom presets that you can enable/disable with enabled=true
+        bottom_search = false, -- use a classic bottom cmdline for search
+        command_palette = false, -- position the cmdline and popupmenu together
+        long_message_to_split = true, -- long messages will be sent to a split
+        inc_rename = false, -- enables an input dialog for inc-rename.nvim
+    },
+})
+
+-- nvim colorizer
+require('colorizer').setup()
+
+-- oil
+require("oil").setup({
+	columns = {
+		"icon",
+		"permissions",
+		"size",
+		"mtime",
+	},
+	delete_to_trash = true,
+    skip_confirm_for_simple_edits = false,
+	view_options = {
+		show_hidden = true,
+	},
+})
+vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
+
+-- code runner
+require('code_runner').setup({
+	filetype = {
+		c = {
+			--"cd $dir &&",
+			--"gcc $fileName -o $fileNameWithoutExt &&",
+			--"$dir/$fileNameWithoutExt"
+	    		"cd \"$dir\" &&",
+    			"gcc \"$fileName\" -o \"$fileNameWithoutExt\" &&",
+    			"\"$dir/$fileNameWithoutExt\""	
+    		},
+		cpp = {
+	    		"cd \"$dir\" &&",
+    			"g++ \"$fileName\" -o \"$fileNameWithoutExt\" &&",
+    			"\"$dir/$fileNameWithoutExt\""	
+		},
+		go = "go run",
+		html = "q $file",
+		java = {
+	    		"cd \"$dir\" &&",
+    			"javac \"$fileName\" &&",
+    			"java \"$fileNameWithoutExt\" &&",
+		},
+		javascript = "node",
+		julia = "julia",
+		python = {
+            "cd \"$dir\" &&",
+            --"python -u",
+            "python -u \"$fileName\""
+        },
+		typescript = "deno run",
+		ruby = "ruby",
+		rust = {
+	    		"cd \"$dir\" &&",
+    			"rustc \"$fileName\" &&",
+    			"\"$dir/$fileNameWithoutExt\""	
+		},
+		zig = "zig run",
+	},
+})
+vim.keymap.set('n', '<leader>r', '<cmd>RunCode<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rf', '<cmd>RunFile<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rft', '<cmd>RunFile tab<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rp', '<cmd>RunProject<CR>', { noremap = true, silent = false })
+vim.keymap.set('n', '<leader>rc', '<cmd>RunClose<CR>', { noremap = true, silent = false })
+--vim.keymap.set('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
+--vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
+
+-- neorg
+local neorg_callbacks = require("neorg.core.callbacks")
+neorg_callbacks.on_event("core.keybinds.events.enable_keybinds", function(_, keybinds)
+    -- Map all the below keybinds only when the "norg" mode is active
+    keybinds.map_event_to_mode("norg", {
+        n = { -- Bind keys in normal mode
+        },
+
+        i = { -- Bind in insert mode
+            { "<C-l>", "core.integrations.telescope.insert_link" },
+        },
+    }, {
+        silent = true,
+        noremap = true,
+    })
+end)
+vim.opt.conceallevel = 1
+
+-- Set up lspconfig.
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+-- lsp
+require("mason").setup()
+require("mason-lspconfig").setup()
+require("lspconfig").clangd.setup {
+	capabilities = capabilities
+}
+require("lspconfig").cssls.setup {
+	capabilities = capabilities
+}
+require("lspconfig").gopls.setup {
+	capabilities = capabilities
+}
+require("lspconfig").html.setup {
+	capabilities = capabilities
+}
+require("lspconfig").julials.setup {
+	capabilities = capabilities
+}
+require("lspconfig").jdtls.setup {
+	capabilities = capabilities
+}
+require("lspconfig").ocamllsp.setup {
+	capabilities = capabilities
+}
+require("lspconfig").pyright.setup {
+	capabilities = capabilities
+}
+require("lspconfig").rust_analyzer.setup {
+	capabilities = capabilities
+}
+require("lspconfig").tsserver.setup {
+	capabilities = capabilities
+}
+require("lspconfig").zls.setup {
+	capabilities = capabilities
+}
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+-- linter
+require('lint').linters_by_ft = {
+	python = {'pydocstyle',},
+	cpp = {'cpplint',},
+	c = {'cpplint',},
+	ruby = {'rubocop',},
+	html = {'markuplint',},
+    java = {'checkstyle',},
+    js = {'oxlint',},
+    ts = {'oxlint',},
+}
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+	callback = function()
+		require("lint").try_lint()
+	end,
+})

@@ -1,0 +1,25 @@
+return {
+    {
+        'sekke276/dark_flat.nvim',
+        dependencies = { 'tamton-aquib/staline.nvim' },
+        config = function ()
+            require('staline').setup()
+
+            require('dark_flat').setup {
+                themes = function (colors)
+                    return {
+                        ["@neorg.markup.bold.norg"] = { fg = colors.cyan, bold = true },
+                        ["@neorg.markup.italic.norg"] = { fg = colors.peanut, italic = true },
+                        ["@neorg.markup.underline.norg"] = { fg = colors.dark_red, underline = true },
+                        ["@neorg.markup.strikethrough.norg"] = { fg = colors.red, strikethrough = true, bold = true },
+                        ["@neorg.markup.verbatim.norg"] = { fg = colors.aqua, bg = colors.vulcan },
+                        ["@neorg.markup.inline_math.norg"] = { fg = colors.red },
+                        ["@neorg.markup.subscript.norg"] = { fg = colors.orange }
+                    }
+                end,
+            }
+
+            vim.cmd.colorscheme('dark_flat')
+        end
+    },
+}
