@@ -159,6 +159,9 @@ return {
             "sindrets/diffview.nvim",        -- optional - Diff integration
             "ibhagwan/fzf-lua",              -- optional
         },
-        config = true
+        config = function ()
+            require('neogit').setup()
+            vim.keymap.set("n", "<A-g>", "<cmd>Neogit<CR>", { noremap = true, silent = true })
+        end
     },
 }
