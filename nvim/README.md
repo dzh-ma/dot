@@ -1,7 +1,6 @@
 # NeoVim Config
 
-![nvim-screenshot](https://github.com/dzh-ma/dot/assets/145275422/3a166992-bf79-49eb-8671-aa25250590f8)
-
+![nvim-screenshot](https://github.com/dzh-ma/dot/assets/145275422/41b375d3-b8bc-4736-a07b-1163e7e50c62)
 
 ## My Plugin List
 
