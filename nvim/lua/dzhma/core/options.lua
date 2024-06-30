@@ -12,8 +12,8 @@ vim.o.expandtab = true                                          -- uses spaces i
 
 vim.o.clipboard = "unnamedplus"
 
--- vim.opt.scrolloff = 999
-vim.opt.cursorline = true
+vim.opt.scrolloff = 999
+-- vim.opt.cursorline = true
 
 vim.opt.laststatus = 2
 vim.opt.showtabline = 2
