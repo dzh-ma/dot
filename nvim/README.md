@@ -18,12 +18,12 @@
 - [onsails/lspkind.nvim](https://github.com/onsails/lspkind.nvim)
 - [hinell/lsp-timeout.nvim](https://github.com/hinell/lsp-timeout.nvim)
 
-# Colorscheme
+### Colorscheme
 
 - [uncleTen276/dark_flat.nvim](https://github.com/uncleTen276/dark_flat.nvim)
 - [tamton-aquib/staline.nvim](https://github.com/tamton-aquib/staline.nvim)
 
-# Functionality
+### Functionality
 
 - [christoomey/vim-system-copy](https://github.com/christoomey/vim-system-copy)
 - [junegunn/fzf](https://github.com/junegunn/fzf)
@@ -35,20 +35,20 @@
 - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 
-# Note Taking
+### Note Taking
 
 - [3rd/image.nvim](https://github.com/3rd/image.nvim)
 - [nvim-neorg/neorg](https://github.com/nvim-neorg/neorg)
     - [vhyrro/luarocks.nvim](https://github.com/vhyrro/luarocks.nvim)
 - [lukas-reineke/headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
 
-# Parsing
+### Parsing
 
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [CRAG666/code_runner.nvim](https://github.com/CRAG666/code_runner.nvim)
 - [mfussenegger/nvim-lint](https://github.com/CRAG666/code_runner.nvim)
 
-# UI
+### UI
 
 - [folke/noice.nvim](https://github.com/folke/noice.nvim)
     - [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim)
