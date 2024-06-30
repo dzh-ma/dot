@@ -1,5 +1,8 @@
 # NeoVim Config
 
+![nvim-screenshot](https://github.com/dzh-ma/dot/assets/145275422/3a166992-bf79-49eb-8671-aa25250590f8)
+
+
 ## My Plugin List
 
 ### Autocompletion + LSP
