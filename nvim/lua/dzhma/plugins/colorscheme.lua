@@ -120,7 +120,7 @@ return {
                 stab_left   = "┃",
                 stab_right  = " ",
 
-                -- fg       = Default is fg of "Normal".
+                fg       = "#FF0000",
                 -- bg       = Default is bg of "Normal".
                 inactive_bg = "#1e2127",
                 inactive_fg = "#aaaaaa",
