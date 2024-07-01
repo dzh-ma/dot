@@ -44,6 +44,9 @@ return {
                     ['core.keybinds'] = {                       -- general keybind support
                         config = {
                             default_keybinds = true,
+                            hook = function (keybinds)
+                                keybinds.remap("norg", "n", "<A-t>", "<cmd>Neorg tangle current-file<CR>")
+                            end
                         },
                     },
                     ['core.dirman.utils'] = {},                 -- ??
