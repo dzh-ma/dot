@@ -150,18 +150,4 @@ return {
             -- refer to the configuration section below
         }
     },
-
-
-    {
-        "NeogitOrg/neogit",
-        dependencies = {
-            "nvim-lua/plenary.nvim",         -- required
-            "sindrets/diffview.nvim",        -- optional - Diff integration
-            "ibhagwan/fzf-lua",              -- optional
-        },
-        config = function ()
-            require('neogit').setup()
-            vim.keymap.set("n", "<A-g>", "<cmd>Neogit<CR>", { noremap = true, silent = true })
-        end
-    },
 }

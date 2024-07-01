@@ -8,14 +8,14 @@ return {
                 transparent = true,
                 themes = function (colors)
                     return {
-                        -- Headings (unchanged)
+                        -- Headings
                         ["@neorg.headings.1.title.norg"] = { fg = "#FFD700", bold = true, italic = true },  -- Gold
                         ["@neorg.headings.2.title.norg"] = { fg = "#7CFC00", bold = true, italic = true },  -- LawnGreen
                         ["@neorg.headings.3.title.norg"] = { fg = "#40E0D0", bold = true, italic = true },  -- Turquoise
                         ["@neorg.headings.4.title.norg"] = { fg = "#FF8C00", bold = true, italic = true },  -- DarkOrange
                         ["@neorg.headings.5.title.norg"] = { fg = "#9370DB", bold = true, italic = true},   -- MediumPurple
                         ["@neorg.headings.6.title.norg"] = { fg = "#00CED1", bold = true, italic = true },  -- DarkTurquoise
-                        -- Matching link colors (unchanged)
+                        -- Matching link colors
                         ["@neorg.links.location.heading.1.norg"] = { fg = "#FFD700", bold = true },
                         ["@neorg.links.location.heading.2.norg"] = { fg = "#7CFC00", bold = true },
                         ["@neorg.links.location.heading.3.norg"] = { fg = "#40E0D0", bold = true },
@@ -39,7 +39,7 @@ return {
                         ["@neorg.quotes.4.content.norg"] = { fg = "#00FA9A" },                 -- MediumSpringGreen (changed from DeepPink)
                         ["@neorg.quotes.5.content.norg"] = { fg = "#20B2AA" },                 -- LightSeaGreen
                         ["@neorg.quotes.6.content.norg"] = { fg = "#8B4513" },                 -- SaddleBrown
-                        -- Other syntax elements (unchanged)
+                        -- Other syntax elements
                         ["@neorg.anchors.norg"] = { underline = true, },
                         ["@neorg.anchors.declaration.norg"] = { fg = colors.light_green },
                         ["@neorg.links.location.url.norg"] = { fg = colors.dark_gray },
@@ -52,6 +52,13 @@ return {
                         ["Function"] = { fg = "#0ADD08", underline = true },
                         ["LineNr"] = { fg = "#FF0000" },
                         ["String"] = { fg = "#FFFF00", italic = true },
+                        -- Git Signs
+                        ["GitSignsAdd"] = { fg = "#FF0000" },
+                        ["GitSignsChange"] = { fg = "#FF69B4" },
+                        ["GitSignsDelete"] = { fg = "#FFD700" },
+                        ["GitSignsTopdelete"] = { fg = "#FF69B4" },
+                        ["GitSignsChangedelete"] = { fg = "#FF8C00" },
+                        ["GitSignsUntracked"] = { fg = "#40E0D0" },
                     }
                 end,
             }
