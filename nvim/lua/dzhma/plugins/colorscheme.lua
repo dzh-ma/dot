@@ -54,11 +54,11 @@ return {
                         ["String"] = { fg = "#FFFF00", italic = true },
                         -- Git Signs
                         ["GitSignsAdd"] = { fg = "#FF0000" },
-                        ["GitSignsChange"] = { fg = "#FF69B4" },
-                        ["GitSignsDelete"] = { fg = "#FFD700" },
-                        ["GitSignsTopdelete"] = { fg = "#FF69B4" },
-                        ["GitSignsChangedelete"] = { fg = "#FF8C00" },
-                        ["GitSignsUntracked"] = { fg = "#40E0D0" },
+                        ["GitSignsChange"] = { fg = "#FF0000" },
+                        ["GitSignsDelete"] = { fg = "#FF0000" },
+                        ["GitSignsTopdelete"] = { fg = "#FF0000" },
+                        ["GitSignsChangedelete"] = { fg = "#FF0000" },
+                        ["GitSignsUntracked"] = { fg = "#FF0000" },
                     }
                 end,
             }
