@@ -36,7 +36,6 @@
 - [altermo/ultimate-autopair.nvim](https://github.com/altermo/ultimate-autopair.nvim)
 - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
-- [NeogitOrg/neogit](https://github.com/NeogitOrg/neogit)
 
 ### Note Taking
 
