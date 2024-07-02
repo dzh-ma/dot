@@ -55,6 +55,11 @@ return {
                     ['core.qol.todo_items'] = {                 -- todo list automatic creation
                         config = {
                             create_todo_parents = true,
+                            order = {
+                                { "undone", " " },
+                                { "pending", "-" },
+                                { "done", "x" },
+                            },
                         },
                     },
                     ['core.promo'] = {},                        -- <C-t> indent; <C-d> for dedent
