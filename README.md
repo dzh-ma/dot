@@ -1,7 +1,7 @@
 # Dot Files
 
-![home-screenshot](https://github.com/dzh-ma/dot/assets/145275422/fbdfd4bb-898b-4aa5-a85b-bc169b94c34f)
+![Desktop](https://github.com/dzh-ma/dot/assets/145275422/604b3f10-bfde-4a9c-beb3-059b439ebc08)
 
-![nvim-screenshot](https://github.com/dzh-ma/dot/assets/145275422/f0fa9b66-8479-4b34-ba2c-6865c440c2fd)
+![NeoVim](https://github.com/dzh-ma/dot/assets/145275422/cc9aebd9-ec18-43c4-a56f-1df794ee77d1)
 
-![20240630_13h43m01s_grim](https://github.com/dzh-ma/dot/assets/145275422/60837c36-1630-42aa-bff4-c7b5b40da862)
+![Terminal](https://github.com/dzh-ma/dot/assets/145275422/550989fc-ca06-4862-a5ae-9d58ebf0da7e)
