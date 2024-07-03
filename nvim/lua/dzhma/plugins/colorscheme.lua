@@ -51,7 +51,7 @@ return {
                         ["Structure"] = { fg = colors.dark_cyan },
                         ["Function"] = { fg = "#0ADD08", underline = true },
                         ["LineNr"] = { fg = "#FF0000" },
-                        ["String"] = { fg = "#FFFF00", italic = true },
+                        ["String"] = { fg = "#FFFF00" },
                         -- Git Signs
                         ["GitSignsAdd"] = { fg = "#FF0000" },
                         ["GitSignsChange"] = { fg = "#FF0000" },

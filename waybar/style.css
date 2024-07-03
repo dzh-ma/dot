@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0px;
     font-family: Hurmit Nerd Font;
-    font-size: 14.5px;
+    font-size: 10px;
     font-style: normal;
     min-height: 0;
     color: #FF0000; /* Global text color set to red */
@@ -49,6 +49,7 @@ window#waybar {
 #pulseaudio,
 #custom-launcher,
 #battery,
+#network
 #custom-code {
     background: transparent;
     padding: 5px 5px 5px 5px;
