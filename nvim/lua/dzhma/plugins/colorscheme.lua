@@ -52,6 +52,7 @@ return {
                         ["Function"] = { fg = "#0ADD08", underline = true },
                         ["LineNr"] = { fg = "#FF0000" },
                         ["String"] = { fg = "#FFFF00" },
+                        ["Keyword"] = { fg = "#FF0000" },
                         -- Git Signs
                         ["GitSignsAdd"] = { fg = "#FF0000" },
                         ["GitSignsChange"] = { fg = "#FF0000" },

@@ -57,7 +57,6 @@ return {
                             create_todo_parents = true,
                             order = {
                                 { "undone", " " },
-                                { "pending", "-" },
                                 { "done", "x" },
                             },
                         },
