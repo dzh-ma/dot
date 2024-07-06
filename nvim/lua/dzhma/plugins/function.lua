@@ -98,17 +98,6 @@ return {
     },
 
     {
-        "jinh0/eyeliner.nvim",
-        keys = { "f", "F" },
-        config = function ()
-            require('eyeliner').setup({
-                highlight_on_key = true,
-                dim = true,
-            })
-        end
-    },
-
-    {
         'altermo/ultimate-autopair.nvim',
         event={'InsertEnter','CmdlineEnter'},
         branch='v0.6', --recommended as each new version will have breaking changes

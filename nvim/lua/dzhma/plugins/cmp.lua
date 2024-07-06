@@ -12,6 +12,10 @@ return {
                 client.server_capabilities.semanticTokensProvider = false       -- to prevent LSP overwriting Treesitter highlighting
             end
 
+            require("lspconfig").asm_lsp.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            }
             require("lspconfig").clangd.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,

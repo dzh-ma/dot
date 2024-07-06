@@ -56,4 +56,11 @@ if status is-interactive
 
     # Set vi mode
     fish_vi_key_bindings
+
+    # Custom key bindings for autocompletion
+    function fish_user_key_bindings
+        for mode in insert default
+            bind -M $mode \cn forward-char force-repaint
+        end
+    end
 end

@@ -29,8 +29,16 @@ return {
                 load = {
                     ['core.concealer'] = {                      -- UI devicon support
                         config = {
-                            -- icon_preset = "diamond",
+                            icon_preset = "diamond",
                             folds = false,
+                            icons = {
+                                code_block = {
+                                    conceal = true,
+                                },
+                                list = {
+                                    icons = { "" },
+                                },
+                            },
                         },
                     },
                     ['core.autocommands'] = {},                 -- required to support other modules
@@ -70,17 +78,18 @@ return {
         end,
     },
 
-    {
-        "lukas-reineke/headlines.nvim",
-        ft = { 'norg' },
-        dependencies = "nvim-treesitter/nvim-treesitter",
-        config = function ()
-            vim.cmd([[highlight CodeBlock guibg=#1E2130]])
-            require('headlines').setup({
-                norg = {
-                    fat_headlines = false,
-                }
-            })
-        end
-    },
+    -- {
+    --     "lukas-reineke/headlines.nvim",
+    --     ft = { 'norg' },
+    --     dependencies = "nvim-treesitter/nvim-treesitter",
+    --     config = function ()
+    --         -- vim.cmd([[highlight CodeBlock guibg=#1E2130]])
+    --         vim.cmd([[highlight CodeBlock guibg=#140D07]])
+    --         require('headlines').setup({
+    --             norg = {
+    --                 fat_headlines = false,
+    --             }
+    --         })
+    --     end
+    -- },
 }
