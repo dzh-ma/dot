@@ -1,6 +1,6 @@
 # NeoVim Config
 
-![NeoVim](https://github.com/dzh-ma/dot/assets/145275422/07f198f7-995a-4ba9-aa3c-9377a01d710b)
+![NeoVim screenshot](https://github.com/dzh-ma/dot/assets/145275422/e922a7c6-284f-483f-a010-007e79014d48)
 
 ## My Plugin List
 
@@ -22,7 +22,7 @@
 
 ### Colorscheme
 
-- [uncleTen276/dark_flat.nvim](https://github.com/uncleTen276/dark_flat.nvim)
+- [dzh-ma/deepwhite.nvim](https://github.com/dzh-ma/deepwhite.nvim)
 - [tamton-aquib/staline.nvim](https://github.com/tamton-aquib/staline.nvim)
 
 ### Functionality
@@ -36,6 +36,7 @@
 - [altermo/ultimate-autopair.nvim](https://github.com/altermo/ultimate-autopair.nvim)
 - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
+- [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)
 
 ### Note Taking
 
