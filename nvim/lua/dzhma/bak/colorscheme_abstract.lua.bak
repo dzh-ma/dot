@@ -1,11 +1,11 @@
 return {
     {
-        dir = "/home/dzhma/Coding/Lua/deepwhite.nvim",
+        "Abstract-IDE/Abstract-cs",
         lazy = false, -- make sure we load this during startup if it is your main colorscheme
         priority = 1000,
         dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
-            vim.cmd.colorscheme("deepwhite")
+            vim.cmd.colorscheme("abscs")
 
             require('staline').setup {
                 defaults = {
@@ -15,7 +15,7 @@ return {
                     full_path       = false,
                     line_column     = "[%l/%L] :%c %p%% ", -- `:h stl` to see all flags.
 
-                    fg              = "#FFFFFF",  -- Foreground text color.
+                    fg              = "#000000",  -- Foreground text color.
                     bg              = "none",     -- Default background is transparent.
                     inactive_color  = "#303030",
                     inactive_bgcolor = "none",
@@ -30,10 +30,10 @@ return {
                     null_ls_symbol = "",          -- A symbol to indicate that a source is coming from null-ls
                 },
                 mode_colors = {
-                    n = "#000000",
-                    i = "#000000",
-                    c = "#000000",
-                    v = "#000000",   -- etc..
+                    n = "#FFFFFF",
+                    i = "#FFFFFF",
+                    c = "#FFFFFF",
+                    v = "#FFFFFF",   -- etc..
                 },
                 --mode_icons = {
                 --    n = " ",
@@ -68,9 +68,9 @@ return {
                 stab_left   = "┃",
                 stab_right  = " ",
 
-                fg       = "#000000",
+                fg       = "#FFFFFF",
                 -- bg       = Default is bg of "Normal".
-                inactive_bg = "#FFFFFF",
+                inactive_bg = "#000000",
                 inactive_fg = "#aaaaaa",
                 -- stab_bg  = Default is darker version of bg.,
 

@@ -1,11 +1,12 @@
 return {
     {
-        dir = "/home/dzhma/Coding/Lua/deepwhite.nvim",
+        "marko-cerovac/material.nvim",
         lazy = false, -- make sure we load this during startup if it is your main colorscheme
         priority = 1000,
         dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
-            vim.cmd.colorscheme("deepwhite")
+            vim.g.material_style = "lighter"
+            vim.cmd.colorscheme("material")
 
             require('staline').setup {
                 defaults = {
@@ -15,8 +16,8 @@ return {
                     full_path       = false,
                     line_column     = "[%l/%L] :%c %p%% ", -- `:h stl` to see all flags.
 
-                    fg              = "#FFFFFF",  -- Foreground text color.
-                    bg              = "none",     -- Default background is transparent.
+                    fg              = "#000000",  -- Foreground text color.
+                    bg              = "#FFFFFF",     -- Default background is transparent.
                     inactive_color  = "#303030",
                     inactive_bgcolor = "none",
                     true_colors     = false,      -- true lsp colors.
@@ -30,10 +31,10 @@ return {
                     null_ls_symbol = "",          -- A symbol to indicate that a source is coming from null-ls
                 },
                 mode_colors = {
-                    n = "#000000",
-                    i = "#000000",
-                    c = "#000000",
-                    v = "#000000",   -- etc..
+                    n = "#FFFFFF",
+                    i = "#FFFFFF",
+                    c = "#FFFFFF",
+                    v = "#FFFFFF",   -- etc..
                 },
                 --mode_icons = {
                 --    n = " ",

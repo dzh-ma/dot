@@ -33,7 +33,7 @@ return {
                             folds = false,
                             icons = {
                                 code_block = {
-                                    conceal = true,
+                                    conceal = false,
                                 },
                                 list = {
                                     icons = { "" },
