@@ -1,11 +1,10 @@
 return {
     {
-        --'sekke276/dark_flat.nvim',
         'uncleTen276/dark_flat.nvim',
         dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
             require('dark_flat').setup {
-                transparent = true,
+                transparent = false,
                 themes = function (colors)
                     return {
                         -- Headings

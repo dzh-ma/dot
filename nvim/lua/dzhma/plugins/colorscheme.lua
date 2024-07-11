@@ -1,11 +1,13 @@
 return {
     {
         dir = "/home/dzhma/Coding/Lua/deepwhite.nvim",
+        -- dir = "/home/dzhma/Coding/Lua/deepblack.nvim",
         lazy = false, -- make sure we load this during startup if it is your main colorscheme
         priority = 1000,
         dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
             vim.cmd.colorscheme("deepwhite")
+            -- require('deepblack').load()
 
             require('staline').setup {
                 defaults = {
@@ -15,7 +17,7 @@ return {
                     full_path       = false,
                     line_column     = "[%l/%L] :%c %p%% ", -- `:h stl` to see all flags.
 
-                    fg              = "#FFFFFF",  -- Foreground text color.
+                    fg              = "#FAF2EB",  -- Foreground text color.
                     bg              = "none",     -- Default background is transparent.
                     inactive_color  = "#303030",
                     inactive_bgcolor = "none",
@@ -70,7 +72,7 @@ return {
 
                 fg       = "#000000",
                 -- bg       = Default is bg of "Normal".
-                inactive_bg = "#FFFFFF",
+                inactive_bg = "#FAF2EB",
                 inactive_fg = "#aaaaaa",
                 -- stab_bg  = Default is darker version of bg.,
 

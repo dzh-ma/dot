@@ -1,12 +1,13 @@
 return {
     {
-        "marko-cerovac/material.nvim",
+        dir = "/home/dzhma/Coding/Lua/deepwhite.nvim",
+        -- dir = "/home/dzhma/Coding/Lua/deepblack.nvim",
         lazy = false, -- make sure we load this during startup if it is your main colorscheme
         priority = 1000,
         dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
-            vim.g.material_style = "lighter"
-            vim.cmd.colorscheme("material")
+            vim.cmd.colorscheme("deepwhite")
+            -- require('deepblack').load()
 
             require('staline').setup {
                 defaults = {
@@ -16,8 +17,8 @@ return {
                     full_path       = false,
                     line_column     = "[%l/%L] :%c %p%% ", -- `:h stl` to see all flags.
 
-                    fg              = "#000000",  -- Foreground text color.
-                    bg              = "#FFFFFF",     -- Default background is transparent.
+                    fg              = "#FAF2EB",  -- Foreground text color.
+                    bg              = "none",     -- Default background is transparent.
                     inactive_color  = "#303030",
                     inactive_bgcolor = "none",
                     true_colors     = false,      -- true lsp colors.
@@ -31,10 +32,10 @@ return {
                     null_ls_symbol = "",          -- A symbol to indicate that a source is coming from null-ls
                 },
                 mode_colors = {
-                    n = "#FFFFFF",
-                    i = "#FFFFFF",
-                    c = "#FFFFFF",
-                    v = "#FFFFFF",   -- etc..
+                    n = "#000000",
+                    i = "#000000",
+                    c = "#000000",
+                    v = "#000000",   -- etc..
                 },
                 --mode_icons = {
                 --    n = " ",
@@ -71,7 +72,7 @@ return {
 
                 fg       = "#000000",
                 -- bg       = Default is bg of "Normal".
-                inactive_bg = "#FFFFFF",
+                inactive_bg = "#FAF2EB",
                 inactive_fg = "#aaaaaa",
                 -- stab_bg  = Default is darker version of bg.,
 
