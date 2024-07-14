@@ -6,8 +6,8 @@ return {
         priority = 1000,
         dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
+            --vim.cmd.colorscheme("deepdark")
             vim.cmd.colorscheme("deepwhite")
-            -- require('deepblack').load()
 
             require('staline').setup {
                 defaults = {
@@ -82,5 +82,9 @@ return {
                 stab_end    = "",
             }
         end,
+    },
+
+    {
+        dir = "/home/dzhma/Coding/Lua/deepdark.nvim",
     },
 }

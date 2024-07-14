@@ -17,4 +17,4 @@ vim.opt.scrolloff = 999
 
 vim.opt.laststatus = 2
 vim.opt.showtabline = 2
-vim.opt.conceallevel = 3
+vim.opt.conceallevel = 0

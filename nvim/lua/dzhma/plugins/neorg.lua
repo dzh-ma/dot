@@ -72,7 +72,32 @@ return {
                     ['core.promo'] = {},                        -- <C-t> indent; <C-d> for dedent
                     ['core.itero'] = {},                        -- list continuation with <A-CR>
                     ['core.tangle'] = {},                       -- creates files for code blocks
-                    ['core.esupports.indent'] = {},
+                    ['core.esupports.indent'] = {
+                        config = {
+                            indents = {
+                                heading2 = {
+                                    indent = 4,
+                                },
+                                heading3 = {
+                                    indent = 8,
+                                },
+                                heading4 = {
+                                    indent = 12,
+                                },
+                                heading5 = {
+                                    indent = 16,
+                                },
+                                heading6 = {
+                                    indent = 20,
+                                },
+                            },
+                        }
+                    },             -- automatic indentation
+                    ['core.completion'] = {
+                        config = {
+                            engine = "nvim-cmp"
+                        }
+                    }                    -- autocompletion
                 },
             }
         end,
