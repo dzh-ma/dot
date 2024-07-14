@@ -1,6 +1,6 @@
 # NeoVim Config
 
-![NeoVim screenshot](https://github.com/dzh-ma/dot/assets/145275422/e922a7c6-284f-483f-a010-007e79014d48)
+![NeoVim screenshot](https://github.com/user-attachments/assets/5b658e35-bab2-4388-b6f0-1676cab83393)
 
 ## My Plugin List
 
@@ -24,6 +24,8 @@
 
 - [dzh-ma/deepwhite.nvim](https://github.com/dzh-ma/deepwhite.nvim)
 - [tamton-aquib/staline.nvim](https://github.com/tamton-aquib/staline.nvim)
+- [shellRaining/hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim)
+- [HampusHauffman/block.nvim](https://github.com/HampusHauffman/block.nvim)
 
 ### Functionality
 
