@@ -1,20 +1,9 @@
 return {
     {
-        "uncleTen276/dark_flat.nvim",
-        dependencies = { 'tamton-aquib/staline.nvim' },
+        "zenbones-theme/zenbones.nvim",
+        dependencies = { 'tamton-aquib/staline.nvim', "rktjmp/lush.nvim" },
         config = function ()
-            require("dark_flat").setup({
-                transparent = true,
-                themes = function ()
-                    return {
-                        ["@markup.strong.typst"] = { fg = "#FFA500", bold = true },
-                        ["@markup.italic.typst"] = { fg = "#00FFFF", italic = true },
-                        ["@markup.heading.typst"] = { fg = "#FFFF00", underline = true, bold = true },
-                    }
-                end,
-            })
-            vim.cmd.colorscheme "dark_flat"
-
+            vim.cmd.colorscheme('zenbones')
             require('staline').setup {
                 defaults = {
                     expand_null_ls = false,  -- This expands out all the null-ls sources to be shown
@@ -39,9 +28,9 @@ return {
                 },
                 mode_colors = {
                     n = "#FFFFFF",
-                    i = "#00FF00",
-                    c = "#FF0000",
-                    v = "#00FFFF",   -- etc..
+                    i = "#FFFFFF",
+                    c = "#FFFFFF",
+                    v = "#FFFFFF",   -- etc..
                 },
                 --mode_icons = {
                 --    n = " ",
@@ -73,19 +62,19 @@ return {
 
             require('stabline').setup {
                 style       = "bar", -- others: arrow, slant, bubble
-                stab_left   = "",
+                stab_left   = " ",
                 stab_right  = " ",
 
-                fg       = "#FFFFFF",
-                bg       = "#000000",
-                inactive_bg = "#000000",
-                inactive_fg = "#aaaaaa",
-                -- stab_bg  = Default is darker version of bg.,
+                fg       = "#B4BDC3",
+                bg       = "#1C1917",
+                inactive_bg = "#1C1917",
+                inactive_fg = "#000000",
+                stab_bg  = "#1C1917",
 
                 font_active = "bold",
                 exclude_fts = { 'NvimTree', 'dashboard', 'lir' },
-                stab_start  = "",   -- The starting of stabline
-                stab_end    = "",
+                --stab_start  = "",   -- The starting of stabline
+                --stab_end    = "",
             }
         end,
     },
@@ -102,6 +91,17 @@ return {
                     enable = true
                 },
             })
+        end
+    },
+
+    {
+        "HampusHauffman/block.nvim",
+        config = function()
+            require("block").setup({
+                automatic = true
+            })
+
+            vim.keymap.set("n", "<A-b>", "<cmd>Block<CR>", { noremap = true, silent = true })
         end
     },
 }

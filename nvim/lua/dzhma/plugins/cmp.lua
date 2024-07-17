@@ -66,6 +66,13 @@ return {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
+            require("lspconfig").typst_lsp.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+                settings = {
+                    exportPdf = "never"
+                }
+            }
             require("lspconfig").rust_analyzer.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,

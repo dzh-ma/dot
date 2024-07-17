@@ -88,10 +88,13 @@ return {
                     max_width = { 100, 0.5 },
                     min_width = 40,
                 },
+
                 on_attach = function(bufnr)
                     vim.keymap.set('n', '<Leader>a', '<cmd>AerialNext<CR>', { buffer = bufnr })
                     vim.keymap.set('n', '<Leader>A', '<cmd>AerialPrev<CR>', { buffer = bufnr })
                 end,
+
+                filter_kind = false,
             })
             vim.keymap.set('n', '<A-a>', '<cmd>AerialToggle!<CR>', { noremap = true, silent = true })
         end,
@@ -101,7 +104,15 @@ return {
         'altermo/ultimate-autopair.nvim',
         event={'InsertEnter','CmdlineEnter'},
         branch='v0.6', --recommended as each new version will have breaking changes
-        opts={},
+        opts = {},
+    },
+
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true
+        -- use opts = {} for passing setup options
+        -- this is equalent to setup({}) function
     },
 
     {

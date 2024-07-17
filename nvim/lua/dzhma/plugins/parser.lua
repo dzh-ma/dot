@@ -54,6 +54,10 @@ return {
                     typescript = "deno run",
                     ruby = "ruby",
                     tex = "pdflatex \"$file\"",
+                    typst = {
+                        "cd \"$dir\" &&",
+                        "typst compile \"$fileName\"",
+                    },
                     rust = {
                         "cd \"$dir\" &&",
                         "cargo build &&",

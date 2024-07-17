@@ -1,0 +1,48 @@
+# Enable recoloring
+set recolor true
+
+# Keep original hue when recoloring
+set recolor-keephue true
+
+# Set dark background color (same as terminal background)
+set default-bg "#000000"
+
+# Set foreground color for normal text
+set default-fg "#FFFFFF"
+
+# Set recolor-darkcolor (for normal text)
+set recolor-darkcolor "#FFFFFF"
+
+# Set recolor-lightcolor (for background)
+set recolor-lightcolor "#000000"
+
+# Set inputbar colors
+set inputbar-bg "#000000"
+set inputbar-fg "#FFFFFF"
+
+# Set notification colors
+set notification-bg "#000000"
+set notification-fg "#FFFFFF"
+
+# Set page separator color
+#set page-separator "#403833"
+
+# Set statusbar colors
+set statusbar-bg "#000000"
+set statusbar-fg "#FFFFFF"
+
+# Set highlight color
+set highlight-color "#6099C0"
+set highlight-active-color "#66A5AD"
+
+# Set completion colors
+set completion-bg "#000000"
+set completion-fg "#FFFFFF"
+set completion-highlight-bg "#6099C0"
+set completion-highlight-fg "#000000"
+
+# Set index colors
+set index-bg "#000000"
+set index-fg "#FFFFFF"
+set index-active-bg "#6099C0"
+set index-active-fg "#000000"
