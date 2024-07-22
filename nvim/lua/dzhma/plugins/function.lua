@@ -84,6 +84,8 @@ return {
         },
         config = function()
             require("aerial").setup({
+                backends = { "lsp", "markdown" },
+
                 layout = {
                     max_width = { 100, 0.5 },
                     min_width = 40,
@@ -94,7 +96,17 @@ return {
                     vim.keymap.set('n', '<Leader>A', '<cmd>AerialPrev<CR>', { buffer = bufnr })
                 end,
 
-                filter_kind = false,
+                filter_kind = false
+                --filter_kind = {
+                --    "Class",
+                --    "Constructor",
+                --    "Enum",
+                --    "Function",
+                --    "Interface",
+                --    "Module",
+                --    "Method",
+                --    "Struct",
+                --},
             })
             vim.keymap.set('n', '<A-a>', '<cmd>AerialToggle!<CR>', { noremap = true, silent = true })
         end,
@@ -152,9 +164,34 @@ return {
     },
 
     {
-        'brenoprata10/nvim-highlight-colors',
+        "itchyny/calendar.vim",
         config = function ()
-            require("nvim-highlight-colors").setup()
+            -- Load credentials from a separate file
+            local credentials_path = vim.fn.expand('~/.cache/calendar.vim/credentials.lua')
+            if vim.fn.filereadable(credentials_path) == 1 then
+                dofile(credentials_path)
+            else
+                print("Warning: calendar.vim credentials file not found")
+            end
+
+            vim.g.calendar_google_calendar = 1
+            vim.g.calendar_frame = 'default'
+
+            vim.keymap.set("n", "<A-c>", "<cmd>Calendar<CR>", { noremap = true, silent = true })
+        end,
+    },
+
+    {
+        "brenoprata10/nvim-highlight-colors",
+        config = function ()
+            require("nvim-highlight-colors").setup({})
+        end
+    },
+
+    {
+        "chentoast/marks.nvim",
+        config = function ()
+            require("marks").setup({})
         end,
     },
 }

@@ -1,11 +1,6 @@
 # NeoVim Config
-
-![NeoVim screenshot](https://github.com/user-attachments/assets/5b658e35-bab2-4388-b6f0-1676cab83393)
-
 ## My Plugin List
-
 ### Autocompletion + LSP
-
 - [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim)
 - [neovim/lsp-config](https://github.com/neovim/nvim-lspconfig)
     - [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim)
@@ -21,14 +16,11 @@
 - [hinell/lsp-timeout.nvim](https://github.com/hinell/lsp-timeout.nvim)
 
 ### Colorscheme
-
-- [dzh-ma/deepwhite.nvim](https://github.com/dzh-ma/deepwhite.nvim)
+- [dzh-ma/Abstract-cs](https://github.com/dzh-ma/Abstract-cs)
 - [tamton-aquib/staline.nvim](https://github.com/tamton-aquib/staline.nvim)
 - [shellRaining/hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim)
-- [HampusHauffman/block.nvim](https://github.com/HampusHauffman/block.nvim)
 
 ### Functionality
-
 - [christoomey/vim-system-copy](https://github.com/christoomey/vim-system-copy)
 - [junegunn/fzf](https://github.com/junegunn/fzf)
 - [linrongbin16/fzfx.nvim](https://github.com/linrongbin16/fzfx.nvim)
@@ -39,22 +31,19 @@
 - [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon)
 - [folke/which-key.nvim](https://github.com/folke/which-key.nvim)
 - [brenoprata10/nvim-highlight-colors](https://github.com/brenoprata10/nvim-highlight-colors)
+- [chentoast/marks.nvim](https://github.com/chentoast/marks.nvim)
+- [echasnovski/mini.move](https://github.com/echasnovski/mini.move)
 
 ### Note Taking
-
-- [3rd/image.nvim](https://github.com/3rd/image.nvim)
-- [nvim-neorg/neorg](https://github.com/nvim-neorg/neorg)
-    - [vhyrro/luarocks.nvim](https://github.com/vhyrro/luarocks.nvim)
-- [lukas-reineke/headlines.nvim](https://github.com/lukas-reineke/headlines.nvim)
+- [MeanderingProgrammer/markdown.nvim](https://github.com/MeanderingProgrammer/markdown.nvim)
+- [itchyny/calendar.vim](https://github.com/itchyny/calendar.vim?tab=readme-ov-file)
 
 ### Parsing
-
 - [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [CRAG666/code_runner.nvim](https://github.com/CRAG666/code_runner.nvim)
 - [mfussenegger/nvim-lint](https://github.com/CRAG666/code_runner.nvim)
 
 ### UI
-
 - [folke/noice.nvim](https://github.com/folke/noice.nvim)
     - [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim)
     - [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify)

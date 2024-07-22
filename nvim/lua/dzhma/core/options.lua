@@ -3,6 +3,7 @@ vim.o.number = true             -- numbered columns (effective on current line)
 vim.o.relativenumber = true     -- relative numbered colums
 vim.o.termguicolors = true
 vim.cmd[["syntax enable"]]
+vim.opt.cursorline = true
 vim.opt.wrap = false            -- disables ugly screen wrapping
 vim.opt.signcolumn = "yes"      -- prevents screen jumping right when LSP issue is raised
 
@@ -13,7 +14,7 @@ vim.o.expandtab = true                                          -- uses spaces i
 vim.o.clipboard = "unnamedplus"
 
 vim.opt.scrolloff = 999
--- vim.opt.cursorline = true
+--vim.opt.sidescrolloff = 999
 
 vim.opt.laststatus = 2
 vim.opt.showtabline = 2

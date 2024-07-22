@@ -1,9 +1,20 @@
 return {
     {
-        dir = "/home/dzhma/Coding/Lua/Abstract-cs",
+        "uncleTen276/dark_flat.nvim",
         dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
-            vim.cmd.colorscheme "abscs"
+            require("dark_flat").setup({
+                transparent = true,
+                themes = function ()
+                    return {
+                        ["@markup.strong.typst"] = { fg = "#FFA500", bold = true },
+                        ["@markup.italic.typst"] = { fg = "#00FFFF", italic = true },
+                        ["@markup.heading.typst"] = { fg = "#FFFF00", underline = true, bold = true },
+                        ["@markup.raw.block.typst"] = { link = "Normal" },
+                    }
+                end,
+            })
+            vim.cmd.colorscheme "dark_flat"
 
             require('staline').setup {
                 defaults = {
@@ -28,10 +39,10 @@ return {
                     null_ls_symbol = "",          -- A symbol to indicate that a source is coming from null-ls
                 },
                 mode_colors = {
-                    n = "#01A0F5",
+                    n = "#FFFFFF",
                     i = "#00FF00",
-                    c = "#E97451",
-                    v = "#5C4D4D",   -- etc..
+                    c = "#FF0000",
+                    v = "#00FFFF",   -- etc..
                 },
                 --mode_icons = {
                 --    n = " ",
@@ -66,10 +77,10 @@ return {
                 stab_left   = "",
                 stab_right  = " ",
 
-                fg       = "#FFFADE",
+                fg       = "#FFFFFF",
                 bg       = "#000000",
                 inactive_bg = "#000000",
-                inactive_fg = "#252525",
+                inactive_fg = "#aaaaaa",
                 -- stab_bg  = Default is darker version of bg.,
 
                 font_active = "bold",
