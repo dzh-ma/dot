@@ -1,11 +1,9 @@
 return {
     {
-        "Abstract-IDE/Abstract-cs",
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000,
+        dir = "/home/dzhma/Coding/Lua/Abstract-cs",
         dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
-            vim.cmd.colorscheme("abscs")
+            vim.cmd.colorscheme "abscs"
 
             require('staline').setup {
                 defaults = {
@@ -30,10 +28,10 @@ return {
                     null_ls_symbol = "",          -- A symbol to indicate that a source is coming from null-ls
                 },
                 mode_colors = {
-                    n = "#FFFFFF",
-                    i = "#FFFFFF",
-                    c = "#FFFFFF",
-                    v = "#FFFFFF",   -- etc..
+                    n = "#01A0F5",
+                    i = "#00FF00",
+                    c = "#E97451",
+                    v = "#5C4D4D",   -- etc..
                 },
                 --mode_icons = {
                 --    n = " ",
@@ -65,13 +63,13 @@ return {
 
             require('stabline').setup {
                 style       = "bar", -- others: arrow, slant, bubble
-                stab_left   = "┃",
+                stab_left   = "",
                 stab_right  = " ",
 
-                fg       = "#FFFFFF",
-                -- bg       = Default is bg of "Normal".
+                fg       = "#FFFADE",
+                bg       = "#000000",
                 inactive_bg = "#000000",
-                inactive_fg = "#aaaaaa",
+                inactive_fg = "#252525",
                 -- stab_bg  = Default is darker version of bg.,
 
                 font_active = "bold",
@@ -80,5 +78,20 @@ return {
                 stab_end    = "",
             }
         end,
+    },
+
+    {
+        "shellRaining/hlchunk.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require("hlchunk").setup({
+                chunk = {
+                    enable = true
+                },
+                indent = {
+                    enable = true
+                },
+            })
+        end
     },
 }

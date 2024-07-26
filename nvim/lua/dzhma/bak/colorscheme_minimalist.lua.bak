@@ -1,22 +1,23 @@
 return {
     {
-        "zenbones-theme/zenbones.nvim",
-        dependencies = { 'tamton-aquib/staline.nvim', "rktjmp/lush.nvim" },
+        dir = "/home/dzhma/Coding/Lua/lackluster.nvim",
+        dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
-            vim.cmd.colorscheme('zenbones')
+            vim.cmd.colorscheme('lackluster-hack')
+
             require('staline').setup {
                 defaults = {
                     expand_null_ls = false,  -- This expands out all the null-ls sources to be shown
-                    left_separator  = "",
-                    right_separator = "",
+                    left_separator  = "",
+                    right_separator = "",
                     full_path       = false,
                     line_column     = "[%l/%L] :%c %p%% ", -- `:h stl` to see all flags.
 
-                    fg              = "#000000",  -- Foreground text color.
+                    fg              = "#FFFFFF",  -- Foreground text color.
                     bg              = "none",     -- Default background is transparent.
                     inactive_color  = "#303030",
                     inactive_bgcolor = "none",
-                    true_colors     = false,      -- true lsp colors.
+                    true_colors     = none,      -- true lsp colors.
                     font_active     = "none",     -- "bold", "italic", "bold,italic", etc
 
                     --mod_symbol      = "  ",
@@ -27,10 +28,10 @@ return {
                     null_ls_symbol = "",          -- A symbol to indicate that a source is coming from null-ls
                 },
                 mode_colors = {
-                    n = "#FFFFFF",
-                    i = "#FFFFFF",
-                    c = "#FFFFFF",
-                    v = "#FFFFFF",   -- etc..
+                    n = "none",
+                    i = "none",
+                    c = "none",
+                    v = "none",   -- etc..
                 },
                 --mode_icons = {
                 --    n = " ",
@@ -62,14 +63,14 @@ return {
 
             require('stabline').setup {
                 style       = "bar", -- others: arrow, slant, bubble
-                stab_left   = " ",
-                stab_right  = " ",
+                stab_left   = "",
+                stab_right  = "",
 
                 fg       = "#B4BDC3",
-                bg       = "#1C1917",
-                inactive_bg = "#1C1917",
+                bg       = "#101010",
+                inactive_bg = "#101010",
                 inactive_fg = "#000000",
-                stab_bg  = "#1C1917",
+                stab_bg  = "#101010",
 
                 font_active = "bold",
                 exclude_fts = { 'NvimTree', 'dashboard', 'lir' },
@@ -91,17 +92,6 @@ return {
                     enable = true
                 },
             })
-        end
-    },
-
-    {
-        "HampusHauffman/block.nvim",
-        config = function()
-            require("block").setup({
-                automatic = true
-            })
-
-            vim.keymap.set("n", "<A-b>", "<cmd>Block<CR>", { noremap = true, silent = true })
         end
     },
 }

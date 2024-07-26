@@ -5,15 +5,21 @@ return {
         dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
         config = function()
             require('render-markdown').setup({
+                heading = {
+                    sign = false,
+                    icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+                },
                 bullet = {
-                    -- icons = { '◌', '○', '◆', '◇' },
+                    enabled = false,
                 },
                 checkbox = {
                     unchecked = {
-                        icon = '╳ '
+                        icon = '╳ ',
+                        highlight = '@markup.list.unchecked.markdown',
                     },
                     checked = {
-                        icon = '✓ '
+                        icon = '✓ ',
+                        highlight = '@markup.list.checked.markdown',
                     }
                 }
             })

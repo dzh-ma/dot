@@ -1,23 +1,40 @@
 return {
     {
-        dir = "/home/dzhma/Coding/Lua/Abstract-cs",
+        url = "https://codeberg.org/jthvai/lavender.nvim",
         dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
-            vim.cmd.colorscheme "abscs"
+            vim.g.lavender = {
+                transparent = {
+                    background = true,
+                    float = true,
+                    popup = true,
+                    sidebar = true,
+                },
+                overrides = {
+                    theme = {
+                        ['@markup.italic'] = { fg = "Green", italic = true },
+                        ['@markup.strong'] = { fg = "Red", bold = true },
+                        ['@markup.list.checked.markdown'] = { fg = "Green", bold = true },
+                        ['@markup.list.unchecked.markdown'] = { fg = "Red", bold = true },
+                    }
+                }
+            }
+
+            vim.cmd.colorscheme('lavender')
 
             require('staline').setup {
                 defaults = {
                     expand_null_ls = false,  -- This expands out all the null-ls sources to be shown
-                    left_separator  = "",
-                    right_separator = "",
+                    left_separator  = "",
+                    right_separator = "",
                     full_path       = false,
                     line_column     = "[%l/%L] :%c %p%% ", -- `:h stl` to see all flags.
 
-                    fg              = "#000000",  -- Foreground text color.
+                    fg              = "#FFFFFF",  -- Foreground text color.
                     bg              = "none",     -- Default background is transparent.
                     inactive_color  = "#303030",
                     inactive_bgcolor = "none",
-                    true_colors     = false,      -- true lsp colors.
+                    true_colors     = "none",      -- true lsp colors.
                     font_active     = "none",     -- "bold", "italic", "bold,italic", etc
 
                     --mod_symbol      = "  ",
@@ -28,10 +45,10 @@ return {
                     null_ls_symbol = "",          -- A symbol to indicate that a source is coming from null-ls
                 },
                 mode_colors = {
-                    n = "#01A0F5",
-                    i = "#00FF00",
-                    c = "#E97451",
-                    v = "#5C4D4D",   -- etc..
+                    n = "none",
+                    i = "none",
+                    c = "none",
+                    v = "none",   -- etc..
                 },
                 --mode_icons = {
                 --    n = " ",
@@ -64,18 +81,18 @@ return {
             require('stabline').setup {
                 style       = "bar", -- others: arrow, slant, bubble
                 stab_left   = "",
-                stab_right  = " ",
+                stab_right  = "",
 
-                fg       = "#FFFADE",
-                bg       = "#000000",
-                inactive_bg = "#000000",
-                inactive_fg = "#252525",
-                -- stab_bg  = Default is darker version of bg.,
+                fg       = "#B4BDC3",
+                bg       = "none",
+                inactive_bg = "none",
+                inactive_fg = "#202020",
+                stab_bg  = "none",
 
                 font_active = "bold",
                 exclude_fts = { 'NvimTree', 'dashboard', 'lir' },
-                stab_start  = "",   -- The starting of stabline
-                stab_end    = "",
+                --stab_start  = "",   -- The starting of stabline
+                --stab_end    = "",
             }
         end,
     },
@@ -84,12 +101,23 @@ return {
         "shellRaining/hlchunk.nvim",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
+            local default_conf = {
+                enable = false,
+                style = {},
+                notify = false,
+                priority = 0,
+                exclude_filetypes = {
+                    aerial = true,
+                    dashboard = true,
+                    -- some other filetypes
+                }
+            }
             require("hlchunk").setup({
                 chunk = {
                     enable = true
                 },
                 indent = {
-                    enable = true
+                    enable = true,
                 },
             })
         end
