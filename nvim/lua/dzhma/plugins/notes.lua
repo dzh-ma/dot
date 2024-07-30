@@ -25,4 +25,13 @@ return {
             })
         end,
     },
+
+    {
+        'AckslD/nvim-FeMaco.lua',
+        config = function ()
+            require("femaco").setup()
+
+            vim.keymap.set('n', '<A-f>', "<cmd>FeMaco<CR>", { noremap = true, silent = true })
+        end,
+    }
 }

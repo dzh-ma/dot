@@ -1,10 +1,7 @@
 return {
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-            "tamton-aquib/staline.nvim"
-        },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             local lualine = require('lualine')
 
@@ -91,39 +88,39 @@ return {
             --    padding = { left = 0, right = 1 }, -- We don't need space before this
             --}
 
-            ins_left {
-                -- mode component
-                function()
-                    return ''
-                end,
-                color = function()
-                    -- auto change color according to neovims mode
-                    local mode_color = {
-                        n = colors.red,
-                        i = colors.green,
-                        v = colors.blue,
-                        [''] = colors.blue,
-                        V = colors.blue,
-                        c = colors.magenta,
-                        no = colors.red,
-                        s = colors.orange,
-                        S = colors.orange,
-                        [''] = colors.orange,
-                        ic = colors.yellow,
-                        R = colors.violet,
-                        Rv = colors.violet,
-                        cv = colors.red,
-                        ce = colors.red,
-                        r = colors.cyan,
-                        rm = colors.cyan,
-                        ['r?'] = colors.cyan,
-                        ['!'] = colors.red,
-                        t = colors.red,
-                    }
-                    return { fg = mode_color[vim.fn.mode()] }
-                end,
-                padding = { right = 1 },
-            }
+            --ins_left {
+            --    -- mode component
+            --    function()
+            --        return ''
+            --    end,
+            --    color = function()
+            --        -- auto change color according to neovims mode
+            --        local mode_color = {
+            --            n = colors.red,
+            --            i = colors.green,
+            --            v = colors.blue,
+            --            [''] = colors.blue,
+            --            V = colors.blue,
+            --            c = colors.magenta,
+            --            no = colors.red,
+            --            s = colors.orange,
+            --            S = colors.orange,
+            --            [''] = colors.orange,
+            --            ic = colors.yellow,
+            --            R = colors.violet,
+            --            Rv = colors.violet,
+            --            cv = colors.red,
+            --            ce = colors.red,
+            --            r = colors.cyan,
+            --            rm = colors.cyan,
+            --            ['r?'] = colors.cyan,
+            --            ['!'] = colors.red,
+            --            t = colors.red,
+            --        }
+            --        return { fg = mode_color[vim.fn.mode()] }
+            --    end,
+            --    padding = { right = 1 },
+            --}
 
             ins_left {
                 -- filesize component
@@ -224,23 +221,6 @@ return {
 
             -- Now don't forget to initialize lualine
             lualine.setup(config)
-
-            require('stabline').setup {
-                style       = "bar", -- others: arrow, slant, bubble
-                stab_left   = "",
-                stab_right  = "",
-
-                fg       = "#B4BDC3",
-                bg       = "none",
-                inactive_bg = "none",
-                inactive_fg = "#202020",
-                stab_bg  = "none",
-
-                font_active = "bold",
-                exclude_fts = { 'NvimTree', 'dashboard', 'lir' },
-                --stab_start  = "",   -- The starting of stabline
-                --stab_end    = "",
-            }
 
         end,
     },
