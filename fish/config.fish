@@ -36,7 +36,7 @@ if status is-interactive
     alias gc="git commit -m"
     alias gs="git push"
     alias gl="git pull"
-    alias x="exit"
+    alias q="exit"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
