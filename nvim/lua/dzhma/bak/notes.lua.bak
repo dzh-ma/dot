@@ -28,7 +28,6 @@ return {
 
     {
         'AckslD/nvim-FeMaco.lua',
-        ft = { "md" },
         config = function ()
             require("femaco").setup()
 

@@ -38,19 +38,13 @@ return {
         dependencies = { "nvim-tree/nvim-web-devicons", 'junegunn/fzf' },
         -- specify version to avoid break changes
         version = 'v5.*',
+        keys = {
+            {"<Space>f", "<cmd>FzfxFiles<CR>", desc = "Find files"},
+            {"<Space>l", "<cmd>FzfxLiveGrep<CR>", desc = "Find words"},
+            {"<Space>L", "<cmd>FzfxLspDiagnostics<CR>", desc = "Find diagnostics"},
+        },
         config = function()
             require("fzfx").setup()
-            -- file search
-            vim.keymap.set( "n", "<space>f", "<cmd>FzfxFiles<cr>", { silent = true, noremap = true, desc = "Find files" })
-
-            -- word search
-            vim.keymap.set( "n", "<space>l", "<cmd>FzfxLiveGrep<cr>", { silent = true, noremap = true, desc = "Live grep" })
-
-            -- buffer search
-            vim.keymap.set( "n", "<space>F", "<cmd>FzfxBuffers<cr>", { silent = true, noremap = true, desc = "Find buffers" })
-
-            -- LSP diagnostics
-            vim.keymap.set( "n", "<space>L", "<cmd>FzfxLspDiagnostics<cr>", { silent = true, noremap = true, desc = "Search lsp diagnostics" })
         end,
     },
 
