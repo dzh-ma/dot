@@ -12,7 +12,7 @@ return {
                 overrides = {
                     theme = {
                         ['@markup.italic'] = { fg = "Cyan", italic = true },
-                        ['@markup.strong'] = { fg = "Red", bold = true },
+                        ['@markup.strong'] = { fg = "Yellow", bold = true },
                         ['@markup.list.checked.markdown'] = { fg = "Green", bold = true },
                         ['@markup.list.unchecked.markdown'] = { fg = "Red", bold = true },
                     }
