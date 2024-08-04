@@ -11,10 +11,13 @@ return {
                 },
                 overrides = {
                     theme = {
-                        ['@markup.italic'] = { fg = "Cyan", italic = true },
-                        ['@markup.strong'] = { fg = "Yellow", bold = true },
-                        ['@markup.list.checked.markdown'] = { fg = "Green", bold = true },
-                        ['@markup.list.unchecked.markdown'] = { fg = "Red", bold = true },
+                        ['@markup.italic'] = { fg = "cyan", italic = true },
+                        ['@markup.strong'] = { fg = "yellow", bold = true },
+                        ['@markup.list.checked.markdown'] = { fg = "green", bold = true },
+                        ['@markup.list.unchecked.markdown'] = { fg = "red", bold = true },
+                        asciidocMacro = { fg = "#000000", bg = "Blue" },
+                        asciidocMacroAttributes = { fg = "#000000", bg = "pink"  },
+                        asciidocAnchorMacro = { fg = "#000000", bg = "cyan" },
                     }
                 }
             }
@@ -27,17 +30,6 @@ return {
         "shellRaining/hlchunk.nvim",
         event = { "BufReadPre", "BufNewFile" },
         config = function()
-            local default_conf = {
-                enable = false,
-                style = {},
-                notify = false,
-                priority = 0,
-                exclude_filetypes = {
-                    aerial = true,
-                    dashboard = true,
-                    -- some other filetypes
-                }
-            }
             require("hlchunk").setup({
                 chunk = {
                     enable = true
