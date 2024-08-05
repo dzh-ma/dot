@@ -9,12 +9,12 @@ return {
                     sign = false,
                     icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
                     backgrounds = {
-                        'RenderMarkdownH1Bg',
-                        'RenderMarkdownH2Bg',
-                        'RenderMarkdownH3Bg',
-                        'asciidocMacro',
-                        'asciidocMacroAttributes',
-                        'asciidocAnchorMacro',
+                        "@neorg.anchors.norg",
+                        "@neorg.anchors.declaration.norg",
+                        "@neorg.links.location.url.norg",
+                        "@neorg.tags.ranged_verbatim.begin.norg",
+                        "@neorg.tags.ranged_verbatim.end.norg",
+                        "@neorg.tags.ranged_verbatim.name.word.norg",
                     },
                 },
                 bullet = {
