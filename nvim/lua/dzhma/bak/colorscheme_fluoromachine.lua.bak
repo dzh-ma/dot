@@ -4,23 +4,7 @@ return {
         config = function ()
             local fm = require('fluoromachine')
 
-            fm.setup({
-                overrides = {
-                    -- for changing markdown heading values
-                    ["@neorg.anchors.norg"] = { fg = "#200933", bg = "#61E2FF" },
-                    ["@neorg.anchors.declaration.norg"] = { fg = "#200933", bg = "#FF8B39" },
-                    ["@neorg.links.location.url.norg"] = { fg = "#200933", bg = "#FC199A" },
-                    ["@neorg.tags.ranged_verbatim.begin.norg"] = { fg = "#200933", bg = "#AF6DF9" },
-                    ["@neorg.tags.ranged_verbatim.end.norg"] = { fg = "#200933", bg = "#FE4450" },
-                    ["@neorg.tags.ranged_verbatim.name.word.norg"] = { fg = "#200933", bg = "#72F1B8" },
-                    ["@markup.heading.1.markdown"] = { fg = "#200933", bg = "#61E2FF" },
-                    ["@markup.heading.2.markdown"] = { fg = "#200933", bg = "#FF8B39" },
-                    ["@markup.heading.3.markdown"] = { fg = "#200933", bg = "#FC199A" },
-                    ["@markup.heading.4.markdown"] = { fg = "#200933", bg = "#AF6DF9" },
-                    ["@markup.heading.5.markdown"] = { fg = "#200933", bg = "#FE4450" },
-                    ["@markup.heading.6.markdown"] = { fg = "#200933", bg = "#72F1B8" },
-                },
-            })
+            fm.setup()
 
             vim.cmd.colorscheme('fluoromachine')
         end,

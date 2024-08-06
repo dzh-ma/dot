@@ -1,12 +1,14 @@
 return {
     {
-        'maxmx03/fluoromachine.nvim',
+        'Verf/deepwhite.nvim',
         config = function ()
-            local fm = require('fluoromachine')
+            local dw = require('deepwhite')
 
-            fm.setup()
+            dw.setup({
+                low_blue_light = false
+            })
 
-            vim.cmd.colorscheme('fluoromachine')
+            vim.cmd.colorscheme('deepwhite')
         end,
     },
 
