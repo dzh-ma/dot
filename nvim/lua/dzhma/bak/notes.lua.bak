@@ -8,6 +8,14 @@ return {
                 heading = {
                     sign = false,
                     icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
+                    backgrounds = {
+                        "@markup.heading.1.markdown",
+                        "@markup.heading.2.markdown",
+                        "@markup.heading.3.markdown",
+                        "@markup.heading.4.markdown",
+                        "@markup.heading.5.markdown",
+                        "@markup.heading.6.markdown",
+                    },
                 },
                 bullet = {
                     enabled = false,
@@ -20,14 +28,15 @@ return {
                     checked = {
                         icon = '✓ ',
                         highlight = '@markup.list.checked.markdown',
-                    }
-                }
+                    },
+                },
             })
         end,
     },
 
     {
         'AckslD/nvim-FeMaco.lua',
+        ft = { "markdown" },
         config = function ()
             require("femaco").setup()
 

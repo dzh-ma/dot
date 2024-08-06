@@ -158,24 +158,6 @@ return {
     },
 
     {
-        "itchyny/calendar.vim",
-        config = function ()
-            -- Load credentials from a separate file
-            local credentials_path = vim.fn.expand('~/.cache/calendar.vim/credentials.lua')
-            if vim.fn.filereadable(credentials_path) == 1 then
-                dofile(credentials_path)
-            else
-                print("Warning: calendar.vim credentials file not found")
-            end
-
-            vim.g.calendar_google_calendar = 1
-            vim.g.calendar_frame = 'default'
-
-            vim.keymap.set("n", "<A-c>", "<cmd>Calendar<CR>", { noremap = true, silent = true })
-        end,
-    },
-
-    {
         "brenoprata10/nvim-highlight-colors",
         config = function ()
             require("nvim-highlight-colors").setup({

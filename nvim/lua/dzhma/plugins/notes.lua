@@ -1,37 +1,28 @@
 return {
     {
-        'MeanderingProgrammer/markdown.nvim',
-        -- name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
-        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-        config = function()
-            require('render-markdown').setup({
-                heading = {
-                    sign = false,
-                    icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
-                    backgrounds = {
-                        "@neorg.anchors.norg",
-                        "@neorg.anchors.declaration.norg",
-                        "@neorg.links.location.url.norg",
-                        "@neorg.tags.ranged_verbatim.begin.norg",
-                        "@neorg.tags.ranged_verbatim.end.norg",
-                        "@neorg.tags.ranged_verbatim.name.word.norg",
-                    },
-                },
-                bullet = {
-                    enabled = false,
-                },
-                checkbox = {
-                    unchecked = {
-                        icon = '╳ ',
-                        highlight = '@markup.list.unchecked.markdown',
-                    },
-                    checked = {
-                        icon = '✓ ',
-                        highlight = '@markup.list.checked.markdown',
-                    },
-                },
-            })
-        end,
+        "OXY2DEV/markview.nvim",
+        lazy = false,      -- Recommended
+        dependencies = {
+            -- You will not need this if you installed the
+            -- parsers manually
+            -- Or if the parsers are in your $RUNTIMEPATH
+            --"nvim-treesitter/nvim-treesitter",
+
+            "nvim-tree/nvim-web-devicons"
+        },
+        config = function ()
+            local markview = require("markview");
+            local presets = require("markview.presets");
+
+            markview.setup({
+                --headings = presets.headings.glow_labels,
+                modes = { "n", "i", "c" },
+                hybrid_modes = { "i", "n" },
+            });
+
+            vim.keymap.set("n", "<A-m>", "<cmd>Markview<CR>", { noremap = true, silent = true })
+            --vim.cmd("Markview enableAll");
+        end
     },
 
     {
