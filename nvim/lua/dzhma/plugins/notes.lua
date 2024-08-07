@@ -16,8 +16,9 @@ return {
 
             markview.setup({
                 --headings = presets.headings.glow_labels,
-                modes = { "n", "i", "c" },
-                hybrid_modes = { "i", "n" },
+                modes = { "n", "i", "c", "v" },
+                --hybrid_modes = { "i", "n" },
+                --hybrid_modes = { "i" },
             });
 
             vim.keymap.set("n", "<A-m>", "<cmd>Markview<CR>", { noremap = true, silent = true })

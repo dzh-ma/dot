@@ -1,6 +1,6 @@
 return {
     {
-        'Verf/deepwhite.nvim',
+        dir = "/home/dzhma/Coding/Lua/deepwhite.nvim",
         config = function ()
             local dw = require('deepwhite')
 

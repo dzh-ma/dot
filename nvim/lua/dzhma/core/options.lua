@@ -6,7 +6,7 @@ vim.cmd[["syntax enable"]]
 vim.opt.cursorline = false
 vim.opt.wrap = false            -- disables ugly screen wrapping
 vim.opt.signcolumn = "yes"      -- prevents screen jumping right when LSP issue is raised
-vim.opt.linespace = -5
+--vim.opt.linespace = -5
 
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4                                               -- consistent tabbing
