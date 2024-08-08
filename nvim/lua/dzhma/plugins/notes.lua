@@ -1,7 +1,8 @@
 return {
     {
         "OXY2DEV/markview.nvim",
-        lazy = false,      -- Recommended
+        --lazy = false,      -- Recommended
+        event = "VeryLazy",
         dependencies = {
             -- You will not need this if you installed the
             -- parsers manually
@@ -21,7 +22,7 @@ return {
                 --hybrid_modes = { "i" },
             });
 
-            vim.keymap.set("n", "<A-m>", "<cmd>Markview<CR>", { noremap = true, silent = true })
+            vim.keymap.set("n", "<A-m>", "<cmd>Markview toggle<CR>", { noremap = true, silent = true })
             --vim.cmd("Markview enableAll");
         end
     },

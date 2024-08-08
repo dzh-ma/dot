@@ -28,6 +28,7 @@ return {
     -- optional for the 'fzf' command
     {
         "junegunn/fzf",
+        event = "VeryLazy",
         build = function()
             vim.fn["fzf#install"]()
         end,
@@ -50,6 +51,7 @@ return {
 
     {
         'stevearc/oil.nvim',					            -- file manipulation & traversal inside a buffer environment
+        event = "VeryLazy",
         config = function()
             require("oil").setup({
                 columns = {
@@ -159,6 +161,7 @@ return {
 
     {
         "brenoprata10/nvim-highlight-colors",
+        event = "VeryLazy",
         config = function ()
             require("nvim-highlight-colors").setup({
                 render = "virtual",
@@ -171,6 +174,7 @@ return {
 
     {
         "chentoast/marks.nvim",
+        event = "VeryLazy",
         config = function ()
             require("marks").setup({})
         end,
