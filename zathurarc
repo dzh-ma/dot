@@ -5,44 +5,44 @@ set recolor true
 set recolor-keephue true
 
 # Set dark background color (same as terminal background)
-set default-bg "#FAF2EB"
+set default-bg "#000000"
 
 # Set foreground color for normal text
-set default-fg "#1A1918"
+set default-fg "#FFFFFF"
 
 # Set recolor-darkcolor (for normal text)
-set recolor-darkcolor "#1A1918"
+set recolor-darkcolor "#FFFFFF"
 
 # Set recolor-lightcolor (for background)
-set recolor-lightcolor "#FAF2EB"
+set recolor-lightcolor "#000000"
 
 # Set inputbar colors
-set inputbar-bg "#FAF2EB"
-set inputbar-fg "#1A1918"
+set inputbar-bg "#000000"
+set inputbar-fg "#FF0000"
 
 # Set notification colors
-set notification-bg "#FAF2EB"
-set notification-fg "#1A1918"
+set notification-bg "#000000"
+set notification-fg "#FF0000"
 
 # Set page separator color
 #set page-separator "#403833"
 
 # Set statusbar colors
-set statusbar-bg "#FAF2EB"
-set statusbar-fg "#1A1918"
+set statusbar-bg "#000000"
+set statusbar-fg "#FF0000"
 
 # Set highlight color
 set highlight-color "#6099C0"
 set highlight-active-color "#66A5AD"
 
 # Set completion colors
-set completion-bg "#FAF2EB"
-set completion-fg "#1A1918"
+set completion-bg "#000000"
+set completion-fg "#FF0000"
 set completion-highlight-bg "#6099C0"
-set completion-highlight-fg "#FAF2EB"
+set completion-highlight-fg "#000000"
 
 # Set index colors
-set index-bg "#FAF2EB"
-set index-fg "#1A1918"
-set index-active-bg "#FAF2EB"
-set index-active-fg "#1A1918"
+set index-bg "#000000"
+set index-fg "#FF0000"
+set index-active-bg "#000000"
+set index-active-fg "#FF0000"

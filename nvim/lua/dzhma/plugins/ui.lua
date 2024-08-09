@@ -3,7 +3,10 @@ return {
         -- UI overhaul
         'folke/noice.nvim',
         event = "VeryLazy",
-        dependencies = { "MunifTanjim/nui.nvim", "rcarriga/nvim-notify"},
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
         config = function()
             require("noice").setup({
                 lsp = {
@@ -37,10 +40,12 @@ return {
 
             require("notify").setup({
                 background_colour = "#000000",
-                render = "minimal",
+                render = "wrapped-compact",
                 timeout = 0,
+                max_width = 40,
             })
         end,
+
     },
 
     {
