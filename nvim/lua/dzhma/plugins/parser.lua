@@ -7,9 +7,11 @@ return {
             local configs = require("nvim-treesitter.configs")
             configs.setup({
                 ensure_installed = {
-                    "c", "cpp", "css", "lua", "html", "go", "java", "javascript",
-                    "julia", "json", "markdown_inline", "ocaml", "ocaml_interface", "php",
-                    "python", "ruby", "rust", "sql", "ssh_config", "xml", "zig"
+                    "asm", "bash", "c", "c_sharp", "cpp", "css", "dockerfile",
+                    "fish", "go", "html", "java", "javascript", "julia", "json",
+                    "markdown", "markdown_inline", "mermaid", "lua", "ocaml", "ocaml_interface",
+                    "php", "python", "query", "ruby", "rust", "sql", "ssh_config",
+                    "typescript", "typst", "vim", "vimdoc", "vue", "xml", "yaml", "zig"
                 },
                 sync_install = false,
                 highlight = { enable = true },

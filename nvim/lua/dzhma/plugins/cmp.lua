@@ -46,10 +46,6 @@ return {
                     }
                 }
             }
-            require("lspconfig").markdown_oxide.setup {
-                capabilities = capabilities,
-                on_attach = on_attach,
-            }
             require("lspconfig").ocamllsp.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,

@@ -3,7 +3,7 @@ vim.o.number = true             -- numbered columns (effective on current line)
 vim.o.relativenumber = true     -- relative numbered colums
 vim.o.termguicolors = true
 vim.cmd[["syntax enable"]]
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.wrap = false            -- disables ugly screen wrapping
 vim.opt.signcolumn = "yes"      -- prevents screen jumping right when LSP issue is raised
 --vim.opt.linespace = -5
@@ -15,7 +15,17 @@ vim.o.expandtab = true                                          -- uses spaces i
 vim.o.clipboard = "unnamedplus"
 
 vim.opt.scrolloff = 999
---vim.opt.sidescrolloff = 999
+vim.opt.sidescrolloff = 999
 
 vim.opt.laststatus = 0
 vim.opt.showtabline = 0
+
+local group = vim.api.nvim_create_augroup("VCenterCursor", { clear = true })
+vim.api.nvim_create_autocmd(
+    {"BufEnter", "WinEnter", "WinNew", "VimResized"},
+    {
+        group = group,
+        pattern = {"*", "*.*"},
+        command = "let &scrolloff=(winheight(win_getid())/2) + 1",
+    }
+)

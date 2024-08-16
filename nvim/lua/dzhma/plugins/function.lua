@@ -80,7 +80,7 @@ return {
         },
         config = function()
             require("aerial").setup({
-                backends = { "lsp", "markdown" },
+                backends = { "treesitter" },
 
                 layout = {
                     max_width = { 100, 0.5 },
@@ -186,5 +186,5 @@ return {
             {"<A-b>", function () require("snipe").open_buffer_menu() end, desc = "Open Snipe buffer menu"}
         },
         opts = {}
-    }
+    },
 }

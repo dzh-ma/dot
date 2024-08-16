@@ -1,46 +1,82 @@
 return {
     {
-        'MeanderingProgrammer/markdown.nvim',
-        -- name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
-        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
-        config = function()
-            require('render-markdown').setup({
-                heading = {
-                    sign = false,
-                    icons = { "󰎤 ", "󰎧 ", "󰎪 ", "󰎭 ", "󰎱 ", "󰎳 " },
-                    backgrounds = {
-                        "@markup.heading.1.markdown",
-                        "@markup.heading.2.markdown",
-                        "@markup.heading.3.markdown",
-                        "@markup.heading.4.markdown",
-                        "@markup.heading.5.markdown",
-                        "@markup.heading.6.markdown",
-                    },
-                },
-                bullet = {
-                    enabled = false,
-                },
-                checkbox = {
-                    unchecked = {
-                        icon = '╳ ',
-                        highlight = '@markup.list.unchecked.markdown',
-                    },
-                    checked = {
-                        icon = '✓ ',
-                        highlight = '@markup.list.checked.markdown',
-                    },
-                },
-            })
-        end,
+        "OXY2DEV/markview.nvim",
+        --lazy = false,      -- Recommended
+        event = "VeryLazy",
+        ft = "markdown",
+        dependencies = {
+            -- You will not need this if you installed the
+            -- parsers manually
+            -- Or if the parsers are in your $RUNTIMEPATH
+            --"nvim-treesitter/nvim-treesitter",
+
+            "nvim-tree/nvim-web-devicons"
+        },
+        config = function ()
+            local markview = require("markview");
+            --local presets = require("markview.presets");
+
+            markview.setup({
+                --headings = presets.headings.glow_labels,
+                modes = { "n", "i", "c", "v" },
+                --hybrid_modes = { "i", "n" },
+                --hybrid_modes = { "i" },
+            });
+
+            vim.keymap.set("n", "<A-m>", "<cmd>Markview toggle<CR>", { noremap = true, silent = true })
+            --vim.cmd("Markview enableAll");
+        end
     },
 
     {
         'AckslD/nvim-FeMaco.lua',
-        ft = { "markdown" },
+        ft = "neorg",
         config = function ()
             require("femaco").setup()
 
             vim.keymap.set('n', '<A-f>', "<cmd>FeMaco<CR>", { noremap = true, silent = true })
         end,
-    }
+    },
+
+    {
+        "OXY2DEV/helpview.nvim",
+        --lazy = false, -- Recommended
+        ft = "help",
+        dependencies = {
+            "nvim-treesitter/nvim-treesitter"
+        },
+    },
+
+    {
+        "jghauser/follow-md-links.nvim",
+        ft = "markdown",
+    },
+
+    {
+        "opdavies/toggle-checkbox.nvim",
+        ft = "markdown",
+        keys = {
+            { "<C-Space>", "<cmd>lua require('toggle-checkbox').toggle()<CR>", desc = "toggle checkbox" },
+        }
+    },
+
+    {
+        "Myzel394/easytables.nvim",
+        ft = "markdown",
+        config = function ()
+            require("easytables").setup({})
+        end
+    },
+
+    {
+        "NFrid/due.nvim",
+        ft = "markdown",
+        config = function ()
+            require("due_nvim").setup({
+                use_clock_time = true,
+                use_seconds = true,
+                use_clock_today = true,
+            })
+        end
+    },
 }
