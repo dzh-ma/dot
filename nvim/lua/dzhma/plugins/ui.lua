@@ -42,10 +42,10 @@ return {
 
             require("notify").setup({
                 background_colour = "#000000",
-                render = "compact",
+                render = "minimal",
                 timeout = 0,
                 --max_width = 20,
-                top_down = false
+                top_down = true
             })
         end,
     },
@@ -83,13 +83,6 @@ return {
             vim.g.WebDevIconsUnicodeDecorateFileNodes = 1
             vim.g.WebDevIconsUnicodeDecorateOpenFolderNodes = 1
             vim.g.WebDevIconsUnicodeDecorateDefault = 0
-        end,
-    },
-
-    {
-        'arnamak/stay-centered.nvim',
-        config = function ()
-            require("stay-centered").setup({})
         end,
     },
 }

@@ -1,21 +1,22 @@
 return {
     {
         "vhyrro/luarocks.nvim",
+        ft = 'norg',
         priority = 1000, -- We'd like this plugin to load first out of the rest
         opts = {
             rocks = { "magick" },
         },
     },
 
-    {
-        "3rd/image.nvim",
-        ft = { 'norg', 'markdown' },
-        event = "VeryLazy",
-        dependencies = { "luarocks.nvim" },
-        config = function ()
-            require("image").setup()
-        end,
-    },
+    --{
+    --    "3rd/image.nvim",
+    --    ft = 'norg',
+    --    event = "VeryLazy",
+    --    dependencies = { "luarocks.nvim" },
+    --    config = function ()
+    --        require("image").setup()
+    --    end,
+    --},
 
     {
         "nvim-neorg/neorg",
@@ -43,7 +44,7 @@ return {
                     },
                     ['core.autocommands'] = {},                 -- required to support other modules
                     ['core.integrations.treesitter'] = {},      -- treesitter highlighting support
-                    ['core.integrations.image'] = {},           -- image support with image.nvim
+                    --['core.integrations.image'] = {},           -- image support with image.nvim
                     ['core.esupports.metagen'] = {              -- document metadata generation
                         config = {
                             type = "auto",
