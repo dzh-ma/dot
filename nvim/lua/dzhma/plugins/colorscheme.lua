@@ -55,13 +55,14 @@ return {
                         ["@neorg.markup.bold.norg"] = { fg = "#FF0000", bg = "#770000", bold = true },
                         ["@neorg.markup.italic.norg"] = { fg = "#00FF00", bg = "#007700", italic = true },
                         ["@neorg.markup.underline.norg"] = { fg = "#00FFFF", bg = "#007777", underline = true },
-                        ["@neorg.markup.strikethrough.norg"] = { fg = "#8B0000", bg = "#660000", strikethrough = true, bold = true },
-                        ["@neorg.markup.verbatim.norg"] = { fg = "#FFFF00", bg = "#4B0082" },
-                        ["@neorg.markup.inline_math.norg"] = { fg = "#FF69B4", bg = "#CC5490", bold = true },
-                        ["@neorg.markup.superscript.norg"] = { fg = "#FFC0CB", bg = "#CC99A1" },
+                        ["@neorg.markup.strikethrough.norg"] = { fg = "#964B00", bg = "#341D08", strikethrough = true, bold = true },
+                        ["@neorg.markup.verbatim.norg"] = { fg = "#673DFF", bg = "#1F104F" },
+                        ["@neorg.markup.inline_math.norg"] = { fg = "#FF69B4", bg = "#A34774", bold = true },
+                        ["@neorg.markup.superscript.norg"] = { fg = "#FFC0CB", bg = "#AB7A82" },
                         ["@neorg.markup.subscript.norg"] = { fg = "#8A2BE2", bg = "#2A0134" },
                         ["@neorg.markup.variable.norg"] = { fg = "#FFA500", bg = "#8B4000", bold = true, italic = true },
-                        --["@neorg.markup.spoiler.norg"] = { bg = "#708090" },                   -- SlateGray
+                        ["@neorg.markup.spoiler.norg"] = { bg = "#7A1B0C" },
+                        ["@neorg.markup.inline_comment.norg"] = { fg = "#A9A9A9", bg = "#3F3F3F", italic = true },
 
                         -- neorg quotes
                         ["@neorg.quotes.1.content.norg"] = { fg = "#FF6347" },                 -- Tomato
@@ -78,12 +79,13 @@ return {
                         ["@neorg.quotes.6.prefix.norg"] = { fg = "#FFFF00", bg = "#5B4A08" },
 
                         -- neorg modifiers
-                        ["@neorg.tags.ranged_verbatim.begin.norg"] = { fg = "#964B00", bg = "#5C4033", bold = true, italic = true },
-                        ["@neorg.tags.ranged_verbatim.end.norg"] = { fg = "#964B00", bg = "#5C4033", bold = true, italic = true },
-                        ["@neorg.tags.ranged_verbatim.name.word.norg"] = { fg = "#964B00", bg = "#5C4033", bold = true, italic = true},
+                        ["@neorg.tags.ranged_verbatim.begin.norg"] = { fg = "#964B00", bg = "#4B280A", bold = true, italic = true },
+                        ["@neorg.tags.ranged_verbatim.end.norg"] = { fg = "#964B00", bg = "#4B280A", bold = true, italic = true },
+                        ["@neorg.tags.ranged_verbatim.name.word.norg"] = { fg = "#964B00", bg = "#4B280A", bold = true, italic = true},
                         ["@neorg.tags.ranged_verbatim.parameters.word.norg"] = { fg = "#66FF00", bold = true, italic = true},
                         ["@neorg.lists.ordered.prefix.norg"] = { fg = "#FFFF00", bg = "#5B4A08" },
                         ["@neorg.lists.unordered.prefix.norg"] = { fg = "#FFFF00", bg = "#5B4A08" },
+                        ["@neorg.tags.ranged_verbatim.document_meta.key.norg_meta"] = { fg = "#FFFF00", bg = "#504E17", bold = true },
 
                         -- neorg todo
                         ["@neorg.todo_items.undone.norg"] = { fg = "#FF0000", bg = "#5B4513" },
