@@ -88,9 +88,11 @@ return {
                         config = {
                             engine = "nvim-cmp"
                         }
-                    }                    -- autocompletion
+                    },                   -- autocompletion
                 },
             }
+
+            vim.keymap.set("n", "<A-K>", "<cmd>Neorg kanban toggle<CR>", { noremap = true, silent = true })
         end,
     },
 

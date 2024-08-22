@@ -62,7 +62,7 @@ return {
                         ["@neorg.markup.subscript.norg"] = { fg = "#8A2BE2", bg = "#2A0134" },
                         ["@neorg.markup.variable.norg"] = { fg = "#FFA500", bg = "#8B4000", bold = true, italic = true },
                         ["@neorg.markup.spoiler.norg"] = { bg = "#7A1B0C" },
-                        ["@neorg.markup.inline_comment.norg"] = { fg = "#A9A9A9", bg = "#3F3F3F", italic = true },
+                        ["@neorg.markup.inline_comment.norg"] = { fg = "#A9A9A9", bg = "#1F1F1F", italic = true },
 
                         -- neorg quotes
                         ["@neorg.quotes.1.content.norg"] = { fg = "#FF6347" },                 -- Tomato
@@ -91,9 +91,9 @@ return {
                         ["@neorg.todo_items.undone.norg"] = { fg = "#FF0000", bg = "#5B4513" },
                         ["@neorg.todo_items.done.norg"] = { fg = "#00FF00", bg = "#5B4513" },
                         ["@neorg.todo_items.pending.norg"] = { fg = "#00FFFF", bg = "#5B4513" },
-                        ["@neorg.todo_items.uncertain.norg"] = { fg = "#0000FF", bg = "#5B4513" },
+                        ["@neorg.todo_items.uncertain.norg"] = { fg = "#FFFFFF", bg = "#5B4513" },
                         ["@neorg.todo_items.urgent.norg"] = { fg = "#FFFF00", bg = "#5B4513" },
-                        ["@neorg.todo_items.recurring.norg"] = { fg = "#341709", bg = "#5B4513" },
+                        ["@neorg.todo_items.recurring.norg"] = { fg = "#00FFFF", bg = "#5B4513" },
                         ["@neorg.todo_items.on_hold.norg"] = { fg = "#FFFFFF", bg = "#5B4513" },
                         ["@neorg.todo_items.cancelled.norg"] = { fg = "#000000", bg = "#5B4513" },
                     }
