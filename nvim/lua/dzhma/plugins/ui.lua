@@ -44,7 +44,7 @@ return {
                 background_colour = "#000000",
                 render = "minimal",
                 timeout = 0,
-                --max_width = 20,
+                --max_width = 40,
                 top_down = true
             })
         end,

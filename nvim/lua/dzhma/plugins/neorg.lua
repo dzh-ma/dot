@@ -36,9 +36,24 @@ return {
                                 code_block = {
                                     conceal = true,
                                 },
-                                --list = {
-                                --    icons = { "" },
-                                --},
+                                heading = {
+                                    highlights = {
+                                        "@neorg.headings.1.title.norg",
+                                        "@neorg.headings.2.title.norg",
+                                        "@neorg.headings.3.title.norg",
+                                        "@neorg.headings.4.title.norg",
+                                        "@neorg.headings.5.title.norg",
+                                        "@neorg.headings.6.title.norg",
+                                    },
+                                    icons = {
+                                        " 󰎤",
+                                        " 󰎧",
+                                        " 󰎪",
+                                        " 󰎭",
+                                        " 󰎱",
+                                        " 󰎳",
+                                    },
+                                }
                             },
                         },
                     },
@@ -75,13 +90,13 @@ return {
                     ['core.tangle'] = {},                       -- creates files for code blocks
                     ['core.esupports.indent'] = {
                         config = {
-                            format_on_enter = false,
-                            format_on_escape = false,
-                            indents = {
-                                _  = {
-                                    indent = -999,
-                                },
-                            },
+                            format_on_enter = true,
+                            format_on_escape = true,
+                            --indents = {
+                            --    _  = {
+                            --        indent = -999,
+                            --    },
+                            --},
                         },
                     },             -- automatic indentation
                     ['core.completion'] = {
