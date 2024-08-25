@@ -6,11 +6,12 @@ vim.cmd[["syntax enable"]]
 vim.opt.cursorline = false
 vim.opt.wrap = false            -- disables ugly screen wrapping
 vim.opt.signcolumn = "yes"      -- prevents screen jumping right when LSP issue is raised
---vim.opt.linespace = -5
+vim.opt.conceallevel = 3
+vim.opt.concealcursor = "cn"
 
 vim.o.shiftwidth = 4
-vim.o.tabstop = 4                                               -- consistent tabbing
-vim.o.expandtab = true                                          -- uses spaces instead of tab
+vim.o.tabstop = 4               -- consistent tabbing
+vim.o.expandtab = true          -- uses spaces instead of tab
 
 vim.o.clipboard = "unnamedplus"
 
@@ -26,32 +27,26 @@ local cmd = vim.cmd
 local api = vim.api
 local nvim_create_autocmd = api.nvim_create_autocmd
 local nvim_set_hl = api.nvim_set_hl
-
 opt.list = true
-
 local space = "·"
 opt.listchars:append {
-	tab = "│─",
-	multispace = space,
-	lead = space,
-	trail = space,
-	nbsp = space
+    tab = "│─",
+    multispace = space,
+    lead = space,
+    trail = space,
+    nbsp = space
 }
-
 cmd([[match TrailingWhitespace /\s\+$/]])
-
 nvim_set_hl(0, "TrailingWhitespace", { link = "Error" })
-
 nvim_create_autocmd("InsertEnter", {
-	callback = function()
-		opt.listchars.trail = nil
-		nvim_set_hl(0, "TrailingWhitespace", { link = "Whitespace" })
-	end
+    callback = function()
+        opt.listchars.trail = nil
+        nvim_set_hl(0, "TrailingWhitespace", { link = "Whitespace" })
+    end
 })
-
 nvim_create_autocmd("InsertLeave", {
-	callback = function()
-		opt.listchars.trail = space
-		nvim_set_hl(0, "TrailingWhitespace", { link = "Error" })
-	end
+    callback = function()
+        opt.listchars.trail = space
+        nvim_set_hl(0, "TrailingWhitespace", { link = "Error" })
+    end
 })

@@ -42,12 +42,45 @@ return {
 
             require("notify").setup({
                 background_colour = "#000000",
-                render = "minimal",
+                render = "compact",
                 timeout = 0,
                 --max_width = 40,
                 top_down = true
             })
         end,
+    },
+
+    {
+        "nvim-tree/nvim-tree.lua",
+        keys = {
+            { "<A-t>", "<cmd>NvimTreeToggle<CR>", desc = "Open Nvim Tree" },
+        },
+        config = function ()
+            vim.g.loaded_netrw = 1
+            vim.g.loaded_netrwPlugin = 1
+
+            -- optionally enable 24-bit colour
+            vim.opt.termguicolors = true
+
+            -- empty setup using defaults
+            require("nvim-tree").setup()
+
+            -- OR setup with some options
+            require("nvim-tree").setup({
+                sort = {
+                    sorter = "case_sensitive",
+                },
+                view = {
+                    width = 30,
+                },
+                renderer = {
+                    group_empty = true,
+                },
+                filters = {
+                    dotfiles = true,
+                },
+            })
+        end
     },
 
     {

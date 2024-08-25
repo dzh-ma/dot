@@ -1,9 +1,9 @@
 return {
     {
-        'williamboman/mason.nvim',			            -- LSP/DAP/linter/formatter installer
+        'williamboman/mason.nvim',                  -- LSP/DAP/linter/formatter installer
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            'williamboman/mason-lspconfig.nvim',		    -- linker between Mason installed LSPs & LSP integration
+            'williamboman/mason-lspconfig.nvim',    -- linker between Mason installed LSPs & LSP integration
         },
         config = function()
             require("mason").setup()
