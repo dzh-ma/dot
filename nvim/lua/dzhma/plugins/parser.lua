@@ -7,9 +7,9 @@ return {
             local configs = require("nvim-treesitter.configs")
             configs.setup({
                 ensure_installed = {
-                    "asm", "bash", "c", "c_sharp", "cpp", "css", "dockerfile",
-                    "fish", "go", "html", "java", "javascript", "julia", "json",
-                    "markdown", "markdown_inline", "mermaid", "lua", "ocaml", "ocaml_interface",
+                    "asm", "bash", "c", "c_sharp", "cpp", "css", "dockerfile", "fish",
+                    "go", "html", "java", "javascript", "julia", "json", "latex", "lua",
+                    "markdown", "markdown_inline", "mermaid", "ocaml", "ocaml_interface",
                     "php", "python", "query", "ruby", "rust", "sql", "ssh_config",
                     "typescript", "typst", "vim", "vimdoc", "vue", "xml", "yaml", "zig"
                 },

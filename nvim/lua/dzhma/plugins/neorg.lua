@@ -34,7 +34,7 @@ return {
                             folds = false,
                             icons = {
                                 code_block = {
-                                    conceal = true,
+                                    conceal = false,
                                 },
                                 heading = {
                                     highlights = {
@@ -131,7 +131,18 @@ return {
     },
 
     {
-        "dhruvasagar/vim-table-mode", -- create tables easily using <leader>tm
+        "dhruvasagar/vim-table-mode",
         ft = "norg",
+    },
+
+    {
+        "jbyuki/nabla.nvim",
+        ft = "norg",
+        keys = {
+            { "<leader>m", "<cmd>lua require('nabla').popup()<CR>" },
+        },
+        config = function ()
+            require("nabla").enable_virt()
+        end
     },
 }
