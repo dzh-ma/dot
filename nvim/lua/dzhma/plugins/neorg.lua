@@ -104,6 +104,7 @@ return {
                             engine = "nvim-cmp"
                         }
                     },                   -- autocompletion
+                    ['core.export'] = {},
                 },
             }
 
@@ -137,7 +138,6 @@ return {
 
     {
         "jbyuki/nabla.nvim",
-        ft = "norg",
         keys = {
             { "<leader>m", "<cmd>lua require('nabla').popup()<CR>" },
         },
