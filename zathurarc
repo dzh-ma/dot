@@ -4,14 +4,16 @@ set recolor true
 # Keep original hue when recoloring
 set recolor-keephue true
 
+set font "Monofur Nerd Font Mono 30"
+
 # Set dark background color (same as terminal background)
 set default-bg "#000000"
 
 # Set foreground color for normal text
-set default-fg "#FFFFFF"
+set default-fg "#FF0000"
 
 # Set recolor-darkcolor (for normal text)
-set recolor-darkcolor "#FFFFFF"
+set recolor-darkcolor "#FF0000"
 
 # Set recolor-lightcolor (for background)
 set recolor-lightcolor "#000000"
@@ -46,3 +48,6 @@ set index-bg "#000000"
 set index-fg "#FF0000"
 set index-active-bg "#000000"
 set index-active-fg "#FF0000"
+
+set selection-clipboard clipboard
+set recolor-reverse-video "true"
