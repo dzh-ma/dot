@@ -36,7 +36,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setq display-line-numbers-type relative)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -75,7 +75,7 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(setq doom-font (font-spec :family "Lexend Deca" :size 20))
+(setq doom-font (font-spec :family "Hurmit Nerd Font" :size 16))
 
 (require 'org-modern)
 (add-hook 'org-mode-hook #'org-modern-mode)
@@ -98,10 +98,6 @@
           org-roam-ui-update-on-save t
           org-roam-ui-open-on-start t))
 
-;;(setq display-line-numbers-type 'relative)
-;;(global-display-line-numbers-mode)
-;;(add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode 0)))
-
 ;; Customize Org Mode heading sizes without changing colors
 (dolist (face '((org-level-1 . 1.5)
                 (org-level-2 . 1.3)
@@ -113,4 +109,10 @@
                 (org-level-8 . 1.0)))
   (set-face-attribute (car face) nil :height (cdr face)))
 
-(setq +doom-dashboard-ascii-banner-fn nil)
+(setq +doom-dashboard-ascii-banner-fn true)
+
+(display-battery-mode 1)  ;; Enable battery display in the mode line
+
+(display-time-mode 1)  ;; Enable time display in the mode line
+(setq display-time-format "%H:%M")  ;; ISO 8601 format
+(setq display-time-default-load-average nil)     ;; Hide load average

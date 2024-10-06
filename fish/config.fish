@@ -63,4 +63,6 @@ if status is-interactive
             bind -M $mode \cn forward-char force-repaint
         end
     end
+else
+    source ~/.config/fish/config.fish
 end
