@@ -3,7 +3,6 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 ;; (setq user-full-name "John Doe"
@@ -36,7 +35,7 @@
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type relative)
+(setq display-line-numbers-type nil)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -109,10 +108,37 @@
                 (org-level-8 . 1.0)))
   (set-face-attribute (car face) nil :height (cdr face)))
 
-(setq +doom-dashboard-ascii-banner-fn true)
+(setq +doom-dashboard-ascii-banner-fn t)
 
 (display-battery-mode 1)  ;; Enable battery display in the mode line
-
 (display-time-mode 1)  ;; Enable time display in the mode line
 (setq display-time-format "%H:%M")  ;; ISO 8601 format
 (setq display-time-default-load-average nil)     ;; Hide load average
+
+(set-face-attribute 'org-level-1 nil :foreground "#00FFFF" :background "#004C4C" :weight 'bold)  ;; Cyan dominant
+(set-face-attribute 'org-level-2 nil :foreground "#FFFF00" :background "#5B5B00" :weight 'bold)  ;; Yellow dominant
+(set-face-attribute 'org-level-3 nil :foreground "#00CED1" :background "#003D47" :weight 'bold)  ;; Dark cyan
+(set-face-attribute 'org-level-4 nil :foreground "#FFD700" :background "#5B4A08" :weight 'bold)  ;; Yellow gold
+(set-face-attribute 'org-level-5 nil :foreground "#40E0D0" :background "#065465" :weight 'bold)  ;; Turquoise
+(set-face-attribute 'org-level-6 nil :foreground "#E0FFFF" :background "#204040" :weight 'bold)  ;; Light cyan
+
+(setq persp-emacsclient-init-frame-behaviour-override "main")
+
+;; Function to open PDFs with Zathura
+(defun open-pdf-with-zathura (file)
+  "Open the specified PDF file with Zathura."
+  (start-process "zathura" nil "zathura" file))
+
+;; Use Zathura for opening PDFs in Dired mode or when opening a PDF
+(add-to-list 'auto-mode-alist '("\\.pdf\\'" . default))
+(setq dired-guess-shell-alist-user
+      '(("\\.pdf\\'" "zathura")))
+
+;; Automatically open PDFs with Zathura when clicking on a PDF file in Emacs
+(add-hook 'find-file-hook
+          (lambda ()
+            (when (string-match "\\.pdf\\'" buffer-file-name)
+              (open-pdf-with-zathura buffer-file-name)
+              (kill-buffer))))
+
+(add-hook 'window-setup-hook #'treemacs 'append)

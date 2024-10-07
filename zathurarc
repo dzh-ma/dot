@@ -4,12 +4,10 @@ set recolor true
 # Keep original hue when recoloring
 set recolor-keephue true
 
-set font "Monofur Nerd Font Mono 30"
-
 # Set dark background color (same as terminal background)
-set default-bg "#000000"
+set default-bg "#28323e"
 
-set font "Hurmit Nerd Font Mono 16"
+set font "Hurmit Nerd Font Mono 11"
 set default-bg "#28323e"
 set recolor-lightcolor "#28323e"
 set inputbar-bg "#28323e"
@@ -23,3 +21,7 @@ set highlight-color "#92b6f4"  # Same as URL color in Kitty
 set highlight-active-color "#c574dd"  # Same as cursor color in Kitty
 set selection-clipboard clipboard
 set recolor-reverse-video "true"
+set statusbar-fg              "#fdfdfd"
+set statusbar-bg              "#28323e"
+
+set database sqlite
