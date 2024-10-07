@@ -142,3 +142,5 @@
               (kill-buffer))))
 
 (add-hook 'window-setup-hook #'treemacs 'append)
+
+(global-set-key (kbd "M-t") 'vterm)
