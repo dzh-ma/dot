@@ -23,10 +23,10 @@
        :completion
        ;;company           ; the ultimate code completion backend
        ;;(corfu +orderless)  ; complete with cap(f), cape and a flying feather!
-       helm              ; the *other* search engine for love and life
+       ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;;ivy               ; a search engine for love and life
-       ;;vertico           ; the search engine of the future
+       vertico           ; the search engine of the future
 
        :ui
        ;;deft              ; notational velocity for Emacs
@@ -78,7 +78,7 @@
        :term
        ;;eshell            ; the elisp shell that works everywhere
        ;;shell             ; simple shell REPL for Emacs
-       ;;term              ; basic terminal emulator for Emacs
+       ;;term              ; terminal emulator basic for Emacs
        vterm             ; the best terminal emulation in Emacs
 
        :checkers
@@ -110,7 +110,7 @@
 
        :os
        (:if (featurep :system 'macos) macos)  ; improve compatibility with macOS
-       ;;tty               ; improve the terminal Emacs experience
+       tty               ; improve the terminal Emacs experience
 
        :lang
        ;;agda              ; types of types of types of types...

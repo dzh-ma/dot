@@ -10,6 +10,7 @@
 ;; (package! some-package)
 
 (package! org-modern)
+(package! vertico-posframe)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
@@ -53,3 +54,4 @@
 
 (unpin! org-roam)
 (package! org-roam-ui)
+
