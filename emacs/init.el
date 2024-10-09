@@ -21,7 +21,7 @@
        ;;layout            ; auie,ctsrnm is the superior home row
 
        :completion
-       ;;company           ; the ultimate code completion backend
+       (company +childframe) ; the ultimate code completion backend
        ;;(corfu +orderless)  ; complete with cap(f), cape and a flying feather!
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
@@ -195,3 +195,18 @@
 
 (with-eval-after-load 'evil
   (define-key evil-normal-state-map (kbd ";") 'evil-ex))
+
+(add-hook 'org-mode-hook
+          (lambda ()
+            (when (string-equal (buffer-file-name)
+                                (expand-file-name "config.org" doom-user-dir))
+              (add-hook 'after-save-hook #'org-babel-tangle
+                        nil 'local))))
+
+(after! company
+  (setq company-tooltip-align-annotations t))
+(after! company
+  (setq company-tooltip-minimum-width 40))
+(after! company
+  ;; Use Control+Space to select and apply the suggestion
+  (define-key company-active-map (kbd "C-SPC") #'company-complete-selection))
