@@ -19,15 +19,15 @@ clients, file templates, and snippets. It is optional.
 
 * Font Configuration
 Doom exposes five (optional) variables for controlling fonts in Doom:
-- `doom-font' -- the primary font to use
-- `doom-variable-pitch-font' -- a non-monospace font (where applicable)
-- `doom-big-font' -- used for `doom-big-font-mode'; use this for
+- ~'doom-font~ -- the primary font to use
+- ~'doom-variable-pitch-font~ -- a non-monospace font (where applicable)
+- ~'doom-big-font~ -- used for ~`doom-big-font-mode~; use this for
   presentations or streaming.
-- `doom-symbol-font' -- for symbols
-- `doom-serif-font' -- for the `fixed-pitch-serif' face
+- ~'doom-symbol-font~ -- for symbols
+- ~'doom-serif-font~ -- for the ~fixed-pitch-serif~ face
 
   #+BEGIN_SRC emacs-lisp :tangle yes
-(setq doom-font (font-spec :family "Hurmit Nerd Font" :size 16))
+(setq doom-font (font-spec :family "Input Mono" :size 16))
   #+END_SRC
 
 
@@ -37,7 +37,7 @@ available. You can either set ~doom-theme~ or manually load a theme with the
 ~load-theme~ function. This is the default:
 
 #+BEGIN_SRC emacs-lisp :tangle yes
-(setq doom-theme 'doom-ephemeral)
+(setq doom-theme 'doom-lantern)
 #+END_SRC
 
 
@@ -51,6 +51,19 @@ numbers are disabled. For relative line numbers, set this to ~`relative~.
 
 (set-face-attribute 'line-number nil :foreground "#00FFFF" :weight 'bold)
 (set-face-attribute 'line-number-current-line nil :foreground "#000000" :background "#00FFFF" :weight 'bold)
+
+;; keep the cursor centered to avoid sudden scroll jumps
+(require 'centered-cursor-mode)
+
+;; disable in terminal modes
+;; http://stackoverflow.com/a/6849467/519736
+;; also disable in Info mode, because it breaks going back with the backspace key
+(define-global-minor-mode my-global-centered-cursor-mode centered-cursor-mode
+  (lambda ()
+    (when (not (memq major-mode
+                     (list 'Info-mode 'term-mode 'eshell-mode 'shell-mode 'erc-mode)))
+      (centered-cursor-mode))))
+(my-global-centered-cursor-mode 1)
 #+END_SRC
 
 
@@ -90,6 +103,15 @@ Whenever you reconfigure a package, make sure to wrap your config in an
     (org-babel-tangle)))
 
 (add-hook 'after-save-hook #'my/org-babel-tangle-on-save)
+
+;;(if (require 'toc-org nil t)
+;;    (progn
+;;      (add-hook 'org-mode-hook 'toc-org-mode)
+;;
+;;      ;; enable in markdown, too
+;;      (add-hook 'markdown-mode-hook 'toc-org-mode)
+;;      (define-key markdown-mode-map (kbd "\C-c\C-o") 'toc-org-markdown-follow-thing-at-point))
+;;  (warn "toc-org not found"))
 #+END_SRC
 
 
@@ -97,14 +119,14 @@ Whenever you reconfigure a package, make sure to wrap your config in an
 Customize Org Mode heading sizes without changing colors.
 
 #+BEGIN_SRC emacs-lisp :tangle yes
-(dolist (face '((org-level-1 . 1.5)
-                (org-level-2 . 1.3)
-                (org-level-3 . 1.2)
-                (org-level-4 . 1.1)
-                (org-level-5 . 1.0)
-                (org-level-6 . 1.0)
-                (org-level-7 . 1.0)
-                (org-level-8 . 1.0)))
+(dolist (face '((org-level-1 . 2.0)
+                (org-level-2 . 1.8)
+                (org-level-3 . 1.5)
+                (org-level-4 . 1.3)
+                (org-level-5 . 1.2)
+                (org-level-6 . 1.1)
+                (org-level-7 . 1.1)
+                (org-level-8 . 1.1)))
   (set-face-attribute (car face) nil :height (cdr face)))
 #+END_SRC
 
@@ -122,18 +144,35 @@ Customize the dashboard and other display settings.
 
 
 * Customize Org Mode Faces
-Set custom colors for Org mode headings.
+Set custom colors for Org mode properties.
 
 #+BEGIN_SRC emacs-lisp :tangle yes
 (set-face-attribute 'org-level-1 nil :foreground "#00FFFF" :background "#004C4C" :weight 'bold)  ;; Cyan dominant
 (set-face-attribute 'org-level-2 nil :foreground "#FFFF00" :background "#5B5B00" :weight 'bold)  ;; Yellow dominant
-(set-face-attribute 'org-level-3 nil :foreground "#00CED1" :background "#003D47" :weight 'bold)  ;; Dark cyan
+(set-face-attribute 'org-level-3 nil :foreground "#00FF00" :background "#1F4F16" :weight 'bold)  ;; Green dominant
 (set-face-attribute 'org-level-4 nil :foreground "#FFD700" :background "#5B4A08" :weight 'bold)  ;; Yellow gold
 (set-face-attribute 'org-level-5 nil :foreground "#40E0D0" :background "#065465" :weight 'bold)  ;; Turquoise
-(set-face-attribute 'org-level-6 nil :foreground "#E0FFFF" :background "#204040" :weight 'bold)  ;; Light cyan
+(set-face-attribute 'org-level-6 nil :foreground "#FF0000" :background "#52170B" :weight 'bold)  ;; Red dominant
 
 (set-face-attribute 'org-list-dt nil :foreground "#00FFFF" :background "#004C4C" :weight 'bold)  ;; Light cyan
+(set-face-attribute 'org-table nil :foreground "#00FF00" :weight 'bold)                          ;; Green
 #+END_SRC
+
+
+* Customize Markdown Faces
+Set custom colors for Markdown properties.
+
+#+begin_src emacs-lisp :tangle yes
+(set-face-attribute 'markdown-header-face-1 nil :foreground "#00FFFF" :background "#004C4C" :weight 'bold)  ;; Cyan dominant
+(set-face-attribute 'markdown-header-face-2 nil :foreground "#FFFF00" :background "#5B5B00" :weight 'bold)  ;; Yellow dominant
+(set-face-attribute 'markdown-header-face-3 nil :foreground "#00FF00" :background "#1F4F16" :weight 'bold)  ;; Green dominant
+(set-face-attribute 'markdown-header-face-4 nil :foreground "#FFD700" :background "#5B4A08" :weight 'bold)  ;; Yellow gold
+(set-face-attribute 'markdown-header-face-5 nil :foreground "#40E0D0" :background "#065465" :weight 'bold)  ;; Turquoise
+(set-face-attribute 'markdown-header-face-6 nil :foreground "#FF0000" :background "#52170B" :weight 'bold)  ;; Red dominant
+
+(set-face-attribute 'markdown-bold-face nil :foreground "#00FFFF" :weight 'bold)
+(set-face-attribute 'markdown-italic-face nil :foreground "#00FF00" :weight 'bold)
+#+end_src
 
 
 * Perspective Configuration
@@ -176,7 +215,4 @@ Configure Treemacs to open with the window setup.
 Customize global keybindings.
 
 #+BEGIN_SRC emacs-lisp :tangle yes
-(global-set-key (kbd "M-t") 'vterm)
-(global-set-key (kbd "M-n"), 'next-line)
-(global-set-key (kbd "M-p"), 'previous-line)
 #+END_SRC
