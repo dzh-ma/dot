@@ -25,28 +25,16 @@ return {
         end,
     },
 
-    -- optional for the 'fzf' command
     {
-        "junegunn/fzf",
-        event = "VeryLazy",
-        build = function()
-            vim.fn["fzf#install"]()
-        end,
-    },
-
-    {
-        "linrongbin16/fzfx.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons", 'junegunn/fzf' },
-        -- specify version to avoid break changes
-        version = 'v5.*',
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.8",
+        branch = "0.1.x",
+        dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
-            {"<Space>f", "<cmd>FzfxFiles<CR>", desc = "Find files"},
-            {"<Space>l", "<cmd>FzfxLiveGrep<CR>", desc = "Find words"},
-            {"<Space>L", "<cmd>FzfxLspDiagnostics<CR>", desc = "Find diagnostics"},
+            {"<Space>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", desc = "Navigate directory"},
+            {"<Space>l", "<cmd>lua require('telescope.builtin').live_grep()<CR>", desc = "Find phrase"},
+            {"<A-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>", desc = "Navigate buffers"},
         },
-        config = function()
-            require("fzfx").setup()
-        end,
     },
 
     {
@@ -165,20 +153,5 @@ return {
         config = function ()
             require("marks").setup({})
         end,
-    },
-
-    {
-        "leath-dub/snipe.nvim",
-        keys = {
-            {"<A-b>", function () require("snipe").open_buffer_menu() end, desc = "Open Snipe buffer menu"}
-        },
-        opts = {
-            ui = {
-                position = "center"
-            },
-            hints = {
-                dictionary = "asdfhjklqweuiop",
-            }
-        },
     },
 }

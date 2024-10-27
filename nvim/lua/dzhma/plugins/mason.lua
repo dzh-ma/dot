@@ -18,7 +18,6 @@ return {
                     "jdtls",
                     "ocamllsp",
                     "pyright",
-                    "tsserver",
                     "rust_analyzer",
                     "zls",
                 },

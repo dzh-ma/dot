@@ -1,6 +1,9 @@
 # Enable recoloring
 set recolor true
 
+# Clipboard yanking
+set selection-clipboard clipboard
+
 # Keep original hue when recoloring
 set recolor-keephue true
 

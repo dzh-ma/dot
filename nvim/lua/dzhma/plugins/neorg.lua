@@ -105,6 +105,7 @@ return {
                         }
                     },                   -- autocompletion
                     ['core.export'] = {},
+                    ['core.todo-introspector'] = {},
                 },
             }
 

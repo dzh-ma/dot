@@ -32,6 +32,10 @@ return {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
+            require("lspconfig").hyprls.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            }
             require("lspconfig").jdtls.setup {
                 capabilities = capabilities,
             }
@@ -45,6 +49,10 @@ return {
                         }
                     }
                 }
+            }
+            require("lspconfig").millet.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
             }
             require("lspconfig").ocamllsp.setup {
                 capabilities = capabilities,
@@ -62,7 +70,7 @@ return {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
-            require("lspconfig").tsserver.setup {
+            require("lspconfig").ts_ls.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }

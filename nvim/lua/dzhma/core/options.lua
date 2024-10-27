@@ -18,8 +18,8 @@ vim.o.clipboard = "unnamedplus"
 vim.opt.scrolloff = 999
 vim.opt.sidescrolloff = 999
 
-vim.opt.laststatus = 0
-vim.opt.showtabline = 0
+vim.opt.laststatus = 2
+vim.opt.showtabline = 2
 
 -- indentation
 local opt = vim.opt
