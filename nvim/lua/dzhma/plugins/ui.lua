@@ -118,4 +118,12 @@ return {
             vim.g.WebDevIconsUnicodeDecorateDefault = 0
         end,
     },
+
+    {
+        "NvChad/showkeys",
+        event = "VeryLazy",
+        config = function ()
+            vim.cmd(":ShowkeysToggle")
+        end,
+    },
 }

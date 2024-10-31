@@ -87,6 +87,7 @@ return {
                         ["LineNr"] = { fg = "#FF0000" },
                         ["String"] = { fg = "#FFFF00" },
                         ["Keyword"] = { fg = "#FF0000" },
+                        ["CursorLine"] = { bg = "#0A0A0A" },
                         ["GitSignsAdd"] = { fg = "#FF0000" },
                         ["GitSignsChange"] = { fg = "#FF0000" },
                         ["GitSignsDelete"] = { fg = "#FF0000" },

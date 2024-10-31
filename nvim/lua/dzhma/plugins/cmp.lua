@@ -39,6 +39,10 @@ return {
             require("lspconfig").jdtls.setup {
                 capabilities = capabilities,
             }
+            require("lspconfig").julials.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            }
             require("lspconfig").lua_ls.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,
@@ -70,7 +74,7 @@ return {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
-            require("lspconfig").ts_ls.setup {
+            require("lspconfig").rust_analyzer.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
@@ -81,7 +85,7 @@ return {
                     exportPdf = "never"
                 }
             }
-            require("lspconfig").rust_analyzer.setup {
+            require("lspconfig").ts_ls.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }

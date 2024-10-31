@@ -55,7 +55,7 @@ return {
                     },
                     typescript = "deno run",
                     ruby = "ruby",
-                    -- tex = "pdflatex \"$fileName\"",
+                    tex = "pdflatex \"$fileName\"",
                     typst = {
                         "cd \"$dir\" &&",
                         "typst compile \"$fileName\"",
