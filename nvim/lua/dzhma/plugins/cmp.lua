@@ -78,14 +78,15 @@ return {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }
-            require("lspconfig").typst_lsp.setup {
+            require("lspconfig").tinymist.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,
-                settings = {
-                    exportPdf = "never"
-                }
             }
             require("lspconfig").ts_ls.setup {
+                capabilities = capabilities,
+                on_attach = on_attach,
+            }
+            require("lspconfig").yamlls.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,
             }

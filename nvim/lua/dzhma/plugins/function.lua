@@ -68,7 +68,10 @@ return {
         },
         config = function()
             require("aerial").setup({
-                backends = { "treesitter" },
+                backends = {
+                    ['_'] = { "treesitter" },
+                    typst = { "lsp" },
+                },
 
                 layout = {
                     max_width = { 100, 0.5 },

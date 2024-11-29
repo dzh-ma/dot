@@ -1,15 +1,10 @@
 return {
     {
-        dir = "/home/dzhma/Coding/Lua/deepwhite.nvim",
+        dir = "/home/dzhma/Coding/Lua/Abstract-cs",
         dependencies = { 'tamton-aquib/staline.nvim' },
         config = function ()
-            local dw = require('deepwhite')
+            vim.cmd.colorscheme "abscs"
 
-            dw.setup({
-                low_blue_light = true
-            })
-
-            vim.cmd.colorscheme('deepwhite')
             require('staline').setup {
                 defaults = {
                     expand_null_ls = false,  -- This expands out all the null-ls sources to be shown
@@ -18,12 +13,12 @@ return {
                     full_path       = false,
                     line_column     = "[%l/%L] :%c %p%% ", -- `:h stl` to see all flags.
 
-                    fg              = "#FFFFFF",  -- Foreground text color.
+                    fg              = "#000000",  -- Foreground text color.
                     bg              = "none",     -- Default background is transparent.
                     inactive_color  = "#303030",
                     inactive_bgcolor = "none",
-                    true_colors     = true,      -- true lsp colors.
-                    font_active     = "bold,italic",     -- "bold", "italic", "bold,italic", etc
+                    true_colors     = false,      -- true lsp colors.
+                    font_active     = "none",     -- "bold", "italic", "bold,italic", etc
 
                     --mod_symbol      = "  ",
                     lsp_client_symbol = " ",
@@ -33,10 +28,10 @@ return {
                     null_ls_symbol = "",          -- A symbol to indicate that a source is coming from null-ls
                 },
                 mode_colors = {
-                    n = "#000000",
-                    i = "#000000",
-                    c = "#000000",
-                    v = "#000000",   -- etc..
+                    n = "#01A0F5",
+                    i = "#00FF00",
+                    c = "#E97451",
+                    v = "#5C4D4D",   -- etc..
                 },
                 --mode_icons = {
                 --    n = " ",
@@ -68,13 +63,13 @@ return {
 
             require('stabline').setup {
                 style       = "bar", -- others: arrow, slant, bubble
-                stab_left   = "┃",
+                stab_left   = "",
                 stab_right  = " ",
 
-                fg       = "#000000",
-                -- bg       = Default is bg of "Normal".
-                inactive_bg = "#AAAAAA",
-                inactive_fg = "#000000",
+                fg       = "#FFFADE",
+                bg       = "#000000",
+                inactive_bg = "#000000",
+                inactive_fg = "#252525",
                 -- stab_bg  = Default is darker version of bg.,
 
                 font_active = "bold",
@@ -83,5 +78,20 @@ return {
                 stab_end    = "",
             }
         end,
+    },
+
+    {
+        "shellRaining/hlchunk.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        config = function()
+            require("hlchunk").setup({
+                chunk = {
+                    enable = true
+                },
+                indent = {
+                    enable = true
+                },
+            })
+        end
     },
 }
