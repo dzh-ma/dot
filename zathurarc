@@ -2,7 +2,7 @@
 set recolor true
 
 # Font configuration
-set font "CodeNewRoman Nerd Font Mono 12"
+set font "CaskaydiaCove Nerd Font Mono 28"
 
 # Clipboard yanking
 set selection-clipboard clipboard

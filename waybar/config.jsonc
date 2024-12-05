@@ -3,13 +3,11 @@
     "height": 20,
     "spacing": 0,
     "modules-left": [
-        "sway/workspaces",
-        "sway/window",
         "hyprland/workspaces",
-        "hyprland/window"
+        "hyprland/window",
     ],
     "modules-right": [
-        "tray",
+        //"tray",
         "disk",
         "cpu",
         "temperature",
@@ -138,7 +136,7 @@
 
   "clock": {
     // "timezone": "America/New_York",
-    "format": "<span color='#222222' bgcolor='#8ec07c'> DAY </span> {:%H:%M:%S %d-%m,%a}",
+    "format": "<span color='#222222' bgcolor='#8ec07c'> DAY </span> {:%a %H:%M:%S %Y-%m-%d}",
     "tooltip": false,
     "interval":1,
   }
