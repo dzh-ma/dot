@@ -114,73 +114,90 @@ return {
             'L3MON4D3/LuaSnip',				                -- code snippets to give code information from LSP
             'rafamadriz/friendly-snippets',			        -- snippet collection for a range of programming languages
             'onsails/lspkind.nvim',				            -- devicon integration into LSP autocomplete
+            "roobert/tailwindcss-colorizer-cmp.nvim",
         },
         config = function()
-            local cmp = require'cmp'
-            local lspkind = require('lspkind')
+            -- load friendly-snippets
+            require("luasnip.loaders.from_vscode").lazy_load()
 
+            -- require cmp
+            local cmp = require("cmp")
+
+            -- require luasnip
+            local luasnip = require("luasnip")
+
+            -- require lspkind
+            local lspkind = require("lspkind")
+
+            -- require tailwind colorizer for cmp
+            local tailwindcss_colorizer_cmp = require("tailwindcss-colorizer-cmp")
+
+            -- custom setup
             cmp.setup({
-                snippet = {
-                    -- REQUIRED - you must specify a snippet engine
-                    expand = function(args)
-                        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-                    end,
-                },
                 window = {
-                    -- completion = cmp.config.window.bordered(),
-                    -- documentation = cmp.config.window.bordered(),
                     completion = {
-                        winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-                        col_offset = -3,
-                        side_padding = 0,
+                        border = "rounded", -- single|rounded|none
+                        -- custom colors
+                        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLineBG,Search:None", -- BorderBG|FloatBorder
+                        side_padding = 0, -- padding at sides
+                        col_offset = -4, -- move floating box left or right
+                    },
+                    documentation = {
+                        border = "rounded", -- single|rounded|none
+                        -- custom colors
+                        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLineBG,Search:None", -- BorderBG|FloatBorder
                     },
                 },
+                snippet = {
+                    expand = function(args)
+                        luasnip.lsp_expand(args.body)
+                    end,
+                },
                 mapping = cmp.mapping.preset.insert({
-                    -- ['<C-k>'] = cmp.mapping.scroll_docs(-4),
-                    -- ['<C-l>'] = cmp.mapping.scroll_docs(4),
-                    --['<C-Space>'] = cmp.mapping.complete(),
-                    -- ['<C-e>'] = cmp.mapping.abort(),
-                    ['<C-Space>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-                    --['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                    ["<C-P>"] = cmp.mapping.select_prev_item(), -- select previous suggestion
+                    ["<S-TAB>"] = cmp.mapping.select_prev_item(), -- select previous suggestion (2)
+                    ["<C-n>"] = cmp.mapping.select_next_item(), -- select next suggestion
+                    ["<TAB>"] = cmp.mapping.select_next_item(), -- select next suggestion (2)
+                    ["<C-L>"] = cmp.mapping.scroll_docs(-4), -- scroll docs down
+                    ["<C-H>"] = cmp.mapping.scroll_docs(4), -- scroll docs up
+                    ["<C-e>"] = cmp.mapping.abort(), -- close completion window
+                    ["<C-Space>"] = cmp.mapping.complete( { select = false } ), -- show completion suggestions
+                    ["<CR>"] = cmp.mapping.confirm({ select = false }), -- confirm suggestion
                 }),
                 sources = cmp.config.sources({
-                    { name = 'nvim_lsp' },
-                    { name = 'luasnip' }, -- For luasnip users.
-                    { name = 'neorg' },
-                }, {
-                        { name = 'buffer' },
-                    }),
-                formatting = {},
-                experimental = {
-                    ghost_text = true,
+                    { name = "nvim_lsp" }, -- lsp
+                    { name = "luasnip" }, -- luasnips
+                    { name = "buffer" }, -- text within the current buffer
+                    { name = "path" }, -- file system paths
+                }),
+                formatting = {
+                    fields = { "kind", "abbr", "menu" },
+                    format = function(entry, item)
+                        -- vscode like icons for cmp autocompletion
+                        local fmt = lspkind.cmp_format({
+                            mode = "symbol_text",
+                            maxwidth = 50,
+                            ellipsis_char = "...",
+                            before = tailwindcss_colorizer_cmp.formatter, -- prepend tailwindcss-colorizer
+                        })(entry, item)
+
+                        -- customize lspkind format
+                        local strings = vim.split(fmt.kind, "%s", { trimempty = true })
+
+                        -- strings[1] -> default icon
+                        -- strings[2] -> kind
+
+                        -- set different icon styles
+                        -- fmt.kind = " " .. (cmp_kinds[strings[2]] or "") -- concatenate icon based on kind
+
+                        -- append customized kind text
+                        fmt.kind = fmt.kind .. " " -- just an extra space at the end
+                        fmt.menu = strings[2] ~= nil and ("  " .. (strings[2] or "")) or ""
+
+                        return fmt
+                    end,
                 },
             })
-            -- Set configuration for specific filetype.
-            cmp.setup.filetype('gitcommit', {
-                sources = cmp.config.sources({
-                    { name = 'git' }, -- You can specify the `git` source if [you were installed it](https://github.com/petertriho/cmp-git).
-                }, {
-                        { name = 'buffer' },
-                    })
-            })
-            -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
-            cmp.setup.cmdline({ '/', '?' }, {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = {
-                    { name = 'buffer' }
-                }
-            })
-            -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-            cmp.setup.cmdline(':', {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = cmp.config.sources({
-                    { name = 'path' }
-                }, {
-                        { name = 'cmdline' }
-                    })
-            })
-
-            vim.diagnostic.config { virtual_text = false }
         end,
     },
 }
