@@ -2,7 +2,7 @@
 set recolor true
 
 # Font configuration
-set font "CaskaydiaCove Nerd Font Mono 28"
+set font "CaskaydiaCove Nerd Font Mono 11"
 
 # Clipboard yanking
 set selection-clipboard clipboard
@@ -15,8 +15,8 @@ set default-bg "#000000"
 set default-fg "#FFFADE"
 
 # Recoloring for Text and Background
-set recolor-darkcolor "#252525"
-set recolor-lightcolor "#FFFADE"
+set recolor-darkcolor "#FFFADE"
+set recolor-lightcolor "#000000"
 
 # Input Bar Colors
 set inputbar-bg "#141414"
@@ -25,9 +25,6 @@ set inputbar-fg "#1D918B"
 # Notification Colors
 set notification-bg "#141414"
 set notification-fg "#FC2929"
-
-# Page Separator Color (optional, for visual alignment)
-set page-separator "#CCCCCC"
 
 # Status Bar Colors
 set statusbar-bg "#141414"

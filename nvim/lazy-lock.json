@@ -1,4 +1,5 @@
 {
+  "FTerm.nvim": { "branch": "master", "commit": "d1320892cc2ebab472935242d9d992a2c9570180" },
   "LuaSnip": { "branch": "master", "commit": "787dee55ca364cc9119787165418fe93b74c1842" },
   "aerial.nvim": { "branch": "master", "commit": "60a784614acb1d7695bd9ae0fee8ada1bf7b0c28" },
   "cmp-buffer": { "branch": "main", "commit": "3022dbc9166796b644a841a02de8dd1cc1d311fa" },
@@ -39,6 +40,7 @@
   "oil.nvim": { "branch": "master", "commit": "cca1631d5ea450c09ba72f3951a9e28105a3632c" },
   "pathlib.nvim": { "branch": "main", "commit": "57e5598af6fe253761c1b48e0b59b7cd6699e2c1" },
   "plenary.nvim": { "branch": "master", "commit": "2d9b06177a975543726ce5c73fca176cedbffe9d" },
+  "project-explorer.nvim": { "branch": "main", "commit": "efecf747c5bc6c4fc5ed8488ccee62b56367fcd6" },
   "rainbow-delimiters.nvim": { "branch": "master", "commit": "d803ba7668ba390aa4cfd3580183c982cac36fd8" },
   "showkeys": { "branch": "main", "commit": "b5c031888ac519a231f26f8fba99621ed5120ef4" },
   "staline.nvim": { "branch": "main", "commit": "d337bc9b343df3328921ef4c3f8ff604102d0201" },

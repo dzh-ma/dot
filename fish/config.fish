@@ -1,7 +1,7 @@
 if status is-interactive
     # Commands to run in interactive sessions can go here
     # ALIASES
-    alias n="nvim"
+    alias n="neovide"
     alias z="zoxide"
     alias e="exa --long --icons --all --no-quotes --across --modified --total-size --grid"
     alias clear="clear && fastfetch"
@@ -23,14 +23,14 @@ if status is-interactive
     alias c="gcc -o"
     alias cp="g++ -o"
     #alias rust='function rust; set dir (pwd); set fileName (string replace -r "\..*$" "" $argv[1]); rustc $argv[1]; and eval "$dir/$fileName"; end'
-    alias nk="nvim ~/.config/kitty/kitty.conf"
-    alias nf="nvim ~/.config/fish/config.fish"
-    alias nb="nvim ~/.bashrc"
-    alias nt="nvim ~/.tmux.conf"
-    alias ns="nvim ~/.config/starship.toml"
-    alias nn="nvim ~/.config/nvim/init.lua"
-    alias nh="nvim ~/.config/hypr/hyprland.conf"
-    alias nw="nvim ~/.config/waybar/config.jsonc"
+    alias nk="neovide ~/.config/kitty/kitty.conf"
+    alias nf="neovide ~/.config/fish/config.fish"
+    alias nb="neovide ~/.bashrc"
+    alias nt="neovide ~/.tmux.conf"
+    alias ns="neovide ~/.config/starship.toml"
+    alias nn="neovide ~/.config/nvim/init.lua"
+    alias nh="neovide ~/.config/hypr/hyprland.conf"
+    alias nw="neovide ~/.config/waybar/config.jsonc"
     #alias nf="nvim ~/.config/fastfetch/config.jsonc"
     alias g.="git add ."
     alias gc="git commit -m"
