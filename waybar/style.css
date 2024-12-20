@@ -2,7 +2,6 @@
 /*            Common CSS            */
 /* ================================ */
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
     padding: 0;
     border-radius: 0;
     min-height: 0;
@@ -15,8 +14,8 @@
 
 /* the whole window */
 window#waybar {
-    background: #000000;
-    color: #fff4d2;
+    background: #06101e; /* Neofusion dark0 */
+    color: #66def9; /* Neofusion light0 */
     padding: 0;
     margin: 0;
 }
@@ -33,10 +32,9 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    color: #fff4d2;
+    color: #66def9; /* Neofusion light0 */
     padding: 0 4px;
     margin-bottom: 4px;
-    /*font-family: IosevkaTerm Nerd Font Propo;*/
     font-family: Hurmit Nerd Font Mono;
     font-size: 22px;
     font-weight: 800;
@@ -44,99 +42,74 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-    color: #d3869b;
+    color: #fa7a61; /* Neofusion faded_yellow */
     background: none;
 }
 
 #workspaces button.visible {
-    color: #8ec07c;
+    color: #35b5ff; /* Neofusion bright_green */
     font-family: Hurmit Nerd Font Mono;
     font-size: 22px;
     font-weight: 800;
-    border-radius: 0;
-    padding: 0 4px;
-    border-bottom: 2px solid #8ec07c;
-}
-
-#workspaces button.visible:hover {
-    color: #8ec07c;
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 22px;
-    font-weight: 800;
-    border-radius: 0;
-    padding: 0 4px;
+    border-bottom: 2px solid #35b5ff;
 }
 
 #workspaces button.active {
-    color: #8ec07c;
+    color: #35b5ff; /* Neofusion bright_green */
     font-family: Hurmit Nerd Font Mono;
     font-size: 22px;
     font-weight: 800;
-    border-radius: 0;
-    padding: 0 4px;
-    border-bottom: 2px solid #8ec07c;
-}
-
-#workspaces button.active:hover {
-    color: #8ec07c;
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 22px;
-    font-weight: 800;
-    border-radius: 0;
-    padding: 0 4px;
+    border-bottom: 2px solid #35b5ff;
 }
 
 #workspaces button.urgent {
-    color: #ea6962;
-    border-bottom: 2px solid #ea6962;
+    color: #fd5e3a; /* Neofusion bright_red */
+    border-bottom: 2px solid #fd5e3a;
 }
 
 /* ================================ */
-/*            window                 */
+/*            window                */
 /* ================================ */
-
 #window {
-    color: #d3869b;
+    color: #fa7a61; /* Neofusion faded_yellow */
     background: none;
     margin: 4px 8px;
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    border-bottom: 2px solid #d3869b;
+    border-bottom: 2px solid #fa7a61;
 }
 
 /* ================================ */
-/*            tray                 */
+/*            tray                  */
 /* ================================ */
-
 #tray {
     margin: 0 3px;
     padding: 0 8px;
 }
 
 /* ================================ */
-/*            disk                 */
+/*            disk                  */
 /* ================================ */
-
 #disk {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #ea6962;
+    color: #ec30ac; /* Neofusion neutral_purple */
     margin: 5px 2px;
-    border-bottom: 2px solid #ea6962;
+    border-bottom: 2px solid #ec30ac;
 }
 
 /* ================================ */
-/*            cpu                  */
+/*            cpu                   */
 /* ================================ */
 #cpu {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #e78a4e;
+    color: #e2d9c5; /* Neofusion bright_blue */
     margin: 5px 2px;
-    border-bottom: 2px solid #e78a4e;
+    border-bottom: 2px solid #e2d9c5;
 }
 
 /* ================================ */
@@ -146,18 +119,18 @@ window#waybar.hidden {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #d8a657;
+    color: #fa7a61; /* Neofusion faded_yellow */
     margin: 5px 3px;
-    border-bottom: 2px solid #d8a657;
+    border-bottom: 2px solid #fa7a61;
 }
 
 #temperature.critical {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #cc241d;
+    color: #fd5e3a; /* Neofusion bright_red */
     margin: 5px 3px;
-    border-bottom: 2px solid #cc241d;
+    border-bottom: 2px solid #fd5e3a;
 }
 
 /* ================================ */
@@ -167,9 +140,9 @@ window#waybar.hidden {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #f6c657;
+    color: #e8e5b5; /* Neofusion light_aqua */
     margin: 5px 3px;
-    border-bottom: 2px solid #f6c657;
+    border-bottom: 2px solid #e8e5b5;
 }
 
 /* ================================ */
@@ -179,9 +152,9 @@ window#waybar.hidden {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #458588;
+    color: #22536f; /* Neofusion gray */
     margin: 5px 3px;
-    border-bottom: 2px solid #458588;
+    border-bottom: 2px solid #22536f;
 }
 
 /* ================================ */
@@ -191,18 +164,18 @@ window#waybar.hidden {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #83a598;
+    color: #008DA3; /* Neofusion light2 */
     margin: 5px 3px;
-    border-bottom: 2px solid #83a598;
+    border-bottom: 2px solid #008DA3;
 }
 
 #pulseaudio.muted {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #ea6962;
+    color: #fd5e3a; /* Neofusion bright_red */
     margin: 5px 3px;
-    border-bottom: 2px solid #ea6962;
+    border-bottom: 2px solid #fd5e3a;
 }
 
 /* ================================ */
@@ -212,28 +185,29 @@ window#waybar.hidden {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #689d6a;
+    color: #35b5ff; /* Neofusion bright_green */
     margin: 5px 3px;
-    border-bottom: 2px solid #689d6a;
+    border-bottom: 2px solid #35b5ff;
 }
 
 #battery.critical {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #cc241d;
+    color: #fd5e3a; /* Neofusion bright_red */
     margin: 5px 3px;
-    border-bottom: 2px solid #cc241d;
+    border-bottom: 2px solid #fd5e3a;
 }
 
 #battery.warning {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #e78a4e;
+    color: #fa7a61; /* Neofusion faded_yellow */
     margin: 5px 3px;
-    border-bottom: 2px solid #e78a4e;
+    border-bottom: 2px solid #fa7a61;
 }
+
 /* ================================ */
 /*            clock                 */
 /* ================================ */
@@ -241,7 +215,7 @@ window#waybar.hidden {
     font-family: Hurmit Nerd Font Mono;
     font-size: 15px;
     font-weight: 800;
-    color: #8ec07c;
+    color: #35b5ff; /* Neofusion bright_green */
     margin: 5px 3px;
-    border-bottom: 2px solid #8ec07c;
+    border-bottom: 2px solid #35b5ff;
 }

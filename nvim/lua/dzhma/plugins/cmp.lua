@@ -161,7 +161,7 @@ return {
                     ["<C-L>"] = cmp.mapping.scroll_docs(-4), -- scroll docs down
                     ["<C-H>"] = cmp.mapping.scroll_docs(4), -- scroll docs up
                     ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-                    ["<C-Space>"] = cmp.mapping.complete( { select = false } ), -- show completion suggestions
+                    ["<C-Space>"] = cmp.mapping.complete( { select = true } ), -- show completion suggestions
                     ["<CR>"] = cmp.mapping.confirm({ select = false }), -- confirm suggestion
                 }),
                 sources = cmp.config.sources({
