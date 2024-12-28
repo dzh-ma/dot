@@ -8,6 +8,59 @@ return {
             "folke/noice.nvim"
         },
         config = function()
+            require("neofusion").setup({
+                overrides = {
+                    -- Header 1
+                    ["@markup.heading.1.markdown"] = {
+                        fg = "#ef89a8",   -- A pinkish-red tone resembling Heading 1 in the image
+                        bg = "#513b4a",   -- A darker background for contrast
+                        bold = true
+                    },
+                    -- Header 2
+                    ["@markup.heading.2.markdown"] = {
+                        fg = "#ebba9c",   -- A soft beige tone for Heading 2
+                        bg = "#544341",   -- A darker blue background
+                        bold = true
+                    },
+                    -- Header 3
+                    ["@markup.heading.3.markdown"] = {
+                        fg = "#f1e3b7",   -- Bright orange-red for Heading 3
+                        bg = "#534f4d",   -- Darker red for contrast
+                        bold = true
+                    },
+                    -- Header 4
+                    ["@markup.heading.4.markdown"] = {
+                        fg = "#a9d4ac",   -- Bright greenish-blue for Heading 4
+                        bg = "#3f4f4b",   -- A darker teal background
+                        bold = true
+                    },
+                    -- Header 5
+                    ["@markup.heading.5.markdown"] = {
+                        fg = "#7ac2e4",   -- Vibrant cyan for Heading 5
+                        bg = "#354859",   -- A very dark cyan background
+                        bold = true
+                    },
+                    -- Header 6
+                    ["@markup.heading.6.markdown"] = {
+                        fg = "#a7acdd",   -- Purple-pink for Heading 6
+                        bg = "#40445c",   -- Darker purple for contrast
+                        bold = true
+                    },
+                    -- Bold Text
+                    ["@markup.strong.markdown_inline"] = {
+                        fg = "#FFC500",   -- Matches Heading 1 for bold emphasis
+                        bold = true,
+                        underline = true,
+                    },
+                    -- Italic Text
+                    ["@markup.italic.markdown_inline"] = {
+                        fg = "#FF0000",   -- Matches Heading 5 for italic text
+                        italic = true,
+                        underline = true,
+                    }
+                }
+            })
+
             vim.o.background = "dark"
             vim.cmd.colorscheme "neofusion"
 

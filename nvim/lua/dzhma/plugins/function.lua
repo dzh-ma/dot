@@ -31,8 +31,6 @@ return {
         branch = "0.1.x",
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "ahmedkhalf/project.nvim",
-            "olimorris/persisted.nvim",
             "nvim-telescope/telescope-fzf-native.nvim",
         },
         cmd = "Telescope",
@@ -50,12 +48,6 @@ return {
 
             -- load fzf
             telescope.load_extension("fzf")
-
-            -- projects extension integration for telescope
-            telescope.load_extension("projects")
-
-            -- persisted extension for session management
-            telescope.load_extension("persisted")
 
             -- custom setup
             telescope.setup({
@@ -203,7 +195,7 @@ return {
                     show_hidden = true,
                 },
             })
-            vim.keymap.set("n", "<A-o>", "<cmd>Oil<CR>", { desc = "Open parent directory" })
+            vim.keymap.set("n", "-", "<cmd>Oil<CR>", { desc = "Open parent directory" })
         end,
     },
 
@@ -256,36 +248,6 @@ return {
     },
 
     {
-        'windwp/nvim-autopairs',
-        event = "InsertEnter",
-        config = true
-        -- use opts = {} for passing setup options
-        -- this is equalent to setup({}) function
-    },
-
-    {
-        "ThePrimeagen/harpoon",
-        branch = "harpoon2",
-        dependencies = { "nvim-lua/plenary.nvim" },
-        event = "VeryLazy",
-        config = function ()
-            local harpoon = require("harpoon")
-
-            -- REQUIRED
-            harpoon:setup()
-
-            -- REQUIRED
-            vim.keymap.set("n", "<A-s>", function() harpoon:list():add() end)
-            vim.keymap.set("n", "<C-s>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-            vim.keymap.set("n", "<A-h>", function() harpoon:list():select(1) end)
-            vim.keymap.set("n", "<A-j>", function() harpoon:list():select(2) end)
-            vim.keymap.set("n", "<A-k>", function() harpoon:list():select(3) end)
-            vim.keymap.set("n", "<A-l>", function() harpoon:list():select(4) end)
-        end,
-    },
-
-    {
         "folke/which-key.nvim",
         event = "VeryLazy",
         init = function()
@@ -305,5 +267,20 @@ return {
         config = function ()
             require("marks").setup({})
         end,
+    },
+
+    {
+        "thunder-coding/zincoxide",
+        opts = {
+            zincoxide_cmd = "zoxide",
+            complete = true,
+            behavior = "tabs",
+        },
+        cmd = {
+            "Z",
+            "Zg",
+            "Zt",
+            "Zw",
+        },
     },
 }

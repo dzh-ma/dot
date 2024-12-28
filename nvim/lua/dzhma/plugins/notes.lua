@@ -44,7 +44,7 @@ return {
     },
 
     {
-        'AckslD/nvim-FeMaco.lua',
+        "AckslD/nvim-FeMaco.lua",
         keys = {
             { "<A-f>", "<cmd>FeMaco<CR>", "code block isolation" },
         },
