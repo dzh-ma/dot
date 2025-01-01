@@ -10,28 +10,27 @@ return {
         config = function()
             require("neofusion").setup({
                 overrides = {
-                    -- Header 1
                     ["@markup.heading.1.markdown"] = {
-                        fg = "#ef89a8",   -- A pinkish-red tone resembling Heading 1 in the image
-                        bg = "#513b4a",   -- A darker background for contrast
+                        fg = "#ffd700",   -- A pinkish-red tone resembling Heading 1 in the image
+                        bg = "#988e75",   -- A darker background for contrast
                         bold = true
                     },
                     -- Header 2
                     ["@markup.heading.2.markdown"] = {
-                        fg = "#ebba9c",   -- A soft beige tone for Heading 2
-                        bg = "#544341",   -- A darker blue background
+                        fg = "#4ec9b0",   -- A soft beige tone for Heading 2
+                        bg = "#869692",   -- A darker blue background
                         bold = true
                     },
                     -- Header 3
                     ["@markup.heading.3.markdown"] = {
-                        fg = "#f1e3b7",   -- Bright orange-red for Heading 3
-                        bg = "#534f4d",   -- Darker red for contrast
+                        fg = "#ff8c42",   -- Bright orange-red for Heading 3
+                        bg = "#b59e92",   -- Darker red for contrast
                         bold = true
                     },
                     -- Header 4
                     ["@markup.heading.4.markdown"] = {
-                        fg = "#a9d4ac",   -- Bright greenish-blue for Heading 4
-                        bg = "#3f4f4b",   -- A darker teal background
+                        fg = "#ff77a8",   -- Bright greenish-blue for Heading 4
+                        bg = "#c9b1b8",   -- A darker teal background
                         bold = true
                     },
                     -- Header 5
@@ -57,6 +56,51 @@ return {
                         fg = "#FF0000",   -- Matches Heading 5 for italic text
                         italic = true,
                         underline = true,
+                    },
+                    ["@variable.parameter"] = {
+                        fg = "#D2A6A8",
+                        italic = true,
+                    },
+                    ["@variable.member"] = {
+                        fg = "#4682b4",
+                    },
+                    ["@function.method.call"] = {
+                        fg = "#8FBC8F",
+                        bold = true,
+                    },
+                    ["@string"] = {
+                        fg = "#FFD700",
+                        italic = true,
+                    },
+                    ["@function"] = {
+                        fg = "#FF77A8",
+                        bold = true,
+                        underline = true,
+                    },
+                    ["@function.call"] = {
+                        fg = "#FF77A8",
+                        bold = true,
+                        underline = true,
+                    },
+                    ["@constant"] = {
+                        fg = "#D2A6A8",
+                    },
+                    ["@property"] = {
+                        fg = "#34243E",
+                        italic = true,
+                    },
+                    ["Oilfile"] = {
+                        fg = "#FF8C42",
+                        italic = true,
+                    },
+                    ["@keyword.modifier"] = {
+                        fg = "#FFFFF0",
+                        bold = true,
+                    },
+                    ["@type"] = {
+                        fg = "#FFA726",
+                        underline = true,
+                        bold = true,
                     }
                 }
             })
@@ -208,7 +252,7 @@ return {
                             separator = true, -- true is the default, or set custom
                         },
                     },
-                    diagnostics_indicator = function(count, level) -- diagnostics format
+                    diagnostics_indicator = function(count) -- diagnostics format
                         return " " .. count
                     end,
                     -- exclude some buffer and file types

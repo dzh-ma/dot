@@ -43,9 +43,10 @@ return {
             require("notify").setup({
                 background_colour = "#000000",
                 render = "compact",
-                timeout = 0,
-                --max_width = 40,
-                top_down = true
+                stages = "static",
+                timeout = 5000,
+                max_width = 60,
+                top_down = true,
             })
         end,
     },

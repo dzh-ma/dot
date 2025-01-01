@@ -269,18 +269,18 @@ return {
         end,
     },
 
-    {
-        "thunder-coding/zincoxide",
-        opts = {
-            zincoxide_cmd = "zoxide",
-            complete = true,
-            behavior = "tabs",
-        },
-        cmd = {
-            "Z",
-            "Zg",
-            "Zt",
-            "Zw",
-        },
-    },
+    -- {
+    --     "thunder-coding/zincoxide",
+    --     opts = {
+    --         zincoxide_cmd = "zoxide",
+    --         complete = true,
+    --         behavior = "tabs",
+    --     },
+    --     cmd = {
+    --         "Z",
+    --         "Zg",
+    --         "Zt",
+    --         "Zw",
+    --     },
+    -- },
 }
