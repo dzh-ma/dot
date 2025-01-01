@@ -78,4 +78,12 @@ return {
        build = "cd app && yarn install",
        config = function() vim.g.mkdp_filetypes = { "markdown" } end,
     },
+
+    {
+        "opdavies/toggle-checkbox.nvim",
+        ft = { "markdown" },
+        config = function ()
+            vim.keymap.set("n", "<leader>t", ":lua require('toggle-checkbox').toggle()<CR>")
+        end
+    },
 }

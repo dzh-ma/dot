@@ -198,6 +198,22 @@ return {
                     end,
                 },
             })
+
+            cmp.setup.cmdline({ "/", "?" }, {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = {
+                    { name = "buffer" }, -- for searching text in the buffer
+                },
+            })
+
+            cmp.setup.cmdline(":", {
+                mapping = cmp.mapping.preset.cmdline(),
+                sources = cmp.config.sources({
+                    { name = "path" }, -- file system paths
+                }, {
+                        { name = "cmdline" }, -- Neovim's command-line suggestions
+                    }),
+            })
         end,
     },
 }
