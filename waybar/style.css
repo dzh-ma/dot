@@ -37,7 +37,7 @@ window#waybar.hidden {
     padding: 0 4px;
     margin-bottom: 4px;
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     border-bottom: 2px solid transparent;
 }
@@ -50,7 +50,7 @@ window#waybar.hidden {
 #workspaces button.visible {
     color: #35b5ff; /* Neofusion bright_green */
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     border-bottom: 2px solid #35b5ff;
 }
@@ -58,7 +58,7 @@ window#waybar.hidden {
 #workspaces button.active {
     color: #35b5ff; /* Neofusion bright_green */
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     border-bottom: 2px solid #35b5ff;
 }
@@ -76,7 +76,7 @@ window#waybar.hidden {
     background: none;
     margin: 4px 8px;
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     border-bottom: 2px solid #fa7a61;
 }
@@ -94,7 +94,7 @@ window#waybar.hidden {
 /* ================================ */
 #disk {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #ec30ac; /* Neofusion neutral_purple */
     margin: 5px 2px;
@@ -106,7 +106,7 @@ window#waybar.hidden {
 /* ================================ */
 #cpu {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #e2d9c5; /* Neofusion bright_blue */
     margin: 5px 2px;
@@ -118,7 +118,7 @@ window#waybar.hidden {
 /* ================================ */
 #temperature {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #fa7a61; /* Neofusion faded_yellow */
     margin: 5px 3px;
@@ -127,7 +127,7 @@ window#waybar.hidden {
 
 #temperature.critical {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #fd5e3a; /* Neofusion bright_red */
     margin: 5px 3px;
@@ -139,7 +139,7 @@ window#waybar.hidden {
 /* ================================ */
 #backlight {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #e8e5b5; /* Neofusion light_aqua */
     margin: 5px 3px;
@@ -151,7 +151,7 @@ window#waybar.hidden {
 /* ================================ */
 #memory {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #22536f; /* Neofusion gray */
     margin: 5px 3px;
@@ -163,7 +163,7 @@ window#waybar.hidden {
 /* ================================ */
 #pulseaudio {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #008DA3; /* Neofusion light2 */
     margin: 5px 3px;
@@ -172,7 +172,7 @@ window#waybar.hidden {
 
 #pulseaudio.muted {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #fd5e3a; /* Neofusion bright_red */
     margin: 5px 3px;
@@ -184,7 +184,7 @@ window#waybar.hidden {
 /* ================================ */
 #battery {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #35b5ff; /* Neofusion bright_green */
     margin: 5px 3px;
@@ -193,7 +193,7 @@ window#waybar.hidden {
 
 #battery.critical {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #fd5e3a; /* Neofusion bright_red */
     margin: 5px 3px;
@@ -202,7 +202,7 @@ window#waybar.hidden {
 
 #battery.warning {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #fa7a61; /* Neofusion faded_yellow */
     margin: 5px 3px;
@@ -214,7 +214,7 @@ window#waybar.hidden {
 /* ================================ */
 #clock {
     font-family: Hurmit Nerd Font Mono;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: 800;
     color: #35b5ff; /* Neofusion bright_green */
     margin: 5px 3px;

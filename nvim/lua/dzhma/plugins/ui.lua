@@ -115,17 +115,6 @@ return {
     },
 
     {
-        "gorbit99/codewindow.nvim",
-        event = "VeryLazy",
-        config = function ()
-            local codewindow = require('codewindow')
-            codewindow.setup()
-            codewindow.apply_default_keybinds()
-            vim.cmd("lua require('codewindow').open_minimap()")
-        end
-    },
-
-    {
         "Bekaboo/dropbar.nvim",
         -- optional, but required for fuzzy finder support
         dependencies = {
