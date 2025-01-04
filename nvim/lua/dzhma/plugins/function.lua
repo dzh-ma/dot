@@ -269,18 +269,21 @@ return {
         end,
     },
 
-    -- {
-    --     "thunder-coding/zincoxide",
-    --     opts = {
-    --         zincoxide_cmd = "zoxide",
-    --         complete = true,
-    --         behavior = "tabs",
-    --     },
-    --     cmd = {
-    --         "Z",
-    --         "Zg",
-    --         "Zt",
-    --         "Zw",
-    --     },
-    -- },
+    {
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        keys = {
+            { "<Leader>t", "<cmd>TodoTelescope<CR>", desc = "Search all project todos" }
+        },
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+    },
+
+    {
+        "hinell/lsp-timeout.nvim",
+        dependencies = { "neovim/nvim-lspconfig" }
+    },
 }
