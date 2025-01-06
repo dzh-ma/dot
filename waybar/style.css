@@ -1,4 +1,3 @@
-
 /* ================================ */
 /*            Common CSS            */
 /* ================================ */
@@ -15,8 +14,8 @@
 
 /* the whole window */
 window#waybar {
-    background: #06101e; /* Neofusion dark0 */
-    color: #66def9; /* Neofusion light0 */
+    background: #000000; /* True black background */
+    color: #b0bec4; /* Foreground */
     padding: 0;
     margin: 0;
 }
@@ -33,52 +32,42 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    color: #66def9; /* Neofusion light0 */
+    color: #b0bec4; /* Foreground */
     padding: 0 4px;
     margin-bottom: 4px;
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-size: 24px;
     font-weight: 800;
     border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {
-    color: #fa7a61; /* Neofusion faded_yellow */
+    color: #d54e53; /* Red */
     background: none;
 }
 
-#workspaces button.visible {
-    color: #35b5ff; /* Neofusion bright_green */
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
-    font-weight: 800;
-    border-bottom: 2px solid #35b5ff;
-}
-
+#workspaces button.visible,
 #workspaces button.active {
-    color: #35b5ff; /* Neofusion bright_green */
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
-    font-weight: 800;
-    border-bottom: 2px solid #35b5ff;
+    color: #3dd177; /* Green */
+    border-bottom: 2px solid #3dd177;
 }
 
 #workspaces button.urgent {
-    color: #fd5e3a; /* Neofusion bright_red */
-    border-bottom: 2px solid #fd5e3a;
+    color: #d03770; /* Bright red */
+    border-bottom: 2px solid #d03770;
 }
 
 /* ================================ */
 /*            window                */
 /* ================================ */
 #window {
-    color: #fa7a61; /* Neofusion faded_yellow */
+    color: #d54e53; /* Red */
     background: none;
     margin: 4px 8px;
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-size: 16px;
     font-weight: 800;
-    border-bottom: 2px solid #fa7a61;
+    border-bottom: 2px solid #d54e53;
 }
 
 /* ================================ */
@@ -93,131 +82,114 @@ window#waybar.hidden {
 /*            disk                  */
 /* ================================ */
 #disk {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-size: 16px;
     font-weight: 800;
-    color: #ec30ac; /* Neofusion neutral_purple */
+    color: #c678dd; /* Purple */
     margin: 5px 2px;
-    border-bottom: 2px solid #ec30ac;
+    border-bottom: 2px solid #c678dd;
 }
 
 /* ================================ */
 /*            cpu                   */
 /* ================================ */
 #cpu {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-size: 16px;
     font-weight: 800;
-    color: #e2d9c5; /* Neofusion bright_blue */
+    color: #00b0ff; /* Blue */
     margin: 5px 2px;
-    border-bottom: 2px solid #e2d9c5;
+    border-bottom: 2px solid #00b0ff;
 }
 
 /* ================================ */
 /*            temp                  */
 /* ================================ */
 #temperature {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-size: 16px;
     font-weight: 800;
-    color: #fa7a61; /* Neofusion faded_yellow */
+    color: #d54e53; /* Red */
     margin: 5px 3px;
-    border-bottom: 2px solid #fa7a61;
+    border-bottom: 2px solid #d54e53;
 }
 
 #temperature.critical {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
-    font-weight: 800;
-    color: #fd5e3a; /* Neofusion bright_red */
-    margin: 5px 3px;
-    border-bottom: 2px solid #fd5e3a;
+    color: #d03770; /* Bright red */
+    border-bottom: 2px solid #d03770;
 }
 
 /* ================================ */
 /*            backlight             */
 /* ================================ */
 #backlight {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-size: 16px;
     font-weight: 800;
-    color: #e8e5b5; /* Neofusion light_aqua */
+    color: #64fcda; /* Cyan */
     margin: 5px 3px;
-    border-bottom: 2px solid #e8e5b5;
+    border-bottom: 2px solid #64fcda;
 }
 
 /* ================================ */
 /*            memory                */
 /* ================================ */
 #memory {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-size: 16px;
     font-weight: 800;
-    color: #22536f; /* Neofusion gray */
+    color: #676e7b; /* Gray */
     margin: 5px 3px;
-    border-bottom: 2px solid #22536f;
+    border-bottom: 2px solid #676e7b;
 }
 
 /* ================================ */
 /*         pulseaudio               */
 /* ================================ */
 #pulseaudio {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-size: 16px;
     font-weight: 800;
-    color: #008DA3; /* Neofusion light2 */
+    color: #64fcda; /* Cyan */
     margin: 5px 3px;
-    border-bottom: 2px solid #008DA3;
+    border-bottom: 2px solid #64fcda;
 }
 
 #pulseaudio.muted {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
-    font-weight: 800;
-    color: #fd5e3a; /* Neofusion bright_red */
-    margin: 5px 3px;
-    border-bottom: 2px solid #fd5e3a;
+    color: #d03770; /* Bright red */
+    border-bottom: 2px solid #d03770;
 }
 
 /* ================================ */
 /*            battery               */
 /* ================================ */
 #battery {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-size: 16px;
     font-weight: 800;
-    color: #35b5ff; /* Neofusion bright_green */
+    color: #3dd177; /* Green */
     margin: 5px 3px;
-    border-bottom: 2px solid #35b5ff;
+    border-bottom: 2px solid #3dd177;
 }
 
 #battery.critical {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
-    font-weight: 800;
-    color: #fd5e3a; /* Neofusion bright_red */
-    margin: 5px 3px;
-    border-bottom: 2px solid #fd5e3a;
+    color: #d03770; /* Bright red */
+    border-bottom: 2px solid #d03770;
 }
 
 #battery.warning {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
-    font-weight: 800;
-    color: #fa7a61; /* Neofusion faded_yellow */
-    margin: 5px 3px;
-    border-bottom: 2px solid #fa7a61;
+    color: #ffc900; /* Yellow */
+    border-bottom: 2px solid #ffc900;
 }
 
 /* ================================ */
 /*            clock                 */
 /* ================================ */
 #clock {
-    font-family: Hurmit Nerd Font Mono;
-    font-size: 26px;
+    font-family: JetBrainsMono Nerd Font Mono;
+    font-size: 16px;
     font-weight: 800;
-    color: #35b5ff; /* Neofusion bright_green */
+    color: #3dd177; /* Green */
     margin: 5px 3px;
-    border-bottom: 2px solid #35b5ff;
+    border-bottom: 2px solid #3dd177;
 }
-
