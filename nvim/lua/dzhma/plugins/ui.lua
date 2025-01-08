@@ -88,19 +88,14 @@ return {
     },
 
     {
-        "nvzone/showkeys",
+        "gorbit99/codewindow.nvim",
         event = "VeryLazy",
-        opts = {
-        },
         config = function ()
-            require("showkeys").setup({
-                timeout = 1,
-                maxkeys = 5,
-                position = "top-center",
-            })
-
-            vim.cmd("ShowkeysToggle")
-        end,
+            local codewindow = require('codewindow')
+            codewindow.setup()
+            codewindow.apply_default_keybinds()
+            vim.cmd("lua require('codewindow').open_minimap()")
+        end
     },
 
     {
