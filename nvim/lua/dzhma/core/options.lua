@@ -18,7 +18,7 @@ vim.opt.linespace = 20
 vim.o.clipboard = "unnamedplus"     -- copy/paste support
 
 -- cursor lock
--- vim.opt.scrolloff = 999
+vim.opt.scrolloff = 999
 vim.opt.sidescrolloff = 999
 
 -- menu line appearance

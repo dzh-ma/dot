@@ -70,13 +70,6 @@ return {
     },
 
     {
-        -- icon pack 1
-        'ryanoasis/vim-devicons',
-        event = "VeryLazy",
-    },
-
-    {
-        -- icon pack 2
         'nvim-tree/nvim-web-devicons',
         event = "VeryLazy",
         config = function()
@@ -88,14 +81,10 @@ return {
     },
 
     {
-        "gorbit99/codewindow.nvim",
-        event = "VeryLazy",
-        config = function ()
-            local codewindow = require('codewindow')
-            codewindow.setup()
-            codewindow.apply_default_keybinds()
-            vim.cmd("lua require('codewindow').open_minimap()")
-        end
+        "dgox16/devicon-colorscheme.nvim",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+        },
     },
 
     {
