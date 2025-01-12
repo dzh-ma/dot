@@ -15,7 +15,7 @@
     cream:                             #ffffff; /* Green */
     highlight:                         underline bold #aaaaaa; /* Blue highlight */
     transparent:                       #00000000;
-    font:                              "Bedstead 30";
+    font:                              "IosevkaTermSlab Nerd Font Mono 30";
     padding:                           0px;
     margin:                            0px;
 }

@@ -11,8 +11,24 @@ return {
             indent = {
                 enabled = true,
                 per_level = 4,
-                skip_heading = true,
-            }
+                skip_heading = false,
+            },
+            backgrounds = {
+                'RenderMarkdownH1Bg',
+                'RenderMarkdownH2Bg',
+                'RenderMarkdownH3Bg',
+                'RenderMarkdownH4Bg',
+                'RenderMarkdownH5Bg',
+                'RenderMarkdownH6Bg',
+            },
+            foregrounds = {
+                'RenderMarkdownH1',
+                'RenderMarkdownH2',
+                'RenderMarkdownH3',
+                'RenderMarkdownH4',
+                'RenderMarkdownH5',
+                'RenderMarkdownH6',
+            },
         },
     },
 
@@ -46,10 +62,10 @@ return {
     },
 
     {
-       "iamcco/markdown-preview.nvim",
-       ft = { "markdown" },
-       build = "cd app && yarn install",
-       config = function() vim.g.mkdp_filetypes = { "markdown" } end,
+        "iamcco/markdown-preview.nvim",
+        ft = { "markdown" },
+        build = "cd app && yarn install",
+        config = function() vim.g.mkdp_filetypes = { "markdown" } end,
     },
 
     {

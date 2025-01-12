@@ -10,6 +10,7 @@
         //"tray",
         "disk",
         "cpu",
+        "temperature",
         "backlight",
         "memory",
         "pulseaudio",
@@ -36,7 +37,7 @@
     },
 
     "hyprland/window": {
-        "format": "<span color='#ffffff' bgcolor='#000000'> WIN </span> {class}",
+        "format": "<span color='#66def9' bgcolor='#06101e'> WIN </span> {class}",
         "separate-outputs": true
     },
 
@@ -46,32 +47,41 @@
     },
 
     "disk": {
-        "format": "<span color='#ffffff' bgcolor='#000000'> DSK </span> {free}",
+        "format": "<span color='#66def9' bgcolor='#06101e'> DSK </span> {free}",
         "interval": 20
     },
 
     "cpu": {
-        "format": "<span color='#ffffff' bgcolor='#000000'> CPU </span> {usage}%",
+        "format": "<span color='#66def9' bgcolor='#06101e'> CPU </span> {usage}%",
         "tooltip": false,
         "interval": 1
     },
 
+    "temperature": {
+        "tooltip": false,
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 70,
+        "format-critical": "<span color='#66def9' bgcolor='#06101e'> TEM </span> {temperatureC}°C",
+        "format": "<span color='#66def9' bgcolor='#06101e'> TMP </span> {temperatureC}°C"
+    },
+
     "backlight": {
-        "format": "<span color='#ffffff' bgcolor='#000000'> BRI </span> {percent}%",
+        "format": "<span color='#66def9' bgcolor='#06101e'> BRI </span> {percent}%",
         "tooltip": false
     },
 
     "memory": {
-        "format": "<span color='#ffffff' bgcolor='#000000'> MEM </span> {used}GiB",
+        "format": "<span color='#66def9' bgcolor='#06101e'> MEM </span> {used}GiB",
         "interval": 1,
         "tooltip": false
     },
 
     "pulseaudio": {
-        "format": "<span color='#ffffff bgcolor='#000000'> VOL </span> {volume}%",
-        "format-muted": "<span color='#ffffff bgcolor='#000000'> MUTE </span> {volume}%",
-        "format-bluetooth": "<span color='#ffffff' bgcolor='#000000'> BLU </span> {volume}%",
-        "format-bluetooth-muted": "<span color='#ffffff bgcolor='#000000'> MUTE </span> {volume}%",
+        "format": "<span color='#66def9' bgcolor='#06101e'> VOL </span> {volume}%",
+        "format-muted": "<span color='#66def9' bgcolor='#06101e'> MUTE </span> {volume}%",
+        "format-bluetooth": "<span color='#66def9' bgcolor='#06101e'> BLU </span> {volume}%",
+        "format-bluetooth-muted": "<span color='#66def9' bgcolor='#06101e'> MUTE </span> {volume}%",
         "format-source": "{volume}% ",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "tooltip": false,
@@ -89,18 +99,18 @@
             "warning": 40,
             "critical": 15
         },
-        "format": "<span color='#ffffff' bgcolor='#000000'> BAT </span> {capacity}%",
-        "format-critical": "<span color='#ffffff' bgcolor='#000000'> BAT </span> {capacity}%!!",
-        "format-warning": "<span color='#ffffff' bgcolor='#000000'> BAT </span> {capacity}%",
-        "format-full": "<span color='#ffffff' bgcolor='#000000'> FULL </span> {capacity}%",
-        "format-charging": "<span color='#ffffff' bgcolor='#000000'> POW </span> {capacity}%",
-        "format-plugged": "<span color='#ffffff' bgcolor='#000000'> POW </span> {capacity}%",
-        "format-alt": "<span color='#ffffff' bgcolor='#000000'> BAT </span> {time}",
+        "format": "<span color='#66def9' bgcolor='#06101e'> BAT </span> {capacity}%",
+        "format-critical": "<span color='#66def9' bgcolor='#06101e'> BAT </span> {capacity}%!!",
+        "format-warning": "<span color='#66def9' bgcolor='#06101e'> BAT </span> {capacity}%",
+        "format-full": "<span color='#66def9' bgcolor='#06101e'> FULL </span> {capacity}%",
+        "format-charging": "<span color='#66def9' bgcolor='#06101e'> POW </span> {capacity}%",
+        "format-plugged": "<span color='#66def9' bgcolor='#06101e'> POW </span> {capacity}%",
+        "format-alt": "<span color='#66def9' bgcolor='#06101e'> BAT </span> {time}",
         "tooltip": false
     },
 
     "clock": {
-        "format": "<span color='#ffffff' bgcolor='#000000'> DAY </span> {:%a %H:%M:%S %Y-%m-%d}",
+        "format": "<span color='#66def9' bgcolor='#06101e'> DAY </span> {:%a %H:%M:%S %Y-%m-%d}",
         "tooltip": false,
         "interval": 1
     }
