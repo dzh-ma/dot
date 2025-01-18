@@ -11,22 +11,28 @@ return {
             require("neofusion").setup({
                 overrides = {
                     ["RenderMarkdownH1Bg"] = {
-                        bg = "#988e75",
+                        -- bg = "#988e75",
+                        bg = "#06101e",
                     },
                     ["RenderMarkdownH2Bg"] = {
-                        bg = "#869692",
+                        -- bg = "#869692",
+                        bg = "#06101e",
                     },
                     ["RenderMarkdownH3Bg"] = {
-                        bg = "#b59e92",
+                        -- bg = "#b59e92",
+                        bg = "#06101e",
                     },
                     ["RenderMarkdownH4Bg"] = {
-                        bg = "#c9b1b8",
+                        -- bg = "#c9b1b8",
+                        bg = "#06101e",
                     },
                     ["RenderMarkdownH5Bg"] = {
-                        bg = "#354859",
+                        -- bg = "#354859",
+                        bg = "#06101e",
                     },
                     ["RenderMarkdownH6Bg"] = {
-                        bg = "#40445c",
+                        -- bg = "#40445c",
+                        bg = "#06101e",
                     },
                     ["RenderMarkdownCodeInline"] = {
                         fg = "#ffbf00",
@@ -75,7 +81,7 @@ return {
                     },
                     -- Italic Text
                     ["@markup.italic.markdown_inline"] = {
-                        fg = "#FF0000",   -- Matches Heading 5 for italic text
+                        fg = "#00FF00",   -- Matches Heading 5 for italic text
                         italic = true,
                         -- underline = true,
                     },

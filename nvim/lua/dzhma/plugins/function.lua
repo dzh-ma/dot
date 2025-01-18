@@ -286,4 +286,9 @@ return {
         "hinell/lsp-timeout.nvim",
         dependencies = { "neovim/nvim-lspconfig" }
     },
+
+    {
+        "sindrets/diffview.nvim",
+        event = "VeryLazy",
+    },
 }

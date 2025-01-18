@@ -9,6 +9,7 @@
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "code_runner.nvim": { "branch": "main", "commit": "65218f8f646fe61e506090522df357539642ae83" },
   "devicon-colorscheme.nvim": { "branch": "main", "commit": "de03970159817b40d66945849e9ac3380f58b67f" },
+  "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "dropbar.nvim": { "branch": "master", "commit": "e5f9fb998a54c0ec1c2d25de88a3c260c494ffe1" },
   "follow-md-links.nvim": { "branch": "main", "commit": "ce8735a15dc3e5fc5bb052ec51b849c03e57df53" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },

@@ -42,10 +42,10 @@ return {
 
             require("notify").setup({
                 background_colour = "#000000",
-                render = "compact",
+                render = "wrapped-default",
                 stages = "static",
                 timeout = 5000,
-                max_width = 60,
+                max_width = 50,
                 top_down = true,
             })
         end,
@@ -95,6 +95,7 @@ return {
             require('tiny-inline-diagnostic').setup({
                 preset = "ghost",
             })
+            vim.diagnostic.config({virtual_text = false})
         end
     },
 
