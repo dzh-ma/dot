@@ -2,7 +2,7 @@
 set recolor true
 
 # Font configuration
-set font "IosevkaTermSlab Nerd Font Mono 12"
+set font "UbuntuMono Nerd Font 18"
 
 # Clipboard yanking
 set selection-clipboard clipboard
@@ -14,37 +14,37 @@ set recolor-keephue true
 set database sqlite
 
 # Default colors
-set default-bg "#06101e"
-set default-fg "#66def9"
+set default-bg "#fffdfb"       # White Chocolate background
+set default-fg "#794135"       # White Chocolate foreground
 
 # Recoloring for Text and Background
-set recolor-darkcolor "#66def9"
-set recolor-lightcolor "#06101e"
+set recolor-darkcolor "#794135"  # White Chocolate foreground
+set recolor-lightcolor "#fffdfb" # White Chocolate background
 
 # Input Bar Colors
-set inputbar-bg "#031B26"
-set inputbar-fg "#22536f"
+set inputbar-bg "#e4d7d3"        # White Chocolate neutral background
+set inputbar-fg "#9d8580"        # White Chocolate comment
 
 # Notification Colors
-set notification-bg "#031B26"
-set notification-fg "#fd5e3a"
+set notification-bg "#e4d7d3"    # White Chocolate neutral background
+set notification-fg "#da1306"    # White Chocolate error (red)
 
 # Status Bar Colors
-set statusbar-bg "#031B26"
-set statusbar-fg "#22536f"
+set statusbar-bg "#e4d7d3"       # White Chocolate neutral background
+set statusbar-fg "#9d8580"       # White Chocolate comment
 
 # Highlight Colors
-set highlight-color "#22536f"
-set highlight-active-color "#35b5ff"
+set highlight-color "#69b98b"    # White Chocolate current (green)
+set highlight-active-color "#1aa7d6" # White Chocolate info (blue)
 
 # Completion Colors
-set completion-bg "#031B26"
-set completion-fg "#22536f"
-set completion-highlight-bg "#35b5ff"
-set completion-highlight-fg "#06101e"
+set completion-bg "#e4d7d3"          # White Chocolate neutral background
+set completion-fg "#9d8580"          # White Chocolate comment
+set completion-highlight-bg "#1aa7d6" # White Chocolate info (blue)
+set completion-highlight-fg "#fffdfb" # White Chocolate background
 
 # Index Colors
-set index-bg "#031B26"
-set index-fg "#22536f"
-set index-active-bg "#ec30ac"
-set index-active-fg "#06101e"
+set index-bg "#e4d7d3"          # White Chocolate neutral background
+set index-fg "#9d8580"          # White Chocolate comment
+set index-active-bg "#bf1ca2"   # White Chocolate key
+set index-active-fg "#fffdfb"   # White Chocolate background

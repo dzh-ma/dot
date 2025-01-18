@@ -30,3 +30,5 @@ vim.g.neovide_cursor_animation_length = 0.13
 vim.g.neovide_cursor_trail_size = 0.4
 vim.g.neovide_cursor_smooth_blink = true
 vim.g.neovide_cursor_vfx_mode = "wireframe"
+
+vim.g.loaded_perl_provider = 0

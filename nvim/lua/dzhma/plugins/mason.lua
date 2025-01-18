@@ -16,7 +16,6 @@ return {
                     "html",
                     "julials",
                     "jdtls",
-                    "ocamllsp",
                     "pyright",
                     "rust_analyzer",
                     "zls",

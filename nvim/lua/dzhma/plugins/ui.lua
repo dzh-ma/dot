@@ -43,9 +43,9 @@ return {
             require("notify").setup({
                 background_colour = "#000000",
                 render = "wrapped-default",
-                stages = "static",
+                stages = "slide",
                 timeout = 5000,
-                max_width = 50,
+                max_width = 60,
                 top_down = true,
             })
         end,
@@ -78,6 +78,11 @@ return {
             vim.g.WebDevIconsUnicodeDecorateOpenFolderNodes = 1
             vim.g.WebDevIconsUnicodeDecorateDefault = 0
         end,
+    },
+
+    {
+        'echasnovski/mini.nvim',
+        version = false,
     },
 
     {

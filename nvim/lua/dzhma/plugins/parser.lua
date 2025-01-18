@@ -10,7 +10,7 @@ return {
                     "asm", "bash", "c", "c_sharp", "cpp", "css", "dockerfile", "fish",
                     "go", "html", "java", "javascript", "julia", "json", "latex", "lua",
                     "markdown", "markdown_inline", "mermaid", "ocaml", "ocaml_interface",
-                    "php", "python", "query", "ruby", "rust", "sql", "ssh_config",
+                    "php", "python", "query", "regex", "ruby", "rust", "sql", "ssh_config",
                     "typescript", "typst", "vim", "vimdoc", "vue", "xml", "yaml", "zig"
                 },
                 sync_install = false,

@@ -1,5 +1,7 @@
-set PS1 "[\u@\h \W]\$ '"
-set -Ux PATH $HOME/.local/bin $HOME/.local/share/gem/ruby/3.0.0/bin $HOME/.cargo/bin $PATH
+#set PS1 "[\u@\h \W]\$ '"
+set -Ux PATH $HOME/.local/bin $HOME/.local/share/gem/ruby/3.3.0/bin $HOME/.cargo/bin $HOME/.npm-global/bin$PATH
+set -U fish_user_paths /home/dzh-ma/.local/share/gem/ruby/3.3.0/bin $fish_user_paths
+set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
@@ -38,6 +40,7 @@ if status is-interactive
     alias gs="git push"
     alias gl="git pull"
     alias q="exit"
+    alias f="fan_state set"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
@@ -66,3 +69,9 @@ if status is-interactive
         end
     end
 end
+
+
+if not pgrep ssh-agent > /dev/null
+    eval (ssh-agent -c)
+end
+ssh-add ~/.ssh/id_ed25519 2>/dev/null

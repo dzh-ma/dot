@@ -85,6 +85,7 @@ $time\
 """
 
 add_newline = true
+command_timeout =  500
 
 [character]
 format = "$symbol "

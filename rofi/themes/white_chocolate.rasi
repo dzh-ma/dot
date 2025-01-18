@@ -1,0 +1,182 @@
+/**
+ * ROFI Color theme
+ * User: Adapted to White Chocolate Theme
+ */
+
+* {
+    foreground:                        #794135; /* White Chocolate foreground */
+    backlight:                         #fffdfb; /* White Chocolate background */
+    background-color:                  transparent;
+    dark:                              #e4d7d3; /* White Chocolate neutral background */
+    red:                               #da1306; /* White Chocolate error */
+    red-alt:                           #bf1ca2; /* White Chocolate key */
+    orange:                            #b1a600; /* White Chocolate parameter */
+    gray-dark:                         #9d8580; /* White Chocolate comment */
+    element-bg:                        #eee9e7; /* White Chocolate cursorline */
+    cream:                             #69b98b; /* White Chocolate current */
+    highlight:                         underline bold #da1306; /* White Chocolate error with emphasis */
+    transparent:                       #00000000;
+    font:                              "UbuntuMono Nerd Font 18";
+    padding:                            0px;
+    margin:                             0px;
+}
+
+configuration {
+    display-drun: "Applications: ";
+    display-run: "Commands: ";
+    display-window: "Windows: ";
+}
+
+window {
+    width:                             24%;
+    location:                          center;
+    anchor:                            center;
+    padding:                           0px;
+    border:                            5px;
+    border-radius:                     0.2%;
+    border-color:                      @dark;
+    background-color:                  @dark;
+    spacing:                           0;
+    children:                          [mainbox];
+    orientation:                       horizontal;
+}
+
+mainbox {
+    spacing:                           0;
+    children:                          [ inputbar, message, listview ];
+}
+
+message {
+    border-color:                      @foreground;
+    padding:                           5px;
+    background-color:                  #69b98b; /* White Chocolate current */
+}
+
+message {
+    font:                              "Source Code Pro 8";
+    color:                             @dark;
+}
+
+inputbar {
+    color:                             @foreground;
+    padding:                           10px;
+    background-color:                  @dark;
+    border:                            2px 2px 2px 2px;
+    border-color:                      @gray-dark;
+    font:                              "Source Code Pro 18";
+}
+
+entry, prompt, case-indicator {
+    text-font:                         inherit;
+    text-color:                        @red;
+}
+
+prompt {
+    margin:                            0px 0.5em 0em 0em;
+}
+
+listview {
+    padding:                           3px;
+    border-color:                      @gray-dark;
+    border:                            0px 2px 2px 2px;
+    background-color:                  @dark;
+    dynamic:                           false;
+    lines:                             10;
+    columns:                           1;
+}
+
+element {
+    padding:                           3px;
+    vertical-align:                    0.5;
+    border:                            2px;
+    border-radius:                     0px;
+    background-color:                  @element-bg;
+    color:                             @cream;
+    font:inherit;
+}
+
+element-text {
+    background-color:                  inherit;
+    text-color:                        inherit;
+}
+
+element selected.normal {
+    background-color:                  @orange;
+    text-color:                        @dark;
+}
+
+element normal active {
+    foreground:                        @orange;
+}
+
+element normal urgent {
+    foreground:                        @foreground;
+}
+
+element alternate normal {
+}
+
+element alternate active {
+    foreground:                        @orange;
+}
+
+element alternate urgent {
+    foreground:                        @foreground;
+}
+
+/* current working window */
+element selected active {
+    background-color:                  @red-alt;
+    foreground:                        @dark;
+}
+
+element selected urgent {
+    background-color:                  @foreground;
+    foreground:                        @dark;
+}
+
+element normal normal {
+
+}
+
+vertb {
+    expand:                            false;
+    children:                          [ dummy0, mode-switcher, dummy1  ];
+}
+
+dummy0,  dummy1 {
+    expand:                            true;
+}
+
+mode-switcher {
+    expand:                            false;
+    orientation:                       vertical;
+    spacing:                           0px;
+    border:                            0px 0px 0px 0px;
+}
+
+button {
+    font:                              "FontAwesome 22";
+    padding:                           6px;
+    border:                            2px 0px 2px 2px;
+    border-radius:                     4px 0px 0px 4px;
+    background-color:                  @dark;
+    border-color:                      @foreground;
+    color:                             @foreground;
+    horizontal-align:                  0.5;
+}
+
+button selected normal {
+    color:                             @dark;
+    border:                            2px 0px 2px 2px;
+    background-color:                  @dark;
+    border-color:                      @foreground;
+}
+
+error-message {
+    expand:                            true;
+    background-color:                  @red-alt;
+    border-color:                      @dark;
+    border:                            2px;
+    padding:                           1em;
+}
