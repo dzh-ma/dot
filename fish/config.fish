@@ -40,7 +40,8 @@ if status is-interactive
     alias gs="git push"
     alias gl="git pull"
     alias q="exit"
-    alias f="fan_state set"
+    alias fg="fan_state get"
+    alias fs="fan_state set"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
