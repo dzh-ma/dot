@@ -35,7 +35,7 @@ window#waybar.hidden {
     color: #794135; /* White Chocolate foreground */
     padding: 0 4px;
     margin-bottom: 4px;
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 26px;
     font-weight: 800;
     border-bottom: 2px solid transparent;
@@ -48,7 +48,7 @@ window#waybar.hidden {
 
 #workspaces button.visible {
     color: #69b98b; /* White Chocolate current (green) */
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 26px;
     font-weight: 800;
     border-bottom: 2px solid #69b98b;
@@ -56,7 +56,7 @@ window#waybar.hidden {
 
 #workspaces button.active {
     color: #69b98b; /* White Chocolate current (green) */
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 26px;
     font-weight: 800;
     border-bottom: 2px solid #69b98b;
@@ -74,7 +74,7 @@ window#waybar.hidden {
     color: #bf1ca2; /* White Chocolate key */
     background: none;
     margin: 4px 8px;
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     border-bottom: 2px solid #bf1ca2;
@@ -92,7 +92,7 @@ window#waybar.hidden {
 /*            disk                  */
 /* ================================ */
 #disk {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #a54dff; /* White Chocolate special */
@@ -104,7 +104,7 @@ window#waybar.hidden {
 /*            cpu                   */
 /* ================================ */
 #cpu {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #1aa7d6; /* White Chocolate info */
@@ -116,7 +116,7 @@ window#waybar.hidden {
 /*            temp                  */
 /* ================================ */
 #temperature {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #bf1ca2; /* White Chocolate key */
@@ -125,7 +125,7 @@ window#waybar.hidden {
 }
 
 #temperature.critical {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #da1306; /* White Chocolate error (red) */
@@ -137,7 +137,7 @@ window#waybar.hidden {
 /*            backlight             */
 /* ================================ */
 #backlight {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #69b98b; /* White Chocolate current (green) */
@@ -149,7 +149,7 @@ window#waybar.hidden {
 /*            memory                */
 /* ================================ */
 #memory {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #9d8580; /* White Chocolate comment */
@@ -161,7 +161,7 @@ window#waybar.hidden {
 /*         pulseaudio               */
 /* ================================ */
 #pulseaudio {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #b1a600; /* White Chocolate parameter */
@@ -170,7 +170,7 @@ window#waybar.hidden {
 }
 
 #pulseaudio.muted {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #da1306; /* White Chocolate error (red) */
@@ -182,7 +182,7 @@ window#waybar.hidden {
 /*            battery               */
 /* ================================ */
 #battery {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #69b98b; /* White Chocolate current (green) */
@@ -191,7 +191,7 @@ window#waybar.hidden {
 }
 
 #battery.critical {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #da1306; /* White Chocolate error (red) */
@@ -200,7 +200,7 @@ window#waybar.hidden {
 }
 
 #battery.warning {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #bf1ca2; /* White Chocolate key */
@@ -212,7 +212,7 @@ window#waybar.hidden {
 /*            clock                 */
 /* ================================ */
 #clock {
-    font-family: IosevkaTermSlab Nerd Font Mono;
+    font-family: MonaspiceRn Nerd Font Mono;
     font-size: 20px;
     font-weight: 800;
     color: #69b98b; /* White Chocolate current (green) */

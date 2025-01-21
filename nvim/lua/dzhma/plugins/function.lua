@@ -37,7 +37,6 @@ return {
         keys = {
             { "<Space>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", desc = "Navigate directory" },
             { "<Space>l", "<cmd>lua require('telescope.builtin').live_grep()<CR>", desc = "Find phrase" },
-            { "<A-b>", "<cmd>lua require('telescope.builtin').buffers()<CR>", desc = "Navigate buffers" },
         },
         config = function()
             -- require telescope
@@ -290,5 +289,44 @@ return {
     {
         "sindrets/diffview.nvim",
         event = "VeryLazy",
+    },
+
+    {
+        "leath-dub/snipe.nvim",
+        keys = {
+            {"<A-g>", function () require("snipe").open_buffer_menu() end, desc = "Open Snipe buffer menu"}
+        },
+        opts = {
+            ui = {
+                position = "center",
+                open_win_override = {
+                    title = " ",
+                    border = "rounded",
+                },
+                hints = {
+                    dictionary = "aoeuhtns",
+                },
+            },
+        },
+    },
+
+    {
+        "kungfusheep/snipe-lsp.nvim",
+        event = "VeryLazy",
+        dependencies = "leath-dub/snipe.nvim",
+        opts = {
+            open_symbols_menu = '<leader>ds',
+            open_symbols_menu_for_split = '<leader>sds',
+            open_symbols_menu_for_vsplit = '<leader>vds',
+        },
+    },
+
+    {
+        "kungfusheep/snipe-spell.nvim",
+        dependencies = "leath-dub/snipe.nvim",
+        config = true,
+        keys = {
+            { "<Leader>S", "<cmd>SnipeSpell<cr>", desc = "Snipe Spellchecker" },
+        }
     },
 }

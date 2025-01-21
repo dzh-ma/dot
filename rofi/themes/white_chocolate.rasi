@@ -16,7 +16,7 @@
     cream:                             #69b98b; /* White Chocolate current */
     highlight:                         underline bold #da1306; /* White Chocolate error with emphasis */
     transparent:                       #00000000;
-    font:                              "UbuntuMono Nerd Font 18";
+    font:                              "MonaspiceRn Nerd Font 18";
     padding:                            0px;
     margin:                             0px;
 }
