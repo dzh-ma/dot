@@ -1,8 +1,8 @@
 return {
     {
         -- UI overhaul
-        'folke/noice.nvim',
-        event = "VeryLazy",
+        "folke/noice.nvim",
+        event = { "VeryLazy" },
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
@@ -42,10 +42,10 @@ return {
 
             require("notify").setup({
                 background_colour = "#000000",
-                render = "wrapped-default",
-                stages = "slide",
-                timeout = 5000,
-                max_width = 60,
+                render = "minimal",     -- default/minimal/simple/compact/wrapped-compact/wrapped-default
+                stages = "slide",       -- fade_in_slide_out/fade/slide/static
+                timeout = 0,
+                max_width = 30,
                 top_down = true,
             })
         end,
@@ -53,10 +53,10 @@ return {
 
     {
         -- Git information integration
-        'lewis6991/gitsigns.nvim',
+        "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
         config = function()
-            require('gitsigns').setup({
+            require("gitsigns").setup({
                 signs = {
                     add = { text = "+" },
                     change = { text = "~" },
@@ -70,7 +70,7 @@ return {
     },
 
     {
-        'nvim-tree/nvim-web-devicons',
+        "nvim-tree/nvim-web-devicons",
         event = "VeryLazy",
         config = function()
             vim.g.WebDevIconsUnicodeDecorateFolderNodes = 1
@@ -81,7 +81,7 @@ return {
     },
 
     {
-        'echasnovski/mini.nvim',
+        "echasnovski/mini.nvim",
         version = false,
     },
 
@@ -97,7 +97,7 @@ return {
         event = "VeryLazy", -- Or `LspAttach`
         priority = 1000, -- needs to be loaded in first
         config = function()
-            require('tiny-inline-diagnostic').setup({
+            require("tiny-inline-diagnostic").setup({
                 preset = "ghost",
             })
             vim.diagnostic.config({virtual_text = false})
@@ -108,67 +108,67 @@ return {
         "Bekaboo/dropbar.nvim",
         -- optional, but required for fuzzy finder support
         dependencies = {
-            'nvim-telescope/telescope-fzf-native.nvim',
-            build = 'make'
+            "nvim-telescope/telescope-fzf-native.nvim",
+            build = "make"
         },
         config = function()
-            local dropbar_api = require('dropbar.api')
+            local dropbar_api = require("dropbar.api")
 
-            vim.keymap.set('n', '<Leader>;', dropbar_api.pick, { desc = 'Pick symbols in winbar' })
-            vim.keymap.set('n', '[;', dropbar_api.goto_context_start, { desc = 'Go to start of current context' })
-            vim.keymap.set('n', '];', dropbar_api.select_next_context, { desc = 'Select next context' })
+            vim.keymap.set("n", "<Leader>;", dropbar_api.pick, { desc = "Pick symbols in winbar" })
+            vim.keymap.set("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current context" })
+            vim.keymap.set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
         end,
     },
 
     {
-        'isakbm/gitgraph.nvim',
+        "isakbm/gitgraph.nvim",
         opts = {
             format = {
-                timestamp = '%H:%M:%S %d-%m-%Y',
-                fields = { 'hash', 'timestamp', 'author', 'branch_name', 'tag' },
+                timestamp = "%H:%M:%S %d-%m-%Y",
+                fields = { "hash", "timestamp", "author", "branch_name", "tag" },
             },
             hooks = {
                 on_select_commit = function(commit)
-                    print('selected commit:', commit.hash)
+                    print("selected commit:", commit.hash)
                 end,
                 on_select_range_commit = function(from, to)
-                    print('selected range:', from.hash, to.hash)
+                    print("selected range:", from.hash, to.hash)
                 end,
             },
             symbols = {
-                merge_commit = '',
-                commit = '',
-                merge_commit_end = '',
-                commit_end = '',
+                merge_commit = "",
+                commit = "",
+                merge_commit_end = "",
+                commit_end = "",
 
                 -- Advanced symbols
-                GVER = '',
-                GHOR = '',
-                GCLD = '',
-                GCRD = '╭',
-                GCLU = '',
-                GCRU = '',
-                GLRU = '',
-                GLRD = '',
-                GLUD = '',
-                GRUD = '',
-                GFORKU = '',
-                GFORKD = '',
-                GRUDCD = '',
-                GRUDCU = '',
-                GLUDCD = '',
-                GLUDCU = '',
-                GLRDCL = '',
-                GLRDCR = '',
-                GLRUCL = '',
-                GLRUCR = '',
+                GVER = "",
+                GHOR = "",
+                GCLD = "",
+                GCRD = "╭",
+                GCLU = "",
+                GCRU = "",
+                GLRU = "",
+                GLRD = "",
+                GLUD = "",
+                GRUD = "",
+                GFORKU = "",
+                GFORKD = "",
+                GRUDCD = "",
+                GRUDCU = "",
+                GLUDCD = "",
+                GLUDCU = "",
+                GLRDCL = "",
+                GLRDCR = "",
+                GLRUCL = "",
+                GLRUCR = "",
             },
         },
         keys = {
             {
                 "<leader>gl",
                 function()
-                    require('gitgraph').draw({}, { all = true, max_count = 5000 })
+                    require("gitgraph").draw({}, { all = true, max_count = 5000 })
                 end,
                 desc = "GitGraph - Draw",
             },

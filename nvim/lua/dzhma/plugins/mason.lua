@@ -10,14 +10,22 @@ return {
 
             require("mason-lspconfig").setup({
                 ensure_installed = {
+                    "asm_lsp",
                     "clangd",
                     "cssls",
                     "gopls",
                     "html",
-                    "julials",
                     "jdtls",
+                    "julials",
+                    "lua_ls",
+                    "millet",
+                    "phpactor",
                     "pyright",
+                    "solargraph",
                     "rust_analyzer",
+                    "tinymist",
+                    "ts_ls",
+                    "yamlls",
                     "zls",
                 },
             })

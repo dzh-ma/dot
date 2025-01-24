@@ -1,25 +1,25 @@
 return {
     {
-        'christoomey/vim-system-copy',			        -- enables system yanking & pasting in & out of NeoVim
+        "christoomey/vim-system-copy",			        -- enables system yanking & pasting in & out of NeoVim
     },
 
     {
-        'echasnovski/mini.move',
+        "echasnovski/mini.move",
         version = false,
         config = function()
-            require('mini.move').setup({
+            require("mini.move").setup({
                 mappings = {
                     -- move selection in visual mode
-                    left = '<A-C-h>',
-                    right = '<A-C-l>',
-                    up = '<A-C-k>',
-                    down = '<A-C-j>',
+                    left = "<A-C-h>",
+                    right = "<A-C-l>",
+                    up = "<A-C-k>",
+                    down = "<A-C-j>",
 
                     -- move current line in normal mode
-                    line_left = '<A-C-h>',
-                    line_right = '<A-C-l>',
-                    line_up = '<A-C-k>',
-                    line_down = '<A-C-j>',
+                    line_left = "<A-C-h>",
+                    line_right = "<A-C-l>",
+                    line_up = "<A-C-k>",
+                    line_down = "<A-C-j>",
                 }
             })
         end,
@@ -178,7 +178,7 @@ return {
     },
 
     {
-        'stevearc/oil.nvim',					            -- file manipulation & traversal inside a buffer environment
+        "stevearc/oil.nvim",					            -- file manipulation & traversal inside a buffer environment
         event = "VeryLazy",
         config = function()
             require("oil").setup({
@@ -199,17 +199,17 @@ return {
     },
 
     {
-        'stevearc/aerial.nvim',
+        "stevearc/aerial.nvim",
         event = "VeryLazy",
         keys = { "<A-a>", "<Leader>a", "<Leader>A" },
         dependencies = {
-            'nvim-treesitter/nvim-treesitter',
-            'nvim-tree/nvim-web-devicons',
+            "nvim-treesitter/nvim-treesitter",
+            "nvim-tree/nvim-web-devicons",
         },
         config = function()
             require("aerial").setup({
                 backends = {
-                    ['_'] = { "treesitter" },
+                    ["_"] = { "treesitter" },
                     typst = { "lsp" },
                 },
 
@@ -219,8 +219,8 @@ return {
                 },
 
                 on_attach = function(bufnr)
-                    vim.keymap.set('n', '<Leader>a', '<cmd>AerialNext<CR>', { buffer = bufnr })
-                    vim.keymap.set('n', '<Leader>A', '<cmd>AerialPrev<CR>', { buffer = bufnr })
+                    vim.keymap.set("n", "<Leader>a", "<cmd>AerialNext<CR>", { buffer = bufnr })
+                    vim.keymap.set("n", "<Leader>A", "<cmd>AerialPrev<CR>", { buffer = bufnr })
                 end,
 
                 filter_kind = false
@@ -235,14 +235,14 @@ return {
                 --    "Struct",
                 --},
             })
-            vim.keymap.set('n', '<A-a>', '<cmd>AerialToggle!<CR>', { noremap = true, silent = true })
+            vim.keymap.set("n", "<A-a>", "<cmd>AerialToggle!<CR>", { noremap = true, silent = true })
         end,
     },
 
     {
-        'altermo/ultimate-autopair.nvim',
-        event={'InsertEnter','CmdlineEnter'},
-        branch='v0.6', --recommended as each new version will have breaking changes
+        "altermo/ultimate-autopair.nvim",
+        event={"InsertEnter","CmdlineEnter"},
+        branch="v0.6", --recommended as each new version will have breaking changes
         opts = {},
     },
 
@@ -271,24 +271,43 @@ return {
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
+        event = {
+            "VeryLazy",
+        },
         keys = {
             { "<Leader>t", "<cmd>TodoTelescope<CR>", desc = "Search all project todos" }
         },
         opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
+            keywords = {
+                BLOCKER = { icon = "󰂭 ", color = "error", alt = { "STOP", "PREVENT" } },
+                DEBUG = { icon = " ", color = "test", alt = { "TRACE", "LOG", "DEBUGGING" } },
+                DEPRECATED = { icon = " ", color = "error", alt = { "REMOVE", "OLD", "OBSOLETE" } },
+                DOCS = { icon = "󱔗 ", color = "hint", alt = { "DOCUMENTATION", "REFERENCE" } },
+                FIX = { icon = " ", color = "error", alt = { "FIXME", "BUG", "FIXIT", "ISSUE" } },
+                HACK = { icon = " ", color = "warning" },
+                IDEA = { icon = " ", color = "hint", alt = { "INSPIRATION", "SUGGESTION" } },
+                IMPORTANT = { icon = " ", color = "warning", alt = { "CRITICAL", "ATTENTION" } },
+                NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
+                PERF = { icon = " ", alt = { "OPTIM", "PERFORMANCE", "OPTIMIZE" } },
+                QUESTION = { icon = " ", color = "hint", alt = { "QUERY", "ASK", "HELP" } },
+                REFACTOR = { icon = " ", color = "hint", alt = { "REWRITE", "IMPROVE", "CLEANUP" } },
+                REVIEW = { icon = " ", color = "hint", alt = { "CHECK", "INSPECT", "VALIDATE" } },
+                TEST = { icon = "󰙨 ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
+                TODO = { icon = " ", color = "info" },
+                WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
+            },
+            merge_keywords = true, -- if true, extends the existing keywords instead of replacing them
         }
     },
 
     {
         "hinell/lsp-timeout.nvim",
-        dependencies = { "neovim/nvim-lspconfig" }
+        dependencies = { "neovim/nvim-lspconfig" },
     },
 
     {
         "sindrets/diffview.nvim",
-        event = "VeryLazy",
+        event = { "VeryLazy" },
     },
 
     {
@@ -312,18 +331,18 @@ return {
 
     {
         "kungfusheep/snipe-lsp.nvim",
-        event = "VeryLazy",
-        dependencies = "leath-dub/snipe.nvim",
+        event = { "VeryLazy" },
+        dependencies = { "leath-dub/snipe.nvim" },
         opts = {
-            open_symbols_menu = '<leader>ds',
-            open_symbols_menu_for_split = '<leader>sds',
-            open_symbols_menu_for_vsplit = '<leader>vds',
+            open_symbols_menu = "<leader>ds",
+            open_symbols_menu_for_split = "<leader>sds",
+            open_symbols_menu_for_vsplit = "<leader>vds",
         },
     },
 
     {
         "kungfusheep/snipe-spell.nvim",
-        dependencies = "leath-dub/snipe.nvim",
+        dependencies = { "leath-dub/snipe.nvim" },
         config = true,
         keys = {
             { "<Leader>S", "<cmd>SnipeSpell<cr>", desc = "Snipe Spellchecker" },

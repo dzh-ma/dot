@@ -11,9 +11,9 @@ return {
                     "go", "html", "java", "javascript", "julia", "json", "latex", "lua",
                     "markdown", "markdown_inline", "mermaid", "ocaml", "ocaml_interface",
                     "php", "python", "query", "regex", "ruby", "rust", "sql", "ssh_config",
-                    "typescript", "typst", "vim", "vimdoc", "vue", "xml", "yaml", "zig"
+                    "typescript", "typst", "vim", "vimdoc", "vue", "xml", "yaml", "zig",
                 },
-                sync_install = false,
+                sync_install = true,
                 highlight = { enable = true },
                 indent = { enable = true },
             })
@@ -21,10 +21,10 @@ return {
     },
 
     {
-        'CRAG666/code_runner.nvim',				        -- manually programmed code execution using a keyword
+        "CRAG666/code_runner.nvim",				        -- manually programmed code execution using a keyword
         event = "VeryLazy",
         config = function()
-            require('code_runner').setup({
+            require("code_runner").setup({
                 filetype = {
                     c = {
                         --"cd $dir &&",
@@ -70,29 +70,25 @@ return {
                     zig = "zig run",
                 },
             })
-            vim.keymap.set('n', '<leader>r', '<cmd>RunCode<CR>', { noremap = true, silent = false })
-            vim.keymap.set('n', '<leader>R', '<cmd>RunFile<CR>', { noremap = true, silent = false })
-            vim.keymap.set('n', '<leader>b', '<cmd>RunFile tab<CR>', { noremap = true, silent = false })
-            --vim.keymap.set('n', '<leader>P', '<cmd>RunProject<CR>', { noremap = true, silent = false })
-            --vim.keymap.set('n', '<leader>rc', '<cmd>RunClose<CR>', { noremap = true, silent = false })
-            --vim.keymap.set('n', '<leader>crf', ':CRFiletype<CR>', { noremap = true, silent = false })
-            --vim.keymap.set('n', '<leader>crp', ':CRProjects<CR>', { noremap = true, silent = false })
+            vim.keymap.set("n", "<leader>r", "<cmd>RunCode<CR>", { noremap = true, silent = false })
+            vim.keymap.set("n", "<leader>R", "<cmd>RunFile<CR>", { noremap = true, silent = false })
+            vim.keymap.set("n", "<leader>b", "<cmd>RunFile tab<CR>", { noremap = true, silent = false })
         end,
     },
 
     {
-        'mfussenegger/nvim-lint',				        -- linter integration using Mason linters
+        "mfussenegger/nvim-lint",				        -- linter integration using Mason linters
         event = { "BufReadPost", "BufNewFile" },
         config = function()
-            require('lint').linters_by_ft = {
-                python = {'pylint',},
-                cpp = {'cpplint',},
-                c = {'cpplint',},
-                ruby = {'rubocop',},
-                html = {'markuplint',},
-                js = {'oxlint',},
-                ts = {'oxlint',},
-                go = {'staticcheck',},
+            require("lint").linters_by_ft = {
+                python = {"pylint",},
+                cpp = {"cpplint",},
+                c = {"cpplint",},
+                ruby = {"rubocop",},
+                html = {"markuplint",},
+                js = {"oxlint",},
+                ts = {"oxlint",},
+                go = {"staticcheck",},
             }
             vim.api.nvim_create_autocmd({ "BufWritePost" }, {
                 callback = function()
