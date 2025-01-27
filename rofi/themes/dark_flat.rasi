@@ -15,7 +15,7 @@
     cream:                             #3dd177; /* Green */
     highlight:                         underline bold #00b0ff; /* Blue highlight */
     transparent:                       #00000000;
-    font:                              "ProFont IIx Nerd Font Mono 10";
+    font:                              "Hasklug Nerd Font 16";
     padding:                           0px;
     margin:                            0px;
 }

@@ -8,7 +8,7 @@ if status is-interactive
     # ALIASES
     alias n="nvim"
     alias z="zoxide"
-    alias e="exa --long --icons --all --no-quotes --across --modified --total-size --grid"
+    alias e="exa --long --icons --all --no-quotes --across --modified --total-size --grid --group-directories-first"
     alias clear="clear && fastfetch"
     alias za="zathura"
     alias img="kitty +kitten icat"

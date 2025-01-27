@@ -35,8 +35,8 @@ window#waybar.hidden {
     color: #b0bec4; /* Foreground */
     padding: 0 4px;
     margin-bottom: 4px;
-    font-family: ProFont IIx Nerd Font Mono;
-    font-size: 26px;
+    font-family: Hasklug Nerd Font;
+    font-size: 16px;
     font-weight: 800;
     border-bottom: 2px solid transparent;
 }
@@ -64,8 +64,8 @@ window#waybar.hidden {
     color: #d54e53; /* Red */
     background: none;
     margin: 4px 8px;
-    font-family: ProFont IIx Nerd Font Mono;
-    font-size: 26px;
+    font-family: Hasklug Nerd Font;
+    font-size: 16px;
     font-weight: 800;
     border-bottom: 2px solid #d54e53;
 }
@@ -82,8 +82,8 @@ window#waybar.hidden {
 /*            disk                  */
 /* ================================ */
 #disk {
-    font-family: ProFont IIx Nerd Font Mono;
-    font-size: 26px;
+    font-family: Hasklug Nerd Font;
+    font-size: 16px;
     font-weight: 800;
     color: #c678dd; /* Purple */
     margin: 5px 2px;
@@ -94,8 +94,8 @@ window#waybar.hidden {
 /*            cpu                   */
 /* ================================ */
 #cpu {
-    font-family: ProFont IIx Nerd Font Mono;
-    font-size: 26px;
+    font-family: Hasklug Nerd Font;
+    font-size: 16px;
     font-weight: 800;
     color: #00b0ff; /* Blue */
     margin: 5px 2px;
@@ -106,8 +106,8 @@ window#waybar.hidden {
 /*            temp                  */
 /* ================================ */
 #temperature {
-    font-family: ProFont IIx Nerd Font Mono;
-    font-size: 26px;
+    font-family: Hasklug Nerd Font;
+    font-size: 16px;
     font-weight: 800;
     color: #d54e53; /* Red */
     margin: 5px 3px;
@@ -123,8 +123,8 @@ window#waybar.hidden {
 /*            backlight             */
 /* ================================ */
 #backlight {
-    font-family: ProFont IIx Nerd Font Mono;
-    font-size: 26px;
+    font-family: Hasklug Nerd Font;
+    font-size: 16px;
     font-weight: 800;
     color: #64fcda; /* Cyan */
     margin: 5px 3px;
@@ -135,8 +135,8 @@ window#waybar.hidden {
 /*            memory                */
 /* ================================ */
 #memory {
-    font-family: ProFont IIx Nerd Font Mono;
-    font-size: 26px;
+    font-family: Hasklug Nerd Font;
+    font-size: 16px;
     font-weight: 800;
     color: #676e7b; /* Gray */
     margin: 5px 3px;
@@ -147,8 +147,8 @@ window#waybar.hidden {
 /*         pulseaudio               */
 /* ================================ */
 #pulseaudio {
-    font-family: ProFont IIx Nerd Font Mono;
-    font-size: 26px;
+    font-family: Hasklug Nerd Font;
+    font-size: 16px;
     font-weight: 800;
     color: #64fcda; /* Cyan */
     margin: 5px 3px;
@@ -164,8 +164,8 @@ window#waybar.hidden {
 /*            battery               */
 /* ================================ */
 #battery {
-    font-family: ProFont IIx Nerd Font Mono;
-    font-size: 26px;
+    font-family: Hasklug Nerd Font;
+    font-size: 16px;
     font-weight: 800;
     color: #3dd177; /* Green */
     margin: 5px 3px;
@@ -186,8 +186,8 @@ window#waybar.hidden {
 /*            clock                 */
 /* ================================ */
 #clock {
-    font-family: ProFont IIx Nerd Font Mono;
-    font-size: 26px;
+    font-family: Hasklug Nerd Font;
+    font-size: 16px;
     font-weight: 800;
     color: #3dd177; /* Green */
     margin: 5px 3px;
