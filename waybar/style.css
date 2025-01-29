@@ -14,8 +14,8 @@
 
 /* the whole window */
 window#waybar {
-    background: #000000; /* True black background */
-    color: #b0bec4; /* Foreground */
+    background: #fffdfb; /* White Chocolate background */
+    color: #794135; /* White Chocolate foreground */
     padding: 0;
     margin: 0;
 }
@@ -32,42 +32,52 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    color: #b0bec4; /* Foreground */
+    color: #794135; /* White Chocolate foreground */
     padding: 0 4px;
     margin-bottom: 4px;
-    font-family: Hasklug Nerd Font;
-    font-size: 16px;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 12px;
     font-weight: 800;
     border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {
-    color: #d54e53; /* Red */
+    color: #bf1ca2; /* White Chocolate key */
     background: none;
 }
 
-#workspaces button.visible,
+#workspaces button.visible {
+    color: #69b98b; /* White Chocolate current (green) */
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 12px;
+    font-weight: 800;
+    border-bottom: 2px solid #69b98b;
+}
+
 #workspaces button.active {
-    color: #3dd177; /* Green */
-    border-bottom: 2px solid #3dd177;
+    color: #69b98b; /* White Chocolate current (green) */
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 12px;
+    font-weight: 800;
+    border-bottom: 2px solid #69b98b;
 }
 
 #workspaces button.urgent {
-    color: #d03770; /* Bright red */
-    border-bottom: 2px solid #d03770;
+    color: #da1306; /* White Chocolate error (red) */
+    border-bottom: 2px solid #da1306;
 }
 
 /* ================================ */
 /*            window                */
 /* ================================ */
 #window {
-    color: #d54e53; /* Red */
+    color: #bf1ca2; /* White Chocolate key */
     background: none;
     margin: 4px 8px;
-    font-family: Hasklug Nerd Font;
-    font-size: 16px;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
     font-weight: 800;
-    border-bottom: 2px solid #d54e53;
+    border-bottom: 2px solid #bf1ca2;
 }
 
 /* ================================ */
@@ -82,114 +92,130 @@ window#waybar.hidden {
 /*            disk                  */
 /* ================================ */
 #disk {
-    font-family: Hasklug Nerd Font;
-    font-size: 16px;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
     font-weight: 800;
-    color: #c678dd; /* Purple */
+    color: #a54dff; /* White Chocolate special */
     margin: 5px 2px;
-    border-bottom: 2px solid #c678dd;
+    border-bottom: 2px solid #a54dff;
 }
 
 /* ================================ */
 /*            cpu                   */
 /* ================================ */
 #cpu {
-    font-family: Hasklug Nerd Font;
-    font-size: 16px;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
     font-weight: 800;
-    color: #00b0ff; /* Blue */
+    color: #1aa7d6; /* White Chocolate info */
     margin: 5px 2px;
-    border-bottom: 2px solid #00b0ff;
+    border-bottom: 2px solid #1aa7d6;
 }
 
 /* ================================ */
 /*            temp                  */
 /* ================================ */
 #temperature {
-    font-family: Hasklug Nerd Font;
-    font-size: 16px;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
     font-weight: 800;
-    color: #d54e53; /* Red */
+    color: #bf1ca2; /* White Chocolate key */
     margin: 5px 3px;
-    border-bottom: 2px solid #d54e53;
+    border-bottom: 2px solid #bf1ca2;
 }
 
 #temperature.critical {
-    color: #d03770; /* Bright red */
-    border-bottom: 2px solid #d03770;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
+    font-weight: 800;
+    color: #da1306; /* White Chocolate error (red) */
+    margin: 5px 3px;
+    border-bottom: 2px solid #da1306;
 }
 
 /* ================================ */
 /*            backlight             */
 /* ================================ */
 #backlight {
-    font-family: Hasklug Nerd Font;
-    font-size: 16px;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
     font-weight: 800;
-    color: #64fcda; /* Cyan */
+    color: #69b98b; /* White Chocolate current (green) */
     margin: 5px 3px;
-    border-bottom: 2px solid #64fcda;
+    border-bottom: 2px solid #69b98b;
 }
 
 /* ================================ */
 /*            memory                */
 /* ================================ */
 #memory {
-    font-family: Hasklug Nerd Font;
-    font-size: 16px;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
     font-weight: 800;
-    color: #676e7b; /* Gray */
+    color: #9d8580; /* White Chocolate comment */
     margin: 5px 3px;
-    border-bottom: 2px solid #676e7b;
+    border-bottom: 2px solid #9d8580;
 }
 
 /* ================================ */
 /*         pulseaudio               */
 /* ================================ */
 #pulseaudio {
-    font-family: Hasklug Nerd Font;
-    font-size: 16px;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
     font-weight: 800;
-    color: #64fcda; /* Cyan */
+    color: #b1a600; /* White Chocolate parameter */
     margin: 5px 3px;
-    border-bottom: 2px solid #64fcda;
+    border-bottom: 2px solid #b1a600;
 }
 
 #pulseaudio.muted {
-    color: #d03770; /* Bright red */
-    border-bottom: 2px solid #d03770;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
+    font-weight: 800;
+    color: #da1306; /* White Chocolate error (red) */
+    margin: 5px 3px;
+    border-bottom: 2px solid #da1306;
 }
 
 /* ================================ */
 /*            battery               */
 /* ================================ */
 #battery {
-    font-family: Hasklug Nerd Font;
-    font-size: 16px;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
     font-weight: 800;
-    color: #3dd177; /* Green */
+    color: #69b98b; /* White Chocolate current (green) */
     margin: 5px 3px;
-    border-bottom: 2px solid #3dd177;
+    border-bottom: 2px solid #69b98b;
 }
 
 #battery.critical {
-    color: #d03770; /* Bright red */
-    border-bottom: 2px solid #d03770;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
+    font-weight: 800;
+    color: #da1306; /* White Chocolate error (red) */
+    margin: 5px 3px;
+    border-bottom: 2px solid #da1306;
 }
 
 #battery.warning {
-    color: #ffc900; /* Yellow */
-    border-bottom: 2px solid #ffc900;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
+    font-weight: 800;
+    color: #bf1ca2; /* White Chocolate key */
+    margin: 5px 3px;
+    border-bottom: 2px solid #bf1ca2;
 }
 
 /* ================================ */
 /*            clock                 */
 /* ================================ */
 #clock {
-    font-family: Hasklug Nerd Font;
-    font-size: 16px;
+    font-family: MonaspiceRn Nerd Font Mono;
+    font-size: 20px;
     font-weight: 800;
-    color: #3dd177; /* Green */
+    color: #69b98b; /* White Chocolate current (green) */
     margin: 5px 3px;
-    border-bottom: 2px solid #3dd177;
+    border-bottom: 2px solid #69b98b;
 }

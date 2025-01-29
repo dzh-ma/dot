@@ -73,6 +73,7 @@ return {
             "rafamadriz/friendly-snippets",			        -- snippet collection for a range of programming languages
             "onsails/lspkind.nvim",				            -- devicon integration into LSP autocomplete
             "roobert/tailwindcss-colorizer-cmp.nvim",
+            "f3fora/cmp-spell",                             -- dictionary autocompletion
         },
         config = function()
             require("luasnip.loaders.from_vscode").lazy_load()
@@ -118,6 +119,16 @@ return {
                     { name = "luasnip" }, -- luasnips
                     { name = "buffer" }, -- text within the current buffer
                     { name = "path" }, -- file system paths
+                    {
+                        name = "spell",
+                        option = {
+                            keep_all_entries = false,
+                            enable_in_context = function ()
+                                return true
+                            end,
+                            preselect_correct_word = true,
+                        },
+                    },
                 }),
                 formatting = {
                     fields = { "kind", "abbr", "menu" },

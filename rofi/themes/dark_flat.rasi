@@ -1,21 +1,21 @@
 /**
- * ROFI Color Theme - Dark Flat
+ * ROFI Color Theme - Dark Flat (Updated)
  */
 
 * {
-    foreground:                        #b0bec4; /* Foreground */
+    foreground:                        #FF0000; /* Foreground */
     backlight:                         #000000; /* True black background */
     background-color:                  transparent;
-    dark:                              #1e2024; /* Dark gray */
-    red:                               #d54e53; /* Red */
-    red-alt:                           #d03770; /* Alternate red */
-    orange:                            #ffc900; /* Yellow/Orange */
-    gray-dark:                         #676e7b; /* Gray */
-    element-bg:                        #383a3e; /* Element background */
-    cream:                             #3dd177; /* Green */
-    highlight:                         underline bold #00b0ff; /* Blue highlight */
+    dark:                              #000000; /* Dark gray */
+    red:                               #FF0000; /* Red */
+    red-alt:                           #F07178; /* Alternate red */
+    orange:                            #FFCB6B; /* Yellow/Orange */
+    gray-dark:                         #000000; /* Gray */
+    element-bg:                        #000000; /* Element background */
+    cream:                             #FF0000; /* Green */
+    highlight:                         underline bold #FF0000; /* Blue highlight */
     transparent:                       #00000000;
-    font:                              "Hasklug Nerd Font 16";
+    font:                              "CaskaydiaCove Nerd Font Mono 16";
     padding:                           0px;
     margin:                            0px;
 }

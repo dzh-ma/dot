@@ -9,6 +9,7 @@ vim.opt.signcolumn = "yes"          -- prevents screen jumping right when LSP is
 vim.opt.conceallevel = 3
 vim.opt.concealcursor = "cn"
 vim.opt.spell = true
+vim.opt.spelllang = { "en_us" }
 
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4                   -- consistent tabbing
@@ -21,8 +22,8 @@ vim.opt.scrolloff = 999
 vim.opt.sidescrolloff = 999
 
 -- menu line appearance
-vim.opt.laststatus = 2
-vim.opt.showtabline = 2
+vim.opt.laststatus = 0
+vim.opt.showtabline = 0
 
 -- neovide settings
 vim.g.neovide_cursor_animation_length = 0.13

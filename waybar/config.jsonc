@@ -19,21 +19,12 @@
         "clock"
     ],
 
-    "temperature": {
-        "tooltip": false,
-        "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
-        "critical-threshold": 70,
-        "format-critical": "<span color='#d03770' bgcolor='#000000'> TEM </span> {temperatureC}°C",
-        "format": "<span color='#d54e53' bgcolor='#000000'> TMP </span> {temperatureC}°C"
-    },
-
     "hyprland/workspaces": {
         "disable-scroll": true,
         "active-only": false,
         "all-outputs": true,
         "warp-on-scroll": false,
-        //"format": "{icon}",
+        "format": "{icon}",
         //"format-icons": {
         //    "1": "󰎤",
         //    "2": "󰎧",
@@ -47,7 +38,7 @@
     },
 
     "hyprland/window": {
-        "format": "<span color='#d54e53' bgcolor='#000000'> WIN </span> {class}",
+        "format": "<span color='#794135' bgcolor='#fffdfb'> WIN </span> {class}",
         "separate-outputs": true
     },
 
@@ -57,32 +48,41 @@
     },
 
     "disk": {
-        "format": "<span color='#c678dd' bgcolor='#000000'> DSK </span> {free}",
+        "format": "<span color='#794135' bgcolor='#fffdfb'> DSK </span> {free}",
         "interval": 20
     },
 
     "cpu": {
-        "format": "<span color='#00b0ff' bgcolor='#000000'> CPU </span> {usage}%",
+        "format": "<span color='#794135' bgcolor='#fffdfb'> CPU </span> {usage}%",
         "tooltip": false,
         "interval": 1
     },
 
+    "temperature": {
+        "tooltip": false,
+        "thermal-zone": 2,
+        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
+        "critical-threshold": 70,
+        "format-critical": "<span color='#da1306' bgcolor='#fffdfb'> TEM </span> {temperatureC}°C",
+        "format": "<span color='#794135' bgcolor='#fffdfb'> TMP </span> {temperatureC}°C"
+    },
+
     "backlight": {
-        "format": "<span color='#64fcda' bgcolor='#000000'> BRI </span> {percent}%",
+        "format": "<span color='#794135' bgcolor='#fffdfb'> BRI </span> {percent}%",
         "tooltip": false
     },
 
     "memory": {
-        "format": "<span color='#676e7b' bgcolor='#000000'> MEM </span> {used}GiB",
+        "format": "<span color='#794135' bgcolor='#fffdfb'> MEM </span> {used}GiB",
         "interval": 1,
         "tooltip": false
     },
 
     "pulseaudio": {
-        "format": "<span color='#64fcda' bgcolor='#000000'> VOL </span> {volume}%",
-        "format-muted": "<span color='#d03770' bgcolor='#000000'> MUTE </span> {volume}%",
-        "format-bluetooth": "<span color='#64fcda' bgcolor='#000000'> BLU </span> {volume}%",
-        "format-bluetooth-muted": "<span color='#d03770' bgcolor='#000000'> MUTE </span> {volume}%",
+        "format": "<span color='#794135' bgcolor='#fffdfb'> VOL </span> {volume}%",
+        "format-muted": "<span color='#da1306' bgcolor='#fffdfb'> MUTE </span> {volume}%",
+        "format-bluetooth": "<span color='#794135' bgcolor='#fffdfb'> BLU </span> {volume}%",
+        "format-bluetooth-muted": "<span color='#da1306' bgcolor='#fffdfb'> MUTE </span> {volume}%",
         "format-source": "{volume}% ",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "tooltip": false,
@@ -100,18 +100,18 @@
             "warning": 40,
             "critical": 15
         },
-        "format": "<span color='#3dd177' bgcolor='#000000'> BAT </span> {capacity}%",
-        "format-critical": "<span color='#d03770' bgcolor='#000000'> BAT </span> {capacity}%!!",
-        "format-warning": "<span color='#ffc900' bgcolor='#000000'> BAT </span> {capacity}%",
-        "format-full": "<span color='#3dd177' bgcolor='#000000'> FULL </span> {capacity}%",
-        "format-charging": "<span color='#3dd177' bgcolor='#000000'> POW </span> {capacity}%",
-        "format-plugged": "<span color='#3dd177' bgcolor='#000000'> POW </span> {capacity}%",
-        "format-alt": "<span color='#3dd177' bgcolor='#000000'> BAT </span> {time}",
+        "format": "<span color='#794135' bgcolor='#fffdfb'> BAT </span> {capacity}%",
+        "format-critical": "<span color='#da1306' bgcolor='#fffdfb'> BAT </span> {capacity}%!!",
+        "format-warning": "<span color='#bf1ca2' bgcolor='#fffdfb'> BAT </span> {capacity}%",
+        "format-full": "<span color='#794135' bgcolor='#fffdfb'> FULL </span> {capacity}%",
+        "format-charging": "<span color='#794135' bgcolor='#fffdfb'> POW </span> {capacity}%",
+        "format-plugged": "<span color='#794135' bgcolor='#fffdfb'> POW </span> {capacity}%",
+        "format-alt": "<span color='#794135' bgcolor='#fffdfb'> BAT </span> {time}",
         "tooltip": false
     },
 
     "clock": {
-        "format": "<span color='#3dd177' bgcolor='#000000'> DAY </span> {:%a %H:%M:%S %Y-%m-%d}",
+        "format": "<span color='#794135' bgcolor='#fffdfb'> DAY </span> {:%a %H:%M:%S %Y-%m-%d}",
         "tooltip": false,
         "interval": 1
     }
