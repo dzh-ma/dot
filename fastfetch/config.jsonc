@@ -12,19 +12,52 @@
         //{
         //    "type": "custom",
         //    "format": "\u001b[36m  󰊠  コンピューター"
-        //},
+
         {
             "type": "custom",
-            "format": "┌──────────────────────────────────────────┐"
+            "format": "┌────────────────────────────────────────────────┐"
+        },
+        {
+            "type": "host",
+            "format": "{0}",
+            "key": "    OS"
+        },
+        {
+            "type": "title",
+            "key": "  󰊠 User"
+        },
+        {
+            "type": "datetime",
+            "key": "   Date-Time"
+        },
+        {
+            "type": "brightness",
+            "format": "{0}",
+            "key": "   Brightness",
+        },
+        {
+            "type": "battery",
+            //"format": "{0}",
+            "key": "    Battery",
+        },
+        {
+            "type": "custom",
+            "format": "└────────────────────────────────────────────────┘"
+        },
+        {
+            "type": "custom",
+            "format": "┌────────────────────────────────────────────────┐"
         },
         {
             "type": "os",
             "key": "   OS",
+            "format": "{2}",
             "keyColor": "red"
         },
         {
             "type": "kernel",
             "key": "   Kernel",
+            "format": "{2}",
             "keyColor": "red"
         },
         {
@@ -40,25 +73,22 @@
         {
             "type": "wm",
             "key": "   WM",
+            "format": "{0}",
             "keyColor": "yellow"
         },
         {
             "type": "terminal",
             "key": "   Terminal",
+            "format": "{0}",
             "keyColor": "yellow"
         },
         {
             "type": "custom",
-            "format": "└──────────────────────────────────────────┘"
-        },
-        "break",
-        {
-            "type": "title",
-            "key": "  󰊠"
+            "format": "└────────────────────────────────────────────────┘"
         },
         {
             "type": "custom",
-            "format": "┌──────────────────────────────────────────┐"
+            "format": "┌────────────────────────────────────────────────┐"
         },
         {
             "type": "cpu",
@@ -73,9 +103,8 @@
             "keyColor": "blue"
         },
         {
-            "type": "gpu",
-            "format": "{3}",
-            "key": "   GPU Driver",
+            "type": "wifi",
+            "key": "  󰍛 Wifi",
             "keyColor": "magenta"
         },
         {
@@ -84,8 +113,18 @@
             "keyColor": "magenta"
         },
         {
+            "type": "swap",
+            "key": "   Swap",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "disk",
+            "key": "   Disk",
+            "keyColor": "cyan"
+        },
+        {
             "type": "custom",
-            "format": "└──────────────────────────────────────────┘"
+            "format": "└────────────────────────────────────────────────┘"
         },
         "break"
         //{

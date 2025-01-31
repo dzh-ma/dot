@@ -1,0 +1,112 @@
+/* ROFI Color Theme - Custom */
+
+* {
+    foreground:                        #ffffff;
+    backlight:                         #16181a;
+    background-color:                  transparent;
+    dark:                              #3c4048;
+    red:                               #ff6e5e;
+    red-alt:                           #ffbd5e;
+    orange:                            #bd5eff;
+    gray-dark:                         #3c4048;
+    element-bg:                        #16181a;
+    cream:                             #5ea1ff;
+    highlight:                         underline bold #5eff6c;
+    transparent:                       #00000000;
+    font:                              "ShureTechMono Nerd Font Mono";
+    padding:                           0px;
+    margin:                            0px;
+}
+
+configuration {
+        display-drun: "Applications: ";
+        display-run: "Commands: ";
+        display-window: "Windows: ";
+}
+
+window {
+    width:                             24%;
+    location:                          center;
+    anchor:                            center;
+    padding:                           0px;
+    border:                            5px;
+    border-radius:                     0.2%;
+    border-color:                      @dark;
+    background-color:                  @dark;
+    spacing:                           0;
+    children:                          [mainbox];
+    orientation:                       horizontal;
+}
+
+mainbox {
+    spacing:                           0;
+    children:                          [ inputbar, message, listview ];
+}
+
+message {
+    border-color:                      @foreground;
+    padding:                           5;
+    background-color:                  #ffffff;
+    font:                              "ShureTechMono Nerd Font Mono";
+    color:                             @dark;
+}
+
+inputbar {
+    color:                             @foreground;
+    padding:                           10px;
+    background-color:                  @dark;
+    border:                            2px 2px 2px 2px;
+    border-color:                      @gray-dark;
+    font:                              "ShureTechMono Nerd Font Mono";
+}
+
+element {
+    padding:                           3px;
+    vertical-align:                    0.5;
+    border:                            2px;
+    border-radius:                     0px;
+    background-color:                  @element-bg;
+    color:                             @cream;
+    font:inherit;
+}
+
+element selected.normal {
+    background-color:                  @orange;
+    text-color:                        @dark;
+}
+
+element selected active {
+    background-color:                  @red-alt;
+    foreground:                        @dark;
+}
+
+element selected urgent {
+    background-color:                  @foreground;
+    foreground:                        @dark;
+}
+
+button {
+    font:                              "FontAwesome 22";
+    padding:                           6px;
+    border:                            2px 0px 2px 2px;
+    border-radius:                     4px 0px 0px 4px;
+    background-color:                  @dark;
+    border-color:                      @foreground;
+    color:                             @foreground;
+    horizontal-align:                  0.5;
+}
+
+button selected normal {
+    color:                             @dark;
+    border:                            2px 0px 2px 2px;
+    background-color:                  @dark;
+    border-color:                      @foreground;
+}
+
+error-message {
+    expand:                            true;
+    background-color:                  @red-alt;
+    border-color:                      @dark;
+    border:                            2px;
+    padding:                           1em;
+}

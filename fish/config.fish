@@ -42,6 +42,7 @@ if status is-interactive
     alias q="exit"
     alias fg="fan_state get"
     alias fs="fan_state set"
+    alias a="clear"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
