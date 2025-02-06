@@ -60,16 +60,6 @@ return {
     },
 
     {
-        "AckslD/nvim-FeMaco.lua",
-        keys = {
-            { "<A-f>", "<cmd>FeMaco<CR>", "code block isolation" },
-        },
-        config = function ()
-            require("femaco").setup()
-        end,
-    },
-
-    {
         "OXY2DEV/helpview.nvim",
         ft = "help",
         dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -83,20 +73,5 @@ return {
     {
         "dhruvasagar/vim-table-mode",
         ft = { "markdown", "typst" },
-    },
-
-    {
-        "iamcco/markdown-preview.nvim",
-        ft = { "markdown" },
-        build = "cd app && yarn install",
-        config = function() vim.g.mkdp_filetypes = { "markdown" } end,
-    },
-
-    {
-        "opdavies/toggle-checkbox.nvim",
-        ft = { "markdown" },
-        config = function ()
-            vim.keymap.set("n", "<A-t>", ":lua require('toggle-checkbox').toggle()<CR>")
-        end
     },
 }

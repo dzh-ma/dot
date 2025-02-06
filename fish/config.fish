@@ -8,7 +8,8 @@ if status is-interactive
     # ALIASES
     alias n="nvim"
     alias z="zoxide"
-    alias e="exa --long --icons --all --no-quotes --across --modified --total-size --grid --group-directories-first"
+    alias E="exa --long --icons --all --no-quotes --across --modified --total-size --grid --group-directories-first"
+    alias e="exa --long --icons --all --no-quotes --across --modified --grid --group-directories-first"
     alias clear="clear && fastfetch"
     alias za="zathura"
     alias img="kitty +kitten icat"
@@ -43,6 +44,7 @@ if status is-interactive
     alias fg="fan_state get"
     alias fs="fan_state set"
     alias a="clear"
+    alias b="btop"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin

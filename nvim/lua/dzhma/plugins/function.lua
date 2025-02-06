@@ -32,149 +32,62 @@ return {
         dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-telescope/telescope-fzf-native.nvim",
+            "jvgrootveld/telescope-zoxide",
         },
         cmd = "Telescope",
         keys = {
             { "<Space>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", desc = "Navigate directory" },
             { "<Space>l", "<cmd>lua require('telescope.builtin').live_grep()<CR>", desc = "Find phrase" },
+            -- { "<Space>C", "<cmd>lua require('telescope').extensions.zoxide.list<CR>", { desc = "Zoxide search" } }
         },
         config = function()
-            -- require telescope
             local telescope = require("telescope")
 
-            -- require telescope actions
-            local actions = require("telescope.actions")
-
-            -- load fzf
+            -- load extensions
             telescope.load_extension("fzf")
-
-            -- custom setup
-            telescope.setup({
-                defaults = {
-                    layout_strategy = "vertical", -- vertical layout
-                    sorting_strategy = "ascending",
-                    results_title = "",
-                    prompt_prefix = "  ", --  ›
-                    selection_caret = " › ",
-                    entry_prefix = "   ", -- each entry result prefix
+            telescope.load_extension('zoxide')
+        end,
+        opts = {
+            defaults = {
+                layout_strategy = "horizontal",
+                layout_config = {
+                    horizontal = {
+                        prompt_position = "bottom",
+                        preview_width = 0.5,
+                    },
+                    width = 1.0,
+                    height = 1.0,
+                    preview_cutoff = 120,
+                },
+                sorting_strategy = "descending",
+                winblend = 0,
+            },
+            extensions = {
+                persisted = {
                     layout_config = {
                         prompt_position = "top",
-                        width = 0.7,
-                        height = 0.6,
+                        width = 0.6,
+                        height = 0.5,
                     },
+                },
+                zoxide = {
+                    prompt_title = "[ Walking on the shoulders of TJ ]",
                     mappings = {
-                        i = {
-                            ["<C-k>"] = actions.move_selection_previous,
-                            ["<C-j>"] = actions.move_selection_next,
-                            ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+                        default = {
+                            after_action = function(selection)
+                                print("Update to (" .. selection.z_score .. ") " .. selection.path)
+                            end
                         },
-                    },
-                    -- result numbers at the right: matches|total
-                    get_status_text = function(picker)
-                        local total = picker.stats.processed or 0
-                        local matches = total - (picker.stats.filtered or 0)
-
-                        if matches == 0 and total == 0 then
-                            return ""
-                        end
-
-                        return string.format("%s|%s ", matches, total)
-                    end,
-                },
-                pickers = {
-                    find_files = {
-                        previewer = false,
-                        layout_config = {
-                            prompt_position = "top",
-                            width = 0.6,
-                            height = 0.5,
-                        },
-                    },
-                    live_grep = {
-                        previewer = false,
-                        prompt_title = "Global Search",
-                        results_title = "", -- results
-                        layout_config = {
-                            prompt_position = "top",
-                            width = 0.7,
-                            height = 0.6,
-                        },
-                    },
-                    current_buffer_fuzzy_find = {
-                        previewer = false,
-                        prompt_title = "Search",
-                        results_title = "", -- results
-                        layout_config = {
-                            prompt_position = "top",
-                            width = 0.7,
-                            height = 0.6,
-                        },
-                    },
-                    buffers = {
-                        previewer = false,
-                        layout_config = {
-                            prompt_position = "top",
-                            width = 0.6,
-                            height = 0.5,
-                        },
-                    },
-                    git_bcommits = {
-                        previewer = false,
-                        layout_config = {
-                            prompt_position = "top",
-                            width = 0.7,
-                            height = 0.6,
-                        },
-                    },
-                    git_commits = {
-                        previewer = false,
-                        layout_config = {
-                            prompt_position = "top",
-                            width = 0.7,
-                            height = 0.6,
-                        },
-                    },
-                    git_status = {
-                        previewer = false,
-                        layout_config = {
-                            prompt_position = "top",
-                            width = 0.6,
-                            height = 0.5,
-                        },
-                    },
-                    git_branches = {
-                        previewer = false,
-                        layout_config = {
-                            prompt_position = "top",
-                            width = 0.6,
-                            height = 0.5,
-                        },
-                        -- overwrite default behavior of checking out to dettached HEAD
-                        mappings = {
-                            i = { ["<cr>"] = actions.git_switch_branch },
-                        },
-                    },
-                    diagnostics = {
-                        previewer = false,
-                        prompt_title = "Diagnostics",
-                        layout_config = {
-                            prompt_position = "top",
-                            width = 0.6,
-                            height = 0.5,
+                        ["<C-s>"] = {
+                            before_action = function(selection) print("before C-s") end,
+                            action = function(selection)
+                                vim.cmd.edit(selection.path)
+                            end
                         },
                     },
                 },
-                extensions = {
-                    persisted = {
-                        layout_config = {
-                            prompt_position = "top",
-                            width = 0.6,
-                            height = 0.5,
-                        },
-                    },
-                },
-            })
-        end,
+            },
+        }
     },
 
     {
@@ -244,6 +157,13 @@ return {
         event={"InsertEnter","CmdlineEnter"},
         branch="v0.6", --recommended as each new version will have breaking changes
         opts = {},
+    },
+
+    {
+        "NStefan002/visual-surround.nvim",
+        config = function ()
+            require("visual-surround").setup({})
+        end
     },
 
     {

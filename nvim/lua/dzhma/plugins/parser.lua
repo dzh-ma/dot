@@ -84,6 +84,7 @@ return {
                 python = {"pylint",},
                 cpp = {"cpplint",},
                 c = {"cpplint",},
+                json = { "jsonlint" },
                 ruby = {"rubocop",},
                 html = {"markuplint",},
                 js = {"oxlint",},

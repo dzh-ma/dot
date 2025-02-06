@@ -37,18 +37,18 @@ return {
                 chunk = {
                     enable = true,
                     style = {
-                        { fg = "#ff0000" },
-                        { fg = "#ff0000" },
+                        { fg = "#ffffff" },
+                        { fg = "#ffffff" },
                     },
                     delay = 0,
                     duration = 0,
                 },
                 indent = {
-                    enable = true,
+                    enable = false,
                 },
                 line_num = {
                     enable = true,
-                    style = "#ff0000",
+                    style = "#ffffff",
                 }
             })
         end

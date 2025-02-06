@@ -66,7 +66,8 @@ return {
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",				            -- autocomplete integration
             "hrsh7th/cmp-buffer",				            -- source of coding information for autocomplete to pull
-            "hrsh7th/cmp-path",				                -- source of file path information for autocomplete to pull
+            -- "hrsh7th/cmp-path",				                -- source of file path information for autocomplete to pull
+            "FelipeLema/cmp-async-path",                    -- general improvement on path
             "hrsh7th/cmp-cmdline",				            -- autocomplete integration inside cmdline
             "saadparwaiz1/cmp_luasnip",			            -- linker between autocomplete & LuaSnip
             "L3MON4D3/LuaSnip",				                -- code snippets to give code information from LSP
@@ -104,21 +105,28 @@ return {
                     end,
                 },
                 mapping = cmp.mapping.preset.insert({
-                    ["<C-P>"] = cmp.mapping.select_prev_item(), -- select previous suggestion
-                    ["<S-TAB>"] = cmp.mapping.select_prev_item(), -- select previous suggestion (2)
+                    ["<C-Space>"] = cmp.mapping.confirm({ select = true }),
+
                     ["<C-n>"] = cmp.mapping.select_next_item(), -- select next suggestion
-                    ["<TAB>"] = cmp.mapping.select_next_item(), -- select next suggestion (2)
-                    ["<C-L>"] = cmp.mapping.scroll_docs(-4), -- scroll docs down
-                    ["<C-H>"] = cmp.mapping.scroll_docs(4), -- scroll docs up
+                    ["<C-p>"] = cmp.mapping.select_prev_item(), -- select previous suggestion
+
+                    ["<C-u>"] = cmp.mapping.scroll_docs(4), -- scroll docs up
+                    ["<C-d>"] = cmp.mapping.scroll_docs(-4), -- scroll docs down
+
                     ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-                    ["<C-Space>"] = cmp.mapping.complete( { select = true } ), -- show completion suggestions
-                    ["<CR>"] = cmp.mapping.confirm({ select = false }), -- confirm suggestion
                 }),
+                experimental = {
+                    ghost_text = true,
+                },
+                view = {
+                    entries = "wild",
+                },
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" }, -- lsp
                     { name = "luasnip" }, -- luasnips
                     { name = "buffer" }, -- text within the current buffer
-                    { name = "path" }, -- file system paths
+                    -- { name = "path" }, -- file system paths
+                    { name = "async_path" },
                     {
                         name = "spell",
                         option = {

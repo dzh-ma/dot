@@ -103,11 +103,6 @@
             "keyColor": "blue"
         },
         {
-            "type": "wifi",
-            "key": "  󰍛 Wifi",
-            "keyColor": "magenta"
-        },
-        {
             "type": "memory",
             "key": "  󰍛 Memory",
             "keyColor": "magenta"
@@ -115,11 +110,16 @@
         {
             "type": "swap",
             "key": "   Swap",
-            "keyColor": "cyan"
+            "keyColor": "magenta"
         },
         {
             "type": "disk",
             "key": "   Disk",
+            "keyColor": "cyan"
+        },
+        {
+            "type": "wifi",
+            "key": "  󰍛 Wifi",
             "keyColor": "cyan"
         },
         {

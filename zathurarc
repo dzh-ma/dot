@@ -1,5 +1,5 @@
 # Font configuration
-set font "MonaspiceRn Nerd Font 14"
+set font "ShureTechMono Nerd Font Mono 16"
 
 # Clipboard yanking
 set selection-clipboard clipboard
@@ -13,37 +13,41 @@ set recolor-keephue true
 # Use SQLite for the database
 set database sqlite
 
-set default-bg "#fffdfb"       # White Chocolate background
-set default-fg "#794135"       # White Chocolate foreground
+# Base Colors (from Kitty)
+set default-bg "#16181a"
+set default-fg "#ffffff"
 
 # Recoloring for Text and Background
-set recolor-darkcolor "#794135"  # White Chocolate foreground
-set recolor-lightcolor "#fffdfb" # White Chocolate background
+set recolor-darkcolor "#ffffff"
+set recolor-lightcolor "#16181a"
 
 # Input Bar Colors
-set inputbar-bg "#e4d7d3"        # White Chocolate neutral background
-set inputbar-fg "#9d8580"        # White Chocolate comment
+set inputbar-bg "#16181a"
+set inputbar-fg "#ffffff"
 
 # Notification Colors
-set notification-bg "#e4d7d3"    # White Chocolate neutral background
-set notification-fg "#da1306"    # White Chocolate error (red)
+set notification-bg "#16181a"
+set notification-fg "#ffffff"
 
 # Status Bar Colors
-set statusbar-bg "#e4d7d3"       # White Chocolate neutral background
-set statusbar-fg "#9d8580"       # White Chocolate comment
+set statusbar-bg "#16181a"
+set statusbar-fg "#ffffff"
 
 # Highlight Colors
-set highlight-color "#69b98b"    # White Chocolate current (green)
-set highlight-active-color "#1aa7d6" # White Chocolate info (blue)
+# Using selection background for inactive highlights...
+set highlight-color "#3c4048"
+# ...and the active tab background from Kitty as the active highlight.
+set highlight-active-color "#ffbd5e"
 
 # Completion Colors
-set completion-bg "#e4d7d3"          # White Chocolate neutral background
-set completion-fg "#9d8580"          # White Chocolate comment
-set completion-highlight-bg "#1aa7d6" # White Chocolate info (blue)
-set completion-highlight-fg "#fffdfb" # White Chocolate background
+set completion-bg "#16181a"
+set completion-fg "#ffffff"
+set completion-highlight-bg "#3c4048"
+set completion-highlight-fg "#ffffff"
 
 # Index Colors
-set index-bg "#e4d7d3"          # White Chocolate neutral background
-set index-fg "#9d8580"          # White Chocolate comment
-set index-active-bg "#bf1ca2"   # White Chocolate key
-set index-active-fg "#fffdfb"   # White Chocolate background
+set index-bg "#16181a"
+set index-fg "#ffffff"
+# Use the active tab colors for active index items:
+set index-active-bg "#ffbd5e"
+set index-active-fg "#000000"

@@ -1,40 +1,53 @@
-/* ROFI Color Theme - Custom */
+/**
+ * ROFI Color Theme - Adapted from Kitty
+ */
 
 * {
-    foreground:                        #ffffff;
-    backlight:                         #16181a;
+    /* Base Colors */
+    foreground:                        #ffffff;        /* Primary text (Kitty foreground) */
+    backlight:                         #16181a;        /* Primary background (Kitty background) */
     background-color:                  transparent;
-    dark:                              #3c4048;
-    red:                               #ff6e5e;
-    red-alt:                           #ffbd5e;
-    orange:                            #bd5eff;
-    gray-dark:                         #3c4048;
-    element-bg:                        #16181a;
-    cream:                             #5ea1ff;
-    highlight:                         underline bold #5eff6c;
+    
+    /* Accent Colors */
+    dark:                              #3c4048;        /* Dark accent (Kitty selection_background / color8) */
+    red:                               #ff6e5e;        /* Error/Red accent (Kitty color1) */
+    red-alt:                           #ff6e5e;        /* Alternate red (Kitty color1) */
+    orange:                            #ffbd5e;        /* Active element accent (Kitty active_tab_background) */
+    gray-dark:                         #3c4048;        /* Reusing dark for borders, etc. */
+    
+    /* Element Colors */
+    element-bg:                        #16181a;        /* Same as backlight */
+    cream:                             #ffffff;        /* Use foreground for element text */
+    
+    /* Highlight styling */
+    highlight:                         underline bold #3c4048;  /* Underline & bold with the dark accent */
+    
     transparent:                       #00000000;
-    font:                              "ShureTechMono Nerd Font Mono";
+    
+    /* Font (using your desired font) */
+    font:                              "ShureTechMono Nerd Font Mono 16";
+    
     padding:                           0px;
     margin:                            0px;
 }
 
 configuration {
-        display-drun: "Applications: ";
-        display-run: "Commands: ";
-        display-window: "Windows: ";
+    display-drun: "Applications: ";
+    display-run: "Commands: ";
+    display-window: "Windows: ";
 }
 
 window {
-    width:                             24%;
+    width:                             50%;
     location:                          center;
     anchor:                            center;
     padding:                           0px;
     border:                            5px;
     border-radius:                     0.2%;
     border-color:                      @dark;
-    background-color:                  @dark;
+    background-color:                  @backlight;
     spacing:                           0;
-    children:                          [mainbox];
+    children:                          [ mainbox ];
     orientation:                       horizontal;
 }
 
@@ -44,20 +57,40 @@ mainbox {
 }
 
 message {
+    /* For a consistent dark theme, we use the backlight as the background */
     border-color:                      @foreground;
     padding:                           5;
-    background-color:                  #ffffff;
-    font:                              "ShureTechMono Nerd Font Mono";
-    color:                             @dark;
+    background-color:                  @backlight;
+    font:                              "ShureTechMono Nerd Font Mono 16";
+    color:                             @foreground;
 }
 
 inputbar {
     color:                             @foreground;
     padding:                           10px;
-    background-color:                  @dark;
+    background-color:                  @backlight;
     border:                            2px 2px 2px 2px;
     border-color:                      @gray-dark;
-    font:                              "ShureTechMono Nerd Font Mono";
+    font:                              "ShureTechMono Nerd Font Mono 16";
+}
+
+entry, prompt, case-indicator {
+    text-font:                         inherit;
+    text-color:                        @red;
+}
+
+prompt {
+    margin:                            0px 0.5em 0em 0em;
+}
+
+listview {
+    padding:                           3px;
+    border-color:                      @gray-dark;
+    border:                            0px 2px 2px 2px;
+    background-color:                  @backlight;
+    dynamic:                           false;
+    lines:                             10;
+    columns:                           1;
 }
 
 element {
@@ -67,22 +100,64 @@ element {
     border-radius:                     0px;
     background-color:                  @element-bg;
     color:                             @cream;
-    font:inherit;
+    font:                              inherit;
 }
 
+element-text {
+    background-color:                  inherit;
+    text-color:                        inherit;
+}
+
+/* Selected elements use the accent colors */
 element selected.normal {
     background-color:                  @orange;
-    text-color:                        @dark;
+    text-color:                        @backlight;
+}
+
+element normal active {
+    foreground:                        @orange;
+}
+
+element normal urgent {
+    foreground:                        @foreground;
+}
+
+element alternate normal {}
+
+element alternate active {
+    foreground:                        @orange;
+}
+
+element alternate urgent {
+    foreground:                        @foreground;
 }
 
 element selected active {
     background-color:                  @red-alt;
-    foreground:                        @dark;
+    foreground:                        @backlight;
 }
 
 element selected urgent {
     background-color:                  @foreground;
-    foreground:                        @dark;
+    foreground:                        @backlight;
+}
+
+element normal normal {}
+
+vertb {
+    expand:                            false;
+    children:                          [ dummy0, mode-switcher, dummy1 ];
+}
+
+dummy0, dummy1 {
+    expand:                            true;
+}
+
+mode-switcher {
+    expand:                            false;
+    orientation:                       vertical;
+    spacing:                           0px;
+    border:                            0px 0px 0px 0px;
 }
 
 button {
@@ -90,16 +165,16 @@ button {
     padding:                           6px;
     border:                            2px 0px 2px 2px;
     border-radius:                     4px 0px 0px 4px;
-    background-color:                  @dark;
+    background-color:                  @backlight;
     border-color:                      @foreground;
     color:                             @foreground;
     horizontal-align:                  0.5;
 }
 
 button selected normal {
-    color:                             @dark;
+    color:                             @backlight;
     border:                            2px 0px 2px 2px;
-    background-color:                  @dark;
+    background-color:                  @backlight;
     border-color:                      @foreground;
 }
 
