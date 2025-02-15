@@ -1,7 +1,7 @@
 -- UI essentials
 vim.cmd[["syntax enable"]]
-vim.o.number = false                 -- numbered columns (effective on current line)
-vim.o.relativenumber = false         -- relative numbered columns
+vim.o.number = true                 -- numbered columns (effective on current line)
+vim.o.relativenumber = true         -- relative numbered columns
 vim.o.termguicolors = true
 vim.opt.cursorline = false
 vim.opt.wrap = false                -- disables ugly screen wrapping
@@ -19,7 +19,7 @@ vim.o.clipboard = "unnamedplus"     -- copy/paste support
 
 -- cursor lock
 vim.opt.scrolloff = 999
-vim.opt.sidescrolloff = 999
+-- vim.opt.sidescrolloff = 999
 
 -- menu line appearance
 vim.opt.laststatus = 0
@@ -35,9 +35,17 @@ vim.g.loaded_perl_provider = 0
 
 -- changing indentation rules
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "css", "javascript", "javascriptreact", "ruby" },
-  callback = function()
-    vim.bo.shiftwidth = 2
-    vim.bo.tabstop = 2
-  end,
+    pattern = { "css", "javascript", "javascriptreact", "ruby" },
+    callback = function()
+        vim.bo.shiftwidth = 2
+        vim.bo.tabstop = 2
+    end,
+})
+
+-- disabling spellchecking on terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = "*",
+    callback = function()
+        vim.opt_local.spell = false
+    end,
 })

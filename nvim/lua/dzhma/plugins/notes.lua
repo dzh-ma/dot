@@ -21,7 +21,9 @@ return {
                     },
                     horizontal_rules = presets.horizontal_rules.dashed,
                 },
-                hybrid_modes = { "v", "i" },
+                preview = {
+                    hybrid_modes = { "v", "i" },
+                },
                 linewise_hybrid_mode = true,
             })
 

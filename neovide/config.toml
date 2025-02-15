@@ -1,3 +1,7 @@
 [font]
-normal = "ShureTechMono Nerd Font Mono"
-size = 16.0
+normal = "Agave Nerd Font"
+size = 12.0
+
+# [font]
+# normal = "VictorMono Nerd Font Mono"
+# size = 26.0

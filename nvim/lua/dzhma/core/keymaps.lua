@@ -8,6 +8,8 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { noremap = true, silent = true })       
 vim.keymap.set('n', '<C-k>', '<C-w>k', { noremap = true, silent = true })               -- moving up a pane from normal mode
 vim.keymap.set('n', '<C-h>', '<C-w>h', { noremap = true, silent = true })               -- moving left a pane from normal mode
 vim.keymap.set('n', '<C-l>', '<C-w>l', { noremap = true, silent = true })               -- moving right a pane from normal mode
+vim.keymap.set('n', '<C-;>', '<C-w><', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-\'>', '<C-w>>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-p>', '<cmd>bprevious<CR>', { noremap = true, silent = true })
 -- exiting terminal mode

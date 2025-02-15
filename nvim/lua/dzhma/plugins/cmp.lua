@@ -53,10 +53,11 @@ return {
                 }
             }
 
-            vim.keymap.set('n', '<Space>e', vim.diagnostic.open_float)
+            vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)
             vim.keymap.set('n', '<Leader>p', vim.diagnostic.goto_prev)
             vim.keymap.set('n', '<Leader>n', vim.diagnostic.goto_next)
-            vim.keymap.set('n', '<Space>q', vim.diagnostic.setloclist)
+            vim.keymap.set('n', '<Leader>q', vim.diagnostic.setloclist)
+            vim.keymap.set('n', '<Leader>G', vim.lsp.buf.code_action)
         end,
     },
 
@@ -110,8 +111,8 @@ return {
                     ["<C-n>"] = cmp.mapping.select_next_item(), -- select next suggestion
                     ["<C-p>"] = cmp.mapping.select_prev_item(), -- select previous suggestion
 
-                    ["<C-u>"] = cmp.mapping.scroll_docs(4), -- scroll docs up
-                    ["<C-d>"] = cmp.mapping.scroll_docs(-4), -- scroll docs down
+                    ["<C-d>"] = cmp.mapping.scroll_docs(4), -- scroll docs up
+                    ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- scroll docs down
 
                     ["<C-e>"] = cmp.mapping.abort(), -- close completion window
                 }),

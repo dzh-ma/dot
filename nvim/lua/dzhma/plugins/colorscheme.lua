@@ -1,24 +1,40 @@
 return {
-    -- {
-    --     'EtiamNullam/white-chocolate.nvim',
-    --     priority = 1000,
-    --     config = function()
-    --         require('white-chocolate').setup()
-    --         vim.api.nvim_set_hl(0, "@markup.strong.markdown_inline", { fg = "#1aa7d6", bold = true })
-    --         vim.api.nvim_set_hl(0, "@markup.italic.markdown_inline", { fg = "#69b98b", italic = true })
-    --     end,
-    -- },
     {
         "scottmckendry/cyberdream.nvim",
         lazy = false,
         priority = 1000,
         dependencies = {
             "nvim-lualine/lualine.nvim",
+            "justinhj/battery.nvim",
+            "archibate/lualine-time",
+            "chrisgrieser/nvim-dr-lsp",
         },
         config = function ()
+            require("battery").setup({})
+
+            local nvimbattery = {
+                function()
+                    return require("battery").get_status_line()
+                end,
+            }
+
+            require("dr-lsp").setup({
+                highlightCursorWordReferences = {
+                    enable = true,
+                },
+            })
+
             require("lualine").setup({
                 options = {
                     theme = "auto"
+                },
+                sections = {
+                    lualine_a = nvimbattery,
+                    lualine_c = { require("dr-lsp").lspCount },
+                    lualine_z = {
+                        "cdate",
+                        "ctime",
+                    },
                 },
             })
 

@@ -16,6 +16,9 @@ return {
                         ["vim.lsp.util.stylize_markdown"] = true,
                         ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
                     },
+                    progress = {
+                        enabled = false,
+                    },
                 },
                 presets = {
                     -- you can enable a preset by setting it to true, or a table that will override the preset config
@@ -38,14 +41,15 @@ return {
                 },
             })
 
-            vim.keymap.set("n", "<A-n>", "<cmd>Noice<CR>", { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<A-n>", "<cmd>Noice<CR>", { noremap = true, silent = true })
+            vim.keymap.set("n", "<A-n>", "<cmd>Telescope notify<CR>", { noremap = true, silent = true })
 
             require("notify").setup({
                 background_colour = "#000000",
-                render = "minimal",     -- default/minimal/simple/compact/wrapped-compact/wrapped-default
+                render = "default",     -- default/minimal/simple/compact/wrapped-compact/wrapped-default
                 stages = "slide",       -- fade_in_slide_out/fade/slide/static
                 timeout = 0,
-                max_width = 30,
+                -- max_width = 30,
                 top_down = true,
             })
         end,
@@ -56,16 +60,7 @@ return {
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
         config = function()
-            require("gitsigns").setup({
-                signs = {
-                    add = { text = "+" },
-                    change = { text = "~" },
-                    delete = { text = "-" },
-                    topdelete = { text = "▔" },
-                    changedelete = { text = "≃" },
-                    untracked = { text = "?" },
-                }
-            })
+            require("gitsigns").setup()
         end,
     },
 
@@ -121,57 +116,10 @@ return {
     },
 
     {
-        "isakbm/gitgraph.nvim",
+        "rachartier/tiny-glimmer.nvim",
+        event = "VeryLazy",
         opts = {
-            format = {
-                timestamp = "%H:%M:%S %d-%m-%Y",
-                fields = { "hash", "timestamp", "author", "branch_name", "tag" },
-            },
-            hooks = {
-                on_select_commit = function(commit)
-                    print("selected commit:", commit.hash)
-                end,
-                on_select_range_commit = function(from, to)
-                    print("selected range:", from.hash, to.hash)
-                end,
-            },
-            symbols = {
-                merge_commit = "",
-                commit = "",
-                merge_commit_end = "",
-                commit_end = "",
-
-                -- Advanced symbols
-                GVER = "",
-                GHOR = "",
-                GCLD = "",
-                GCRD = "╭",
-                GCLU = "",
-                GCRU = "",
-                GLRU = "",
-                GLRD = "",
-                GLUD = "",
-                GRUD = "",
-                GFORKU = "",
-                GFORKD = "",
-                GRUDCD = "",
-                GRUDCU = "",
-                GLUDCD = "",
-                GLUDCU = "",
-                GLRDCL = "",
-                GLRDCR = "",
-                GLRUCL = "",
-                GLRUCR = "",
-            },
-        },
-        keys = {
-            {
-                "<leader>gl",
-                function()
-                    require("gitgraph").draw({}, { all = true, max_count = 5000 })
-                end,
-                desc = "GitGraph - Draw",
-            },
+            -- your configuration
         },
     },
 }

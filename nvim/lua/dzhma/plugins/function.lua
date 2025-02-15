@@ -37,8 +37,8 @@ return {
         cmd = "Telescope",
         keys = {
             { "<Space>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", desc = "Navigate directory" },
+            { "<Space>F", "<cmd>lua require('telescope').extensions.zoxide.list()<CR>", { desc = "Zoxide search" } },
             { "<Space>l", "<cmd>lua require('telescope.builtin').live_grep()<CR>", desc = "Find phrase" },
-            -- { "<Space>C", "<cmd>lua require('telescope').extensions.zoxide.list<CR>", { desc = "Zoxide search" } }
         },
         config = function()
             local telescope = require("telescope")
@@ -173,11 +173,7 @@ return {
             vim.o.timeout = true
             vim.o.timeoutlen = 300
         end,
-        opts = {
-            -- your configuration comes here
-            -- or leave it empty to use the default settings
-            -- refer to the configuration section below
-        }
+        opts = {},
     },
 
     {
@@ -195,7 +191,7 @@ return {
             "VeryLazy",
         },
         keys = {
-            { "<Leader>t", "<cmd>TodoTelescope<CR>", desc = "Search all project todos" }
+            { "<Leader>T", "<cmd>TodoTelescope<CR>", desc = "Search all project todos" }
         },
         opts = {
             keywords = {
@@ -218,11 +214,6 @@ return {
             },
             merge_keywords = true, -- if true, extends the existing keywords instead of replacing them
         }
-    },
-
-    {
-        "hinell/lsp-timeout.nvim",
-        dependencies = { "neovim/nvim-lspconfig" },
     },
 
     {
@@ -250,17 +241,6 @@ return {
     },
 
     {
-        "kungfusheep/snipe-lsp.nvim",
-        event = { "VeryLazy" },
-        dependencies = { "leath-dub/snipe.nvim" },
-        opts = {
-            open_symbols_menu = "<leader>ds",
-            open_symbols_menu_for_split = "<leader>sds",
-            open_symbols_menu_for_vsplit = "<leader>vds",
-        },
-    },
-
-    {
         "kungfusheep/snipe-spell.nvim",
         dependencies = { "leath-dub/snipe.nvim" },
         config = true,
@@ -270,28 +250,20 @@ return {
     },
 
     {
-        "ThePrimeagen/harpoon",
-        event = { "VeryLazy" },
-        branch = "harpoon2",
+        "kdheepak/lazygit.nvim",
+        lazy = true,
+        cmd = {
+            "LazyGit",
+            "LazyGitConfig",
+            "LazyGitCurrentFile",
+            "LazyGitFilter",
+            "LazyGitFilterCurrentFile",
+        },
         dependencies = {
             "nvim-lua/plenary.nvim",
-            "nvim-telescope/telescope.nvim",
         },
-        config = function ()
-            local harpoon = require("harpoon")
-            harpoon:setup()
-
-            vim.keymap.set("n", "<A-s>", function() harpoon:list():add() end)
-            vim.keymap.set("n", "<C-s>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-            vim.keymap.set("n", "<A-h>", function() harpoon:list():select(1) end)
-            vim.keymap.set("n", "<A-j>", function() harpoon:list():select(2) end)
-            vim.keymap.set("n", "<A-k>", function() harpoon:list():select(3) end)
-            vim.keymap.set("n", "<A-l>", function() harpoon:list():select(4) end)
-
-            -- Toggle previous & next buffers stored within Harpoon list
-            vim.keymap.set("n", "<Leader><S-P>", function() harpoon:list():prev() end)
-            vim.keymap.set("n", "<Leader><S-N>", function() harpoon:list():next() end)
-        end,
+        keys = {
+            { "<Leader>g", "<cmd>LazyGit<CR>", desc = "LazyGit" },
+        },
     },
 }

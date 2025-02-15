@@ -45,6 +45,7 @@ if status is-interactive
     alias fs="fan_state set"
     alias a="clear"
     alias b="btop"
+    alias g="gwenview"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
