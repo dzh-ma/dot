@@ -49,3 +49,33 @@ vim.api.nvim_create_autocmd("TermOpen", {
         vim.opt_local.spell = false
     end,
 })
+
+-- Save the original vim.ui.open
+local orig_ui_open = vim.ui.open
+
+-- Helper function to resolve a target to an absolute path
+local function resolve_target(target)
+    -- If target starts with a slash or a protocol (e.g. http://), assume it's already absolute.
+    if target:match("^/") or target:match("^[a-z]+://") then
+        return target
+    else
+        -- Resolve relative path with respect to the current file's directory
+        return vim.fn.expand("%:p:h") .. "/" .. target
+    end
+end
+
+vim.ui.open = function(target, opts, on_open)
+    local resolved_target = resolve_target(target)
+    local lower_target = resolved_target:lower()
+    if lower_target:match("%.pdf$") then
+        vim.fn.jobstart("zathura " .. vim.fn.shellescape(resolved_target), { detach = true })
+        if on_open then on_open() end
+    elseif lower_target:match("%.png$") or lower_target:match("%.jpe?g$") or
+        lower_target:match("%.gif$") or lower_target:match("%.bmp$") or
+        lower_target:match("%.svg$") then
+        vim.fn.jobstart("imv " .. vim.fn.shellescape(resolved_target), { detach = true })
+        if on_open then on_open() end
+    else
+        orig_ui_open(target, opts, on_open)
+    end
+end

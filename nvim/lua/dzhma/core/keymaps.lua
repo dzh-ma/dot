@@ -12,6 +12,8 @@ vim.keymap.set('n', '<C-;>', '<C-w><', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-\'>', '<C-w>>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-n>', '<cmd>bnext<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<C-p>', '<cmd>bprevious<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-N>', '<cmd>tabnext<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-P>', '<cmd>tabprevious<CR>', { noremap = true, silent = true })
 -- exiting terminal mode
 vim.keymap.set('t', '<C-j>', '<C-\\><C-N><C-j>', { noremap = true, silent = true })
 vim.keymap.set('t', '<C-k>', '<C-\\><C-N><C-k>', { noremap = true, silent = true })

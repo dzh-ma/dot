@@ -222,31 +222,20 @@ return {
     },
 
     {
-        "leath-dub/snipe.nvim",
-        keys = {
-            {"<A-g>", function () require("snipe").open_buffer_menu() end, desc = "Open Snipe buffer menu"}
-        },
-        opts = {
-            ui = {
-                position = "center",
-                open_win_override = {
-                    title = " ",
-                    border = "rounded",
-                },
-                hints = {
-                    dictionary = "aoeuhtns",
-                },
-            },
-        },
-    },
-
-    {
         "kungfusheep/snipe-spell.nvim",
         dependencies = { "leath-dub/snipe.nvim" },
         config = true,
         keys = {
-            { "<Leader>S", "<cmd>SnipeSpell<cr>", desc = "Snipe Spellchecker" },
+            { "<A-s>", "<cmd>SnipeSpell<cr>", desc = "Snipe Spellchecker" },
         }
+    },
+
+    {
+        "j-morano/buffer_manager.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        keys = {
+            { "<A-d>", "<cmd>lua require('buffer_manager.ui').toggle_quick_menu()<CR>", desc = "Toggle buffer manager" }
+        },
     },
 
     {
