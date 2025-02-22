@@ -1,6 +1,7 @@
 return {
+    -- DOCS: LSP support
     {
-        'neovim/nvim-lspconfig',                        -- LSP integration
+        "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",
@@ -61,8 +62,9 @@ return {
         end,
     },
 
+    -- DOCS: Auto-completion
     {
-        "hrsh7th/nvim-cmp",				                -- autocomplete function
+        "hrsh7th/nvim-cmp",
         event = { "InsertEnter", "CmdlineEnter" },
         dependencies = {
             "hrsh7th/cmp-nvim-lsp",				            -- autocomplete integration

@@ -1,8 +1,10 @@
 return {
+    -- DOCS: Copy-paste support
     {
         "christoomey/vim-system-copy",			        -- enables system yanking & pasting in & out of NeoVim
     },
 
+    -- DOCS: Improved function
     {
         "echasnovski/mini.move",
         version = false,
@@ -25,6 +27,7 @@ return {
         end,
     },
 
+    -- DOCS: Picker
     {
         "nvim-telescope/telescope.nvim",
         tag = "0.1.8",
@@ -90,6 +93,7 @@ return {
         }
     },
 
+    -- DOCS: File manager
     {
         "stevearc/oil.nvim",					            -- file manipulation & traversal inside a buffer environment
         event = "VeryLazy",
@@ -111,6 +115,7 @@ return {
         end,
     },
 
+    -- DOCS: File heading filter
     {
         "stevearc/aerial.nvim",
         event = "VeryLazy",
@@ -152,6 +157,7 @@ return {
         end,
     },
 
+    -- DOCS: Automatic pairing
     {
         "altermo/ultimate-autopair.nvim",
         event={"InsertEnter","CmdlineEnter"},
@@ -159,6 +165,20 @@ return {
         opts = {},
     },
 
+    -- DOCS: Automatic pairing in markup languages
+    {
+        "windwp/nvim-ts-autotag",
+        event = { "InsertEnter", "CmdlineEnter" },
+        config = function ()
+            require("nvim-ts-autotag").setup({
+                opts = {
+                    enable_close_on_slash = true,
+                }
+            })
+        end
+    },
+
+    -- DOCS: Easy parenthesization
     {
         "NStefan002/visual-surround.nvim",
         config = function ()
@@ -166,6 +186,7 @@ return {
         end
     },
 
+    -- DOCS: Keybind helper
     {
         "folke/which-key.nvim",
         event = "VeryLazy",
@@ -176,6 +197,7 @@ return {
         opts = {},
     },
 
+    -- DOCS: Improved marks function
     {
         "chentoast/marks.nvim",
         event = "VeryLazy",
@@ -216,11 +238,13 @@ return {
         }
     },
 
+    -- DOCS: Git differences
     {
         "sindrets/diffview.nvim",
         event = { "VeryLazy" },
     },
 
+    -- DOCS: Spell correction
     {
         "kungfusheep/snipe-spell.nvim",
         dependencies = { "leath-dub/snipe.nvim" },
@@ -230,6 +254,7 @@ return {
         }
     },
 
+    -- DOCS: Buffer navigator
     {
         "j-morano/buffer_manager.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -238,6 +263,7 @@ return {
         },
     },
 
+    -- DOCS: Git manager
     {
         "kdheepak/lazygit.nvim",
         lazy = true,

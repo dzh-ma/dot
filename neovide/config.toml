@@ -1,7 +1,3 @@
 [font]
-normal = "Agave Nerd Font"
-size = 12.0
-
-# [font]
-# normal = "VictorMono Nerd Font Mono"
-# size = 26.0
+normal = "Mononoki Nerd Font"
+size = 16.0

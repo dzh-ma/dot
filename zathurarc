@@ -1,5 +1,5 @@
 # Font configuration
-set font "Agave Nerd Font Mono 12"
+set font "CommitMono Nerd Font Mono 12"
 
 # Clipboard yanking
 set selection-clipboard clipboard
@@ -14,23 +14,23 @@ set recolor-keephue true
 set database sqlite
 
 # Base Colors (from Kitty)
-set default-bg "#16181a"
+set default-bg "#000000"
 set default-fg "#ffffff"
 
 # Recoloring for Text and Background
 set recolor-darkcolor "#ffffff"
-set recolor-lightcolor "#16181a"
+set recolor-lightcolor "#000000"
 
 # Input Bar Colors
-set inputbar-bg "#16181a"
+set inputbar-bg "#000000"
 set inputbar-fg "#ffffff"
 
 # Notification Colors
-set notification-bg "#16181a"
+set notification-bg "#000000"
 set notification-fg "#ffffff"
 
 # Status Bar Colors
-set statusbar-bg "#16181a"
+set statusbar-bg "#000000"
 set statusbar-fg "#ffffff"
 
 # Highlight Colors
@@ -40,13 +40,13 @@ set highlight-color "#3c4048"
 set highlight-active-color "#ffbd5e"
 
 # Completion Colors
-set completion-bg "#16181a"
+set completion-bg "#000000"
 set completion-fg "#ffffff"
 set completion-highlight-bg "#3c4048"
 set completion-highlight-fg "#ffffff"
 
 # Index Colors
-set index-bg "#16181a"
+set index-bg "#000000"
 set index-fg "#ffffff"
 # Use the active tab colors for active index items:
 set index-active-bg "#ffbd5e"

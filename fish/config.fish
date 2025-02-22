@@ -46,6 +46,7 @@ if status is-interactive
     alias a="clear"
     alias b="btop"
     alias g="gwenview"
+    alias s="sudo systemctl"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin

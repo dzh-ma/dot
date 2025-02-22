@@ -5,7 +5,7 @@
 * {
     /* Base Colors */
     foreground:                        #ffffff;        /* Primary text (Kitty foreground) */
-    backlight:                         #16181a;        /* Primary background (Kitty background) */
+    backlight:                         #000000;        /* Primary background (Kitty background) */
     background-color:                  transparent;
     
     /* Accent Colors */
@@ -16,7 +16,7 @@
     gray-dark:                         #3c4048;        /* Reusing dark for borders, etc. */
     
     /* Element Colors */
-    element-bg:                        #16181a;        /* Same as backlight */
+    element-bg:                        #000000;        /* Same as backlight */
     cream:                             #ffffff;        /* Use foreground for element text */
     
     /* Highlight styling */
@@ -25,7 +25,7 @@
     transparent:                       #00000000;
     
     /* Font (using your desired font) */
-    font:                              "Agave Nerd Font 12";
+    font:                              "CommitMono Nerd Font 12";
     
     padding:                           0px;
     margin:                            0px;
@@ -61,7 +61,7 @@ message {
     border-color:                      @foreground;
     padding:                           5;
     background-color:                  @backlight;
-    font:                              "Agave Nerd Font 12";
+    font:                              "CommitMono Nerd Font 12";
     color:                             @foreground;
 }
 
@@ -71,7 +71,7 @@ inputbar {
     background-color:                  @backlight;
     border:                            2px 2px 2px 2px;
     border-color:                      @gray-dark;
-    font:                              "Agave Nerd Font 12";
+    font:                              "CommitMono Nerd Font 12";
 }
 
 entry, prompt, case-indicator {

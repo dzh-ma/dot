@@ -1,4 +1,5 @@
 return {
+    -- DOCS: Main color-scheme
     {
         "scottmckendry/cyberdream.nvim",
         lazy = false,
@@ -24,9 +25,23 @@ return {
                 },
             })
 
+            local lualine_theme = require("lualine.themes.auto")
+            for mode, sections in pairs(lualine_theme) do
+                for section, settings in pairs(sections) do
+                    if type(settings) == "table" and settings.bg then
+                        settings.bg = "#000000"
+                    end
+                    if section == 'a' or section == 'z' then
+                        if settings.fg then
+                            settings.fg = "#FFFFFF"
+                        end
+                    end
+                end
+            end
+
             require("lualine").setup({
                 options = {
-                    theme = "auto"
+                    theme = lualine_theme
                 },
                 sections = {
                     lualine_a = nvimbattery,
@@ -38,10 +53,19 @@ return {
                 },
             })
 
+            require("cyberdream").setup({
+                colors = {
+                    -- For a list of colors see `lua/cyberdream/colours.lua`
+                    -- Example:
+                    bg = "#000000",
+                },
+            })
+
             vim.cmd.colorscheme "cyberdream"
         end,
     },
 
+    -- DOCS: Chunk highlighting
     {
         "shellRaining/hlchunk.nvim",
         event = {
@@ -70,6 +94,7 @@ return {
         end
     },
 
+    -- DOCS: Distinctly colored parentheses
     {
         "HiPhish/rainbow-delimiters.nvim",
         event = { "BufReadPre", "BufNewFile" },

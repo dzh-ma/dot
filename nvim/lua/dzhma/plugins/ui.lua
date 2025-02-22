@@ -1,6 +1,6 @@
 return {
     {
-        -- UI overhaul
+        -- DOCS: UI overhaul
         "folke/noice.nvim",
         event = { "VeryLazy" },
         dependencies = {
@@ -28,14 +28,25 @@ return {
                     long_message_to_split = true, -- long messages will be sent to a split
                     inc_rename = false, -- enables an input dialog for inc-rename.nvim
                 },
-                views = {
-                    cmdline_popup = {
-                        border = {
-                            style = "none",
-                            padding = { 1, 1 },
+                -- views = {
+                --     cmdline_popup = {
+                --         border = {
+                --             style = "none",
+                --             padding = { 1, 1 },
+                --         },
+                --         win_options = {
+                --             winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+                --         },
+                --     },
+                -- },
+                cmdline = {
+                    view = "cmdline",
+                    format = {
+                        search_down = {
+                            view = "cmdline",
                         },
-                        win_options = {
-                            winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
+                        search_up = {
+                            view = "cmdline",
                         },
                     },
                 },
@@ -105,21 +116,6 @@ return {
         dependencies = {
             "nvim-telescope/telescope-fzf-native.nvim",
             build = "make"
-        },
-        config = function()
-            local dropbar_api = require("dropbar.api")
-
-            vim.keymap.set("n", "<Leader>;", dropbar_api.pick, { desc = "Pick symbols in winbar" })
-            vim.keymap.set("n", "[;", dropbar_api.goto_context_start, { desc = "Go to start of current context" })
-            vim.keymap.set("n", "];", dropbar_api.select_next_context, { desc = "Select next context" })
-        end,
-    },
-
-    {
-        "rachartier/tiny-glimmer.nvim",
-        event = "VeryLazy",
-        opts = {
-            -- your configuration
         },
     },
 }
