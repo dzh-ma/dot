@@ -13,13 +13,34 @@ return {
                     },
                 },
                 markdown = {
-                    headings = presets.headings.simple,
+                    headings = {
+                        heading_1 = { sign = "" },
+                        heading_2 = { sign = "" },
+                        heading_3 = { sign = "" },
+                        heading_4 = { sign = "" },
+                        heading_5 = { sign = "" },
+                        heading_6 = { sign = "" },
+                    },
                     tables = {
                         enable = true,
                         block_decorator = false,
                         use_virt_lines = false,
                     },
                     horizontal_rules = presets.horizontal_rules.dashed,
+                    list_items = {
+                        shift_width = function (buffer, item)
+                            local parent_indnet = math.max(1, item.indent - vim.bo[buffer].shiftwidth);
+                            return (item.indent) * (1 / (parent_indnet * 2));
+                        end,
+                        marker_minus = {
+                            add_padding = function (_, item)
+                                return item.indent > 1;
+                            end
+                        }
+                    },
+                    code_blocks = {
+                        sign = false,
+                    },
                 },
                 preview = {
                     hybrid_modes = { "v", "i" },
@@ -57,7 +78,11 @@ return {
                 }
             })
 
+            require("markview.extras.editor").setup()
+
             vim.keymap.set("n", "<A-c>", "<cmd>Checkbox interactive<CR>", { noremap = true, silent = true })
+            vim.keymap.set("n", "<A-f>", "<cmd>CodeCreate<CR>", { noremap = true, silent = true })
+            vim.keymap.set("n", "<A-e>", "<cmd>CodeEdit<CR>", { noremap = true, silent = true })
         end,
     },
 

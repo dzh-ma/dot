@@ -281,4 +281,16 @@ return {
             { "<Leader>g", "<cmd>LazyGit<CR>", desc = "LazyGit" },
         },
     },
+
+    -- DOCS: Easy jumping to words
+    {
+        "smoka7/hop.nvim",
+        version = "*",
+        keys = {
+            { "<A-h>", "<cmd>HopWord<CR>", desc = "Hop to a word" },
+        },
+        opts = {
+             keys = "etovxqpdygfblzhckisuran",
+        },
+    },
 }
