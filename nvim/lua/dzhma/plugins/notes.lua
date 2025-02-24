@@ -26,7 +26,7 @@ return {
                         block_decorator = false,
                         use_virt_lines = false,
                     },
-                    horizontal_rules = presets.horizontal_rules.dashed,
+                    -- horizontal_rules = presets.horizontal_rules.dashed,
                     list_items = {
                         shift_width = function (buffer, item)
                             local parent_indnet = math.max(1, item.indent - vim.bo[buffer].shiftwidth);

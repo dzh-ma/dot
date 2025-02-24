@@ -19,7 +19,7 @@ vim.o.clipboard = "unnamedplus"     -- copy/paste support
 
 -- cursor lock
 vim.opt.scrolloff = 999
-vim.opt.sidescrolloff = 999
+-- vim.opt.sidescrolloff = 999
 
 -- menu line appearance
 vim.opt.laststatus = 0
