@@ -21,35 +21,6 @@ return {
         end
     },
 
-    -- DOCS: Chunk highlighting
-    -- {
-        -- "shellRaining/hlchunk.nvim",
-        -- event = {
-        --     "BufReadPre",
-        --     "BufNewFile",
-        -- },
-        -- config = function()
-        --     require("hlchunk").setup({
-        --         chunk = {
-        --             enable = true,
-        --             style = {
-        --                 { fg = "#ffffff" },
-        --                 { fg = "#ffffff" },
-        --             },
-        --             delay = 0,
-        --             duration = 0,
-        --         },
-        --         indent = {
-        --             enable = false,
-        --         },
-        --         line_num = {
-        --             enable = true,
-        --             style = "#ffffff",
-        --         }
-        --     })
-        -- end
-    -- },
-
     -- DOCS: Distinctly colored parentheses
     {
         "HiPhish/rainbow-delimiters.nvim",
