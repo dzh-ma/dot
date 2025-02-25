@@ -1,4 +1,5 @@
 {
+  "BufferTabs.nvim": { "branch": "main", "commit": "4b0872392a3d7430237c69b24a49b123aac88f5b" },
   "LuaSnip": { "branch": "master", "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817" },
   "aerial.nvim": { "branch": "master", "commit": "3284a2cb858ba009c79da87d5e010ccee3c99c4d" },
   "buffer_manager.nvim": { "branch": "main", "commit": "03df0142e60cdf3827d270f01ccb36999d5a4e08" },
@@ -17,7 +18,6 @@
   "gitsigns.nvim": { "branch": "main", "commit": "4c40357994f386e72be92a46f41fc1664c84c87d" },
   "helpview.nvim": { "branch": "main", "commit": "2bc021a2cf1e6ce103f95ceffc172cfefbbf9cfc" },
   "hop.nvim": { "branch": "master", "commit": "08ddca799089ab96a6d1763db0b8adc5320bf050" },
-  "improved-ft.nvim": { "branch": "main", "commit": "f2259e9c4123339cb99430befcabf22f4689b97c" },
   "lazy.nvim": { "branch": "main", "commit": "a8c6db5da7bd382094606340eed015d14fbb5654" },
   "lazygit.nvim": { "branch": "main", "commit": "b9eae3badab982e71abab96d3ee1d258f0c07961" },
   "lspkind.nvim": { "branch": "master", "commit": "d79a1c3299ad0ef94e255d045bed9fa26025dab6" },

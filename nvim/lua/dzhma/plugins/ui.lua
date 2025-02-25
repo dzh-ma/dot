@@ -28,17 +28,6 @@ return {
                     long_message_to_split = true, -- long messages will be sent to a split
                     inc_rename = false, -- enables an input dialog for inc-rename.nvim
                 },
-                -- views = {
-                --     cmdline_popup = {
-                --         border = {
-                --             style = "none",
-                --             padding = { 1, 1 },
-                --         },
-                --         win_options = {
-                --             winhighlight = "NormalFloat:NormalFloat,FloatBorder:FloatBorder",
-                --         },
-                --     },
-                -- },
                 cmdline = {
                     view = "cmdline",
                     format = {
