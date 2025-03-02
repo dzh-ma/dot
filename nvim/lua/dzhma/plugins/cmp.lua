@@ -77,7 +77,6 @@ return {
             "rafamadriz/friendly-snippets",			        -- snippet collection for a range of programming languages
             "onsails/lspkind.nvim",				            -- devicon integration into LSP autocomplete
             "roobert/tailwindcss-colorizer-cmp.nvim",
-            "f3fora/cmp-spell",                             -- dictionary autocompletion
         },
         config = function()
             require("luasnip.loaders.from_vscode").lazy_load()

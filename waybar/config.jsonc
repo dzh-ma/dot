@@ -1,89 +1,126 @@
 {
     "layer": "top",
-    "height": 20,
-    "spacing": 0,
-    "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
-    ],
+    "margin-left": 8,
+    "margin-right": 8,
+    "margin-top": 15,
+    "margin-bottom": 15,
+    "modules-left": ["hyprland/workspaces", "cpu", "memory", "network#speed"],
+    "modules-center": ["clock", "custom/weather"],
     "modules-right": [
-        "disk",
-        "cpu",
-        "temperature",
-        "backlight",
-        "memory",
         "pulseaudio",
-        "battery",
-        "clock"
+        "network",
+        "bluetooth",
+        "battery"
     ],
-
-    "hyprland/window": {
-        "format": "<span color='#ffffff' bgcolor='#16181a'> WIN </span> {class}",
-        "separate-outputs": true
+    "temperature#gpu": {
+        "thermal-zone": 5,
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C ",
+        "format": "{temperatureC}°C ",
+        "tooltip": false
     },
-
-    "disk": {
-        "format": "<span color='#ffffff' bgcolor='#16181a'> DSK </span> {free}",
-        "interval": 20
-    },
-
-    "cpu": {
-        "format": "<span color='#5ea1ff' bgcolor='#16181a'> CPU </span> {usage}%",
-        "tooltip": false,
-        "interval": 1
-    },
-
-    "temperature": {
-        "tooltip": false,
-        "thermal-zone": 2,
-        "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input",
-        "critical-threshold": 70,
-        "format-critical": "<span color='#ff6e5e' bgcolor='#16181a'> TEM </span> {temperatureC}°C",
-        "format": "<span color='#5ef1ff' bgcolor='#16181a'> TMP </span> {temperatureC}°C"
-    },
-
     "backlight": {
-        "format": "<span color='#5eff6c' bgcolor='#16181a'> BRI </span> {percent}%",
-        "tooltip": false
+        "device": "intel_backlight",
+        "scroll-step": 5,
+        "format": "{icon}",
+        "format-icons": ["󰃞 ", "󰃟 ", "󰃝 ", "󰃠 "],
+        "tooltip": true,
+        "tooltip-format": "{percent}%"
     },
-
+    "network#speed": {
+        "interval": 1,
+        "format": "{ifname}%%",
+        "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+        "format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes} ",
+        "format-disconnected": "󰌙",
+        "tooltip-format": "{ipaddr}",
+        "format-linked": "󰈁 {ifname} (No IP)",
+        "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+        "tooltip-format-ethernet": "{ifname} 󰌘",
+        "tooltip-format-disconnected": "󰌙 Disconnected",
+        "max-length": 22,
+        "min-length": 20,
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "{usage}% <span font='Font Awesome 6 Free-Solid'>\uf2db</span>",
+        "on-click": "ghostty btop"
+    },
     "memory": {
-        "format": "<span color='#3c4048' bgcolor='#16181a'> MEM </span> {used}GiB",
         "interval": 1,
-        "tooltip": false
+        "format": "{percentage}% <span font='Font Awesome 5 Free'>󰍛 </span>",
+        "on-click": "ghostty btop",
+        "tooltip-format": "{used}/{total} GiB"
     },
-
-    "pulseaudio": {
-        "format": "<span color='#f1ff5e' bgcolor='#16181a'> VOL </span> {volume}%",
-        "format-muted": "<span color='#ff6e5e' bgcolor='#16181a'> MUTE </span> {volume}%",
-        "format-bluetooth": "<span color='#5ea1ff' bgcolor='#16181a'> BLU </span> {volume}%",
-        "format-bluetooth-muted": "<span color='#ff6e5e' bgcolor='#16181a'> MUTE </span> {volume}%",
-        "format-source": "{volume}% ",
-        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "tooltip": false,
-        "max-volume": 130
-    },
-
-    "battery": {
-        "interval": 1,
-        "states": {
-            "good": 99,
-            "warning": 40,
-            "critical": 15
+    "hyprland/workspaces": {
+        "all-outputs": true,
+        "warp-on-scroll": true,
+        "enable-bar-scroll": true,
+        "disable-scroll-wraparound": false,
+        "persistent-workspaces": {
+            "*": 3
         },
-        "format": "<span color='#5eff6c' bgcolor='#16181a'> BAT </span> {capacity}%",
-        "format-critical": "<span color='#ff6e5e' bgcolor='#16181a'> BAT </span> {capacity}%!!",
-        "format-warning": "<span color='#bd5eff' bgcolor='#16181a'> BAT </span> {capacity}%",
-        "format-full": "<span color='#ffffff' bgcolor='#16181a'> FULL </span> {capacity}%",
-        "format-charging": "<span color='#ffffff' bgcolor='#16181a'> POW </span> {capacity}%",
-        "format-plugged": "<span color='#ffffff' bgcolor='#16181a'> POW </span> {capacity}%",
-        "format-alt": "<span color='#ffffff' bgcolor='#16181a'> BAT </span> {time}",
-        "tooltip": false
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1"
+    },
+    "custom/weather": {
+        "format": "{}°C",
+        "tooltip": false,
+        "interval": 3600,
+        "exec": "wttrbar --location 'Dubai'",
+        "return-type": "json"
     },
 
     "clock": {
-        "format": "<span color='#5eff6c' bgcolor='#16181a'> DAY </span> {:%a %H:%M:%S %Y-%m-%d}",
-        "tooltip": false,
-        "interval": 1
+        "format": "{:%I:%M %p • %a %d/%m}",
+        "tooltip": true,
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+    "network": {
+        "format-wifi": " {icon}",
+        "format-ethernet": "󰈀",
+        "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤢 ", "󰤨 "],
+        "format-disconnected": "󰪎",
+        "interval": 5,
+        "tooltip-format-wifi": " {bandwidthDownBytes} |  {bandwidthUpBytes} | {essid}",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+    "battery": {
+        "states": {
+            "good": 55,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": " {capacity}% {icon} ",
+        "format-full": "{icon}",
+        "format-plugged": " {capacity}% <span font='Font Awesome 5 Free'>\uf0e7</span> ",
+        "format-alt": "{icon}",
+        "tooltip-format": "{capacity}%, about {time} left",
+        "format-icons": [" ", " ", " ", " "]
+    },
+    "pulseaudio": {
+        "format": "<span font='Font Awesome 5 Free'>{icon}</span>",
+        "format-muted": "<span font='Font Awesome 5 Free'>󰝟 </span>",
+        "format-icons": {
+            "headphone": "󰋋 ",
+            "default": [" "]
+        },
+        "tooltip-format": "{volume}% {desc}",
+        "on-click": "pulsemixer"
+    },
+    "bluetooth": {
+        "format": "{icon}",
+        "format-icons": ["", "󰤾", "󰥀", "󰥄", "󰥈"],
+
+        "tooltip-format-off": "Bluetooth is off",
+        "tooltip-format-on": "Bluetooth is on",
+
+        "format-connected": "{icon} {num_connections}",
+        "format-connected-battery": "{icon} {device_battery_percentage}%",
+
+        "tooltip-format-connected": "{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_battery_percentage}%",
     }
 }

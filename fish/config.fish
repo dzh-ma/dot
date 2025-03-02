@@ -36,6 +36,7 @@ if status is-interactive
     alias nn="nvim ~/.config/nvim/init.lua"
     alias nh="nvim ~/.config/hypr/hyprland.conf"
     alias nw="nvim ~/.config/waybar/config.jsonc"
+    alias ng="nvim ~/.config/ghostty/config"
     alias g.="git add ."
     alias gc="git commit -m"
     alias gs="git push"

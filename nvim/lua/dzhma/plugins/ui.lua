@@ -21,36 +21,22 @@ return {
                     },
                 },
                 presets = {
-                    -- you can enable a preset by setting it to true, or a table that will override the preset config
-                    -- you can also add custom presets that you can enable/disable with enabled=true
                     bottom_search = false, -- use a classic bottom cmdline for search
                     command_palette = false, -- position the cmdline and popupmenu together
                     long_message_to_split = true, -- long messages will be sent to a split
                     inc_rename = false, -- enables an input dialog for inc-rename.nvim
                 },
-                cmdline = {
-                    view = "cmdline",
-                    format = {
-                        search_down = {
-                            view = "cmdline",
-                        },
-                        search_up = {
-                            view = "cmdline",
-                        },
-                    },
-                },
             })
 
-            -- vim.keymap.set("n", "<A-n>", "<cmd>Noice<CR>", { noremap = true, silent = true })
             vim.keymap.set("n", "<A-n>", "<cmd>Telescope notify<CR>", { noremap = true, silent = true })
 
             require("notify").setup({
                 background_colour = "#000000",
-                render = "default",     -- default/minimal/simple/compact/wrapped-compact/wrapped-default
-                stages = "slide",       -- fade_in_slide_out/fade/slide/static
-                timeout = 0,
-                -- max_width = 30,
-                top_down = true,
+                render = "minimal",     -- default/minimal/simple/compact/wrapped-compact/wrapped-default
+                stages = "static",       -- fade_in_slide_out/fade/slide/static
+                timeout = 200,
+                max_width = 30,
+                top_down = false,
             })
         end,
     },

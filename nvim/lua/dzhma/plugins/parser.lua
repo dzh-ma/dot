@@ -48,6 +48,7 @@ return {
                     },
                     javascript = "node",
                     julia = "julia",
+                    ocaml = "ocaml $file",
                     python = {
                         "cd \"$dir\" &&",
                         --"python -u",

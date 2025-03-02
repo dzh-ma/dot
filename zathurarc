@@ -1,5 +1,5 @@
 # Font configuration
-set font "ProggyClean Nerd Font Mono 20"
+set font "iMWritingMono Nerd Font Mono 24"
 
 # Clipboard yanking
 set selection-clipboard clipboard
@@ -13,41 +13,42 @@ set recolor-keephue true
 # Use SQLite for the database
 set database sqlite
 
-# Base Colors (from Kitty)
-set default-bg "#1f282e"
-set default-fg "#ffffff"
+# DOCS: Catpuccin Colorscheme
+set default-fg                rgba(205,214,244,1)
+set default-bg 			          rgba(30,30,46,1)
 
-# Recoloring for Text and Background
-set recolor-darkcolor "#ffffff"
-set recolor-lightcolor "#1f282e"
+set completion-bg		          rgba(49,50,68,1)
+set completion-fg		          rgba(205,214,244,1)
+set completion-highlight-bg	  rgba(87,82,104,1)
+set completion-highlight-fg	  rgba(205,214,244,1)
+set completion-group-bg		    rgba(49,50,68,1)
+set completion-group-fg		    rgba(137,180,250,1)
 
-# Input Bar Colors
-set inputbar-bg "#1f282e"
-set inputbar-fg "#ffffff"
+set statusbar-fg		          rgba(205,214,244,1)
+set statusbar-bg		          rgba(49,50,68,1)
 
-# Notification Colors
-set notification-bg "#1f282e"
-set notification-fg "#ffffff"
+set notification-bg		        rgba(49,50,68,1)
+set notification-fg		        rgba(205,214,244,1)
+set notification-error-bg	    rgba(49,50,68,1)
+set notification-error-fg	    rgba(243,139,168,1)
+set notification-warning-bg	  rgba(49,50,68,1)
+set notification-warning-fg	  rgba(250,227,176,1)
 
-# Status Bar Colors
-set statusbar-bg "#1f282e"
-set statusbar-fg "#ffffff"
+set inputbar-fg			          rgba(205,214,244,1)
+set inputbar-bg 		          rgba(49,50,68,1)
 
-# Highlight Colors
-# Using selection background for inactive highlights...
-set highlight-color "#3c4048"
-# ...and the active tab background from Kitty as the active highlight.
-set highlight-active-color "#ffbd5e"
+set recolor                   "true"
+set recolor-lightcolor		    rgba(30,30,46,1)
+set recolor-darkcolor		      rgba(205,214,244,1)
 
-# Completion Colors
-set completion-bg "#1f282e"
-set completion-fg "#ffffff"
-set completion-highlight-bg "#3c4048"
-set completion-highlight-fg "#ffffff"
+set index-fg			            rgba(205,214,244,1)
+set index-bg			            rgba(30,30,46,1)
+set index-active-fg		        rgba(205,214,244,1)
+set index-active-bg		        rgba(49,50,68,1)
 
-# Index Colors
-set index-bg "#1f282e"
-set index-fg "#ffffff"
-# Use the active tab colors for active index items:
-set index-active-bg "#ffbd5e"
-set index-active-fg "#1f282e"
+set render-loading-bg		      rgba(30,30,46,1)
+set render-loading-fg		      rgba(205,214,244,1)
+
+set highlight-color		        rgba(87,82,104,0.5)
+set highlight-fg              rgba(245,194,231,0.5)
+set highlight-active-color	  rgba(245,194,231,0.5)

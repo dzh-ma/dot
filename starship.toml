@@ -182,7 +182,7 @@ symbol = " "
 style = "italic blue"
 
 [nodejs]
-format = "[node](blue) [ ($version)](italic bright-green)"
+format = " [node](blue) [ ($version)](italic bright-green)"
 detect_files = ["package-lock.json", "yarn.lock"]
 version_format = "${major}.${minor}"
 

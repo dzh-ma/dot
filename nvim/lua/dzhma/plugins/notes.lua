@@ -101,4 +101,66 @@ return {
         "dhruvasagar/vim-table-mode",
         ft = { "markdown", "typst" },
     },
+
+    {
+        "GCBallesteros/jupytext.nvim",
+        lazy = false,
+        opts = {},
+    },
+
+    {
+        "benlubas/molten-nvim",
+        version = "<2.0.0",
+        build = ":UpdateRemotePlugins",
+        config = function ()
+            vim.g.molten_output_win_max_height = 12
+
+            vim.keymap.set("n", "<Leader>Mi", "<cmd>MoltenInit<CR>", { silent = true, desc = "Molten: Initialize plugin" })
+            vim.keymap.set("n", "<Leader>Me", "<cmd>MoltenEvaluateOperator<CR>", { silent = true, desc = "Molten: Run operator selection" })
+            vim.keymap.set("n", "<Leader>Ml", "<cmd>MoltenEvaluateLine<CR>", { silent = true, desc = "Molten: Initialize line" })
+            vim.keymap.set("n", "<Leader>Mc", "<cmd>MoltenReevaluateCell<CR>", { silent = true, desc = "Molten: Re-evaluate cell" })
+            vim.keymap.set("n", "<Leader>Mv", "<cmd>MoltenEvaluateVisual<CR>gv", { silent = true, desc = "Molten: Evaluate visual selection" })
+            vim.keymap.set("n", "<Leader>Md", "<cmd>MoltenDelete<CR>", { silent = true, desc = "Molten: Delete cell" })
+            vim.keymap.set("n", "<Leader>Mh", "<cmd>MoltenHideOutput<CR>", { silent = true, desc = "Molten: Hide output" })
+            vim.keymap.set("n", "<Leader>Mo", "<cmd>MoltenEnterOutput<CR>", { silent = true, desc = "Molten: Show/enter output" })
+            vim.keymap.set("n", "<Leader>Mb", "<cmd>MoltenOpenInBrowser<CR>", { silent = true, desc = "Molten: Open output in browser" })
+        end,
+    },
+
+    {
+        "quarto-dev/quarto-nvim",
+        dependencies = {
+            "jmbuhr/otter.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+        ft = { "quarto", "markdown" },
+        config = function ()
+            require("quarto").setup({
+                lspFeatures = {
+                    -- NOTE: put whatever languages you want here:
+                    languages = { "r", "python", "rust" },
+                    chunks = "all",
+                    diagnostics = {
+                        enabled = true,
+                        triggers = { "BufWritePost" },
+                    },
+                    completion = {
+                        enabled = true,
+                    },
+                },
+                keymap = {
+                    -- NOTE: setup your own keymaps:
+                    hover = "H",
+                    definition = "gd",
+                    rename = "<leader>rn",
+                    references = "gr",
+                    format = "<leader>gf",
+                },
+                codeRunner = {
+                    enabled = true,
+                    default_method = "molten",
+                },
+            })
+        end
+    },
 }
