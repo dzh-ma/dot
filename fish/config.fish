@@ -48,6 +48,7 @@ if status is-interactive
     alias b="btop"
     alias g="gwenview"
     alias s="sudo systemctl"
+    alias o="onlyoffice-desktopeditors"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin

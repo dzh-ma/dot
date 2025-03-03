@@ -1,5 +1,10 @@
+* {
+  font-family: "iMWritingMono Nerd Font Mono";
+}
+
 html:not(.style-scope)
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   --ctp-rosewater: #f5e0dc;
   --ctp-flamingo: #f2cdcd;
   --ctp-pink: #f5c2e7;
@@ -46,115 +51,138 @@ i.material-icons:hover
 
 body
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   background: var(--ctp-base) !important;
 }
 
 ytmusic-nav-bar
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   background: var(--ctp-mantle) !important;
 }
 
 ytmusic-pivot-bar-item-renderer:hover, ytmusic-pivot-bar-item-renderer.iron-selected
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   color: var(--ctp-accent) !important;
 }
 
 ytmusic-pivot-bar-item-renderer
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   color: var(--ctp-text) !important;
 }
 
 ytmusic-search-box
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   color: var(--ctp-text) !important;
 }
 
 a.ytmusic-content-update-chip
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   color: var(--ctp-base) !important;
   background-color: var(--ytmusic-color-grey2) !important;
 }
 
 ytmusic-detail-header-renderer
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   background-color: var(--ctp-base) !important;
 }
 
 .title.ytmusic-detail-header-renderer
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   color: var(--ctp-text) !important;
 }
 
 ytmusic-player-page
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   background-color: var(--ctp-base) !important;
 }
 
 ytmusic-data-bound-header-renderer
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   background-color: var(--ctp-mantle) !important;
 }
 
 ytmusic-list-item-renderer
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   background-color: var(--ctp-base) !important;
 }
 
 ytmusic-responsive-list-item-renderer
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   background-color: var(--ctp-base) !important;
 }
 
 ytmusic-player-queue-item
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   background-color: var(--ctp-base) !important;
 }
 paper-tab.iron-selected.ytmusic-player-page
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   color: var(--ctp-text) !important;
 }
 
 tp-yt-paper-tab.iron-selected.ytmusic-player-page
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   color: var(--ctp-text) !important;
 }
 tp-yt-paper-tab.ytmusic-player-page
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   color: var(--ctp-text) !important;
 }
 
 paper-tabs.ytmusic-player-page
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   --paper-tabs-selection-bar-color: var(--ctp-text) !important;
 }
 
 #selectionBar.tp-yt-paper-tabs
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   border-bottom: 2px solid var(--ctp-text) !important;
 }
 
 yt-formatted-string.byline.style-scope.ytmusic-player-queue-item
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   color: var(--ctp-accent) !important;
 }
 
 yt-formatted-string.duration.style-scope.ytmusic-player-queue-item
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   color: var(--ctp-text) !important;
 }
 
 ytmusic-player-bar
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   background: var(--ctp-mantle) !important;
 }
 
 #progress-bar.ytmusic-player-bar
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   --paper-slider-active-color: var(--ctp-accent) !important;
 }
 
 #progress-bar.ytmusic-player-bar[focused], ytmusic-player-bar:hover #progress-bar.ytmusic-player-bar
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   --paper-slider-knob-color: var(--ctp-accent) !important;
   --paper-slider-knob-start-color: var(--ctp-accent) !important;
   --paper-slider-knob-start-border-color: var(--ctp-accent) !important;
@@ -162,6 +190,7 @@ ytmusic-player-bar
 
 paper-slider#volume-slider
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   --paper-slider-container-color: var(--ctp-text) !important;
   --paper-slider-active-color: var(--ctp-text) !important;
   --paper-slider-knob-color: var(--ctp-text) !important;
@@ -169,6 +198,7 @@ paper-slider#volume-slider
 
 .volume-slider.ytmusic-player-bar, .expand-volume-slider.ytmusic-player-bar
 {
+  font-family: "iMWritingMono Nerd Font Mono";
   --paper-slider-container-color: var(--ctp-text) !important;
   --paper-slider-active-color: var(--ctp-text) !important;
   --paper-slider-knob-color: var(--ctp-text) !important;

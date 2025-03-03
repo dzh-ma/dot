@@ -74,4 +74,7 @@ font-size = 15
 keybind = shift+alt+k=scroll_page_lines:25
 keybind = shift+alt+j=scroll_page_lines:-25 
 
+# DOCS: Hiding dimensions information pop-up
+resize-overlay = never
+
 # NOTE: `CTRL+SHIFT+,` to reload config
