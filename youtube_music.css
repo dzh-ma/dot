@@ -1,5 +1,5 @@
 * {
-  font-family: "iMWritingMono Nerd Font Mono";
+  font-family: "iMWritingMono Nerd Font Mono" !important;
 }
 
 html:not(.style-scope)
