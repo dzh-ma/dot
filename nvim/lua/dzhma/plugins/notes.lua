@@ -138,7 +138,7 @@ return {
             require("quarto").setup({
                 lspFeatures = {
                     -- NOTE: put whatever languages you want here:
-                    languages = { "r", "python", "rust" },
+                    languages = { "r", "python", "rust", "ocaml" },
                     chunks = "all",
                     diagnostics = {
                         enabled = true,
@@ -163,4 +163,15 @@ return {
             })
         end
     },
+
+    {
+        'jmbuhr/otter.nvim',
+        keys = {
+            { "<Leader>o", "<cmd>lua require('otter').activate()<CR>", desc = "Find markdown code blocks" }
+        },
+        dependencies = {
+            'nvim-treesitter/nvim-treesitter',
+        },
+        opts = {},
+    }
 }

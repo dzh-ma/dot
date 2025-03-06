@@ -1,5 +1,6 @@
 #set PS1 "[\u@\h \W]\$ '"
-set -Ux PATH $HOME/.local/bin $HOME/.local/share/gem/ruby/3.3.0/bin $HOME/.cargo/bin $HOME/.npm-global/bin$PATH
+#set -Ux PATH $HOME/.local/bin $HOME/.local/share/gem/ruby/3.3.0/bin $HOME/.cargo/bin $HOME/.npm-global/bin$PATH
+set -Ux PATH $HOME/.local/bin $HOME/.local/share/gem/ruby/3.3.0/bin $HOME/.cargo/bin $HOME/.npm-global/bin $PATH
 set -U fish_user_paths /home/dzh-ma/.local/share/gem/ruby/3.3.0/bin $fish_user_paths
 set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
 
@@ -48,6 +49,7 @@ if status is-interactive
     alias a="clear"
     alias b="btop"
     alias B="bluetui"
+    alias bs="brightnessctl set"
     alias g="gwenview"
     alias s="sudo systemctl"
     alias o="onlyoffice-desktopeditors"
