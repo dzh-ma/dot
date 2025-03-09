@@ -58,9 +58,9 @@
         "warp-on-scroll": true,
         "enable-bar-scroll": true,
         "disable-scroll-wraparound": false,
-        "persistent-workspaces": {
-            "*": 3
-        },
+        //"persistent-workspaces": {
+        //    "*": 3
+        //},
         "on-click": "activate",
         "on-scroll-up": "hyprctl dispatch workspace e-1",
         "on-scroll-down": "hyprctl dispatch workspace e+1"

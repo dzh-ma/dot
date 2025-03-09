@@ -53,6 +53,8 @@ if status is-interactive
     alias g="gwenview"
     alias s="sudo systemctl"
     alias o="onlyoffice-desktopeditors"
+    alias d0="hyprctl keyword monitor 'eDP-1, disable'"
+    alias d1="hyprctl keyword monitor 'eDP-1, 2880x1800@120, 0x0, 2'"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin

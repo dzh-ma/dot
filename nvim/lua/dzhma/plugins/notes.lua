@@ -138,7 +138,7 @@ return {
             require("quarto").setup({
                 lspFeatures = {
                     -- NOTE: put whatever languages you want here:
-                    languages = { "r", "python", "rust", "ocaml" },
+                    languages = { "r", "python", "rust", "ocaml", "java" },
                     chunks = "all",
                     diagnostics = {
                         enabled = true,

@@ -68,7 +68,7 @@ selection-foreground = cdd6f4
 
 # DOCS: Font
 font-family = "iMWritingMono Nerd Font Mono"
-font-size = 15
+font-size = 6
 
 # DOCS: Scrolling
 keybind = shift+alt+k=scroll_page_lines:25
