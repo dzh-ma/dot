@@ -18,8 +18,8 @@ vim.o.expandtab = true              -- uses spaces instead of tab
 vim.o.clipboard = "unnamedplus"     -- copy/paste support
 
 -- cursor lock
-vim.opt.scrolloff = 999
-vim.opt.sidescrolloff = 999
+-- vim.opt.scrolloff = 999
+-- vim.opt.sidescrolloff = 999
 
 -- menu line appearance
 vim.opt.laststatus = 2
@@ -35,7 +35,7 @@ vim.g.loaded_perl_provider = 0
 
 -- changing indentation rules
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "css", "javascript", "javascriptreact", "ruby" },
+    pattern = { "css", "javascript", "javascriptreact", "ruby", "typescriptreact" },
     callback = function()
         vim.bo.shiftwidth = 2
         vim.bo.tabstop = 2

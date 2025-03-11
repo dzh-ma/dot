@@ -1,27 +1,5 @@
 return {
     -- DOCS: Main color-scheme
-    -- {
-    --     "0xstepit/flow.nvim",
-    --     lazy = false,
-    --     priority = 1000,
-    --     opts = {
-    --         colors = {
-    --             custom = {
-    --                 saturation = "100",
-    --             },
-    --         },
-    --         ui = {
-    --             borders = "fluo",
-    --         }
-    --     },
-    --     config = function ()
-    --         require("flow").setup(opts)
-    --
-    --         -- vim.cmd.colorscheme "flow"
-    --     end
-    -- },
-
-
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -35,9 +13,16 @@ return {
                 styles = {
                     variables = { "italic" },
                 },
+                integrations = {
+                    notify = true,
+                    aerial = true,
+                    mason = true,
+                    noice = true,
+                },
                 custom_highlights = function(colors)
                     return {
                         ["@neorg.markup.inline_math.norg"] = { fg = colors.flamingo },
+                        ["@markup.quote.markdown"] = { fg = colors.mauve },
                     }
                 end
             })

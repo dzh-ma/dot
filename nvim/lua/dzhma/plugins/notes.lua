@@ -3,8 +3,6 @@ return {
         "OXY2DEV/markview.nvim",
         lazy = false,
         config = function ()
-            local presets = require("markview.presets")
-
             require("markview").setup({
                 typst = {
                     enable = true,
@@ -26,7 +24,6 @@ return {
                         block_decorator = false,
                         use_virt_lines = false,
                     },
-                    -- horizontal_rules = presets.horizontal_rules.dashed,
                     list_items = {
                         shift_width = function (buffer, item)
                             local parent_indnet = math.max(1, item.indent - vim.bo[buffer].shiftwidth);
@@ -49,7 +46,6 @@ return {
             })
 
             require("markview.extras.checkboxes").setup({
-                --- Default checkbox state(used when adding checkboxes).
                 ---@type string
                 default = "X",
 
@@ -60,10 +56,6 @@ return {
                 ---| "list_item" Removes the list item markers too.
                 remove_style = "disable",
 
-                --- Various checkbox states.
-                ---
-                --- States are in sets to quickly change between them
-                --- when there are a lot of states.
                 ---@type string[][]
                 states = {
                     { " ", "/", "X" },
