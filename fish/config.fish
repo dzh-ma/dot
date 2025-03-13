@@ -71,7 +71,7 @@ if status is-interactive
     zoxide init fish | source
 
     # Initialize opam
-    eval (opam env --switch=default)
+    eval (opam env --switch=4.14.1)
 
     # Set vi mode
     fish_vi_key_bindings
