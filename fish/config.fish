@@ -54,7 +54,8 @@ if status is-interactive
     alias s="sudo systemctl"
     alias o="onlyoffice-desktopeditors"
     alias d0="hyprctl keyword monitor 'eDP-1, disable'"
-    alias d1="hyprctl keyword monitor 'eDP-1, 2880x1800@120, 0x0, 2'"
+    alias d1="hyprctl keyword monitor 'eDP-1, 2880x1800@120, 0x0, 1'"
+    alias l="libreoffice"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
