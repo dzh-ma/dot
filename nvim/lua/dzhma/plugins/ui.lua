@@ -42,7 +42,7 @@ return {
     },
 
     {
-        -- Git information integration
+        -- DOCS: Git information integration
         "lewis6991/gitsigns.nvim",
         event = "VeryLazy",
         config = function()
@@ -50,6 +50,7 @@ return {
         end,
     },
 
+    -- DOCS: Icons
     {
         "nvim-tree/nvim-web-devicons",
         event = "VeryLazy",
@@ -61,11 +62,13 @@ return {
         end,
     },
 
+    -- DOCS: Movement buff
     {
         "echasnovski/mini.nvim",
         version = false,
     },
 
+    -- DOCS: Custom icon colors
     {
         "dgox16/devicon-colorscheme.nvim",
         dependencies = {

@@ -70,10 +70,6 @@ selection-foreground = cdd6f4
 font-family = "MonaspiceKr Nerd Font"
 font-size = 20
 
-# DOCS: Scrolling
-keybind = shift+alt+k=scroll_page_lines:25
-keybind = shift+alt+j=scroll_page_lines:-25 
-
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never
 

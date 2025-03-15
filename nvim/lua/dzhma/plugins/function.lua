@@ -293,4 +293,10 @@ return {
              keys = "etovxqpdygfblzhckisuran",
         },
     },
+
+    -- DOCS: Time tracker
+    {
+        "wakatime/vim-wakatime",
+        lazy = false,
+    },
 }
