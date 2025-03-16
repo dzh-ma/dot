@@ -67,8 +67,8 @@ selection-background = 353749
 selection-foreground = cdd6f4
 
 # DOCS: Font
-font-family = "MonaspiceKr Nerd Font"
-font-size = 20
+font-family = "SpaceMono Nerd Font"
+font-size = 15
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never

@@ -1,5 +1,5 @@
 # Font configuration
-set font "iMWritingMono Nerd Font Mono 24"
+set font "SpaceMono Nerd Font 15"
 
 # Clipboard yanking
 set selection-clipboard clipboard

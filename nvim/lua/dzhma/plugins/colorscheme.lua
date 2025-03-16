@@ -41,36 +41,4 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
-
-    -- DOCS: Shows active & inactive buffers
-    {
-        "tomiis4/BufferTabs.nvim",
-        dependencies = {
-            "nvim-tree/nvim-web-devicons", -- optional
-        },
-        lazy = false,
-        config = function()
-            require("buffertabs").setup({
-                --- @type 'single'|'double'|'rounded'|'solid'|'shadow'|table
-                border = "solid",
-
-                --- @type integer
-                padding = 1,
-
-                --- @type string
-                modified = " ",
-
-                --- @type 'row'|'column'
-                display = "column",
-
-                --- @type 'left'|'right'|'center'
-                horizontal = "right",
-
-                --- @type 'top'|'bottom'|'center'
-                vertical = "top",
-            })
-
-            vim.keymap.set("n", "<Leader>h", "<cmd>BufferTabsToggle<CR>", { silent = true, desc = "BufferTabs: Toggle visibility" })
-        end
-    },
 }
