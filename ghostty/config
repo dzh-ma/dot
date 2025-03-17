@@ -68,7 +68,7 @@ selection-foreground = cdd6f4
 
 # DOCS: Font
 font-family = "SpaceMono Nerd Font"
-font-size = 15
+font-size = 12
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never

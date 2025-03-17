@@ -1,5 +1,5 @@
 # Font configuration
-set font "SpaceMono Nerd Font 15"
+set font "SpaceMono Nerd Font 12"
 
 # Clipboard yanking
 set selection-clipboard clipboard
