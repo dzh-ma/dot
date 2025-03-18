@@ -38,6 +38,9 @@ return {
                     },
                     code_blocks = {
                         sign = false,
+                        min_width = 14,
+                        pad_amount = 0,
+                        style = "simple",
                     },
                 },
                 preview = {

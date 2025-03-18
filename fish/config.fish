@@ -20,7 +20,7 @@ if status is-interactive
     alias ckr="clockify-cli report"
     alias cko="clockify-cli out"
     alias power="upower -i /org/freedesktop/UPower/devices/battery_BAT0"
-    alias ps="powerprofilesctl set"
+    alias pp="powerprofilesctl"
     alias mix="pulsemixer"
     alias nmwc="sudo nmcli dev wifi connect"
     alias t="tmux"
