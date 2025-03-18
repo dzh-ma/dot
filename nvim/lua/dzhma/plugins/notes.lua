@@ -1,4 +1,5 @@
 return {
+    -- DOCS: Markdown renderer
     {
         "OXY2DEV/markview.nvim",
         lazy = false,
@@ -78,28 +79,33 @@ return {
         end,
     },
 
+    -- DOCS: Help document renderer
     {
         "OXY2DEV/helpview.nvim",
         ft = "help",
         dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
 
+    -- DOCS: Follow hyperlinks
     {
         "jghauser/follow-md-links.nvim",
         ft = { "markdown" },
     },
 
+    -- DOCS: Table formatter
     {
         "dhruvasagar/vim-table-mode",
         ft = { "markdown", "typst" },
     },
 
+    -- DOCS: Jupyter notebook support
     {
         "GCBallesteros/jupytext.nvim",
         lazy = false,
         opts = {},
     },
 
+    -- DOCS: Jupyter notebook renderer
     {
         "benlubas/molten-nvim",
         version = "<2.0.0",
@@ -119,6 +125,7 @@ return {
         end,
     },
 
+    -- DOCS: Jupyter notebook LSP
     {
         "quarto-dev/quarto-nvim",
         dependencies = {
@@ -156,13 +163,14 @@ return {
         end
     },
 
+    -- DOCS: Jupyter notebook LSP
     {
-        'jmbuhr/otter.nvim',
+        "jmbuhr/otter.nvim",
         keys = {
             { "<Leader>o", "<cmd>lua require('otter').activate()<CR>", desc = "Find markdown code blocks" }
         },
         dependencies = {
-            'nvim-treesitter/nvim-treesitter',
+            "nvim-treesitter/nvim-treesitter",
         },
         opts = {},
     }

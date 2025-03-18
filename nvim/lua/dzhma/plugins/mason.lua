@@ -1,4 +1,5 @@
 return {
+    -- DOCS: Parser package manager
     {
         'williamboman/mason.nvim',                  -- LSP/DAP/linter/formatter installer
         event = { "BufReadPre", "BufNewFile" },

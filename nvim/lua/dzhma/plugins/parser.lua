@@ -1,4 +1,5 @@
 return {
+    -- DOCS: Parser
     {
         "nvim-treesitter/nvim-treesitter",          -- parser
         event = "VeryLazy",
@@ -20,6 +21,7 @@ return {
         end,
     },
 
+    -- DOCS: Executes code
     {
         "CRAG666/code_runner.nvim",				        -- manually programmed code execution using a keyword
         event = "VeryLazy",
@@ -77,6 +79,7 @@ return {
         end,
     },
 
+    -- DOCS: Linter
     {
         "mfussenegger/nvim-lint",				        -- linter integration using Mason linters
         event = { "BufReadPost", "BufNewFile" },

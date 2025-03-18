@@ -206,6 +206,7 @@ return {
         end,
     },
 
+    -- DOCS: Comment improvements
     {
         "folke/todo-comments.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
@@ -236,12 +237,6 @@ return {
             },
             merge_keywords = true, -- if true, extends the existing keywords instead of replacing them
         }
-    },
-
-    -- DOCS: Git differences
-    {
-        "sindrets/diffview.nvim",
-        event = { "VeryLazy" },
     },
 
     -- DOCS: Spell correction
