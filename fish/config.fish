@@ -45,7 +45,7 @@ if status is-interactive
     alias gl="git pull"
     alias q="exit"
     alias fs="fan_state get"
-    alias fS="fan_state set"
+    alias fS="fan_state set"        # 0-3 = standard / quiet / high / full
     alias a="clear"
     alias b="btop"
     alias B="bluetui"
