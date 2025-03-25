@@ -15,7 +15,7 @@
     cream:                             #ffffff; /* Green */
     highlight:                         underline bold #aaaaaa; /* Blue highlight */
     transparent:                       #00000000;
-    font:                              "IosevkaTermSlab Nerd Font Mono 30";
+    font:                              "GohuFont 11 Nerd Font Mono 30";
     padding:                           0px;
     margin:                            0px;
 }

@@ -18,6 +18,7 @@ return {
                     aerial = true,
                     mason = true,
                     noice = true,
+                    hop = true,
                 },
                 custom_highlights = function(colors)
                     return {

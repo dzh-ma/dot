@@ -59,6 +59,7 @@ if status is-interactive
     alias battery="fan_state set 1 && powerprofilesctl set power-saver"
     alias balance="fan_state set 0 && powerprofilesctl set balanced"
     alias performance="fan_state set 3 && powerprofilesctl set performance"
+    alias pac="sudo pacman"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin

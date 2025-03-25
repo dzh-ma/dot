@@ -23,7 +23,7 @@ vim.opt.scrolloff = 999
 
 -- menu line appearance
 vim.opt.laststatus = 2
-vim.opt.showtabline = 0
+vim.opt.showtabline = 2
 
 -- neovide settings
 vim.g.neovide_cursor_animation_length = 0.13

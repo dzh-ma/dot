@@ -4,6 +4,7 @@ return {
         "OXY2DEV/markview.nvim",
         lazy = false,
         config = function ()
+            local presets = require("markview.presets").horizontal_rules;
             require("markview").setup({
                 typst = {
                     enable = true,
@@ -42,6 +43,7 @@ return {
                         pad_amount = 0,
                         style = "simple",
                     },
+                    horizontal_rules = presets.thin
                 },
                 preview = {
                     hybrid_modes = { "v", "i" },
@@ -77,8 +79,8 @@ return {
             require("markview.extras.editor").setup()
 
             vim.keymap.set("n", "<A-c>", "<cmd>Checkbox interactive<CR>", { noremap = true, silent = true })
-            vim.keymap.set("n", "<A-f>", "<cmd>CodeCreate<CR>", { noremap = true, silent = true })
-            vim.keymap.set("n", "<A-e>", "<cmd>CodeEdit<CR>", { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<A-f>", "<cmd>CodeCreate<CR>", { noremap = true, silent = true })
+            -- vim.keymap.set("n", "<A-e>", "<cmd>CodeEdit<CR>", { noremap = true, silent = true })
         end,
     },
 
@@ -124,57 +126,36 @@ return {
             vim.keymap.set("n", "<Leader>Md", "<cmd>MoltenDelete<CR>", { silent = true, desc = "Molten: Delete cell" })
             vim.keymap.set("n", "<Leader>Mh", "<cmd>MoltenHideOutput<CR>", { silent = true, desc = "Molten: Hide output" })
             vim.keymap.set("n", "<Leader>Mo", "<cmd>MoltenEnterOutput<CR>", { silent = true, desc = "Molten: Show/enter output" })
-            vim.keymap.set("n", "<Leader>Mb", "<cmd>MoltenOpenInBrowser<CR>", { silent = true, desc = "Molten: Open output in browser" })
         end,
     },
 
-    -- DOCS: Jupyter notebook LSP
     {
-        "quarto-dev/quarto-nvim",
-        dependencies = {
-            "jmbuhr/otter.nvim",
-            "nvim-treesitter/nvim-treesitter",
-        },
-        ft = { "quarto", "markdown" },
+        'AckslD/nvim-FeMaco.lua',
+        ft = "markdown",
         config = function ()
-            require("quarto").setup({
-                lspFeatures = {
-                    -- NOTE: put whatever languages you want here:
-                    languages = { "r", "python", "rust", "ocaml", "java" },
-                    chunks = "all",
-                    diagnostics = {
-                        enabled = true,
-                        triggers = { "BufWritePost" },
-                    },
-                    completion = {
-                        enabled = true,
-                    },
-                },
-                keymap = {
-                    -- NOTE: setup your own keymaps:
-                    hover = "H",
-                    definition = "gd",
-                    rename = "<leader>rn",
-                    references = "gr",
-                    format = "<leader>gf",
-                },
-                codeRunner = {
-                    enabled = true,
-                    default_method = "molten",
-                },
-            })
-        end
+            require("femaco").setup()
+
+            vim.keymap.set('n', '<A-f>', "<cmd>FeMaco<CR>", { noremap = true, silent = true })
+        end,
     },
 
-    -- DOCS: Jupyter notebook LSP
+    -- DOCS: Bufferline
     {
-        "jmbuhr/otter.nvim",
-        keys = {
-            { "<Leader>o", "<cmd>lua require('otter').activate()<CR>", desc = "Find markdown code blocks" }
-        },
+        "willothy/nvim-cokeline",
         dependencies = {
-            "nvim-treesitter/nvim-treesitter",
+            "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
+            "nvim-tree/nvim-web-devicons", -- If you want devicons
+            "stevearc/resession.nvim"       -- Optional, for persistent history
         },
-        opts = {},
+        config = function ()
+            require("cokeline").setup({
+                buffers = {
+                    delete_on_right_click = false,
+                },
+                mappings = {
+                    disable_mouse = true,
+                },
+            })
+        end,
     }
 }

@@ -571,3 +571,12 @@ frontend
 F29PD
 F29LP
 F29FB
+spinlocks
+boolean
+Lexing
+lexing
+whitespace
+EOF
+lexeme
+GTK
+TUI
