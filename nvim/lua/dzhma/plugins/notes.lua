@@ -4,7 +4,6 @@ return {
         "OXY2DEV/markview.nvim",
         lazy = false,
         config = function ()
-            local presets = require("markview.presets").horizontal_rules;
             require("markview").setup({
                 typst = {
                     enable = true,
@@ -43,7 +42,6 @@ return {
                         pad_amount = 0,
                         style = "simple",
                     },
-                    horizontal_rules = presets.thin
                 },
                 preview = {
                     hybrid_modes = { "v", "i" },
