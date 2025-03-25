@@ -1,198 +1,52 @@
-/* Your custom font */
 :root {
-  --custom-font: "MonaSpiceKr Nerd Font";
+  --custom-font: "SpaceMono Nerd Font";
 }
 * {
   font-family: var(--custom-font), sans-serif !important;
 }
 
-/* 
-  ----- Auto-Hide Navigation Toolbar (Address Bar and related items) -----
-  
-  Instead of just fading out (which leaves its space reserved),
-  we slide it off the top. Adjust the “-50px” value to match the height of your toolbar.
-*/
-
-/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_toolbox.css made available under Mozilla Public License v. 2.0
-See the above repository for updates as well as full license text. */
-
-/* Hide the whole toolbar area unless urlbar is focused or cursor is over the toolbar
- * Dimensions on non-Win10 OS probably needs to be adjusted.
- */
-
-:root{
-  --uc-autohide-toolbox-delay: 200ms; /* Wait 0.1s before hiding toolbars */
-  --uc-toolbox-rotation: 82deg;  /* This may need to be lower on mac - like 75 or so */
-}
-
-:root[sizemode="maximized"]{
-  --uc-toolbox-rotation: 88.5deg;
-}
-
-@media  (-moz-platform: windows){
-  :root:not([lwtheme]) #navigator-toolbox{ background-color: -moz-dialog !important; }
-}
-
-:root[sizemode="fullscreen"],
-:root[sizemode="fullscreen"] #navigator-toolbox{ margin-top: 0 !important; }
-
-#navigator-toolbox{
-  --browser-area-z-index-toolbox: 3;
+/* Hide the navigation bar by default */
+#nav-bar:not([customizing="true"]) {
+  /* Completely hide it from normal flow */
   position: fixed !important;
-  background-color: var(--lwt-accent-color,black) !important;
-  transition: transform 82ms linear, opacity 82ms linear !important;
-  transition-delay: var(--uc-autohide-toolbox-delay) !important;
-  transform-origin: top;
-  transform: rotateX(var(--uc-toolbox-rotation));
+  /* Push it below the visible area */
+  top: -100px !important;
   opacity: 0;
-  line-height: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: -1;
+}
+
+/* Show navigation bar only when it explicitly gets focus (like from Ctrl+L) */
+#nav-bar:focus-within,
+#urlbar[focused="true"],
+#main-window[focusedURLBar="true"] #nav-bar {
+  /* Position it properly when focused */
+  top: var(--tab-min-height) !important;
+  opacity: 1;
+  pointer-events: auto;
   z-index: 1;
-  pointer-events: none;
 }
-:root[sessionrestored] #urlbar[popover]{
-  pointer-events: none;
-  opacity: 0;
-  transition: transform 82ms linear var(--uc-autohide-toolbox-delay), opacity 0ms calc(var(--uc-autohide-toolbox-delay) + 82ms);
-  transform-origin: 0px calc(0px - var(--tab-min-height) - var(--tab-block-margin) * 2);
-  transform: rotateX(89.9deg);
-}
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ toolbox #urlbar[popover],
-#navigator-toolbox:is(:hover,:focus-within) #urlbar[popover],
-#urlbar-container > #urlbar[popover]:is([focused],[open]){
+
+/* Also show when Alt key is pressed to reveal menu */
+#toolbar-menubar[autohide="false"] ~ #nav-bar {
+  top: var(--tab-min-height) !important;
+  opacity: 1;
   pointer-events: auto;
-  opacity: 1;
-  transition-delay: 33ms;
-  transform: rotateX(0deg);
-}
-#mainPopupSet:has(> [panelopen]:not(#ask-chat-shortcuts,#tab-preview-panel)) ~ toolbox,
-#navigator-toolbox:has(#urlbar:is([open],[focus-within])),
-#navigator-toolbox:hover,
-#navigator-toolbox:focus-within{
-  transition-delay: 33ms !important;
-  transform: rotateX(0);
-  opacity: 1;
-}
-/* This makes things like OS menubar/taskbar show the toolbox when hovered in maximized windows.
- * Unfortunately it also means that other OS native surfaces (such as context menu on macos)
- * and other always-on-top applications will trigger toolbox to show up. */
-@media (-moz-bool-pref: "userchrome.autohide-toolbox.unhide-by-native-ui.enabled"){
-  :root[sizemode="maximized"]:not(:hover){
-    #navigator-toolbox:not(:-moz-window-inactive),
-    #urlbar[popover]:not(:-moz-window-inactive){
-      transition-delay: 33ms !important;
-      transform: rotateX(0);
-      opacity: 1;
-    }
-  }
+  z-index: 1;
 }
 
-#navigator-toolbox > *{ line-height: normal; pointer-events: auto }
-
-#navigator-toolbox,
-#navigator-toolbox > *{
-  width: 100vw;
-  -moz-appearance: none !important;
+/* Make sure the urlbar is properly positioned within the nav-bar */
+#urlbar-container {
+  min-width: 200px;
+  width: 100%;
 }
 
-/* These two exist for oneliner compatibility */
-#nav-bar{ width: var(--uc-navigationbar-width,100vw) }
-#TabsToolbar{ width: calc(100vw - var(--uc-navigationbar-width,0px)) }
-
-/* Don't apply transform before window has been fully created */
-:root:not([sessionrestored]) #navigator-toolbox{ transform:none !important }
-
-:root[customizing] #navigator-toolbox{
-  position: relative !important;
-  transform: none !important;
-  opacity: 1 !important;
-}
-
-#navigator-toolbox[inFullscreen] > #PersonalToolbar,
-#PersonalToolbar[collapsed="true"]{ display: none }
-
-/* Uncomment this if tabs toolbar is hidden with hide_tabs_toolbar.css */
- /*#titlebar{ margin-bottom: -9px }*/
-
-/* Uncomment the following for compatibility with tabs_on_bottom.css - this isn't well tested though */
-/*
-#navigator-toolbox{ flex-direction: column; display: flex; }
-#titlebar{ order: 2 }
-*/
-
-/* ===============================================================
-   Auto-Hide Vertical Sidebar (for Vertical Tabs & Side Panel)
-   =============================================================== */
-
-/*
-  This example assumes that your vertical sidebar panel uses the id "#sidebar".
-  If your setup uses a different selector (for example, "#vertical-tabs-panel" or
-  a combination of elements), update the selector accordingly.
-
-  The idea is to “rotate” the sidebar panel out of view (around its left edge)
-  until you hover over it. We use rotateY since the panel is on the side.
-*/
-
-#sidebar {
+/* Fix layout when address bar is visible */
+#nav-bar:focus-within,
+#nav-bar[keynavigating="true"] {
   position: fixed !important;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  /* Ensure the sidebar is above content when visible */
-  z-index: 1000;
-  /* Set the transform origin to the left edge */
-  transform-origin: left;
-  /* Initially hide the sidebar by rotating it out of view */
-  transform: rotateY(var(--uc-sidebar-rotation));
-  opacity: 0;
-  pointer-events: none;
-  transition: transform 82ms linear, opacity 82ms linear !important;
-  transition-delay: var(--uc-autohide-sidebar-delay) !important;
-}
-
-/* When hovering over the sidebar area, reveal it */
-#sidebar:hover,
-#sidebar:focus-within {
-  transition-delay: 33ms !important;
-  transform: rotateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* ===============================================================
-   Optional: Create a Left-Edge Hotspot to Trigger the Sidebar
-   =============================================================== */
-
-/*
-  If your sidebar is fully hidden (rotated out) you may have difficulty
-  triggering the hover. In that case, add an invisible hotspot along the left
-  edge of the window.
-
-  Adjust the width as needed.
-*/
-#main-window::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10px;      /* Increase this if needed */
-  height: 100%;
-  z-index: 999;     /* Slightly below the sidebar */
-  pointer-events: auto;
-  /* No background so it remains invisible */
-}
-
-/*
-  When hovering over the hotspot, force the sidebar to show.
-  (This rule uses the general sibling combinator (~). Adjust if your DOM structure is different.)
-*/
-#main-window::before:hover ~ #sidebar {
-  transition-delay: 33ms !important;
-  transform: rotateY(0);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-#TabsToolbar
-{
-    visibility: collapse;
+  width: 100%;
+  /* Ensure it's below tabs but visible */
+  top: var(--tab-min-height) !important;
 }
