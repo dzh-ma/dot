@@ -25,22 +25,22 @@ return {
                         block_decorator = false,
                         use_virt_lines = false,
                     },
-                    list_items = {
-                        shift_width = function (buffer, item)
-                            local parent_indnet = math.max(1, item.indent - vim.bo[buffer].shiftwidth);
-                            return (item.indent) * (1 / (parent_indnet * 2));
-                        end,
-                        marker_minus = {
-                            add_padding = function (_, item)
-                                return item.indent > 1;
-                            end
-                        }
-                    },
+                    -- list_items = {
+                    --     shift_width = function (buffer, item)
+                    --         local parent_indnet = math.max(1, item.indent - vim.bo[buffer].shiftwidth);
+                    --         return (item.indent) * (1 / (parent_indnet * 2));
+                    --     end,
+                    --     marker_minus = {
+                    --         add_padding = function (_, item)
+                    --             return item.indent > 1;
+                    --         end
+                    --     }
+                    -- },
                     code_blocks = {
-                        sign = false,
-                        min_width = 14,
+                        -- sign = false,
+                        -- min_width = 14,
                         pad_amount = 0,
-                        style = "simple",
+                        style = "block",
                     },
                 },
                 preview = {
