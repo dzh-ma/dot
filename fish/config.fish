@@ -61,6 +61,8 @@ if status is-interactive
     alias performance="fan_state set 3 && powerprofilesctl set performance"
     alias pac="sudo pacman"
     alias hwifi="nmcli connection up Bedroom\ 5GHz"
+    alias jumd="jupytext --to markdown"
+    alias juno="jupytext --to notebook"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
