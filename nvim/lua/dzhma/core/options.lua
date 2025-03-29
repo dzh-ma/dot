@@ -6,7 +6,7 @@ vim.o.termguicolors = true
 vim.opt.cursorline = true
 vim.opt.wrap = false                -- disables ugly screen wrapping
 vim.opt.signcolumn = "yes"          -- prevents screen jumping right when LSP issue is raised
-vim.opt.conceallevel = 3
+vim.opt.conceallevel = 0
 vim.opt.concealcursor = "cn"
 vim.opt.spell = true
 vim.opt.spelllang = { "en_us" }
@@ -19,7 +19,7 @@ vim.o.clipboard = "unnamedplus"     -- copy/paste support
 
 -- cursor lock
 vim.opt.scrolloff = 999
-vim.opt.sidescrolloff = 999
+-- vim.opt.sidescrolloff = 999
 
 -- menu line appearance
 vim.opt.laststatus = 2

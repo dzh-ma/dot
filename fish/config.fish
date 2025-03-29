@@ -60,6 +60,7 @@ if status is-interactive
     alias balance="fan_state set 0 && powerprofilesctl set balanced"
     alias performance="fan_state set 3 && powerprofilesctl set performance"
     alias pac="sudo pacman"
+    alias hwifi="nmcli connection up Bedroom\ 5GHz"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin

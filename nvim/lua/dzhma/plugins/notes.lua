@@ -1,87 +1,4 @@
 return {
-    -- DOCS: Markdown renderer
-    {
-        "OXY2DEV/markview.nvim",
-        lazy = false,
-        config = function ()
-            require("markview").setup({
-                typst = {
-                    enable = true,
-                    codes = {
-                        padding = 0,
-                    },
-                },
-                markdown = {
-                    headings = {
-                        heading_1 = { sign = "" },
-                        heading_2 = { sign = "" },
-                        heading_3 = { sign = "" },
-                        heading_4 = { sign = "" },
-                        heading_5 = { sign = "" },
-                        heading_6 = { sign = "" },
-                    },
-                    tables = {
-                        enable = true,
-                        block_decorator = false,
-                        use_virt_lines = false,
-                    },
-                    -- list_items = {
-                    --     shift_width = function (buffer, item)
-                    --         local parent_indnet = math.max(1, item.indent - vim.bo[buffer].shiftwidth);
-                    --         return (item.indent) * (1 / (parent_indnet * 2));
-                    --     end,
-                    --     marker_minus = {
-                    --         add_padding = function (_, item)
-                    --             return item.indent > 1;
-                    --         end
-                    --     }
-                    -- },
-                    code_blocks = {
-                        -- sign = false,
-                        -- min_width = 14,
-                        pad_amount = 0,
-                        style = "block",
-                    },
-                },
-                preview = {
-                    hybrid_modes = { "v", "i" },
-                },
-                linewise_hybrid_mode = true,
-            })
-
-            require("markview.extras.checkboxes").setup({
-                ---@type string
-                default = "X",
-
-                --- Changes how checkboxes are removed.
-                ---@type
-                ---| "disable" Disables the checkbox.
-                ---| "checkbox" Removes the checkbox.
-                ---| "list_item" Removes the list item markers too.
-                remove_style = "disable",
-
-                ---@type string[][]
-                states = {
-                    { " ", "/", "X" },
-                    { "<", ">" },
-                    { "?", "!", "*" },
-                    { '"' },
-                    { "l", "b", "i" },
-                    { "S", "I" },
-                    { "p", "c" },
-                    { "f", "k", "w" },
-                    { "u", "d" }
-                }
-            })
-
-            require("markview.extras.editor").setup()
-
-            vim.keymap.set("n", "<A-c>", "<cmd>Checkbox interactive<CR>", { noremap = true, silent = true })
-            -- vim.keymap.set("n", "<A-f>", "<cmd>CodeCreate<CR>", { noremap = true, silent = true })
-            -- vim.keymap.set("n", "<A-e>", "<cmd>CodeEdit<CR>", { noremap = true, silent = true })
-        end,
-    },
-
     -- DOCS: Help document renderer
     {
         "OXY2DEV/helpview.nvim",
@@ -103,30 +20,59 @@ return {
 
     -- DOCS: Jupyter notebook support
     {
-        "GCBallesteros/jupytext.nvim",
-        lazy = false,
-        opts = {},
+        "goerz/jupytext.vim",
+        config = function ()
+            -- Jupyter notebook configuration
+            vim.api.nvim_create_augroup("jupyter_config", { clear = true })
+            vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+                pattern = {"*.ipynb"},
+                group = "jupyter_config",
+                callback = function()
+                    -- Set filetype
+                    vim.bo.filetype = "markdown.jupyter"
+
+                    -- Configure magma-nvim
+                    vim.keymap.set('n', '<leader>r', ':MagmaEvaluateOperator<CR>', {silent = true, noremap = true})
+                    vim.keymap.set('n', '<leader>rr', ':MagmaEvaluateLine<CR>', {silent = true, noremap = true})
+                    vim.keymap.set('n', '<leader>rc', ':MagmaReevaluateCell<CR>', {silent = true, noremap = true})
+                    vim.keymap.set('n', '<leader>rd', ':MagmaDelete<CR>', {silent = true, noremap = true})
+                    vim.keymap.set('n', '<leader>ro', ':MagmaShowOutput<CR>', {silent = true, noremap = true})
+
+                    -- Set magma kernel (adjust as needed)
+                    vim.g.magma_automatically_open_output = false
+                    vim.g.magma_image_provider = "kitty"
+                    vim.g.magma_cell_highlight_group = "CursorLine"
+
+                    if vim.bo.filetype == "ocaml" or vim.bo.filetype:match(".*ocaml.*") then
+                        vim.g.magma_kernel_priority = {"ocaml-jupyter"}
+                    else
+                        vim.g.magma_kernel_priority = {"python3"}
+                    end
+                end
+            })
+
+            -- Jupyter conversion settings (can use jupytext.vim instead of jupytext.nvim)
+            vim.g.jupytext_fmt = 'md'
+            vim.g.jupytext_style = 'markdown'
+        end
     },
 
-    -- DOCS: Jupyter notebook renderer
+    -- DOCS: Jupyter integration
     {
-        "benlubas/molten-nvim",
-        version = "<2.0.0",
+        "dccsillag/magma-nvim",
         build = ":UpdateRemotePlugins",
-        config = function ()
-            vim.g.molten_output_win_max_height = 12
-
-            vim.keymap.set("n", "<Leader>Mi", "<cmd>MoltenInit<CR>", { silent = true, desc = "Molten: Initialize plugin" })
-            vim.keymap.set("n", "<Leader>Me", "<cmd>MoltenEvaluateOperator<CR>", { silent = true, desc = "Molten: Run operator selection" })
-            vim.keymap.set("n", "<Leader>Ml", "<cmd>MoltenEvaluateLine<CR>", { silent = true, desc = "Molten: Initialize line" })
-            vim.keymap.set("n", "<Leader>Mc", "<cmd>MoltenReevaluateCell<CR>", { silent = true, desc = "Molten: Re-evaluate cell" })
-            vim.keymap.set("n", "<Leader>Mv", "<cmd>MoltenEvaluateVisual<CR>gv", { silent = true, desc = "Molten: Evaluate visual selection" })
-            vim.keymap.set("n", "<Leader>Md", "<cmd>MoltenDelete<CR>", { silent = true, desc = "Molten: Delete cell" })
-            vim.keymap.set("n", "<Leader>Mh", "<cmd>MoltenHideOutput<CR>", { silent = true, desc = "Molten: Hide output" })
-            vim.keymap.set("n", "<Leader>Mo", "<cmd>MoltenEnterOutput<CR>", { silent = true, desc = "Molten: Show/enter output" })
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+        ft = {"python", "julia", "ocaml", "markdown"}, 
+        config = function()
+            -- Make sure to execute this after the plugin is loaded
+            vim.g.magma_automatically_open_output = false
+            vim.g.magma_image_provider = "kitty"  -- Or "ueberzug" if you use it
         end,
     },
 
+    -- DOCS: Codeblock containerization
     {
         'AckslD/nvim-FeMaco.lua',
         ft = "markdown",
@@ -137,23 +83,43 @@ return {
         end,
     },
 
-    -- DOCS: Bufferline
     {
-        "willothy/nvim-cokeline",
-        dependencies = {
-            "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
-            "nvim-tree/nvim-web-devicons", -- If you want devicons
-            "stevearc/resession.nvim"       -- Optional, for persistent history
-        },
+        'MeanderingProgrammer/render-markdown.nvim',
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+        -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+        dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+        ---@module 'render-markdown'
         config = function ()
-            require("cokeline").setup({
-                buffers = {
-                    delete_on_right_click = false,
+            require("render-markdown").setup({
+                completions = {
+                    lsp = {
+                        enabled = true,
+                    }
                 },
-                mappings = {
-                    disable_mouse = true,
+                sign = {
+                    enabled = false,
                 },
+                indent = {
+                    enabled = true,
+                    render_modes = true,
+                },
+                heading = {
+                    position = "overlay",
+                    left_pad = 0.5
+                },
+                code = {
+                    render_modes = true,
+                    width = "block",
+                    border = "thick",
+                    left_margin = 0.5,
+                    left_pad = 0.2,
+                    right_pad = 0.2,
+                },
+                pipe_table = {
+                    style = "normal",
+                }
             })
         end,
-    }
+        opts = {},
+    },
 }

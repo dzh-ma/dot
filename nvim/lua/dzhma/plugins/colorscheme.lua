@@ -19,6 +19,7 @@ return {
                     mason = true,
                     noice = true,
                     hop = true,
+                    markdown = true,
                 },
                 custom_highlights = function(colors)
                     return {
