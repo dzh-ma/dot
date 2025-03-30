@@ -16,7 +16,6 @@ return {
                 "html",
                 "jdtls",
                 "julials",
-                "markdown_oxide",
                 "millet",
                 "phpactor",
                 "pyright",
