@@ -1,5 +1,5 @@
 /**
- * ROFI Color Theme - Catpuuccin Adaptation
+ * ROFI Color Theme - Catppuccin Adaptation
  */
 
 * {
@@ -25,7 +25,7 @@
     transparent:                       #00000000;
     
     /* Font */
-    font:                              "SpaceMono Nerd Font Mono 15";
+    font:                              "SpaceMono Nerd Font Mono 30";
     
     padding:                           0px;
     margin:                            0px;
@@ -60,7 +60,7 @@ message {
     border-color:                      @foreground;
     padding:                           5;
     background-color:                  @backlight;
-    font:                              "SpaceMono Nerd Font Mono 15";
+    font:                              "SpaceMono Nerd Font Mono 30";
     color:                             @foreground;
 }
 
@@ -70,7 +70,7 @@ inputbar {
     background-color:                  @backlight;
     border:                            2px 2px 2px 2px;
     border-color:                      @gray-dark;
-    font:                              "SpaceMono Nerd Font Mono 15";
+    font:                              "SpaceMono Nerd Font Mono 30";
 }
 
 entry, prompt, case-indicator {
