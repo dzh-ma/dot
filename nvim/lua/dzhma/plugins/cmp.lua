@@ -139,6 +139,7 @@ return {
                             preselect_correct_word = true,
                         },
                     },
+                    { name = "render-markdown" },
                 }),
                 formatting = {
                     fields = { "kind", "abbr", "menu" },

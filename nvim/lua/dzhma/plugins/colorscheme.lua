@@ -20,13 +20,18 @@ return {
                     noice = true,
                     hop = true,
                     markdown = true,
+                    indent_blankline = {
+                        enabled = true,
+                        scope_color = "mauve",
+                        colored_indetn_levels = true,
+                    }
                 },
                 custom_highlights = function(colors)
                     return {
                         ["@neorg.markup.inline_math.norg"] = { fg = colors.flamingo },
                         ["@markup.quote.markdown"] = { fg = colors.mauve },
                     }
-                end
+                end,
             })
 
             require("lualine").setup({

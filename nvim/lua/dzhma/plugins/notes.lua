@@ -18,7 +18,7 @@ return {
         ft = { "markdown", "typst" },
     },
 
-    -- DOCS: Codeblock containerization
+    -- DOCS: Code-block containerization
     {
         'AckslD/nvim-FeMaco.lua',
         ft = "markdown",
@@ -29,6 +29,7 @@ return {
         end,
     },
 
+    -- DOCS: Markdown renderer
     {
         'MeanderingProgrammer/render-markdown.nvim',
         -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
@@ -51,7 +52,7 @@ return {
                 },
                 heading = {
                     position = "overlay",
-                    left_pad = 0.5
+                    -- left_pad = 0.5
                 },
                 code = {
                     render_modes = true,
@@ -63,7 +64,7 @@ return {
                 },
                 pipe_table = {
                     style = "normal",
-                }
+                },
             })
         end,
         opts = {},
