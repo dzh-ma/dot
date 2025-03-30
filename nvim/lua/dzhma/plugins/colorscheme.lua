@@ -19,12 +19,13 @@ return {
                     mason = true,
                     noice = true,
                     hop = true,
-                    markdown = true,
+                    render_markdown = true,
                     indent_blankline = {
                         enabled = true,
                         scope_color = "mauve",
-                        colored_indetn_levels = true,
-                    }
+                        colored_indent_levels = true,
+                    },
+                    rainbow_delimiters = true,
                 },
                 custom_highlights = function(colors)
                     return {
