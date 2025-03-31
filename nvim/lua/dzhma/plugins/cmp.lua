@@ -85,6 +85,9 @@ return {
             local lspkind = require("lspkind")
             local tailwindcss_colorizer_cmp = require("tailwindcss-colorizer-cmp")
 
+            vim.keymap.set({"s"}, "<Tab>", function() require('luasnip').jump(1) end, { silent = true })
+            vim.keymap.set({"s"}, "<S-Tab>", function() require('luasnip').jump(-1) end, { silent = true })
+
             cmp.setup({
                 window = {
                     completion = {
