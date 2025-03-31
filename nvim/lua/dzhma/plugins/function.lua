@@ -119,7 +119,7 @@ return {
     {
         "stevearc/aerial.nvim",
         event = "VeryLazy",
-        keys = { "<A-a>", "<Leader>a", "<Leader>A" },
+        keys = { "<A-o>", "<Leader>a", "<Leader>A" },
         dependencies = {
             "nvim-treesitter/nvim-treesitter",
             "nvim-tree/nvim-web-devicons",
@@ -153,7 +153,7 @@ return {
                 --    "Struct",
                 --},
             })
-            vim.keymap.set("n", "<A-a>", "<cmd>AerialToggle!<CR>", { noremap = true, silent = true })
+            vim.keymap.set("n", "<A-o>", "<cmd>AerialToggle!<CR>", { noremap = true, silent = true })
         end,
     },
 
@@ -282,7 +282,7 @@ return {
         "smoka7/hop.nvim",
         version = "*",
         keys = {
-            { "<A-h>", "<cmd>HopWord<CR>", desc = "Hop to a word" },
+            { "<A-a>", "<cmd>HopWord<CR>", desc = "Hop to a word" },
         },
         opts = {
              keys = "etovxqpdygfblzhckisuran",

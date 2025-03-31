@@ -154,7 +154,7 @@ threshold = 70
 style = "dimmed white"
 
 [git_branch]
-format = "[ $symbol $branch(:$remote_branch)]($style)"
+format = "[ $symbol $branch(:$remote_branch) ]($style)"
 symbol = "[◬](bold bright-blue)"
 style = "bold italic bright-blue"
 
