@@ -8,7 +8,7 @@ vim.opt.wrap = false                -- disables ugly screen wrapping
 vim.opt.signcolumn = "yes"          -- prevents screen jumping right when LSP issue is raised
 vim.opt.conceallevel = 0
 vim.opt.concealcursor = "cn"
-vim.opt.spell = true
+vim.opt.spell = false
 vim.opt.spelllang = { "en_us" }
 
 vim.o.shiftwidth = 4
@@ -43,10 +43,18 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- disabling spellchecking on terminal
-vim.api.nvim_create_autocmd("TermOpen", {
-    pattern = "*",
-    callback = function()
-        vim.opt_local.spell = false
+-- vim.api.nvim_create_autocmd("TermOpen", {
+--     pattern = "*",
+--     callback = function()
+--         vim.opt_local.spell = false
+--     end,
+-- })
+
+-- spellchecking enabled only during note taking & documentation
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "markdown", "md" },
+    callback = function ()
+        vim.opt_local.spell = true
     end,
 })
 

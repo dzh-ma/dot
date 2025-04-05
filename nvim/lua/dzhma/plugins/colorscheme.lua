@@ -34,6 +34,7 @@ return {
                         -- render-markdown
                         ["RenderMarkdownUnchecked"] = { fg = "#FF0000", bold = true },
                         ["RenderMarkdownChecked"] = { fg = "#00FF00", bold = true },
+                        ["RenderMarkdownInlineHighlight"] = { bg = "#383a3e" },
 
                         -- neorg headings
                         ["@neorg.headings.1.title.norg"] = { fg = "#FF0000", bg = "#400000", bold = true, italic = true },
