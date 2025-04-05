@@ -28,6 +28,8 @@ return {
                         -- general markup
                         ["@markup.strong"] = { fg = "#FF0000", bold = true },
                         ["@markup.italic"] = { fg = "#FFFF00", italic = true },
+                        ["@markup.list.unchecked.markdown"] = { fg = "#FF0000", bold = true },
+                        ["@markup.list.checked.markdown"] = { fg = "#00FF00", bold = true },
 
                         -- render-markdown
                         ["RenderMarkdownUnchecked"] = { fg = "#FF0000", bold = true },
