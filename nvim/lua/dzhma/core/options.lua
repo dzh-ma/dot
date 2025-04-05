@@ -3,7 +3,7 @@ vim.cmd[["syntax enable"]]
 vim.o.number = true                 -- numbered columns (effective on current line)
 vim.o.relativenumber = true         -- relative numbered columns
 vim.o.termguicolors = true
-vim.opt.cursorline = true
+vim.opt.cursorline = false
 vim.opt.wrap = false                -- disables ugly screen wrapping
 vim.opt.signcolumn = "yes"          -- prevents screen jumping right when LSP issue is raised
 vim.opt.conceallevel = 0
@@ -23,7 +23,7 @@ vim.opt.scrolloff = 999
 
 -- menu line appearance
 vim.opt.laststatus = 2
-vim.opt.showtabline = 2
+vim.opt.showtabline = 0
 
 -- neovide settings
 vim.g.neovide_cursor_animation_length = 0.13

@@ -1,39 +1,39 @@
 * {
-  font-family: "iMWritingMono Nerd Font Mono" !important;
-  font-size: 30px;
+  font-family: "JetBrainsMono Nerd Font" !important;
+  font-size: 16px;
 }
 
 html:not(.style-scope)
 {
-  font-family: "iMWritingMono Nerd Font Mono";
-  --ctp-rosewater: #f5e0dc;
-  --ctp-flamingo: #f2cdcd;
-  --ctp-pink: #f5c2e7;
-  --ctp-mauve: #cba6f7;
-  --ctp-red: #f38ba8;
-  --ctp-maroon: #eba0ac;
-  --ctp-peach: #fab387;
-  --ctp-yellow: #f9e2af;
-  --ctp-green: #a6e3a1;
-  --ctp-teal: #94e2d5;
-  --ctp-sky: #89dceb;
-  --ctp-sapphire: #74c7ec;
-  --ctp-blue: #89b4fa;
-  --ctp-lavender: #b4befe;
-  --ctp-text: #cdd6f4;
-  --ctp-subtext1: #bac2de;
-  --ctp-subtext0: #a6adc8;
-  --ctp-overlay2: #9399b2;
-  --ctp-overlay1: #7f849c;
-  --ctp-overlay0: #6c7086;
-  --ctp-surface2: #585b70;
-  --ctp-surface1: #45475a;
-  --ctp-surface0: #313244;
-  --ctp-base: #1e1e2e;
-  --ctp-mantle: #181825;
-  --ctp-crust: #11111b;
+  font-family: "JetBrainsMono Nerd Font";
+  --ctp-rosewater: #f6d5a4; /* palette 14 */
+  --ctp-flamingo: #d03770; /* palette 9 */
+  --ctp-pink: #ff008c; /* palette 13 */
+  --ctp-mauve: #ee2c68; /* cursor-color */
+  --ctp-red: #d54e53; /* palette 1 */
+  --ctp-maroon: #d03770; /* palette 9 */
+  --ctp-peach: #f6d5a4; /* palette 14 */
+  --ctp-yellow: #ffc900; /* palette 3 */
+  --ctp-green: #3dd177; /* palette 2 */
+  --ctp-teal: #64fcda; /* palette 6 */
+  --ctp-sky: #00b0ff; /* palette 4 */
+  --ctp-sapphire: #2b8db3; /* palette 12 */
+  --ctp-blue: #00b0ff; /* palette 4 */
+  --ctp-lavender: #82f4a2; /* palette 10 */
+  --ctp-text: #b0bec4; /* foreground */
+  --ctp-subtext1: #b0bec4; /* foreground */
+  --ctp-subtext0: #676e7b; /* palette 8 */
+  --ctp-overlay2: #676e7b; /* palette 8 */
+  --ctp-overlay1: #383a3e; /* selection-background */
+  --ctp-overlay0: #313244; /* palette 0 */
+  --ctp-surface2: #313244; /* palette 0 */
+  --ctp-surface1: #18191a; /* cursor-text */
+  --ctp-surface0: #18191a; /* cursor-text */
+  --ctp-base: #000000; /* background */
+  --ctp-mantle: #18191a; /* cursor-text */
+  --ctp-crust: #313244; /* palette 0 */
 
-  --ctp-accent: var(--ctp-mauve);
+  --ctp-accent: #ee2c68; /* cursor-color */
 
   --unthemed-yet: inherit !important;
 

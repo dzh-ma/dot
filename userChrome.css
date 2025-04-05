@@ -5,48 +5,48 @@
   font-family: var(--custom-font), sans-serif !important;
 }
 
-/* Hide the navigation bar by default */
-#nav-bar:not([customizing="true"]) {
-  /* Completely hide it from normal flow */
-  position: fixed !important;
-  /* Push it below the visible area */
-  top: -100px !important;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-  z-index: -1;
-}
-
-/* Show navigation bar only when it explicitly gets focus (like from Ctrl+L) */
-#nav-bar:focus-within,
-#urlbar[focused="true"],
-#main-window[focusedURLBar="true"] #nav-bar {
-  /* Position it properly when focused */
-  top: var(--tab-min-height) !important;
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 1;
-}
-
-/* Also show when Alt key is pressed to reveal menu */
-#toolbar-menubar[autohide="false"] ~ #nav-bar {
-  top: var(--tab-min-height) !important;
-  opacity: 1;
-  pointer-events: auto;
-  z-index: 1;
-}
-
-/* Make sure the urlbar is properly positioned within the nav-bar */
-#urlbar-container {
-  min-width: 200px;
-  width: 100%;
-}
-
-/* Fix layout when address bar is visible */
-#nav-bar:focus-within,
-#nav-bar[keynavigating="true"] {
-  position: fixed !important;
-  width: 100%;
-  /* Ensure it's below tabs but visible */
-  top: var(--tab-min-height) !important;
-}
+/* /* Hide the navigation bar by default */ */
+/* #nav-bar:not([customizing="true"]) { */
+/*   /* Completely hide it from normal flow */ */
+/*   position: fixed !important; */
+/*   /* Push it below the visible area */ */
+/*   top: -100px !important; */
+/*   opacity: 0; */
+/*   pointer-events: none; */
+/*   transition: opacity 0.2s ease; */
+/*   z-index: -1; */
+/* } */
+/**/
+/* /* Show navigation bar only when it explicitly gets focus (like from Ctrl+L) */ */
+/* #nav-bar:focus-within, */
+/* #urlbar[focused="true"], */
+/* #main-window[focusedURLBar="true"] #nav-bar { */
+/*   /* Position it properly when focused */ */
+/*   top: var(--tab-min-height) !important; */
+/*   opacity: 1; */
+/*   pointer-events: auto; */
+/*   z-index: 1; */
+/* } */
+/**/
+/* /* Also show when Alt key is pressed to reveal menu */ */
+/* #toolbar-menubar[autohide="false"] ~ #nav-bar { */
+/*   top: var(--tab-min-height) !important; */
+/*   opacity: 1; */
+/*   pointer-events: auto; */
+/*   z-index: 1; */
+/* } */
+/**/
+/* /* Make sure the urlbar is properly positioned within the nav-bar */ */
+/* #urlbar-container { */
+/*   min-width: 200px; */
+/*   width: 100%; */
+/* } */
+/**/
+/* /* Fix layout when address bar is visible */ */
+/* #nav-bar:focus-within, */
+/* #nav-bar[keynavigating="true"] { */
+/*   position: fixed !important; */
+/*   width: 100%; */
+/*   /* Ensure it's below tabs but visible */ */
+/*   top: var(--tab-min-height) !important; */
+/* } */

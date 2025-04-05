@@ -3,7 +3,7 @@
  */
 
 * {
-    foreground:                        #FF0000; /* Foreground */
+    foreground:                        #b0bec4; /* Foreground */
     backlight:                         #000000; /* True black background */
     background-color:                  transparent;
     dark:                              #000000; /* Dark gray */
@@ -15,7 +15,7 @@
     cream:                             #FF0000; /* Green */
     highlight:                         underline bold #FF0000; /* Blue highlight */
     transparent:                       #00000000;
-    font:                              "CaskaydiaCove Nerd Font Mono 16";
+    font:                              "JetBrainsMono Nerd Font Mono 16";
     padding:                           0px;
     margin:                            0px;
 }

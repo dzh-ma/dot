@@ -39,9 +39,9 @@ return {
         config = function ()
             require("render-markdown").setup({
                 completions = {
-                    lsp = {
-                        enabled = true,
-                    }
+                    -- lsp = {
+                    --     enabled = true,
+                    -- }
                 },
                 sign = {
                     enabled = false,
@@ -52,7 +52,22 @@ return {
                 },
                 heading = {
                     position = "overlay",
-                    -- left_pad = 0.5
+                    foregrounds = {
+                        "@neorg.headings.1.title.norg",
+                        "@neorg.headings.2.title.norg",
+                        "@neorg.headings.3.title.norg",
+                        "@neorg.headings.4.title.norg",
+                        "@neorg.headings.5.title.norg",
+                        "@neorg.headings.6.title.norg",
+                    },
+                    backgrounds = {
+                        "@neorg.headings.1.title.norg",
+                        "@neorg.headings.2.title.norg",
+                        "@neorg.headings.3.title.norg",
+                        "@neorg.headings.4.title.norg",
+                        "@neorg.headings.5.title.norg",
+                        "@neorg.headings.6.title.norg",
+                    },
                 },
                 code = {
                     render_modes = true,

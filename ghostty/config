@@ -43,32 +43,33 @@
 # resize-overlay-duration = 4s 200ms
 
 # DOCS: Colorscheme
-palette = 0=#45475a
-palette = 1=#f38ba8
-palette = 2=#a6e3a1
-palette = 3=#f9e2af
-palette = 4=#89b4fa
-palette = 5=#f5c2e7
-palette = 6=#94e2d5
-palette = 7=#bac2de
-palette = 8=#585b70
-palette = 9=#f38ba8
-palette = 10=#a6e3a1
-palette = 11=#f9e2af
-palette = 12=#89b4fa
-palette = 13=#f5c2e7
-palette = 14=#94e2d5
-palette = 15=#a6adc8
-background = 1e1e2e
-foreground = cdd6f4
-cursor-color = f5e0dc
-cursor-text = 1e1e2e
-selection-background = 353749
-selection-foreground = cdd6f4
+palette = 0=#313244 
+palette = 1=#d54e53 
+palette = 2=#3dd177 
+palette = 3=#ffc900 
+palette = 4=#00b0ff 
+palette = 5=#ee2c68 
+palette = 6=#64fcda 
+palette = 7=#b0bec4 
+palette = 8=#676e7b 
+palette = 9=#d03770 
+palette = 10=#82f4a2
+palette = 11=#ffe47e
+palette = 12=#2b8db3
+palette = 13=#ff008c
+palette = 14=#f6d5a4
+palette = 15=#fefefe
+
+background = #000000
+foreground = #b0bec4
+cursor-color = #ee2c68
+cursor-text = #18191a
+selection-background = #383a3e
+selection-foreground = #fefefe
 
 # DOCS: Font
-font-family = "SpaceMono Nerd Font"
-font-size = 32
+font-family = "JetBrainsMono Nerd Font"
+font-size = 16
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never
