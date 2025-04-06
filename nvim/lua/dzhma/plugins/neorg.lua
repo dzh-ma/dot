@@ -1,28 +1,9 @@
 return {
     {
-        "vhyrro/luarocks.nvim",
-        priority = 1000, -- We'd like this plugin to load first out of the rest
-        opts = {
-            rocks = { "magick" },
-        },
-    },
-
-    {
-        "3rd/image.nvim",
-        ft = { 'norg', 'md' },
-        event = "VeryLazy",
-        dependencies = { "luarocks.nvim" },
-        config = function ()
-            require("image").setup()
-        end,
-    },
-
-    {
         "nvim-neorg/neorg",
-        dependencies = { "luarocks.nvim" },
-        -- ft = 'norg',
+        ft = 'norg',
         event = "VeryLazy",
-        lazy = true, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
+        lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
         version = "*", -- Pin Neorg to the latest stable release
         config = function ()
             require('neorg').setup {
@@ -43,7 +24,7 @@ return {
                     },
                     ['core.autocommands'] = {},                 -- required to support other modules
                     ['core.integrations.treesitter'] = {},      -- treesitter highlighting support
-                    ['core.integrations.image'] = {},           -- image support with image.nvim
+                    -- ['core.integrations.image'] = {},           -- image support with image.nvim
                     ['core.esupports.metagen'] = {              -- document metadata generation
                         config = {
                             type = "auto",
@@ -93,11 +74,11 @@ return {
                             },
                         }
                     },             -- automatic indentation
-                    ['core.completion'] = {
-                        config = {
-                            engine = "nvim-cmp"
-                        }
-                    }                    -- autocompletion
+                    -- ['core.completion'] = {
+                    --     config = {
+                    --         engine = "nvim-cmp"
+                    --     }
+                    -- }                    -- autocompletion
                 },
             }
         end,

@@ -69,17 +69,17 @@ return {
                         ["@neorg.links.location.url.norg"] = { fg = colors.dark_gray },
 
                         -- neorg markup
-                        ["@neorg.markup.bold.norg"] = { fg = "#FF0000", bg = "#770000", bold = true },
-                        ["@neorg.markup.italic.norg"] = { fg = "#00FF00", bg = "#007700", italic = true },
-                        ["@neorg.markup.underline.norg"] = { fg = "#00FFFF", bg = "#007777", underline = true },
-                        ["@neorg.markup.strikethrough.norg"] = { fg = "#964B00", bg = "#341D08", strikethrough = true, bold = true },
-                        ["@neorg.markup.verbatim.norg"] = { fg = "#673DFF", bg = "#1F104F" },
-                        ["@neorg.markup.inline_math.norg"] = { fg = "#FF69B4", bg = "#A34774", bold = true },
-                        ["@neorg.markup.superscript.norg"] = { fg = "#FFC0CB", bg = "#AB7A82" },
-                        ["@neorg.markup.subscript.norg"] = { fg = "#8A2BE2", bg = "#2A0134" },
-                        ["@neorg.markup.variable.norg"] = { fg = "#FFA500", bg = "#8B4000", bold = true, italic = true },
+                        ["@neorg.markup.bold.norg"] = { fg = "#FF0000",  bold = true },
+                        ["@neorg.markup.italic.norg"] = { fg = "#00FF00",  italic = true },
+                        ["@neorg.markup.underline.norg"] = { fg = "#00FFFF", underline = true },
+                        ["@neorg.markup.strikethrough.norg"] = { fg = "#964B00", strikethrough = true, bold = true },
+                        ["@neorg.markup.verbatim.norg"] = { fg = "#673DFF" },
+                        ["@neorg.markup.inline_math.norg"] = { fg = "#FF69B4", bold = true },
+                        ["@neorg.markup.superscript.norg"] = { fg = "#FFC0CB" },
+                        ["@neorg.markup.subscript.norg"] = { fg = "#8A2BE2" },
+                        ["@neorg.markup.variable.norg"] = { fg = "#FFA500", bold = true, italic = true },
                         ["@neorg.markup.spoiler.norg"] = { bg = "#7A1B0C" },
-                        ["@neorg.markup.inline_comment.norg"] = { fg = "#A9A9A9", bg = "#1F1F1F", italic = true },
+                        ["@neorg.markup.inline_comment.norg"] = { fg = "#A9A9A9", italic = true },
 
                         -- neorg quotes
                         ["@neorg.quotes.1.content.norg"] = { fg = "#FF6347" },                 -- Tomato

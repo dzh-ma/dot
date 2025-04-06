@@ -20,13 +20,13 @@
 
 #vimiumHintMarkerContainer div.internalVimiumHintMarker, #vimiumHintMarkerContainer div.vimiumHintMarker {
   padding: 3px 4px;
-  background: var(--vimium-accent);
-  border: 1px solid var(--vimium-dark-bg);
+  background: var(--vimium-background); /* black background */
+  border: 1px solid var(--vimium-accent); /* red border */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 #vimiumHintMarkerContainer div span {
-  color: var(--vimium-background) !important;
+  color: var(--vimium-accent) !important; /* red text */
   text-shadow: none;
 }
 
