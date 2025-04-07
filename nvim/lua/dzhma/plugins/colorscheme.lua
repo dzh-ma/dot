@@ -73,7 +73,7 @@ return {
                         ["@neorg.markup.italic.norg"] = { fg = "#00FF00",  italic = true },
                         ["@neorg.markup.underline.norg"] = { fg = "#00FFFF", underline = true },
                         ["@neorg.markup.strikethrough.norg"] = { fg = "#964B00", strikethrough = true, bold = true },
-                        ["@neorg.markup.verbatim.norg"] = { fg = "#673DFF" },
+                        ["@neorg.markup.verbatim.norg"] = { fg = "#FFFFFF", bg = "#673DFF" },
                         ["@neorg.markup.inline_math.norg"] = { fg = "#FF69B4", bold = true },
                         ["@neorg.markup.superscript.norg"] = { fg = "#FFC0CB" },
                         ["@neorg.markup.subscript.norg"] = { fg = "#8A2BE2" },
@@ -103,6 +103,8 @@ return {
                         ["@neorg.lists.ordered.prefix.norg"] = { fg = "#FFFF00", bg = "#5B4A08" },
                         ["@neorg.lists.unordered.prefix.norg"] = { fg = "#FFFF00", bg = "#5B4A08" },
                         ["@neorg.tags.ranged_verbatim.document_meta.key.norg_meta"] = { fg = "#FFFF00", bg = "#504E17", bold = true },
+                        ["@neorg.footnotes.content.norg"] = { fg = "#FFFF00", bg = "#515151", bold = true },
+                        ["@neorg.definitions.content.norg"] = { fg = "#00FFFF", bg = "#515151", bold = true },
 
                         -- neorg todo
                         ["@neorg.todo_items.undone.norg"] = { fg = "#FF0000", bg = "#5B4513" },

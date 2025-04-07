@@ -131,6 +131,7 @@ return {
                     { name = "buffer" }, -- text within the current buffer
                     -- { name = "path" }, -- file system paths
                     { name = "async_path" },
+                    { name = "neorg" },
                     {
                         name = "spell",
                         option = {

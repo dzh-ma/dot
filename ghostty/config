@@ -69,7 +69,7 @@ selection-foreground = #fefefe
 
 # DOCS: Font
 font-family = "JetBrainsMono Nerd Font"
-font-size = 16
+font-size = 18
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never

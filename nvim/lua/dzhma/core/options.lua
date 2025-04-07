@@ -52,7 +52,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- spellchecking enabled only during note taking & documentation
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "markdown", "md" },
+    pattern = { "markdown", "md", "neorg", "norg" },
     callback = function ()
         vim.opt_local.spell = true
     end,

@@ -15,7 +15,7 @@ return {
     -- DOCS: Table formatter
     {
         "dhruvasagar/vim-table-mode",
-        ft = { "markdown", "typst" },
+        ft = { "markdown", "typst", "norg" },
     },
 
     -- DOCS: Code-block containerization

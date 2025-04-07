@@ -56,46 +56,31 @@ return {
                     ['core.esupports.indent'] = {
                         config = {
                             indents = {
-                                heading2 = {
-                                    indent = 4,
-                                },
-                                heading3 = {
-                                    indent = 8,
-                                },
-                                heading4 = {
-                                    indent = 12,
-                                },
-                                heading5 = {
-                                    indent = 16,
-                                },
-                                heading6 = {
-                                    indent = 20,
-                                },
+                                -- heading2 = {
+                                --     indent = 4,
+                                -- },
+                                -- heading3 = {
+                                --     indent = 8,
+                                -- },
+                                -- heading4 = {
+                                --     indent = 12,
+                                -- },
+                                -- heading5 = {
+                                --     indent = 16,
+                                -- },
+                                -- heading6 = {
+                                --     indent = 20,
+                                -- },
                             },
                         }
                     },             -- automatic indentation
-                    -- ['core.completion'] = {
-                    --     config = {
-                    --         engine = "nvim-cmp"
-                    --     }
-                    -- }                    -- autocompletion
+                    ['core.completion'] = {
+                        config = {
+                            engine = "nvim-cmp"
+                        }
+                    }                    -- autocompletion
                 },
             }
         end,
     },
-
-    -- {
-    --     "lukas-reineke/headlines.nvim",
-    --     ft = { 'norg' },
-    --     dependencies = "nvim-treesitter/nvim-treesitter",
-    --     config = function ()
-    --         -- vim.cmd([[highlight CodeBlock guibg=#1E2130]])
-    --         vim.cmd([[highlight CodeBlock guibg=#140D07]])
-    --         require('headlines').setup({
-    --             norg = {
-    --                 fat_headlines = false,
-    --             }
-    --         })
-    --     end
-    -- },
 }
