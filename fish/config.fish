@@ -65,6 +65,9 @@ if status is-interactive
     alias jumd="jupytext --to markdown"
     alias juno="jupytext --to notebook"
     alias minorg="~/Work/minorg/minorg"
+    alias tlist="sudo timeshift --list --snapshot-device /dev/nvme0n1p2"
+    alias tcreate="sudo timeshift --create --comments"
+    alias tdelete="sudo timeshift --delete-all"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
