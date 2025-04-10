@@ -68,8 +68,8 @@ selection-background = #383a3e
 selection-foreground = #fefefe
 
 # DOCS: Font
-font-family = "JetBrainsMono Nerd Font"
-font-size = 18
+font-family = "CaskaydiaCove Nerd Font"
+font-size = 24
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never

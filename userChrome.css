@@ -1,5 +1,5 @@
 :root {
-  --custom-font: "JetBrainsMono Nerd Font";
+  --custom-font: "CaskaydiaCove Nerd Font";
 }
 * {
   font-family: var(--custom-font), sans-serif !important;

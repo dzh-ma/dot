@@ -15,7 +15,7 @@
     cream:                             #FF0000; /* Green */
     highlight:                         underline bold #FF0000; /* Blue highlight */
     transparent:                       #00000000;
-    font:                              "JetBrainsMono Nerd Font Mono 16";
+    font:                              "CaskaydiaCove Nerd Font Mono 16";
     padding:                           0px;
     margin:                            0px;
 }

@@ -132,7 +132,7 @@ return {
                         -- ["@neorg.tags.ranged_verbatim.document_meta.key.norg_meta"] = { fg = "#FFFF00", bg = "#504E17", bold = true },
                         -- ["@neorg.footnotes.content.norg"] = { fg = "#FFFF00", bg = "#515151", bold = true },
                         -- ["@neorg.definitions.content.norg"] = { fg = "#00FFFF", bg = "#515151", bold = true },
-                        -- ["@neorg.tags.ranged_verbatim.begin.norg"] = { fg = "#964B00", bg = "#4B280A", bold = true, italic = true },
+                        ["@neorg.tags.ranged_verbatim.begin.norg"] = { fg = "#964B00", bold = true, italic = true },
                         ["@neorg.tags.ranged_verbatim.end.norg"] = { fg = "#964B00", bold = true, italic = true },
                         ["@neorg.tags.ranged_verbatim.name.word.norg"] = { fg = "#964B00", bold = true, italic = true},
                         ["@neorg.tags.ranged_verbatim.parameters.word.norg"] = { fg = "#66FF00", bold = true, italic = true},
