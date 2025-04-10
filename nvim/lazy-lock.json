@@ -42,6 +42,7 @@
   "pathlib.nvim": { "branch": "main", "commit": "57e5598af6fe253761c1b48e0b59b7cd6699e2c1" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "render-markdown.nvim": { "branch": "main", "commit": "05e6a6d119f90b99829ecb7eb85428a226c0c05f" },
+  "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "snipe-spell.nvim": { "branch": "main", "commit": "973b3d70ea026d9b43b56c4834c19ee85b3b1372" },
   "snipe.nvim": { "branch": "main", "commit": "f43a1f0090de03d48ce5c55df630c1aa4d0b4291" },
   "tailwindcss-colorizer-cmp.nvim": { "branch": "main", "commit": "3d3cd95e4a4135c250faf83dd5ed61b8e5502b86" },
