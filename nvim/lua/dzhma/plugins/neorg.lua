@@ -78,7 +78,12 @@ return {
                         config = {
                             engine = "nvim-cmp"
                         }
-                    }                    -- autocompletion
+                    },                   -- autocompletion
+                    ['core.todo-introspector'] = {
+                        config = {
+                            highlight_group = "@neorg.markup.superscript.norg",
+                        }
+                    },
                 },
             }
         end,
