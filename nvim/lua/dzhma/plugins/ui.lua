@@ -89,39 +89,39 @@ return {
     },
 
     -- DOCS: Indentation
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        main = "ibl",
-        config = function ()
-            local highlight = {
-                "RainbowRed",
-                "RainbowYellow",
-                "RainbowBlue",
-                "RainbowPink", -- Will use Magenta color
-                "RainbowGreen",
-                "RainbowMagenta",
-                "RainbowCyan",
-            }
-
-            local hooks = require "ibl.hooks"
-            -- create the highlight groups in the highlight setup hook, so they are reset
-            -- every time the colorscheme changes
-            hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-                -- Colors updated to match Cyberdream theme
-                vim.api.nvim_set_hl(0, "RainbowRed",     { fg = "#d11500" }) -- Cyberdream Red
-                vim.api.nvim_set_hl(0, "RainbowYellow",  { fg = "#997b00" }) -- Cyberdream Yellow
-                vim.api.nvim_set_hl(0, "RainbowBlue",    { fg = "#0057d1" }) -- Cyberdream Blue
-                vim.api.nvim_set_hl(0, "RainbowPink",    { fg = "#a018ff" }) -- Cyberdream Magenta (substituted for Pink)
-                vim.api.nvim_set_hl(0, "RainbowGreen",   { fg = "#008b0c" }) -- Cyberdream Green
-                vim.api.nvim_set_hl(0, "RainbowMagenta", { fg = "#a018ff" }) -- Cyberdream Magenta
-                vim.api.nvim_set_hl(0, "RainbowCyan",    { fg = "#008c99" }) -- Cyberdream Cyan
-            end)
-
-            require("ibl").setup { indent = { highlight = highlight } }
-        end,
-        opts = {}
-    },
-
+    -- {
+    --     "lukas-reineke/indent-blankline.nvim",
+    --     main = "ibl",
+    --     config = function ()
+    --         local highlight = {
+    --             "RainbowRed",
+    --             "RainbowYellow",
+    --             "RainbowBlue",
+    --             "RainbowPink", -- Will use Magenta color
+    --             "RainbowGreen",
+    --             "RainbowMagenta",
+    --             "RainbowCyan",
+    --         }
+    --
+    --         local hooks = require "ibl.hooks"
+    --         -- create the highlight groups in the highlight setup hook, so they are reset
+    --         -- every time the colorscheme changes
+    --         hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    --             -- Colors updated to match Cyberdream theme
+    --             vim.api.nvim_set_hl(0, "RainbowRed",     { fg = "#d11500" }) -- Cyberdream Red
+    --             vim.api.nvim_set_hl(0, "RainbowYellow",  { fg = "#997b00" }) -- Cyberdream Yellow
+    --             vim.api.nvim_set_hl(0, "RainbowBlue",    { fg = "#0057d1" }) -- Cyberdream Blue
+    --             vim.api.nvim_set_hl(0, "RainbowPink",    { fg = "#a018ff" }) -- Cyberdream Magenta (substituted for Pink)
+    --             vim.api.nvim_set_hl(0, "RainbowGreen",   { fg = "#008b0c" }) -- Cyberdream Green
+    --             vim.api.nvim_set_hl(0, "RainbowMagenta", { fg = "#a018ff" }) -- Cyberdream Magenta
+    --             vim.api.nvim_set_hl(0, "RainbowCyan",    { fg = "#008c99" }) -- Cyberdream Cyan
+    --         end)
+    --
+    --         require("ibl").setup { indent = { highlight = highlight } }
+    --     end,
+    --     opts = {}
+    -- },
+    --
 
     -- DOCS: Bufferline
     {
