@@ -6,8 +6,8 @@ vim.o.termguicolors = true
 vim.opt.cursorline = false
 vim.opt.wrap = false                -- disables ugly screen wrapping
 vim.opt.signcolumn = "yes"          -- prevents screen jumping right when LSP issue is raised
-vim.opt.conceallevel = 0
-vim.opt.concealcursor = "cn"
+vim.opt.conceallevel = 3
+-- vim.opt.concealcursor = "cn"
 vim.opt.spell = false
 vim.opt.spelllang = { "en_us" }
 
