@@ -76,17 +76,17 @@ return {
     },
 
     -- DOCS: Clean diagnostics
-    -- {
-    --     "rachartier/tiny-inline-diagnostic.nvim",
-    --     event = "VeryLazy", -- Or `LspAttach`
-    --     priority = 1000, -- needs to be loaded in first
-    --     config = function()
-    --         require("tiny-inline-diagnostic").setup({
-    --             preset = "ghost",
-    --         })
-    --         vim.diagnostic.config({virtual_text = false})
-    --     end
-    -- },
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "VeryLazy", -- Or `LspAttach`
+        priority = 1000, -- needs to be loaded in first
+        config = function()
+            require("tiny-inline-diagnostic").setup({
+                preset = "ghost",
+            })
+            vim.diagnostic.config({virtual_text = false})
+        end
+    },
 
     -- DOCS: Indentation
     {
@@ -97,7 +97,7 @@ return {
                 "RainbowRed",
                 "RainbowYellow",
                 "RainbowBlue",
-                "RainbowPink",
+                "RainbowPink", -- Will use Magenta color
                 "RainbowGreen",
                 "RainbowMagenta",
                 "RainbowCyan",
@@ -107,13 +107,14 @@ return {
             -- create the highlight groups in the highlight setup hook, so they are reset
             -- every time the colorscheme changes
             hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
-                vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#d54e53" })
-                vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#ffc900" })
-                vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#00b0ff" })
-                vim.api.nvim_set_hl(0, "RainbowPink", { fg = "#ee2c68" })
-                vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#3dd177" })
-                vim.api.nvim_set_hl(0, "RainbowMagenta", { fg = "#d03770" })
-                vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#64fcda" })
+                -- Colors updated to match Cyberdream theme
+                vim.api.nvim_set_hl(0, "RainbowRed",     { fg = "#d11500" }) -- Cyberdream Red
+                vim.api.nvim_set_hl(0, "RainbowYellow",  { fg = "#997b00" }) -- Cyberdream Yellow
+                vim.api.nvim_set_hl(0, "RainbowBlue",    { fg = "#0057d1" }) -- Cyberdream Blue
+                vim.api.nvim_set_hl(0, "RainbowPink",    { fg = "#a018ff" }) -- Cyberdream Magenta (substituted for Pink)
+                vim.api.nvim_set_hl(0, "RainbowGreen",   { fg = "#008b0c" }) -- Cyberdream Green
+                vim.api.nvim_set_hl(0, "RainbowMagenta", { fg = "#a018ff" }) -- Cyberdream Magenta
+                vim.api.nvim_set_hl(0, "RainbowCyan",    { fg = "#008c99" }) -- Cyberdream Cyan
             end)
 
             require("ibl").setup { indent = { highlight = highlight } }
@@ -123,22 +124,22 @@ return {
 
 
     -- DOCS: Bufferline
-    -- {
-    --     "willothy/nvim-cokeline",
-    --     dependencies = {
-    --         "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
-    --         "nvim-tree/nvim-web-devicons", -- If you want devicons
-    --         "stevearc/resession.nvim"       -- Optional, for persistent history
-    --     },
-    --     config = function ()
-    --         require("cokeline").setup({
-    --             buffers = {
-    --                 delete_on_right_click = false,
-    --             },
-    --             mappings = {
-    --                 disable_mouse = true,
-    --             },
-    --         })
-    --     end,
-    -- },
+    {
+        "willothy/nvim-cokeline",
+        dependencies = {
+            "nvim-lua/plenary.nvim",        -- Required for v0.4.0+
+            "nvim-tree/nvim-web-devicons", -- If you want devicons
+            "stevearc/resession.nvim"       -- Optional, for persistent history
+        },
+        config = function ()
+            require("cokeline").setup({
+                buffers = {
+                    delete_on_right_click = false,
+                },
+                mappings = {
+                    disable_mouse = true,
+                },
+            })
+        end,
+    },
 }

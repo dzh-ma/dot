@@ -1,0 +1,188 @@
+/**
+ * ROFI Color Theme - Adapted for Cyberdream
+ */
+
+* {
+    /* Base Colors - Cyberdream */
+    foreground:         #16181a;    /* Primary text (Cyberdream foreground) */
+    backlight:          #ffffff;    /* Primary background (Cyberdream background) */
+    background-color:   transparent; /* Keep window background transparent initially */
+
+    /* Accent Colors - Cyberdream */
+    dark:               #acacac;    /* Dark accent / Border (Cyberdream Gray) */
+    red:                #d11500;    /* Error/Red accent (Cyberdream Red) */
+    red-alt:            #d11500;    /* Alternate red (Cyberdream Red) */
+    orange:             #997b00;    /* Active element accent (Cyberdream Yellow) */
+    gray-dark:          #acacac;    /* Reusing dark/gray for consistency */
+
+    /* Element Colors - Cyberdream */
+    element-bg:         #ffffff;    /* Same as backlight (Cyberdream Background) */
+    cream:              #16181a;    /* Element text (Cyberdream Foreground) */
+
+    /* Highlight styling - Using Cyberdream Gray */
+    highlight:          underline bold #acacac; /* Underline & bold with gray */
+
+    transparent:        #00000000;
+
+    /* Font (using your desired font) */
+    font:               "IosevkaTermSlab Nerd Font 18";
+
+    padding:            0px;
+    margin:             0px;
+}
+
+configuration {
+    display-drun: "Applications: ";
+    display-run: "Commands: ";
+    display-window: "Windows: ";
+}
+
+window {
+    width:              50%;
+    location:           center;
+    anchor:             center;
+    padding:            0px;
+    border:             5px;
+    border-radius:      0.2%;
+    border-color:       @dark; /* Gray border */
+    background-color:   @backlight; /* White background */
+    spacing:            0;
+    children:           [ mainbox ];
+    orientation:        horizontal;
+}
+
+mainbox {
+    spacing:            0;
+    children:           [ inputbar, message, listview ];
+}
+
+message {
+    border-color:       @foreground; /* Black border for contrast */
+    padding:            5;
+    background-color:   @backlight; /* White background */
+    font:               "IosevkaTermSlab Nerd Font 18";
+    color:              @foreground; /* Black text */
+}
+
+inputbar {
+    color:              @foreground; /* Black text */
+    padding:            10px;
+    background-color:   @backlight; /* White background */
+    border:             2px 2px 2px 2px;
+    border-color:       @gray-dark; /* Gray border */
+    font:               "IosevkaTermSlab Nerd Font 18";
+}
+
+entry, prompt, case-indicator {
+    text-font:          inherit;
+    text-color:         @red; /* Red prompt text */
+}
+
+prompt {
+    margin:             0px 0.5em 0em 0em;
+}
+
+listview {
+    padding:            3px;
+    border-color:       @gray-dark; /* Gray border */
+    border:             0px 2px 2px 2px;
+    background-color:   @backlight; /* White background */
+    dynamic:            false;
+    lines:              10;
+    columns:            1;
+}
+
+element {
+    padding:            3px;
+    vertical-align:     0.5;
+    border:             2px;
+    border-radius:      0px;
+    background-color:   @element-bg; /* White background */
+    color:              @cream; /* Black text */
+    font:               inherit;
+}
+
+element-text {
+    background-color:   inherit;
+    text-color:         inherit; /* Black text */
+}
+
+/* Selected elements use the accent colors */
+element selected.normal {
+    background-color:   @orange; /* Yellow background for selected */
+    text-color:         @backlight; /* White text for selected */
+}
+
+element normal active {
+    /* Active but not selected */
+    foreground:         @orange; /* Yellow text */
+}
+
+element normal urgent {
+    foreground:         @red; /* Red text for urgent */
+}
+
+element alternate normal {}
+
+element alternate active {
+    foreground:         @orange; /* Yellow text */
+}
+
+element alternate urgent {
+    foreground:         @red; /* Red text */
+}
+
+element selected active {
+    background-color:   @red-alt; /* Red background */
+    foreground:         @backlight; /* White text */
+}
+
+element selected urgent {
+    background-color:   @red; /* Red background */
+    foreground:         @backlight; /* White text */
+}
+
+element normal normal {}
+
+vertb {
+    expand:             false;
+    children:           [ dummy0, mode-switcher, dummy1 ];
+}
+
+dummy0, dummy1 {
+    expand:             true;
+}
+
+mode-switcher {
+    expand:             false;
+    orientation:        vertical;
+    spacing:            0px;
+    border:             0px 0px 0px 0px;
+}
+
+button {
+    font:               "FontAwesome 22"; /* Make sure this font is installed */
+    padding:            6px;
+    border:             2px 0px 2px 2px;
+    border-radius:      4px 0px 0px 4px;
+    background-color:   @backlight; /* White background */
+    border-color:       @foreground; /* Black border */
+    color:              @foreground; /* Black icon */
+    horizontal-align:   0.5;
+}
+
+button selected normal {
+    color:              @backlight; /* White icon */
+    border:             2px 0px 2px 2px;
+    background-color:   @dark; /* Gray background */
+    border-color:       @foreground; /* Black border */
+}
+
+error-message {
+    expand:             true;
+    background-color:   @red-alt; /* Red background */
+    border-color:       @dark; /* Gray border */
+    border:             2px;
+    padding:            1em;
+    color:              @backlight; /* White text */
+}
