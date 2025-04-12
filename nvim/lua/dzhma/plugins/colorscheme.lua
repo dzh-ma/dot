@@ -13,10 +13,19 @@ return {
                 borderless_pickers = true,
                 overrides = function (colors)
                     return {
+                        -- Neorg markup
+                        ["@neorg.markup.bold.norg"] = { fg = colors.yellow, bold = true },
+                        ["@neorg.markup.underline.norg"] = { fg = colors.magenta, underline = true },
+                        ["@neorg.markup.variable.norg"] = { fg = colors.cyan , italic = true },
                         ["@neorg.markup.superscript.norg"] = { fg = colors.green },
+                        ["@neorg.markup.subscript.norg"] = { fg = colors.red },
                         ["@neorg.markup.verbatim.norg"] = { bg = colors.bg_highlight },
                         ["@neorg.definitions.content.norg"] = { fg = colors.pink, italic = true },
                         ["@neorg.footnotes.content.norg"] = { fg = colors.purple, italic = true },
+
+                        -- Neorg metadata
+                        ["@neorg.tags.ranged_verbatim.document_meta.title.norg_meta"] = { bold = true, underline = true },
+                        ["@neorg.tags.ranged_verbatim.document_meta.key.norg_meta"] = { fg = colors.grey, bold = true },
 
                         -- Neorg header titles
                         ["@neorg.links.location.heading.1.norg"] = { fg = colors.bg_alt, bg = colors.red, bold = true, italic = true },
