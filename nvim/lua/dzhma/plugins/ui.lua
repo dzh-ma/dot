@@ -32,10 +32,10 @@ return {
 
             require("notify").setup({
                 background_colour = "#000000",
-                render = "minimal",     -- default/minimal/simple/compact/wrapped-compact/wrapped-default
+                render = "compact",     -- default/minimal/simple/compact/wrapped-compact/wrapped-default
                 stages = "static",       -- fade_in_slide_out/fade/slide/static
-                timeout = 200,
-                max_width = 30,
+                timeout = 1000,
+                max_width = 100,
                 top_down = false,
             })
         end,

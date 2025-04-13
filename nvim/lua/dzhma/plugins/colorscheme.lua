@@ -13,7 +13,7 @@ return {
                 borderless_pickers = true,
                 overrides = function (colors)
                     return {
-                        Comment = { fg = colors.bg_highlight, italic = true },
+                        Comment = { fg = colors.grey, italic = true },
 
                         -- Neorg markup
                         ["@neorg.markup.bold.norg"] = { fg = colors.yellow, bold = true },
