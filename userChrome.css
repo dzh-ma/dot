@@ -1,5 +1,5 @@
 :root {
-  --custom-font: "IosevkaTermSlab Nerd Font";
+  --custom-font: "Terminess Nerd Font";
 }
 * {
   font-family: var(--custom-font), sans-serif !important;

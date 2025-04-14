@@ -72,8 +72,8 @@ palette = 14=#e8e5b5
 palette = 15=#e2d9c5 
 
 # DOCS: Font
-font-family = "IosevkaTermSlab Nerd Font"
-font-size = 19
+font-family = "Terminess Nerd Font"
+font-size = 32
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never

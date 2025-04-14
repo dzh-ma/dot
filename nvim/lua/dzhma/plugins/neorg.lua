@@ -16,15 +16,14 @@ return {
                                 code_block = {
                                     conceal = false,
                                 },
-                                list = {
-                                    icons = { "" },
-                                },
+                                -- list = {
+                                --     icons = { "" },
+                                -- },
                             },
                         },
                     },
                     ['core.autocommands'] = {},                 -- required to support other modules
                     ['core.integrations.treesitter'] = {},      -- treesitter highlighting support
-                    -- ['core.integrations.image'] = {},           -- image support with image.nvim
                     ['core.esupports.metagen'] = {              -- document metadata generation
                         config = {
                             type = "auto",

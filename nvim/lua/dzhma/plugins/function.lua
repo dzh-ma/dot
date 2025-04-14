@@ -308,7 +308,6 @@ return {
             bigfile = { enabled = true },
             dashboard = { enabled = true },
             input = { enabled = true },
-            words = { enabled = true },
         },
     },
 }
