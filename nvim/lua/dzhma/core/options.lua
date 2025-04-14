@@ -81,3 +81,23 @@ vim.ui.open = function(target, opts, on_open)
         orig_ui_open(target, opts, on_open)
     end
 end
+
+-- Place this code somewhere after your plugin manager setup,
+-- for example, in your init.lua or a dedicated autocmds.lua file.
+
+-- Create a dedicated group for clarity and easy clearing
+local neorg_hl_group = vim.api.nvim_create_augroup("NeorgHighlightOverrides", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = neorg_hl_group,
+  pattern = "norg", -- Trigger only for Neorg files
+  callback = function()
+    -- Set the @operator.latex highlight to match your desired style
+    vim.api.nvim_set_hl(0, "@operator.latex", {
+      fg = "#000000",    -- Match @neorg.markup.inline_math.norg foreground
+      bg = "#fd5e3a",    -- Match @neorg.markup.inline_math.norg background
+      italic = true,  -- Match @neorg.markup.inline_math.norg style
+      default = true  -- Important: ensures this overrides theme defaults
+    })
+  end,
+})

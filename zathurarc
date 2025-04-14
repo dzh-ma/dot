@@ -7,55 +7,55 @@ set selection-clipboard clipboard
 # Enable recoloring
 set recolor true
 
-# Keep original hue when recoloring (You might want to set this to false for a pure white/black conversion)
-set recolor-keephue true
+# Adjusted for dark theme
+set recolor-keephue false
 
 # Use SQLite for the database
 set database sqlite
 
-# Base colors - Mapped to Cyberdream (White BG, Black FG)
-set default-bg                rgba(255,255,255,1)      # Cyberdream Background (#ffffff)
-set default-fg                rgba(22,24,26,1)        # Cyberdream Foreground (#16181a)
+# Base colors - Ghostty
+set default-bg                rgba(6,16,30,1)         # Ghostty Background (#06101e)
+set default-fg                rgba(102,222,249,1)     # Ghostty Foreground (#66def9)
 
-# Completions - Adjusted for light theme
-set completion-bg             rgba(172,172,172,1)      # Cyberdream Gray (#acacac)
-set completion-fg             rgba(22,24,26,1)        # Cyberdream Foreground (#16181a)
-set completion-highlight-bg   rgba(0,87,209,1)        # Cyberdream Blue (#0057d1)
-set completion-highlight-fg   rgba(255,255,255,1)      # Cyberdream White (#ffffff)
-set completion-group-bg       rgba(172,172,172,1)      # Cyberdream Gray (#acacac)
-set completion-group-fg       rgba(0,87,209,1)        # Cyberdream Blue (#0057d1)
+# Completions - Styled with Ghostty palette
+set completion-bg             rgba(3,27,38,1)         # Ghostty ANSI 0 (#031B26)
+set completion-fg             rgba(102,222,249,1)     # Ghostty Foreground (#66def9)
+set completion-highlight-bg   rgba(0,141,163,1)       # Ghostty ANSI 6 (#008DA3)
+set completion-highlight-fg   rgba(6,16,30,1)         # Background for contrast
+set completion-group-bg       rgba(3,27,38,1)         # Ghostty ANSI 0
+set completion-group-fg       rgba(236,48,172,1)      # Ghostty ANSI 5 (#ec30ac)
 
-# Statusbar - Adjusted for light theme
-set statusbar-fg              rgba(22,24,26,1)        # Cyberdream Foreground (#16181a)
-set statusbar-bg              rgba(172,172,172,1)      # Cyberdream Gray (#acacac)
+# Statusbar
+set statusbar-fg              rgba(102,222,249,1)     # Ghostty Foreground (#66def9)
+set statusbar-bg              rgba(3,27,38,1)         # Ghostty ANSI 0
 
-# Notifications - Adjusted for light theme
-set notification-bg           rgba(172,172,172,1)      # Cyberdream Gray (#acacac)
-set notification-fg           rgba(22,24,26,1)        # Cyberdream Foreground (#16181a)
-set notification-error-bg     rgba(172,172,172,1)      # Cyberdream Gray (#acacac)
-set notification-error-fg     rgba(209,21,0,1)        # Cyberdream Red (#d11500)
-set notification-warning-bg   rgba(172,172,172,1)      # Cyberdream Gray (#acacac)
-set notification-warning-fg   rgba(153,123,0,1)       # Cyberdream Yellow (#997b00)
+# Notifications
+set notification-bg           rgba(3,27,38,1)
+set notification-fg           rgba(102,222,249,1)
+set notification-error-bg     rgba(3,27,38,1)
+set notification-error-fg     rgba(253,94,58,1)       # Ghostty ANSI 1 (#fd5e3a)
+set notification-warning-bg   rgba(3,27,38,1)
+set notification-warning-fg   rgba(250,122,97,1)      # Bright ANSI 9 (#fa7a61)
 
-# Input bar - Adjusted for light theme
-set inputbar-fg               rgba(22,24,26,1)        # Cyberdream Foreground (#16181a)
-set inputbar-bg               rgba(172,172,172,1)      # Cyberdream Gray (#acacac)
+# Input bar
+set inputbar-fg               rgba(102,222,249,1)
+set inputbar-bg               rgba(3,27,38,1)
 
-# Recoloring (light = page, dark = text) - Mapped to Cyberdream
-set recolor-lightcolor        rgba(255,255,255,1)      # page bg = Cyberdream Background (#ffffff)
-set recolor-darkcolor         rgba(22,24,26,1)        # text color = Cyberdream Foreground (#16181a)
+# Recoloring (light = page, dark = text)
+set recolor-lightcolor        rgba(6,16,30,1)         # page background = Ghostty BG
+set recolor-darkcolor         rgba(102,222,249,1)     # text = Ghostty FG
 
-# Index - Adjusted for light theme
-set index-fg                  rgba(22,24,26,1)        # Cyberdream Foreground (#16181a)
-set index-bg                  rgba(255,255,255,1)      # Cyberdream Background (#ffffff)
-set index-active-fg           rgba(255,255,255,1)      # Cyberdream White (#ffffff)
-set index-active-bg           rgba(0,87,209,1)        # Cyberdream Blue (#0057d1)
+# Index
+set index-fg                  rgba(102,222,249,1)
+set index-bg                  rgba(6,16,30,1)
+set index-active-fg           rgba(6,16,30,1)
+set index-active-bg           rgba(102,222,249,1)
 
 # Loading indicator
-set render-loading-bg         rgba(255,255,255,1)      # Cyberdream Background (#ffffff)
-set render-loading-fg         rgba(22,24,26,1)        # Cyberdream Foreground (#16181a)
+set render-loading-bg         rgba(6,16,30,1)
+set render-loading-fg         rgba(102,222,249,1)
 
-# Highlights - Using Yellow and Magenta from Cyberdream
-set highlight-color           rgba(153,123,0,0.5)      # Cyberdream Yellow (#997b00), semi-transparent
-set highlight-fg              rgba(160,24,255,0.5)     # Cyberdream Magenta (#a018ff), semi-transparent (for text within highlight, if applicable)
-set highlight-active-color    rgba(160,24,255,0.5)     # Cyberdream Magenta (#a018ff), semi-transparent
+# Highlights - using Ghostty bright colors
+set highlight-color           rgba(250,122,97,0.5)    # Bright ANSI 9 (#fa7a61)
+set highlight-fg              rgba(236,48,172,0.5)    # Ghostty Magenta (#ec30ac)
+set highlight-active-color    rgba(236,48,172,0.5)

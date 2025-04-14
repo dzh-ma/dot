@@ -39,7 +39,7 @@ return {
         },
         cmd = "Telescope",
         keys = {
-            { "<Space>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", desc = "Navigate directory" },
+            { "<Space>f", "<cmd>lua require('telescope.builtin').find_files()<CR>", { desc = "Navigate directory" } },
             { "<Space>F", "<cmd>lua require('telescope').extensions.zoxide.list()<CR>", { desc = "Zoxide search" } },
             { "<Space>l", "<cmd>lua require('telescope.builtin').live_grep()<CR>", desc = "Find phrase" },
         },
@@ -310,5 +310,5 @@ return {
             input = { enabled = true },
             words = { enabled = true },
         },
-    }
+    },
 }

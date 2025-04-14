@@ -43,51 +43,33 @@
 # resize-overlay-duration = 4s 200ms
 
 # DOCS: Colorscheme
-palette = 0=#ffffff
-palette = 1=#d11500
-palette = 2=#008b0c
-palette = 3=#997b00
-palette = 4=#0057d1
-palette = 5=#a018ff
-palette = 6=#008c99
-palette = 7=#16181a
-palette = 8=#acacac
-palette = 9=#d11500
-palette = 10=#008b0c
-palette = 11=#997b00
-palette = 12=#0057d1
-palette = 13=#a018ff
-palette = 14=#008c99
-palette = 15=#16181a
+# Base colors
+background = #06101e
+foreground = #66def9
+cursor-color = #66def9
+selection-background = #052839
+# Note: Ghostty doesn't have a separate 'selection-foreground'.
+# It typically uses the main foreground or derives contrast.
 
-background = #ffffff
-foreground = #16181a
-cursor-color = #16181a
-selection-background = #acacac
-selection-foreground = #16181a
-# palette = 0=#313244 
-# palette = 1=#d54e53 
-# palette = 2=#3dd177 
-# palette = 3=#ffc900 
-# palette = 4=#00b0ff 
-# palette = 5=#ee2c68 
-# palette = 6=#64fcda 
-# palette = 7=#b0bec4 
-# palette = 8=#676e7b 
-# palette = 9=#d03770 
-# palette = 10=#82f4a2
-# palette = 11=#ffe47e
-# palette = 12=#2b8db3
-# palette = 13=#ff008c
-# palette = 14=#f6d5a4
-# palette = 15=#fefefe
-#
-# background = #000000
-# foreground = #b0bec4
-# cursor-color = #ee2c68
-# cursor-text = #18191a
-# selection-background = #383a3e
-# selection-foreground = #fefefe
+# Color Palette (ANSI Colors)
+palette = 0=#031B26 
+palette = 1=#fd5e3a 
+palette = 2=#35b5ff 
+palette = 3=#ec30ac 
+palette = 4=#e2d9c5 
+palette = 5=#ec30ac 
+palette = 6=#008DA3 
+palette = 7=#66def9 
+
+# Bright Colors
+palette = 8=#22536f  
+palette = 9=#fa7a61  
+palette = 10=#66def9 
+palette = 11=#fa7a61 
+palette = 12=#66def9 
+palette = 13=#fa7a61 
+palette = 14=#e8e5b5 
+palette = 15=#e2d9c5 
 
 # DOCS: Font
 font-family = "IosevkaTermSlab Nerd Font"
@@ -95,7 +77,5 @@ font-size = 19
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never
-
-background-opacity = 0.9
 
 # NOTE: `CTRL+SHIFT+,` to reload config

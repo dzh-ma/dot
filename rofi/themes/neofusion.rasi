@@ -15,7 +15,7 @@
     cream:                             #e2d9c5; /* Neofusion bright_blue */
     highlight:                         underline bold #35b5ff; /* Neofusion bright_green */
     transparent:                       #00000000;
-    font:                              "Roboto Condensed Bold 11";
+    font:                              "IosevkaTermSlab Nerd Font 20";
     padding:                           0px;
     margin:                            0px;
 }
