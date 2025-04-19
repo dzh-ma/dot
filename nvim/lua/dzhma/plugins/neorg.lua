@@ -10,15 +10,27 @@ return {
                 load = {
                     ['core.concealer'] = {                      -- UI devicon support
                         config = {
-                            icon_preset = "diamond",
+                            icon_preset = "basic",
                             folds = false,
                             icons = {
                                 code_block = {
                                     conceal = false,
+                                    padding = {
+                                        left = 4,
+                                        right = 4,
+                                    },
+                                    spell_check = false,
                                 },
-                                -- list = {
-                                --     icons = { "" },
-                                -- },
+                                ordered = {
+                                    icons = {
+                                        "1.",
+                                        "A.",
+                                        "a.",
+                                        "1)",
+                                        "I.",
+                                        "i.",
+                                    },
+                                },
                             },
                         },
                     },

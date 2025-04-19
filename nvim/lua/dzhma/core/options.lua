@@ -1,14 +1,14 @@
 -- UI essentials
 vim.cmd[["syntax enable"]]
--- vim.o.number = true                 -- numbered columns (effective on current line)
--- vim.o.relativenumber = true         -- relative numbered columns
+vim.o.number = true                 -- numbered columns (effective on current line)
+vim.o.relativenumber = true         -- relative numbered columns
 vim.o.termguicolors = true
 vim.opt.cursorline = false
 vim.opt.wrap = false                -- disables ugly screen wrapping
 vim.opt.signcolumn = "yes"          -- prevents screen jumping right when LSP issue is raised
 vim.opt.conceallevel = 3
 -- vim.opt.concealcursor = "cn"
-vim.opt.spell = false
+vim.opt.spell = true
 vim.opt.spelllang = { "en_us" }
 
 vim.o.shiftwidth = 4
@@ -37,12 +37,12 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- disabling spellchecking on terminal
--- vim.api.nvim_create_autocmd("TermOpen", {
---     pattern = "*",
---     callback = function()
---         vim.opt_local.spell = false
---     end,
--- })
+vim.api.nvim_create_autocmd("TermOpen", {
+    pattern = "*",
+    callback = function()
+        vim.opt_local.spell = false
+    end,
+})
 
 -- spellchecking enabled only during note taking & documentation
 vim.api.nvim_create_autocmd("FileType", {
