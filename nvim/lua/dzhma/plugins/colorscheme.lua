@@ -1,55 +1,51 @@
 return {
+    -- DOCS: Main color-scheme
     {
-        "diegoulloao/neofusion.nvim",
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
         dependencies = {
             "nvim-lualine/lualine.nvim",
         },
-        priority = 1000,
         config = function ()
-            require("neofusion").setup({
-                overrides = {
-                    LineNr = { fg = "#000000", bg = "#fd5e3a" },
-                    LineNrAbove = { fg = "#fd5e3a" },
-                    LineNrBelow = { fg = "#fd5e3a" },
-
-                    ["@neorg.markup.bold.norg"] = { fg = "#deaa88", bold = true },
-                    ["@neorg.markup.italic.norg"] = { fg = "#ec30ac", italic = true },
-                    ["@neorg.markup.underline.norg"] = { fg = "#fd5e3a", underline = true },
-                    ["@neorg.markup.verbatim.norg"] = { fg = "#ffffff", bg = "#000000" },
-                    ["@neorg.markup.inline_math.norg"] = { fg = "#000000", bg = "#fd5e3a", italic = true },
-                    ["@neorg.markup.variable.norg"] = { fg = "#1dff9d" },
-
-                    ["@neorg.markup.inline_math.delimiter.norg"] = { fg = "#fd5e3a", bg = "#fd5e3a", italic = true },
-
-                    ["@neorg.links.location.definition.norg"] = { fg = "#fa7a61", bold = true, italic = true, underline = true },
-                    ["@neorg.links.location.footnote.norg"] = { fg = "#35b5ff", italic = true, underline = true },
-
-                    ["@neorg.definitions.title.norg"] = { fg = "#fa7a61", bold = true, italic = true, underline = true },
-                    ["@neorg.footnotes.title.norg"] = { fg = "#35b5ff", italic = true, underline = true },
-
-                    ["@neorg.links.location.heading.1.norg"] = { fg = "#000000", bg = "#fd5e3a", bold = true, italic = true },
-                    ["@neorg.links.location.heading.2.norg"] = { fg = "#000000", bg = "#35b5ff", bold = true, italic = true },
-                    ["@neorg.links.location.heading.3.norg"] = { fg = "#000000", bg = "#fd5e3a", bold = true, italic = true },
-                    ["@neorg.links.location.heading.4.norg"] = { fg = "#000000", bg = "#fd5e3a", bold = true, italic = true },
-                    ["@neorg.links.location.heading.5.norg"] = { fg = "#000000", bg = "#fd5e3a", bold = true, italic = true },
-                    ["@neorg.links.location.heading.6.norg"] = { fg = "#000000", bg = "#fd5e3a", bold = true, italic = true },
-
-                    ["@neorg.headings.1.title.norg"] = { fg = "#000000", bg = "#fd5e3a", bold = true, italic = true },
-                    ["@neorg.headings.2.title.norg"] = { fg = "#000000", bg = "#35b5ff", bold = true, italic = true },
-                    ["@neorg.headings.3.title.norg"] = { fg = "#000000", bg = "#fd5e3a", bold = true, italic = true },
-                    ["@neorg.headings.4.title.norg"] = { fg = "#000000", bg = "#fd5e3a", bold = true, italic = true },
-                    ["@neorg.headings.5.title.norg"] = { fg = "#000000", bg = "#fd5e3a", bold = true, italic = true },
-                    ["@neorg.headings.6.title.norg"] = { fg = "#000000", bg = "#fd5e3a", bold = true, italic = true },
+            require("catppuccin").setup({
+                flavour = "mocha",      -- latte, frappe, macchiato, mocha
+                styles = {
+                    variables = { "italic" },
                 },
+                integrations = {
+                    notify = true,
+                    aerial = true,
+                    mason = true,
+                    noice = true,
+                    hop = true,
+                    markdown = true,
+                    indent_blankline = {
+                        enabled = true,
+                        scope_color = "mauve",
+                        colored_indetn_levels = true,
+                    }
+                },
+                custom_highlights = function(colors)
+                    return {
+                        ["@neorg.markup.inline_math.norg"] = { fg = colors.flamingo },
+                        ["@markup.quote.markdown"] = { fg = colors.mauve },
+                    }
+                end,
             })
-
-            vim.cmd.colorscheme("neofusion")
 
             require("lualine").setup({
-                options = {
-                    theme = require("neofusion.lualine"),
-                },
+               themes = "catpuccin"
             })
-        end,
+
+            vim.cmd.colorscheme("catppuccin");
+        end
+    },
+
+    -- DOCS: Distinctly colored parentheses
+    {
+        "HiPhish/rainbow-delimiters.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
 }

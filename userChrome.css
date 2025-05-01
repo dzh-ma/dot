@@ -1,5 +1,5 @@
 :root {
-  --custom-font: "Terminess Nerd Font";
+  --custom-font: "SpaceMono Nerd Font";
 }
 * {
   font-family: var(--custom-font), sans-serif !important;
