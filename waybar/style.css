@@ -2,10 +2,12 @@
 
 * {
   font-family: "iMWritingMono Nerd Font Mono";
-  min-height: calc(9px * 1.5); /* was calc(18px * 1.5) */
-  font-size: calc(7.5px * 1.5); /* was calc(15px * 1.5) */
+  min-height: 24px; /* Changed from calc(9px * 1.5) */
+  font-size: 24px; /* Changed from calc(7.5px * 1.5) */
   border: none;
-  border-radius: 3px; /* was 6px */
+  /* Adjusted border-radius proportionally, original was 3px (calculated from 6px / 2) */
+  /* Keeping border-radius small relative to the large font size */
+  border-radius: 4px;
   padding: 0;
   margin: 0;
   box-shadow: none;
@@ -14,36 +16,40 @@
 }
 
 #custom-weather {
-  margin-left: 1px; /* was 2px */
-  margin-right: 1px; /* was 2px */
-  padding: 0px 4px; /* was 0px 8px */
+  margin-left: 3px; /* Increased proportionally from 1px */
+  margin-right: 3px; /* Increased proportionally from 1px */
+  /* Adjusted padding, original was 0px 4px */
+  padding: 0px 8px;
   background: @raisin-black;
   color: @beige;
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 #cpu {
   color: @beige;
-  padding: 0px 4px 0px 7.5px; /* was 0px 8px 0px 15px */
+  /* Adjusted padding, original was 0px 4px 0px 7.5px */
+  padding: 0px 8px 0px 12px;
   background: @raisin-black;
-  margin-left: 1px; /* was 2px */
-  border-radius: 3px 0 0 3px; /* was 6px 0 0 6px */
+  margin-left: 3px; /* Increased proportionally from 1px */
+  border-radius: 4px 0 0 4px; /* Adjusted */
 }
 
 #memory {
   color: @beige;
-  padding: 0px 7.5px 0px 4px; /* was 0px 15px 0px 8px */
+  /* Adjusted padding, original was 0px 7.5px 0px 4px */
+  padding: 0px 12px 0px 8px;
   background: @raisin-black;
-  margin-right: 1px; /* was 2px */
-  border-radius: 0 3px 3px 0; /* was 0 6px 6px 0 */
+  margin-right: 3px; /* Increased proportionally from 1px */
+  border-radius: 0 4px 4px 0; /* Adjusted */
 }
 
 #temperature.gpu {
-  padding: 0px 6px; /* was 0px 12px */
-  margin-right: 1px; /* was 2px */
+  /* Adjusted padding, original was 0px 6px */
+  padding: 0px 10px;
+  margin-right: 3px; /* Increased proportionally from 1px */
   color: @celadon;
   background: @raisin-black;
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 /* General Styling */
@@ -58,19 +64,22 @@ menu,
 #battery,
 #custom-power {
   background: @raisin-black;
-  padding: 3.5px 4px; /* was 7px 8px */
+  /* Adjusted padding, original was 3.5px 4px */
+  padding: 6px 8px;
   margin: 0;
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 tooltip {
-  border: 1px solid @beige;
+  border: 1px solid @beige; /* Kept border thickness */
+  border-radius: 4px; /* Adjusted */
 }
 
 .modules-right,
 .modules-center,
 .modules-left {
-  padding: 0 2.5px; /* was 0 5px */
+  /* Adjusted padding, original was 0 2.5px */
+  padding: 0 5px;
 }
 
 #workspaces {
@@ -80,26 +89,30 @@ tooltip {
   font-weight: bold;
   font-style: normal;
   opacity: 1;
-  font-size: 8px; /* was 16px */
+  font-size: 24px; /* Changed from 8px */
   color: #1e1;
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 #workspaces button {
-  padding: 0px 2.5px; /* was 0px 5px */
-  margin: 1.5px; /* was 3px */
-  border-radius: 3px; /* was 6px */
+  /* Adjusted padding, original was 0px 2.5px */
+  padding: 0px 5px;
+  /* Adjusted margin, original was 1.5px */
+  margin: 3px;
+  border-radius: 4px; /* Adjusted */
   border: none;
   color: #f5e0dc;
   background-color: #1e1e2e;
   transition: all 0.3s ease-in-out;
   opacity: 0.4;
+   /* Adjusted min-width, original was 10px */
+  min-width: 24px; /* Set to match font size */
 }
 
 #workspaces button.active {
   color: #1e1e2e;
   background: #cba6f7;
-  min-width: 10px; /* was 20px */
+  min-width: 24px; /* Adjusted */
   opacity: 1;
 }
 
@@ -111,104 +124,120 @@ tooltip {
 }
 
 #clock {
-  padding: 0 7.5px; /* was 0 15px */
+  /* Adjusted padding, original was 0 7.5px */
+  padding: 0 12px;
   color: @beige;
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 #custom-launcher {
-  font-size: 9px; /* was 18px */
+  font-size: 24px; /* Changed from 9px */
   transition: none;
-  padding: 0px 5px; /* was 0px 10px */
-  margin-right: 1px; /* was 2px */
+  /* Adjusted padding, original was 0px 5px */
+  padding: 0px 8px;
+  margin-right: 3px; /* Increased proportionally from 1px */
   background: @raisin-black;
   color: rgba(137, 220, 235, 1);
-  border-radius: 0 3px 3px 0; /* was 0 6px 6px 0 */
+  border-radius: 0 4px 4px 0; /* Adjusted */
 }
 
 #custom-transparency {
-  font-size: 9px; /* was 18px */
+  font-size: 24px; /* Changed from 9px */
   background: @raisin-black;
   color: #94e2d5;
-  padding: 0px 7px; /* was 0px 14px */
-  border-radius: 3px 0 0 3px; /* was 6px 0 0 6px */
+  /* Adjusted padding, original was 0px 7px */
+  padding: 0px 10px;
+  border-radius: 4px 0 0 4px; /* Adjusted */
 }
 
 #custom-wallpaper {
-  font-size: 10px; /* was 20px */
+  font-size: 24px; /* Changed from 10px */
   font-family: 'Font Awesome 5 Free';
-  padding: 0px 4px; /* was 0px 8px */
-  margin-right: 1px; /* was 2px */
+   /* Adjusted padding, original was 0px 4px */
+  padding: 0px 8px;
+  margin-right: 3px; /* Increased proportionally from 1px */
   color: #f38ba8;
   background: @raisin-black;
-  border-radius: 0 3px 3px 0; /* was 0 6px 6px 0 */
+  border-radius: 0 4px 4px 0; /* Adjusted */
 }
 
 #pulseaudio,
 #backlight {
-  padding: 0 4px; /* was 0 8px */
+  /* Adjusted padding, original was 0 4px */
+  padding: 0 8px;
   color: @beige;
-  border-radius: 3px 0 0 3px; /* was 6px 0 0 6px */
+  border-radius: 4px 0 0 4px; /* Adjusted */
 }
 
 #bluetooth,
 #network {
   color: #cba6f7;
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 #network.speed {
   background: @raisin-black;
-  padding: 0px 3px; /* was 0px 6px */
-  min-width: 5px; /* was 10px */
+  /* Adjusted padding, original was 0px 3px */
+  padding: 0px 6px;
+  /* Adjusted min-width, original was 5px */
+  min-width: 10px;
   color: @beige;
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 #bluetooth {
-  min-width: 10px; /* was 20px */
-  padding: 0 5px; /* was 0 10px */
-  margin: 0 1px; /* was 0 2px */
-  border-radius: 3px; /* was 6px */
+  /* Adjusted min-width, original was 10px */
+  min-width: 24px; /* Set to match font size */
+  /* Adjusted padding, original was 0 5px */
+  padding: 0 8px;
+  /* Adjusted margin, original was 0 1px */
+  margin: 0 3px;
+  border-radius: 4px; /* Adjusted */
 }
 
 #network {
-  min-width: 15px; /* was 30px */
-  padding: 0 3.5px 0 1px; /* was 0 7px 0 2px */
-  border-radius: 0 3px 3px 0; /* was 0 6px 6px 0 */
+  /* Adjusted min-width, original was 15px */
+  min-width: 24px; /* Set to match font size */
+  /* Adjusted padding, original was 0 3.5px 0 1px */
+  padding: 0 6px 0 3px;
+  border-radius: 0 4px 4px 0; /* Adjusted */
 }
 
 #battery {
   color: @mint;
-  min-width: 15px; /* was 30px */
-  padding-left: 2.5px; /* was 5px */
-  margin: 0 1px; /* was 0 2px */
-  padding-right: 2.5px; /* was 5px */
-  border-radius: 3px; /* was 6px */
+  /* Adjusted min-width, original was 15px */
+  min-width: 24px; /* Set to match font size */
+  /* Adjusted padding, original was 2.5px */
+  padding-left: 5px;
+  /* Adjusted margin, original was 0 1px */
+  margin: 0 3px;
+  /* Adjusted padding, original was 2.5px */
+  padding-right: 5px;
+  border-radius: 4px; /* Adjusted */
 }
 
 #battery.charging {
   color: #eff1f5; /* Text */
   background: #40a02b; /* Green */
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 #battery.good:not(.charging) {
   color: #f9e2af; /* Peach */
   background: #1e1e2e; /* Base */
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 #battery.warning:not(.charging) {
   color: #eff1f5; /* Text */
   background: #df8e1d; /* Yellow */
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 #battery.low:not(.charging) {
   color: #eff1f5; /* Text */
   background: #d20f39; /* Red */
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 #battery.critical:not(.charging) {
@@ -219,7 +248,7 @@ tooltip {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  border-radius: 3px; /* was 6px */
+  border-radius: 4px; /* Adjusted */
 }
 
 @keyframes blink {
