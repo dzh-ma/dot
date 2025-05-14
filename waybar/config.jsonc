@@ -40,7 +40,8 @@
         "tooltip-format-disconnected": "󰌙 Disconnected",
         "max-length": 22,
         "min-length": 20,
-        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+        "format-icons": ["󰤯", "󰤢", "󰤨"]
+        // "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
     },
     "cpu": {
         "interval": 1,
@@ -74,7 +75,7 @@
     },
 
     "clock": {
-        "format": "{:%H:%M %p • %a %y-%m-%d}",
+        "format": "{:%H:%M • %a %y-%m-%d}",
         "tooltip": true,
         "tooltip-format": "<tt>{calendar}</tt>"
     },

@@ -1,7 +1,7 @@
 @import 'mocha.css';
 
 * {
-  font-family: "iMWritingMono Nerd Font Mono";
+  font-family: "JetBrainsMono Nerd Font";
   min-height: 24px; /* Changed from calc(9px * 1.5) */
   font-size: 24px; /* Changed from calc(7.5px * 1.5) */
   border: none;
