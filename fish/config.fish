@@ -29,7 +29,7 @@ if status is-interactive
     alias j="java"
     alias jc="javac"
     alias c="gcc -o"
-    alias cp="g++ -o"
+    alias cpp="g++ -o"
     alias nk="nvim ~/.config/kitty/kitty.conf"
     alias nf="nvim ~/.config/fish/config.fish"
     alias nb="nvim ~/.bashrc"

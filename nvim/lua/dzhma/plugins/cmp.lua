@@ -15,7 +15,6 @@ return {
                 "gopls",
                 "html",
                 "jdtls",
-                "julials",
                 "millet",
                 "phpactor",
                 "pyright",

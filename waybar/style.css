@@ -1,259 +1,207 @@
-@import 'mocha.css';
-
+/* ================================ */
+/*            Common CSS            */
+/* ================================ */
 * {
-  font-family: "JetBrainsMono Nerd Font";
-  min-height: 24px; /* Changed from calc(9px * 1.5) */
-  font-size: 24px; /* Changed from calc(7.5px * 1.5) */
-  border: none;
-  /* Adjusted border-radius proportionally, original was 3px (calculated from 6px / 2) */
-  /* Keeping border-radius small relative to the large font size */
-  border-radius: 4px;
-  padding: 0;
-  margin: 0;
-  box-shadow: none;
-  text-shadow: none;
-  background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    border: none;
+    text-shadow: none;
+    transition: none;
+    box-shadow: none;
 }
 
-#custom-weather {
-  margin-left: 3px; /* Increased proportionally from 1px */
-  margin-right: 3px; /* Increased proportionally from 1px */
-  /* Adjusted padding, original was 0px 4px */
-  padding: 0px 8px;
-  background: @raisin-black;
-  color: @beige;
-  border-radius: 4px; /* Adjusted */
+/* the whole window */
+window#waybar {
+    background: #000000; /* True black background */
+    color: #b0bec4; /* Foreground */
+    padding: 0;
+    margin: 0;
 }
 
-#cpu {
-  color: @beige;
-  /* Adjusted padding, original was 0px 4px 0px 7.5px */
-  padding: 0px 8px 0px 12px;
-  background: @raisin-black;
-  margin-left: 3px; /* Increased proportionally from 1px */
-  border-radius: 4px 0 0 4px; /* Adjusted */
+window#waybar.hidden {
+    opacity: 1;
 }
 
-#memory {
-  color: @beige;
-  /* Adjusted padding, original was 0px 7.5px 0px 4px */
-  padding: 0px 12px 0px 8px;
-  background: @raisin-black;
-  margin-right: 3px; /* Increased proportionally from 1px */
-  border-radius: 0 4px 4px 0; /* Adjusted */
-}
-
-#temperature.gpu {
-  /* Adjusted padding, original was 0px 6px */
-  padding: 0px 10px;
-  margin-right: 3px; /* Increased proportionally from 1px */
-  color: @celadon;
-  background: @raisin-black;
-  border-radius: 4px; /* Adjusted */
-}
-
-/* General Styling */
-tooltip,
-menu,
-#workspaces,
-#clock,
-#pulseaudio,
-#backlight,
-#bluetooth,
-#network,
-#battery,
-#custom-power {
-  background: @raisin-black;
-  /* Adjusted padding, original was 3.5px 4px */
-  padding: 6px 8px;
-  margin: 0;
-  border-radius: 4px; /* Adjusted */
-}
-
-tooltip {
-  border: 1px solid @beige; /* Kept border thickness */
-  border-radius: 4px; /* Adjusted */
-}
-
-.modules-right,
-.modules-center,
-.modules-left {
-  /* Adjusted padding, original was 0 2.5px */
-  padding: 0 5px;
-}
-
+/* ================================ */
+/*       workspaces module          */
+/* ================================ */
 #workspaces {
-  background: #1e1e2e;
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
-  font-style: normal;
-  opacity: 1;
-  font-size: 24px; /* Changed from 8px */
-  color: #1e1;
-  border-radius: 4px; /* Adjusted */
+    margin: 0px;
 }
 
 #workspaces button {
-  /* Adjusted padding, original was 0px 2.5px */
-  padding: 0px 5px;
-  /* Adjusted margin, original was 1.5px */
-  margin: 3px;
-  border-radius: 4px; /* Adjusted */
-  border: none;
-  color: #f5e0dc;
-  background-color: #1e1e2e;
-  transition: all 0.3s ease-in-out;
-  opacity: 0.4;
-   /* Adjusted min-width, original was 10px */
-  min-width: 24px; /* Set to match font size */
-}
-
-#workspaces button.active {
-  color: #1e1e2e;
-  background: #cba6f7;
-  min-width: 24px; /* Adjusted */
-  opacity: 1;
+    color: #b0bec4; /* Foreground */
+    padding: 0 4px;
+    margin-bottom: 4px;
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 24px;
+    font-weight: 800;
+    border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {
-  color: #c3dee5;
-  background: #1e1e2e;
-  opacity: 1;
-  animation: none;
+    color: #d54e53; /* Red */
+    background: none;
 }
 
-#clock {
-  /* Adjusted padding, original was 0 7.5px */
-  padding: 0 12px;
-  color: @beige;
-  border-radius: 4px; /* Adjusted */
+#workspaces button.visible,
+#workspaces button.active {
+    color: #3dd177; /* Green */
+    border-bottom: 2px solid #3dd177;
 }
 
-#custom-launcher {
-  font-size: 24px; /* Changed from 9px */
-  transition: none;
-  /* Adjusted padding, original was 0px 5px */
-  padding: 0px 8px;
-  margin-right: 3px; /* Increased proportionally from 1px */
-  background: @raisin-black;
-  color: rgba(137, 220, 235, 1);
-  border-radius: 0 4px 4px 0; /* Adjusted */
+#workspaces button.urgent {
+    color: #d03770; /* Bright red */
+    border-bottom: 2px solid #d03770;
 }
 
-#custom-transparency {
-  font-size: 24px; /* Changed from 9px */
-  background: @raisin-black;
-  color: #94e2d5;
-  /* Adjusted padding, original was 0px 7px */
-  padding: 0px 10px;
-  border-radius: 4px 0 0 4px; /* Adjusted */
+/* ================================ */
+/*            window                */
+/* ================================ */
+#window {
+    color: #d54e53; /* Red */
+    background: none;
+    margin: 4px 8px;
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 16px;
+    font-weight: 800;
+    border-bottom: 2px solid #d54e53;
 }
 
-#custom-wallpaper {
-  font-size: 24px; /* Changed from 10px */
-  font-family: 'Font Awesome 5 Free';
-   /* Adjusted padding, original was 0px 4px */
-  padding: 0px 8px;
-  margin-right: 3px; /* Increased proportionally from 1px */
-  color: #f38ba8;
-  background: @raisin-black;
-  border-radius: 0 4px 4px 0; /* Adjusted */
+/* ================================ */
+/*            tray                  */
+/* ================================ */
+#tray {
+    margin: 0 3px;
+    padding: 0 8px;
 }
 
-#pulseaudio,
+/* ================================ */
+/*            disk                  */
+/* ================================ */
+#disk {
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 16px;
+    font-weight: 800;
+    color: #c678dd; /* Purple */
+    margin: 5px 2px;
+    border-bottom: 2px solid #c678dd;
+}
+
+/* ================================ */
+/*            cpu                   */
+/* ================================ */
+#cpu {
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 16px;
+    font-weight: 800;
+    color: #00b0ff; /* Blue */
+    margin: 5px 2px;
+    border-bottom: 2px solid #00b0ff;
+}
+
+/* ================================ */
+/*            temp                  */
+/* ================================ */
+#temperature {
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 16px;
+    font-weight: 800;
+    color: #d54e53; /* Red */
+    margin: 5px 3px;
+    border-bottom: 2px solid #d54e53;
+}
+
+#temperature.critical {
+    color: #d03770; /* Bright red */
+    border-bottom: 2px solid #d03770;
+}
+
+/* ================================ */
+/*            backlight             */
+/* ================================ */
 #backlight {
-  /* Adjusted padding, original was 0 4px */
-  padding: 0 8px;
-  color: @beige;
-  border-radius: 4px 0 0 4px; /* Adjusted */
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 16px;
+    font-weight: 800;
+    color: #64fcda; /* Cyan */
+    margin: 5px 3px;
+    border-bottom: 2px solid #64fcda;
 }
 
-#bluetooth,
-#network {
-  color: #cba6f7;
-  border-radius: 4px; /* Adjusted */
+/* ================================ */
+/*            memory                */
+/* ================================ */
+#memory {
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 16px;
+    font-weight: 800;
+    color: #676e7b; /* Gray */
+    margin: 5px 3px;
+    border-bottom: 2px solid #676e7b;
 }
 
-#network.speed {
-  background: @raisin-black;
-  /* Adjusted padding, original was 0px 3px */
-  padding: 0px 6px;
-  /* Adjusted min-width, original was 5px */
-  min-width: 10px;
-  color: @beige;
-  border-radius: 4px; /* Adjusted */
+/* ================================ */
+/*         pulseaudio               */
+/* ================================ */
+#pulseaudio {
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 16px;
+    font-weight: 800;
+    color: #64fcda; /* Cyan */
+    margin: 5px 3px;
+    border-bottom: 2px solid #64fcda;
 }
 
-#bluetooth {
-  /* Adjusted min-width, original was 10px */
-  min-width: 24px; /* Set to match font size */
-  /* Adjusted padding, original was 0 5px */
-  padding: 0 8px;
-  /* Adjusted margin, original was 0 1px */
-  margin: 0 3px;
-  border-radius: 4px; /* Adjusted */
+#pulseaudio.muted {
+    color: #d03770; /* Bright red */
+    border-bottom: 2px solid #d03770;
 }
 
-#network {
-  /* Adjusted min-width, original was 15px */
-  min-width: 24px; /* Set to match font size */
-  /* Adjusted padding, original was 0 3.5px 0 1px */
-  padding: 0 6px 0 3px;
-  border-radius: 0 4px 4px 0; /* Adjusted */
-}
-
+/* ================================ */
+/*            battery               */
+/* ================================ */
 #battery {
-  color: @mint;
-  /* Adjusted min-width, original was 15px */
-  min-width: 24px; /* Set to match font size */
-  /* Adjusted padding, original was 2.5px */
-  padding-left: 5px;
-  /* Adjusted margin, original was 0 1px */
-  margin: 0 3px;
-  /* Adjusted padding, original was 2.5px */
-  padding-right: 5px;
-  border-radius: 4px; /* Adjusted */
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 16px;
+    font-weight: 800;
+    color: #3dd177; /* Green */
+    margin: 5px 3px;
+    border-bottom: 2px solid #3dd177;
 }
 
-#battery.charging {
-  color: #eff1f5; /* Text */
-  background: #40a02b; /* Green */
-  border-radius: 4px; /* Adjusted */
+#battery.critical {
+    color: #d03770; /* Bright red */
+    border-bottom: 2px solid #d03770;
 }
 
-#battery.good:not(.charging) {
-  color: #f9e2af; /* Peach */
-  background: #1e1e2e; /* Base */
-  border-radius: 4px; /* Adjusted */
+#battery.warning {
+    color: #ffc900; /* Yellow */
+    border-bottom: 2px solid #ffc900;
 }
 
-#battery.warning:not(.charging) {
-  color: #eff1f5; /* Text */
-  background: #df8e1d; /* Yellow */
-  border-radius: 4px; /* Adjusted */
+/* ================================ */
+/*            clock                 */
+/* ================================ */
+#clock {
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 16px;
+    font-weight: 800;
+    color: #3dd177; /* Green */
+    margin: 5px 3px;
+    border-bottom: 2px solid #3dd177;
 }
 
-#battery.low:not(.charging) {
-  color: #eff1f5; /* Text */
-  background: #d20f39; /* Red */
-  border-radius: 4px; /* Adjusted */
-}
-
-#battery.critical:not(.charging) {
-  color: #eff1f5; /* Text */
-  background: #d20f39; /* Red */
-  animation-name: blink;
-  animation-duration: 0.75s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  border-radius: 4px; /* Adjusted */
-}
-
-@keyframes blink {
-  to {
-    color: #d20f39; /* Red */
-    background: #eff1f5; /* Text */
-  }
+/* ================================ */
+/*           network                */
+/* ================================ */
+#network {
+    font-family: Hurmit Nerd Font Mono;
+    font-size: 16px;
+    font-weight: 800;
+    color: #3dd177; /* Green */
+    margin: 5px 3px;
+    border-bottom: 2px solid #3dd177;
 }

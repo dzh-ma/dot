@@ -17,7 +17,6 @@ return {
                     "gopls",
                     "html",
                     "jdtls",
-                    "julials",
                     "lua_ls",
                     "millet",
                     "phpactor",

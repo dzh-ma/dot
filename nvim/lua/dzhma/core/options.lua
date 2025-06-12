@@ -22,7 +22,7 @@ vim.o.clipboard = "unnamedplus"     -- copy/paste support
 -- vim.opt.sidescrolloff = 999
 
 -- menu line appearance
-vim.opt.laststatus = 2
+vim.opt.laststatus = 0
 vim.opt.showtabline = 0
 
 vim.g.loaded_perl_provider = 0
