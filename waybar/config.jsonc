@@ -40,7 +40,7 @@
     },
 
     "hyprland/window": {
-        "format": "<span color='#66def9' bgcolor='#06101e'> WIN </span> {class}",
+        "format": "<span color='#66def9' bgcolor='#2e3440'> WIN </span> {class}",
         "separate-outputs": true
     },
 
@@ -50,12 +50,12 @@
     },
 
     "disk": {
-        "format": "<span color='#66def9' bgcolor='#06101e'> DSK </span> {free}",
+        "format": "<span color='#66def9' bgcolor='#2e3440'> DSK </span> {free}",
         "interval": 20
     },
 
     "cpu": {
-        "format": "<span color='#66def9' bgcolor='#06101e'> CPU </span> {usage}%",
+        "format": "<span color='#66def9' bgcolor='#2e3440'> CPU </span> {usage}%",
         "tooltip": false,
         "interval": 1
     },
@@ -65,8 +65,8 @@
         "tooltip": false,
         "hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon6/temp1_input",
         "critical-threshold": 85, // Adjusted to a more typical CPU critical threshold
-        "format": "<span color='#66def9' bgcolor='#06101e'> CPU </span> {temperatureC}°C",
-        "format-critical": "<span color='#dc4154' bgcolor='#06101e'> CPU </span> {temperatureC}°C" // Use red for critical
+        "format": "<span color='#66def9' bgcolor='#2e3440'> CPU </span> {temperatureC}°C",
+        "format-critical": "<span color='#dc4154' bgcolor='#2e3440'> CPU </span> {temperatureC}°C" // Use red for critical
     },
 
     // --- GPU Temperature Monitor ---
@@ -76,26 +76,26 @@
         // Removed "thermal-zone" as "hwmon-path" is more precise
         "hwmon-path": "/sys/devices/pci0000:00/0000:00:08.1/0000:c4:00.0/hwmon/hwmon5/temp1_input",
         "critical-threshold": 80, // Adjusted to a more typical GPU critical threshold
-        "format": "<span color='#66def9' bgcolor='#06101e'> GPU </span> {temperatureC}°C",
-        "format-critical": "<span color='#dc4154' bgcolor='#06101e'> GPU </span> {temperatureC}°C" // Use red for critical
+        "format": "<span color='#66def9' bgcolor='#2e3440'> GPU </span> {temperatureC}°C",
+        "format-critical": "<span color='#dc4154' bgcolor='#2e3440'> GPU </span> {temperatureC}°C" // Use red for critical
     },
 
     "backlight": {
-        "format": "<span color='#66def9' bgcolor='#06101e'> BRI </span> {percent}%",
+        "format": "<span color='#66def9' bgcolor='#2e3440'> BRI </span> {percent}%",
         "tooltip": false
     },
 
     "memory": {
-        "format": "<span color='#66def9' bgcolor='#06101e'> MEM </span> {used}GiB",
+        "format": "<span color='#66def9' bgcolor='#2e3440'> MEM </span> {used}GiB",
         "interval": 1,
         "tooltip": false
     },
 
     "pulseaudio": {
-        "format": "<span color='#66def9' bgcolor='#06101e'> VOL </span> {volume}%",
-        "format-muted": "<span color='#66def9' bgcolor='#06101e'> MUTE </span> {volume}%",
-        "format-bluetooth": "<span color='#66def9' bgcolor='#06101e'> BLU </span> {volume}%",
-        "format-bluetooth-muted": "<span color='#66def9' bgcolor='#06101e'> MUTE </span> {volume}%",
+        "format": "<span color='#66def9' bgcolor='#2e3440'> VOL </span> {volume}%",
+        "format-muted": "<span color='#66def9' bgcolor='#2e3440'> MUTE </span> {volume}%",
+        "format-bluetooth": "<span color='#66def9' bgcolor='#2e3440'> BLU </span> {volume}%",
+        "format-bluetooth-muted": "<span color='#66def9' bgcolor='#2e3440'> MUTE </span> {volume}%",
         "format-source": "{volume}% ",
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
         "tooltip": false,
@@ -113,24 +113,24 @@
             "warning": 40,
             "critical": 15
         },
-        "format": "<span color='#66def9' bgcolor='#06101e'> BAT </span> {capacity}%",
-        "format-critical": "<span color='#66def9' bgcolor='#06101e'> BAT </span> {capacity}%!!",
-        "format-warning": "<span color='#66def9' bgcolor='#06101e'> BAT </span> {capacity}%",
-        "format-full": "<span color='#66def9' bgcolor='#06101e'> FULL </span> {capacity}%",
-        "format-charging": "<span color='#66def9' bgcolor='#06101e'> POW </span> {capacity}%",
-        "format-plugged": "<span color='#66def9' bgcolor='#06101e'> POW </span> {capacity}%",
-        "format-alt": "<span color='#66def9' bgcolor='#06101e'> BAT </span> {time}",
+        "format": "<span color='#66def9' bgcolor='#2e3440'> BAT </span> {capacity}%",
+        "format-critical": "<span color='#66def9' bgcolor='#2e3440'> BAT </span> {capacity}%!!",
+        "format-warning": "<span color='#66def9' bgcolor='#2e3440'> BAT </span> {capacity}%",
+        "format-full": "<span color='#66def9' bgcolor='#2e3440'> FULL </span> {capacity}%",
+        "format-charging": "<span color='#66def9' bgcolor='#2e3440'> POW </span> {capacity}%",
+        "format-plugged": "<span color='#66def9' bgcolor='#2e3440'> POW </span> {capacity}%",
+        "format-alt": "<span color='#66def9' bgcolor='#2e3440'> BAT </span> {time}",
         "tooltip": false
     },
 
     "clock": {
-        "format": "<span color='#66def9' bgcolor='#06101e'> DAY </span> {:%a %H:%M:%S %Y-%m-%d}",
+        "format": "<span color='#66def9' bgcolor='#2e3440'> DAY </span> {:%a %H:%M:%S %Y-%m-%d}",
         "tooltip": false,
         "interval": 1
     },
 
     "network": {
-        "format": "<span color='#66def9' bgcolor='#06101e'> NET </span> {essid}",
+        "format": "<span color='#66def9' bgcolor='#2e3440'> NET </span> {essid}",
         "tooltip": false
     }
 }

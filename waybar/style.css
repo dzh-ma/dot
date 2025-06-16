@@ -1,6 +1,3 @@
-/* ================================ */
-/*            Common CSS            */
-/* ================================ */
 * {
     padding: 0;
     border-radius: 0;
@@ -12,196 +9,159 @@
     box-shadow: none;
 }
 
-/* the whole window */
 window#waybar {
-    background: #000000; /* True black background */
-    color: #b0bec4; /* Foreground */
+    /* background: #2e3440; */
+    background-color: rgba(46, 52, 64, 0.8);
+    color: #eceff4;
     padding: 0;
-    margin: 0;
 }
 
 window#waybar.hidden {
     opacity: 1;
 }
 
-/* ================================ */
-/*       workspaces module          */
-/* ================================ */
 #workspaces {
     margin: 0px;
 }
 
 #workspaces button {
-    color: #b0bec4; /* Foreground */
+    color: #eceff4;
     padding: 0 4px;
     margin-bottom: 4px;
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 24px;
     font-weight: 800;
     border-bottom: 2px solid transparent;
 }
 
 #workspaces button:hover {
-    color: #d54e53; /* Red */
+    color: #bf616a;
     background: none;
 }
 
 #workspaces button.visible,
 #workspaces button.active {
-    color: #3dd177; /* Green */
-    border-bottom: 2px solid #3dd177;
+    color: #a3be8c;
+    border-bottom: 2px solid #a3be8c;
 }
 
 #workspaces button.urgent {
-    color: #d03770; /* Bright red */
-    border-bottom: 2px solid #d03770;
+    color: #fc6e68;
+    border-bottom: 2px solid #fc6e68;
 }
 
-/* ================================ */
-/*            window                */
-/* ================================ */
 #window {
-    color: #d54e53; /* Red */
+    color: #bf616a;
     background: none;
     margin: 4px 8px;
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    border-bottom: 2px solid #d54e53;
+    border-bottom: 2px solid #bf616a;
 }
 
-/* ================================ */
-/*            tray                  */
-/* ================================ */
 #tray {
     margin: 0 3px;
     padding: 0 8px;
 }
 
-/* ================================ */
-/*            disk                  */
-/* ================================ */
 #disk {
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #c678dd; /* Purple */
+    color: #b48ead;
     margin: 5px 2px;
-    border-bottom: 2px solid #c678dd;
+    border-bottom: 2px solid #b48ead;
 }
 
-/* ================================ */
-/*            cpu                   */
-/* ================================ */
 #cpu {
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #00b0ff; /* Blue */
+    color: #5e81ac;
     margin: 5px 2px;
-    border-bottom: 2px solid #00b0ff;
+    border-bottom: 2px solid #5e81ac;
 }
 
-/* ================================ */
-/*            temp                  */
-/* ================================ */
 #temperature {
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #d54e53; /* Red */
+    color: #bf616a;
     margin: 5px 3px;
-    border-bottom: 2px solid #d54e53;
+    border-bottom: 2px solid #bf616a;
 }
 
 #temperature.critical {
-    color: #d03770; /* Bright red */
-    border-bottom: 2px solid #d03770;
+    color: #fc6e68;
+    border-bottom: 2px solid #fc6e68;
 }
 
-/* ================================ */
-/*            backlight             */
-/* ================================ */
 #backlight {
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #64fcda; /* Cyan */
+    color: #88c0d0;
     margin: 5px 3px;
-    border-bottom: 2px solid #64fcda;
+    border-bottom: 2px solid #88c0d0;
 }
 
-/* ================================ */
-/*            memory                */
-/* ================================ */
 #memory {
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #676e7b; /* Gray */
+    color: #bf616a;
     margin: 5px 3px;
-    border-bottom: 2px solid #676e7b;
+    border-bottom: 2px solid #bf616a;
 }
 
-/* ================================ */
-/*         pulseaudio               */
-/* ================================ */
 #pulseaudio {
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #64fcda; /* Cyan */
+    color: #88c0d0;
     margin: 5px 3px;
-    border-bottom: 2px solid #64fcda;
+    border-bottom: 2px solid #88c0d0;
 }
 
 #pulseaudio.muted {
-    color: #d03770; /* Bright red */
-    border-bottom: 2px solid #d03770;
+    color: #fc6e68;
+    border-bottom: 2px solid #fc6e68;
 }
 
-/* ================================ */
-/*            battery               */
-/* ================================ */
 #battery {
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #3dd177; /* Green */
+    color: #a3be8c;
     margin: 5px 3px;
-    border-bottom: 2px solid #3dd177;
+    border-bottom: 2px solid #a3be8c;
 }
 
 #battery.critical {
-    color: #d03770; /* Bright red */
-    border-bottom: 2px solid #d03770;
+    color: #fc6e68;
+    border-bottom: 2px solid #fc6e68;
 }
 
 #battery.warning {
-    color: #ffc900; /* Yellow */
-    border-bottom: 2px solid #ffc900;
+    color: #e4b860;
+    border-bottom: 2px solid #e4b860;
 }
 
-/* ================================ */
-/*            clock                 */
-/* ================================ */
 #clock {
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #3dd177; /* Green */
+    color: #a3be8c;
     margin: 5px 3px;
-    border-bottom: 2px solid #3dd177;
+    border-bottom: 2px solid #a3be8c;
 }
 
-/* ================================ */
-/*           network                */
-/* ================================ */
 #network {
-    font-family: Hurmit Nerd Font Mono;
+    font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #3dd177; /* Green */
+    color: #a3be8c;
     margin: 5px 3px;
-    border-bottom: 2px solid #3dd177;
+    border-bottom: 2px solid #a3be8c;
 }

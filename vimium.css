@@ -1,28 +1,24 @@
-/* Catppuccin Mocha Palette */
-
 :root {
-  --vimium-rosewater: #f5e0dc;
-  --vimium-peach: #fab387;
-  --vimium-green: #a6e3a1;
-  --vimium-blue: #89b4fa;
-  --vimium-lavender: #b4befe;
-  --vimium-text: #cdd6f4;
-  --vimium-surface2: #585b70;
-  --vimium-surface0: #313244;
-  --vimium-base: #1e1e2e;
-  --vimium-mantle: #181825;
-  --vimium-crust: #11111b;
+  --vimium-foreground: #ffffff;
+  --vimium-background: #000000;
+  --vimium-accent1:    #3dd177;
+  --vimium-accent2:    #00b0ff;
+  --vimium-accent3:    #ffc900;
+  --vimium-alt:        #c678dd;
+  --vimium-muted:      #313244;
+  --vimium-cursor:     #b0bec4;
 }
-#vimiumHintMarkerContainer div.internalVimiumHintMarker, #vimiumHintMarkerContainer div.vimiumHintMarker {
+
+#vimiumHintMarkerContainer div.internalVimiumHintMarker,
+#vimiumHintMarkerContainer div.vimiumHintMarker {
   padding: 3px 4px;
-  background: var(--vimium-peach);
-  border: 1;
-  border-color: var(--vimium-mantle);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background: var(--vimium-accent3);
+  border: 1px solid var(--vimium-background);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 #vimiumHintMarkerContainer div span {
-  color: var(--vimium-mantle) !important;
+  color: var(--vimium-background) !important;
   text-shadow: none;
 }
 
@@ -31,13 +27,13 @@
 }
 
 #vimiumHintMarkerContainer div > .matchingCharacter ~ span {
-  color: var(--vimium-surface2);
+  color: var(--vimium-cursor);
 }
 
 #vomnibar {
-  background: var(--vimium-base);
-  border: 2px solid var(--vimium-lavender);
-  animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;
+  background: var(--vimium-background);
+  border: 2px solid var(--vimium-alt);
+  animation: show 200ms ease-out forwards;
   max-height: calc(100vh - 70px);
   overflow: hidden;
 }
@@ -54,29 +50,28 @@
 }
 
 #vomnibar input {
-  color: var(--vimium-text);
-  background: var(--vimium-base);
+  color: var(--vimium-foreground);
+  background: var(--vimium-background);
   border: none;
-  height: unset;
   padding: 16px 30px;
 }
 
 #vomnibar .vomnibarSearchArea {
+  background: var(--vimium-background);
   border: none;
   padding: unset;
-  background: var(--vimium-base)
 }
 
 #vomnibar ul {
   padding: 0;
   margin: 0;
-  background: var(--vimium-base);
-  border-top: 1px solid var(--vimium-surface0);
+  background: var(--vimium-background);
+  border-top: 1px solid var(--vimium-muted);
 }
 
 #vomnibar li {
   padding: 10px;
-  border-bottom: 1px solid var(--vimium-surface0)
+  border-bottom: 1px solid var(--vimium-muted);
 }
 
 #vomnibar li .vomnibarTopHalf,
@@ -85,76 +80,96 @@
 }
 
 #vomnibar li .vomnibarSource {
-  color: var(--vimium-peach);
+  color: var(--vimium-accent3);
 }
 
 #vomnibar li em,
 #vomnibar li .vomnibarTitle {
-  color: var(--vimium-blue);
+  color: var(--vimium-accent2);
   font-weight: bold;
 }
 
 #vomnibar li .vomnibarUrl {
-  color: var(--vimium-rosewater);
+  color: var(--vimium-foreground);
 }
 
 #vomnibar li .vomnibarMatch {
-  color: var(--vimium-green);
+  color: var(--vimium-accent1);
   font-weight: bold;
 }
 
 #vomnibar li .vomnibarTitle .vomnibarMatch {
-  color: var(--vimium-blue);
+  color: var(--vimium-accent2);
 }
 
 #vomnibar li.vomnibarSelected {
-  background-color: var(--vimium-surface0);
+  background-color: var(--vimium-muted);
 }
 
 div.vimiumHUD {
-  background: var(--vimium-base);
+  background: var(--vimium-background);
   border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 div.vimiumHUD span#hud-find-input,
 div.vimiumHUD .vimiumHUDSearchAreaInner {
-  color: var(--vimium-text)
+  color: var(--vimium-foreground);
 }
 
 div.vimiumHUD .hud-find {
-  background-color: var(--vimium-base);
+  background-color: var(--vimium-background);
   border: none;
 }
 
 div.vimiumHUD .vimiumHUDSearchArea {
-  background-color: var(--vimium-base);
+  background-color: var(--vimium-background);
 }
 
-body.vimiumBody, .vimiumBody {
-  background-color: var(--vimium-base) !important;
+body.vimiumBody,
+.vimiumBody {
+  background-color: var(--vimium-background) !important;
 }
 
-.vimiumBody #footerWrapper, #userDefinedLinkHintCss, #scrollStepSize, #linkHintNumbers, #newTabUrl, #nextPatterns, #previousPatterns, #searchUrl, #linkHintCharacters, #searchEngines, #keyMappings, #uploadBackup
-{
-  color: var(--vimium-text) !important;
-  background-color: var(--vimium-mantle);
+.vimiumBody #footerWrapper,
+#userDefinedLinkHintCss,
+#scrollStepSize,
+#linkHintNumbers,
+#newTabUrl,
+#nextPatterns,
+#previousPatterns,
+#searchUrl,
+#linkHintCharacters,
+#searchEngines,
+#keyMappings,
+#uploadBackup {
+  color: var(--vimium-foreground) !important;
+  background-color: var(--vimium-muted);
 }
 
-.vimiumBody #footer, .vimiumBody .remove, input[name="pattern"], input[name="passKeys"], #uploadBackup
-{
-  background-color: var(--vimium-mantle) !important;
-  color: var(--vimium-text) !important;
+.vimiumBody #footer,
+.vimiumBody .remove,
+input[name="pattern"],
+input[name="passKeys"],
+#uploadBackup {
+  background-color: var(--vimium-muted) !important;
+  color: var(--vimium-foreground) !important;
 }
 
 body.vimiumBody input {
-  border-color: var(--vimium-crust);
+  border-color: var(--vimium-background);
 }
 
 body.vimiumBody a {
-  color: var(--vimium-lavender);
+  color: var(--vimium-alt);
 }
 
-body.vimiumBody .exclusionHeaderText, body.vimiumBody .example, body.vimiumBody .caption, body.vimiumBody header, body.vimiumBody textarea, body.vimiumBody input, body.vimiumBody label  {
-  color: var(--vimium-text) !important;
+body.vimiumBody .exclusionHeaderText,
+body.vimiumBody .example,
+body.vimiumBody .caption,
+body.vimiumBody header,
+body.vimiumBody textarea,
+body.vimiumBody input,
+body.vimiumBody label {
+  color: var(--vimium-foreground) !important;
 }

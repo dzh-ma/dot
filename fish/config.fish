@@ -56,10 +56,13 @@ if status is-interactive
     alias l="libreoffice"
     alias fs="fan_state get"
     alias fS="fan_state set"        # 0-3 = standard / quiet / high / full
-    alias pp="powerprofilesctl"
-    alias battery="fan_state set 1 && powerprofilesctl set power-saver"
-    alias balance="fan_state set 0 && powerprofilesctl set balanced"
-    alias performance="fan_state set 3 && powerprofilesctl set performance"
+    # alias pp="powerprofilesctl"
+    # alias battery="fan_state set 1 && powerprofilesctl set power-saver"
+    # alias balance="fan_state set 0 && powerprofilesctl set balanced"
+    # alias performance="fan_state set 3 && powerprofilesctl set performance"
+    alias battery="fan_state set 1"
+    alias balance="fan_state set 0"
+    alias performance="fan_state set 3"
     alias pac="sudo pacman"
     alias hwifi="nmcli connection up Bedroom\ 5GHz"
     alias uwifi="nmcli connection up eduroam\ \[a16c8929\]"
@@ -69,6 +72,8 @@ if status is-interactive
     alias tlist="sudo timeshift --list --snapshot-device /dev/nvme0n1p2"
     alias tcreate="sudo timeshift --create --comments"
     alias tdelete="sudo timeshift --delete-all"
+    alias bon="sudo systemctl start bluetooth.service"
+    alias boff="sudo systemctl stop bluetooth.service"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
