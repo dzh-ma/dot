@@ -1,7 +1,7 @@
 -- UI essentials
 vim.cmd[["syntax enable"]]
-vim.o.number = true                 -- numbered columns (effective on current line)
-vim.o.relativenumber = true         -- relative numbered columns
+vim.o.number = false                 -- numbered columns (effective on current line)
+vim.o.relativenumber = false         -- relative numbered columns
 vim.o.termguicolors = true
 vim.opt.cursorline = false
 vim.opt.wrap = false                -- disables ugly screen wrapping
@@ -18,8 +18,8 @@ vim.o.expandtab = true              -- uses spaces instead of tab
 vim.o.clipboard = "unnamedplus"     -- copy/paste support
 
 -- cursor lock
--- vim.opt.scrolloff = 999
--- vim.opt.sidescrolloff = 999
+vim.opt.scrolloff = 999
+vim.opt.sidescrolloff = 999
 
 -- menu line appearance
 vim.opt.laststatus = 0

@@ -14,48 +14,48 @@ set recolor-keephue false
 set database sqlite
 
 # Base colors - Ghostty
-set default-bg                rgba(6,16,30,1)         # Ghostty Background (#06101e)
-set default-fg                rgba(102,222,249,1)     # Ghostty Foreground (#66def9)
+set default-bg                rgba(30,29,40,1)
+set default-fg                rgba(255,255,255,1)
 
 # Completions - Styled with Ghostty palette
-set completion-bg             rgba(3,27,38,1)         # Ghostty ANSI 0 (#031B26)
-set completion-fg             rgba(102,222,249,1)     # Ghostty Foreground (#66def9)
-set completion-highlight-bg   rgba(0,141,163,1)       # Ghostty ANSI 6 (#008DA3)
-set completion-highlight-fg   rgba(6,16,30,1)         # Background for contrast
-set completion-group-bg       rgba(3,27,38,1)         # Ghostty ANSI 0
-set completion-group-fg       rgba(236,48,172,1)      # Ghostty ANSI 5 (#ec30ac)
+set completion-bg             rgba(19,18,24,1)
+set completion-fg             rgba(255,255,255,1)
+set completion-highlight-bg   rgba(131,104,255,1)
+set completion-highlight-fg   rgba(30,29,40,1)
+set completion-group-bg       rgba(19,18,24,1)
+set completion-group-fg       rgba(224,104,255,1)
 
 # Statusbar
-set statusbar-fg              rgba(102,222,249,1)     # Ghostty Foreground (#66def9)
-set statusbar-bg              rgba(3,27,38,1)         # Ghostty ANSI 0
+set statusbar-fg              rgba(255,255,255,1)
+set statusbar-bg              rgba(19,18,24,1)
 
 # Notifications
-set notification-bg           rgba(3,27,38,1)
-set notification-fg           rgba(102,222,249,1)
-set notification-error-bg     rgba(3,27,38,1)
-set notification-error-fg     rgba(253,94,58,1)       # Ghostty ANSI 1 (#fd5e3a)
-set notification-warning-bg   rgba(3,27,38,1)
-set notification-warning-fg   rgba(250,122,97,1)      # Bright ANSI 9 (#fa7a61)
+set notification-bg           rgba(19,18,24,1)
+set notification-fg           rgba(255,255,255,1)
+set notification-error-bg     rgba(19,18,24,1)
+set notification-error-fg     rgba(255,131,104,1)
+set notification-warning-bg   rgba(19,18,24,1)
+set notification-warning-fg   rgba(255,204,194,1)
 
 # Input bar
-set inputbar-fg               rgba(102,222,249,1)
-set inputbar-bg               rgba(3,27,38,1)
+set inputbar-fg               rgba(255,255,255,1)
+set inputbar-bg               rgba(19,18,24,1)
 
 # Recoloring (light = page, dark = text)
-set recolor-lightcolor        rgba(6,16,30,1)         # page background = Ghostty BG
-set recolor-darkcolor         rgba(102,222,249,1)     # text = Ghostty FG
+set recolor-lightcolor        rgba(30,29,40,1)
+set recolor-darkcolor         rgba(255,255,255,1)
 
 # Index
-set index-fg                  rgba(102,222,249,1)
-set index-bg                  rgba(6,16,30,1)
-set index-active-fg           rgba(6,16,30,1)
-set index-active-bg           rgba(102,222,249,1)
+set index-fg                  rgba(255,255,255,1)
+set index-bg                  rgba(30,29,40,1)
+set index-active-fg           rgba(30,29,40,1)
+set index-active-bg           rgba(255,255,255,1)
 
 # Loading indicator
-set render-loading-bg         rgba(6,16,30,1)
-set render-loading-fg         rgba(102,222,249,1)
+set render-loading-bg         rgba(30,29,40,1)
+set render-loading-fg         rgba(255,255,255,1)
 
 # Highlights - using Ghostty bright colors
-set highlight-color           rgba(250,122,97,0.5)    # Bright ANSI 9 (#fa7a61)
-set highlight-fg              rgba(236,48,172,0.5)    # Ghostty Magenta (#ec30ac)
-set highlight-active-color    rgba(236,48,172,0.5)
+set highlight-color           rgba(255,204,194,0.5)
+set highlight-fg              rgba(255,104,176,0.5)
+set highlight-active-color    rgba(255,104,176,0.5)

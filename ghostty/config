@@ -43,35 +43,36 @@
 # resize-overlay-duration = 4s 200ms
 
 # DOCS: Colorscheme
+
 # Base colors
-background = #161f31
-foreground = #c9d8ee
-cursor-color = #c9d8ee
-selection-background = #253557 
+background = #1e1d28
+foreground = #FFFFFF
+cursor-color = #ff68b0
+selection-background = #272535
 
 # Color Palette (ANSI Colors 0-7)
-palette = 0=#121928
-palette = 1=#dc4154
-palette = 2=#5bcf75
-palette = 3=#f0a421
-palette = 4=#50bcef
-palette = 5=#da87ea
-palette = 6=#7dcfff
-palette = 7=#a9bad6
+palette = 0=#131218
+palette = 1=#ff8368
+palette = 2=#95ff68
+palette = 3=#ffe068
+palette = 4=#68ffeb
+palette = 5=#e068ff
+palette = 6=#8368ff
+palette = 7=#fbfaf5
 
 # Bright Colors (ANSI Colors 8-15)
-palette = 8=#596683
-palette = 9=#ff5874
-palette = 10=#4ad860
-palette = 11=#ffc021
-palette = 12=#629df2
-palette = 13=#ff3483
-palette = 14=#90d2fa
-palette = 15=#c9d8ee
+palette = 8=#3c3a53
+palette = 9=#ffccc2
+palette = 10=#d4ffc2
+palette = 11=#ffb068
+palette = 12=#68ffeb
+palette = 13=#ff68b0
+palette = 14=#ffc2e1
+palette = 15=#FFFFFF
 
 # DOCS: Font
-font-family = "Hurmit Nerd Font"
-font-size = 24
+font-family = "ProggyClean Nerd Font"
+font-size = 36
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never

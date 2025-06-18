@@ -1,12 +1,12 @@
 :root {
-  --vimium-foreground: #ffffff;
-  --vimium-background: #000000;
-  --vimium-accent1:    #3dd177;
-  --vimium-accent2:    #00b0ff;
-  --vimium-accent3:    #ffc900;
-  --vimium-alt:        #c678dd;
-  --vimium-muted:      #313244;
-  --vimium-cursor:     #b0bec4;
+  --vimium-foreground: #FFFFFF;
+  --vimium-background: #1e1d28;
+  --vimium-accent1:    #95ff68;
+  --vimium-accent2:    #68ffeb;
+  --vimium-accent3:    #ffe068;
+  --vimium-alt:        #e068ff;
+  --vimium-muted:      #272535;
+  --vimium-cursor:     #FFFFFF;
 }
 
 #vimiumHintMarkerContainer div.internalVimiumHintMarker,

@@ -10,9 +10,8 @@
 }
 
 window#waybar {
-    /* background: #2e3440; */
-    background-color: rgba(46, 52, 64, 0.8);
-    color: #eceff4;
+    background-color: rgba(30, 29, 40, 0.8);
+    color: #FFFFFF;
     padding: 0;
 }
 
@@ -25,7 +24,7 @@ window#waybar.hidden {
 }
 
 #workspaces button {
-    color: #eceff4;
+    color: #FFFFFF;
     padding: 0 4px;
     margin-bottom: 4px;
     font-family: JetBrainsMono Nerd Font;
@@ -35,29 +34,29 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-    color: #bf616a;
+    color: #ff8368;
     background: none;
 }
 
 #workspaces button.visible,
 #workspaces button.active {
-    color: #a3be8c;
-    border-bottom: 2px solid #a3be8c;
+    color: #95ff68;
+    border-bottom: 2px solid #95ff68;
 }
 
 #workspaces button.urgent {
-    color: #fc6e68;
-    border-bottom: 2px solid #fc6e68;
+    color: #ff8368;
+    border-bottom: 2px solid #ff8368;
 }
 
 #window {
-    color: #bf616a;
+    color: #ff8368;
     background: none;
     margin: 4px 8px;
     font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    border-bottom: 2px solid #bf616a;
+    border-bottom: 2px solid #ff8368;
 }
 
 #tray {
@@ -69,99 +68,99 @@ window#waybar.hidden {
     font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #b48ead;
+    color: #e068ff;
     margin: 5px 2px;
-    border-bottom: 2px solid #b48ead;
+    border-bottom: 2px solid #e068ff;
 }
 
 #cpu {
     font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #5e81ac;
+    color: #68ffeb;
     margin: 5px 2px;
-    border-bottom: 2px solid #5e81ac;
+    border-bottom: 2px solid #68ffeb;
 }
 
 #temperature {
     font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #bf616a;
+    color: #ff8368;
     margin: 5px 3px;
-    border-bottom: 2px solid #bf616a;
+    border-bottom: 2px solid #ff8368;
 }
 
 #temperature.critical {
-    color: #fc6e68;
-    border-bottom: 2px solid #fc6e68;
+    color: #ff8368;
+    border-bottom: 2px solid #ff8368;
 }
 
 #backlight {
     font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #88c0d0;
+    color: #8368ff;
     margin: 5px 3px;
-    border-bottom: 2px solid #88c0d0;
+    border-bottom: 2px solid #8368ff;
 }
 
 #memory {
     font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #bf616a;
+    color: #ff8368;
     margin: 5px 3px;
-    border-bottom: 2px solid #bf616a;
+    border-bottom: 2px solid #ff8368;
 }
 
 #pulseaudio {
     font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #88c0d0;
+    color: #8368ff;
     margin: 5px 3px;
-    border-bottom: 2px solid #88c0d0;
+    border-bottom: 2px solid #8368ff;
 }
 
 #pulseaudio.muted {
-    color: #fc6e68;
-    border-bottom: 2px solid #fc6e68;
+    color: #ff8368;
+    border-bottom: 2px solid #ff8368;
 }
 
 #battery {
     font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #a3be8c;
+    color: #95ff68;
     margin: 5px 3px;
-    border-bottom: 2px solid #a3be8c;
+    border-bottom: 2px solid #95ff68;
 }
 
 #battery.critical {
-    color: #fc6e68;
-    border-bottom: 2px solid #fc6e68;
+    color: #ff8368;
+    border-bottom: 2px solid #ff8368;
 }
 
 #battery.warning {
-    color: #e4b860;
-    border-bottom: 2px solid #e4b860;
+    color: #ffe068;
+    border-bottom: 2px solid #ffe068;
 }
 
 #clock {
     font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #a3be8c;
+    color: #95ff68;
     margin: 5px 3px;
-    border-bottom: 2px solid #a3be8c;
+    border-bottom: 2px solid #95ff68;
 }
 
 #network {
     font-family: JetBrainsMono Nerd Font;
     font-size: 16px;
     font-weight: 800;
-    color: #a3be8c;
+    color: #95ff68;
     margin: 5px 3px;
-    border-bottom: 2px solid #a3be8c;
+    border-bottom: 2px solid #95ff68;
 }

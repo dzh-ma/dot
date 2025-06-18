@@ -1,19 +1,19 @@
 * {
-    foreground:                        #ffffff;
-    backlight:                         #16181a;
-    background-color:                  transparent;
-    dark:                              #16181a;
-    red:                               #ff6e5e;
-    red-alt:                           #ff6e5e;
-    orange:                            #ffbd5e;
-    gray-dark:                         #3c4048;
-    element-bg:                        #16181a;
-    cream:                             #5eff6c;
-    highlight:                         underline bold #5ea1ff;
-    transparent:                       #00000000;
-    font:                              "Hurmit Nerd Font 20";
-    padding:                           0px;
-    margin:                            0px;
+    foreground:            #eceff4;
+    backlight:             transparent;
+    background-color:      transparent;
+    dark:                  #2e3440;
+    red:                   #bf616a;
+    red-alt:               #bf616a;
+    orange:                #ebcb8b;
+    gray-dark:             #4c566a;
+    element-bg:            #2e3440;
+    cream:                 #a3be8c;
+    highlight:             underline bold #5e81ac;
+    transparent:           transparent;
+    font:                  "JetBrainsMono Nerd Font 20";
+    padding:               0px;
+    margin:                0px;
 }
 
 configuration {
@@ -27,10 +27,10 @@ window {
     location:                          center;
     anchor:                            center;
     padding:                           0px;
-    border:                            5px;
-    border-radius:                     0.2%;
-    border-color:                      @dark;
-    background-color:                  @backlight;
+    border:                            0px;
+    border-radius:                     0%;
+    border-color:                      transparent;
+    background-color:                  transparent;
     spacing:                           0;
     children:                          [mainbox];
     orientation:                       horizontal;
@@ -70,10 +70,10 @@ prompt {
 listview {
     padding:                           3px;
     border-color:                      @gray-dark;
-    border:                            0px 2px 2px 2px;
-    background-color:                  @backlight;
+    border:                            0px 0px 0px 0px;
+    background-color:                  transparent;
     dynamic:                           false;
-    lines:                             10;
+    lines:                             3;
     columns:                           1;
 }
 
@@ -82,7 +82,7 @@ element {
     vertical-align:                    0.5;
     border:                            2px;
     border-radius:                     0px;
-    background-color:                  @element-bg;
+    background-color:                  transparent;
     color:                             @cream;
     font:inherit;
 }
@@ -115,14 +115,19 @@ element alternate urgent {
     foreground:                        @foreground;
 }
 
+element selected normal {
+    background-color:                  transparent;
+    text-color:                        @orange;
+}
+
 element selected active {
-    background-color:                  @red-alt;
-    foreground:                        @backlight;
+    background-color:                  transparent;
+    // foreground:                        @backlight;
 }
 
 element selected urgent {
-    background-color:                  @foreground;
-    foreground:                        @backlight;
+    background-color:                  transparent;
+    // foreground:                        @backlight;
 }
 
 element normal normal {}
