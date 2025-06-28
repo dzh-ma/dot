@@ -6,28 +6,28 @@
   font-family: var(--custom-font), sans-serif !important;
 }
 
-/* /* Hide the tab bar */ */
+/* Hide the tab bar */
 /* #toolbar-menubar, */
-/* #TabsToolbar { */
+/* #tabstoolbar { */
 /*   visibility: collapse !important; */
 /*   height: 0px !important; */
-/*   margin-bottom: -1px !important; /* Collapse any extra space */ */
+/*   margin-bottom: -1px !important; /* collapse any extra space */ */
 /* } */
 /**/
-/* /* Hide the navigation bar (address bar) */ */
+/* /* hide the navigation bar (address bar) */ */
 /* #nav-bar { */
 /*   visibility: collapse !important; */
 /*   height: 0px !important; */
-/*   margin-bottom: -1px !important; /* Collapse any extra space */ */
+/*   margin-bottom: -1px !important; /* collapse any extra space */ */
 /* } */
 /**/
-/* /* Hide the sidebar */ */
+/* /* hide the sidebar */ */
 /* #sidebar-box { */
 /*   visibility: collapse !important; */
 /*   width: 0px !important; */
 /* } */
 /**/
-/* /* Adjust the main content area to take up the full space */ */
+/* /* adjust the main content area to take up the full space */ */
 /* #content-deck { */
 /*   margin-top: 0px !important; */
 /*   margin-left: 0px !important; */
