@@ -310,4 +310,13 @@ return {
             input = { enabled = true },
         },
     },
+
+    -- DOCS: color picker
+    {
+        "catgoose/nvim-colorizer.lua",
+        event = "BufReadPre",
+        config = function ()
+            require("colorizer").setup()
+        end
+    },
 }

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+DEVICE="bluez_card.80_99_E7_38_F7_97"
+PROFILE=$(pactl list cards | grep -A20 "$DEVICE" | grep "Active Profile" | awk -F: '{print $2}' | xargs)
+
+if [ "$PROFILE" = "a2dp_sink" ]; then
+    pactl set-card-profile "$DEVICE" headset_head_unit
+    echo "Switched to headset (mic) mode."
+else
+    pactl set-card-profile "$DEVICE" a2dp_sink
+    echo "Switched to high quality (music) mode."
+fi
+

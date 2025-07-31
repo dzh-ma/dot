@@ -50,7 +50,7 @@ if status is-interactive
     alias bs="brightnessctl set"
     alias g="gwenview"
     alias s="sudo systemctl"
-    alias o="onlyoffice-desktopeditors"
+    # alias o="onlyoffice-desktopeditors"
     alias d0="hyprctl keyword monitor 'eDP-1, disable'"
     alias d1="hyprctl keyword monitor 'eDP-1, 2880x1800@120, 0x0, 1'"
     alias l="libreoffice"
@@ -78,8 +78,14 @@ if status is-interactive
     alias epp1="sudo nvim /etc/auto-cpufreq.conf"
     alias epp2="sudo systemctl restart auto-cpufreq.service"
     alias live="sudo auto-cpufreq --live"
-    alias reboot="it is not safe to reboot right now"
-    alias shutdown="it is not safe to reboot right now"
+    alias wallpaper="pkill hyprpaper && hyprctl reload"
+    alias vm1="modprobe -a vmw-vmci vmmon"
+    alias vm2="sudo systemctl start vmware-networks-configuration.service"
+    alias vm3="sudo systemctl start vmware-networks.service"
+    alias vm4="sudo systemctl start vmware-usbarbitrator.service"
+    alias vms1="sudo systemctl start vmware-networks-configuration.service"
+    alias vms2="sudo systemctl start vmware-networks.service"
+    alias vms3="sudo systemctl start vmware-usbarbitrator.service"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin

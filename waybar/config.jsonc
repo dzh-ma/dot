@@ -11,7 +11,7 @@
     "modules-right": [
         //"tray",
         "disk",
-        "cpu",
+        // "cpu",
         "temperature#cpu", // New CPU temperature module
         "temperature#gpu", // Existing GPU temperature module (renamed for clarity)
         "backlight",

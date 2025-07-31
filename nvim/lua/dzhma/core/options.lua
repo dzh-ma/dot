@@ -1,7 +1,7 @@
 -- UI essentials
 vim.cmd[["syntax enable"]]
-vim.o.number = false                 -- numbered columns (effective on current line)
-vim.o.relativenumber = false         -- relative numbered columns
+vim.o.number = true                 -- numbered columns (effective on current line)
+vim.o.relativenumber = true         -- relative numbered columns
 vim.o.termguicolors = true
 vim.opt.cursorline = false
 vim.opt.wrap = false                -- disables ugly screen wrapping
