@@ -71,8 +71,8 @@ palette = 14=#ffc2e1
 palette = 15=#FFFFFF
 
 # DOCS: Font
-font-family = "Hurmit Nerd Font"
-font-size = 12
+font-family = "GoMono Nerd Font"
+font-size = 7
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never
