@@ -12,7 +12,7 @@ if status is-interactive
     alias z="zoxide"
     alias E="exa --long --icons --all --no-quotes --across --modified --total-size --grid --group-directories-first"
     alias e="exa --long --icons --all --no-quotes --across --modified --grid --group-directories-first"
-    alias clear="clear && fastfetch"
+    # alias clear="clear && fastfetch"
     alias za="zathura"
     alias img="kitty +kitten icat"
     alias r="ranger"
@@ -93,7 +93,7 @@ if status is-interactive
     set -x PATH $PATH $HOME/.cargo/bin
 
     # Display system info
-    fastfetch
+    # fastfetch
 
     # Initialize starship prompt
     starship init fish | source
