@@ -1,6 +1,6 @@
 #set PS1 "[\u@\h \W]\$ '"
 #set -Ux PATH $HOME/.local/bin $HOME/.local/share/gem/ruby/3.3.0/bin $HOME/.cargo/bin $HOME/.npm-global/bin$PATH
-set -Ux PATH $HOME/.local/bin $HOME/.local/share/gem/ruby/3.3.0/bin $HOME/.cargo/bin $HOME/.npm-global/bin $HOME/.nimble/bin $PATH
+set -Ux PATH $HOME/.local/bin $HOME/.local/share/gem/ruby/3.3.0/bin $HOME/.cargo/bin $HOME/.npm-global/bin $HOME/.nimble/bin $HOME/dot/scripts/ $PATH
 set -U fish_user_paths /home/dzh-ma/.local/share/gem/ruby/3.3.0/bin /home/dzh-ma/.npm-global/bin $fish_user_paths
 set -x SSH_AUTH_SOCK $XDG_RUNTIME_DIR/ssh-agent.socket
 set fish_greeting
@@ -68,6 +68,7 @@ if status is-interactive
     alias pac="sudo pacman"
     alias hwifi="nmcli connection up Bedroom\ 5GHz"
     alias uwifi="nmcli connection up eduroam\ \[a16c8929\]"
+    alias wifi="nmcli connection"
     alias jumd="jupytext --to markdown"
     alias juno="jupytext --to notebook"
     alias tlist="sudo timeshift --list --snapshot-device /dev/nvme0n1p2"

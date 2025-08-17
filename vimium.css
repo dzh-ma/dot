@@ -1,34 +1,40 @@
 :root {
-  --vimium-foreground: #FFFFFF; /* Ghostty foreground */
-  --vimium-background: #1e1d28; /* Ghostty background */
-  --vimium-accent1:    #95ff68; /* Ghostty palette 2 (green) */
-  --vimium-accent2:    #68ffeb; /* Ghostty palette 4 (cyan/blue) */
-  --vimium-accent3:    #ffe068; /* Ghostty palette 3 (yellow) */
-  --vimium-alt:        #e068ff; /* Ghostty palette 5 (magenta) */
-  --vimium-muted:      #272535; /* Ghostty selection-background */
+  --vimium-foreground: #FFFFFF; /* Universal foreground */
+  --vimium-background: #1e1d28; /* Universal background */
+  --vimium-accent1:    #95ff68; /* Green */
+  --vimium-accent2:    #68ffeb; /* Cyan/blue */
+  --vimium-accent3:    #FFFFFF; /* Changed from yellow to white */
+  --vimium-alt:        #e068ff; /* Magenta */
+  --vimium-muted:      #272535; /* Muted background */
   --vimium-cursor:     #FFFFFF; /* Same as foreground */
 }
 
-#vimiumHintMarkerContainer div.internalVimiumHintMarker,
-#vimiumHintMarkerContainer div.vimiumHintMarker {
-  padding: 3px 4px;
-  background: var(--vimium-background); /* #2e3440 */
-  border: 1px solid var(--vimium-muted); /* #4c566a */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.24);
+#vimium-hint-marker-container div.internal-vimium-hint-marker,
+#vimium-hint-marker-container div.vimiumHintMarker {
+    padding: 3px 4px;
+    background: var(--vimium-background);
+    border: 0;
+    border-color: var(--vimium-mantle);
+    box-shadow: none;
 }
 
-#vimiumHintMarkerContainer div span {
-  color: var(--vimium-foreground) !important; /* #eceff4 */
-  text-shadow: none;
+#vimium-hint-marker-container div span {
+    color: var(--vimium-foreground);
+    text-shadow: none;
 }
 
-
-#vimiumHintMarkerContainer div > .matchingCharacter {
-  opacity: 1.0;
+#vimium-hint-marker-container div span.matchingCharacter {
+    color: var(--vimium-foreground);
 }
 
-#vimiumHintMarkerContainer div > .matchingCharacter ~ span {
-  color: var(--vimium-cursor);
+/* vomnibar */
+
+#vomnibar {
+    background: var(--vimium-base);
+    border: 2px solid var(--vimium-lavender);
+    animation: show 200ms cubic-bezier(0, 0, 0.2, 1) forwards;
+    max-height: calc(100vh - 70px);
+    overflow: hidden;
 }
 
 #vomnibar {
@@ -36,14 +42,14 @@
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px; /* adjust width as needed */
+  width: 600px;
   background: var(--vimium-background);
-  border: 2px solid var(--vimium-alt);
+  border: none; /* Removed border */
   animation: show 200ms ease-out forwards;
-  max-height: none; /* remove height limitation */
+  max-height: none;
   overflow: hidden;
   z-index: 999999;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: none; /* Removed shadow */
   border-radius: 8px;
 }
 
@@ -74,13 +80,13 @@
 #vomnibar ul {
   max-height: none !important;
   background: var(--vimium-background);
-  border-top: 1px solid var(--vimium-muted);
+  border: none; /* Removed border */
   overflow: hidden;
 }
 
 #vomnibar li {
   padding: 10px;
-  border-bottom: 1px solid var(--vimium-muted);
+  border: none; /* Removed border */
 }
 
 #vomnibar li .vomnibarTopHalf,
@@ -89,7 +95,7 @@
 }
 
 #vomnibar li .vomnibarSource {
-  color: var(--vimium-accent3);
+  color: var(--vimium-foreground);
 }
 
 /* Limit to max 3 items */
@@ -99,7 +105,7 @@
 
 #vomnibar li em,
 #vomnibar li .vomnibarTitle {
-  color: var(--vimium-accent2);
+  color: var(--vimium-foreground);
   font-weight: bold;
 }
 
@@ -108,12 +114,12 @@
 }
 
 #vomnibar li .vomnibarMatch {
-  color: var(--vimium-accent1);
+  color: var(--vimium-foreground);
   font-weight: bold;
 }
 
 #vomnibar li .vomnibarTitle .vomnibarMatch {
-  color: var(--vimium-accent2);
+  color: var(--vimium-foreground);
 }
 
 #vomnibar li.vomnibarSelected {
@@ -123,7 +129,7 @@
 div.vimiumHUD {
   background: var(--vimium-background);
   border: none;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: none; /* Removed shadow */
 }
 
 div.vimiumHUD span#hud-find-input,
@@ -158,7 +164,8 @@ body.vimiumBody,
 #keyMappings,
 #uploadBackup {
   color: var(--vimium-foreground) !important;
-  background-color: var(--vimium-muted);
+  background-color: var(--vimium-background) !important; /* Changed to universal background */
+  border: none; /* Removed borders */
 }
 
 .vimiumBody #footer,
@@ -166,16 +173,19 @@ body.vimiumBody,
 input[name="pattern"],
 input[name="passKeys"],
 #uploadBackup {
-  background-color: var(--vimium-muted) !important;
+  background-color: var(--vimium-background) !important; /* Changed to universal background */
   color: var(--vimium-foreground) !important;
+  border: none; /* Removed borders */
 }
 
 body.vimiumBody input {
-  border-color: var(--vimium-background);
+  border: none; /* Removed border */
+  background-color: var(--vimium-background) !important;
+  color: var(--vimium-foreground) !important;
 }
 
 body.vimiumBody a {
-  color: var(--vimium-alt);
+  color: var(--vimium-foreground);
 }
 
 body.vimiumBody .exclusionHeaderText,
@@ -186,4 +196,6 @@ body.vimiumBody textarea,
 body.vimiumBody input,
 body.vimiumBody label {
   color: var(--vimium-foreground) !important;
+  background-color: var(--vimium-background) !important;
+  border: none; /* Removed borders */
 }

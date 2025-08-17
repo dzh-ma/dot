@@ -71,8 +71,8 @@ palette = 14=#ffc2e1
 palette = 15=#FFFFFF
 
 # DOCS: Font
-font-family = "JetBrainsMono Nerd Font"
-font-size = 14
+font-family = "FantasqueSansM Nerd Font"
+font-size = 18
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never
