@@ -46,32 +46,32 @@
 
 # Base colors
 background = #1e1d28
-foreground = #FFFFFF
+foreground = #8ba7a7
 cursor-color = #ff68b0
 selection-background = #272535
 
 # Color Palette (ANSI Colors 0-7)
-palette = 0=#131218
-palette = 1=#ff8368
-palette = 2=#95ff68
-palette = 3=#ffe068
-palette = 4=#68ffeb
-palette = 5=#e068ff
-palette = 6=#8368ff
-palette = 7=#fbfaf5
+palette = 0=#241b2f
+palette = 1=#fe4450
+palette = 2=#72f1b8
+palette = 3=#ffcc00
+palette = 4=#61e2ff
+palette = 5=#af6df9
+palette = 6=#61e2ff
+palette = 7=#8ba7a7
 
 # Bright Colors (ANSI Colors 8-15)
-palette = 8=#3c3a53
-palette = 9=#ffccc2
-palette = 10=#d4ffc2
-palette = 11=#ffb068
-palette = 12=#68ffeb
-palette = 13=#ff68b0
-palette = 14=#ffc2e1
-palette = 15=#FFFFFF
+palette = 8=#495495
+palette = 9=#ff6b7d
+palette = 10=#9bffcc
+palette = 11=#ffd633
+palette = 12=#7de8ff
+palette = 13=#fc199a
+palette = 14=#94f0ff
+palette = 15=#ffffff
 
 # DOCS: Font
-font-family = "FantasqueSansM Nerd Font"
+font-family = "JetBrainsMono Nerd Font"
 font-size = 18
 
 # DOCS: Hiding dimensions information pop-up

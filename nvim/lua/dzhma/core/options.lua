@@ -1,7 +1,7 @@
 -- UI essentials
 vim.cmd[["syntax enable"]]
-vim.o.number = true                 -- numbered columns (effective on current line)
-vim.o.relativenumber = true         -- relative numbered columns
+vim.o.number = false                 -- numbered columns (effective on current line)
+vim.o.relativenumber = false         -- relative numbered columns
 vim.o.termguicolors = true
 vim.opt.cursorline = false
 vim.opt.wrap = false                -- disables ugly screen wrapping
@@ -33,6 +33,14 @@ vim.api.nvim_create_autocmd("FileType", {
     callback = function()
         vim.bo.shiftwidth = 2
         vim.bo.tabstop = 2
+    end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "r" },
+    callback = function()
+        vim.bo.shiftwidth = 5
+        vim.bo.tabstop = 5
     end,
 })
 

@@ -1,5 +1,5 @@
 # Font configuration
-set font "Lexend Deca 16"
+set font "JetBrainsMono Nerd Font 16"
 
 # Clipboard yanking
 set selection-clipboard clipboard

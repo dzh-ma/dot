@@ -6,7 +6,7 @@ uniform sampler2D tex;
 out vec4 fragColor;       // replaces gl_FragColor
 
 const vec3 VIB_RGB_BALANCE = vec3(1.0, 1.0, 1.0);
-const float VIB_VIBRANCE = 1.20;
+const float VIB_VIBRANCE = 1.80;
 const vec3 VIB_coeffVibrance = VIB_RGB_BALANCE * -VIB_VIBRANCE;
 
 void main() {

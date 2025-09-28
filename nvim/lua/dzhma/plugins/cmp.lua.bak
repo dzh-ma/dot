@@ -26,22 +26,22 @@ return {
                 "zls",
             }
 
+            local lsp = require("lspconfig")
+            -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
             local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
             local on_attach = function(client)
                 -- Preventing LSP rewriting highlights
                 client.server_capabilities.semanticTokensProvider = false
             end
 
-            -- Set up default servers using the new vim.lsp.config API
             for _, server in ipairs(default_servers) do
-                vim.lsp.config[server] = {
+                lsp[server].setup {
                     capabilities = capabilities,
                     on_attach = on_attach,
                 }
             end
 
-            -- Set up lua_ls with specific settings
-            vim.lsp.config.lua_ls = {
+            lsp.lua_ls.setup {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
@@ -52,12 +52,6 @@ return {
                     }
                 }
             }
-
-            -- Enable the configured LSP servers
-            for _, server in ipairs(default_servers) do
-                vim.lsp.enable(server)
-            end
-            vim.lsp.enable('lua_ls')
 
             vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)
             vim.keymap.set('n', '<Leader>p', vim.diagnostic.goto_prev)

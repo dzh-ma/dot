@@ -8,156 +8,134 @@
     transition: none;
     box-shadow: none;
 }
-
 window#waybar {
     background-color: rgba(30, 29, 40, 0.8);
     color: #FFFFFF;
     padding: 0;
 }
-
 window#waybar.hidden {
     opacity: 1;
 }
-
 #workspaces {
     margin: 0px;
 }
-
 #workspaces button {
     color: #FFFFFF;
     padding: 0 4px;
     margin-bottom: 4px;
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 24px;
     font-weight: 800;
     border-bottom: 2px solid transparent;
 }
-
 #workspaces button:hover {
     color: #ff8368;
     background: none;
 }
-
 #workspaces button.visible,
 #workspaces button.active {
     color: #95ff68;
     border-bottom: 2px solid #95ff68;
 }
-
 #workspaces button.urgent {
     color: #ff8368;
     border-bottom: 2px solid #ff8368;
 }
-
 #window {
     color: #ff8368;
     background: none;
     margin: 4px 8px;
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 16px;
     font-weight: 800;
     border-bottom: 2px solid #ff8368;
 }
-
 #tray {
     margin: 0 3px;
     padding: 0 8px;
 }
-
 #disk {
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 16px;
     font-weight: 800;
     color: #e068ff;
     margin: 5px 2px;
     border-bottom: 2px solid #e068ff;
 }
-
 #cpu {
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 16px;
     font-weight: 800;
     color: #68ffeb;
     margin: 5px 2px;
     border-bottom: 2px solid #68ffeb;
 }
-
 #temperature {
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 16px;
     font-weight: 800;
     color: #ff8368;
     margin: 5px 3px;
     border-bottom: 2px solid #ff8368;
 }
-
 #temperature.critical {
     color: #ff8368;
     border-bottom: 2px solid #ff8368;
 }
-
 #backlight {
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 16px;
     font-weight: 800;
     color: #8368ff;
     margin: 5px 3px;
     border-bottom: 2px solid #8368ff;
 }
-
 #memory {
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 16px;
     font-weight: 800;
     color: #ff8368;
     margin: 5px 3px;
     border-bottom: 2px solid #ff8368;
 }
-
 #pulseaudio {
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 16px;
     font-weight: 800;
     color: #8368ff;
     margin: 5px 3px;
     border-bottom: 2px solid #8368ff;
 }
-
 #pulseaudio.muted {
     color: #ff8368;
     border-bottom: 2px solid #ff8368;
 }
-
 #battery {
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 16px;
     font-weight: 800;
     color: #95ff68;
     margin: 5px 3px;
     border-bottom: 2px solid #95ff68;
 }
-
 #battery.critical {
     color: #ff8368;
     border-bottom: 2px solid #ff8368;
 }
-
 #battery.warning {
     color: #ffe068;
     border-bottom: 2px solid #ffe068;
 }
-
 #clock {
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 16px;
     font-weight: 800;
     color: #95ff68;
     margin: 5px 3px;
     border-bottom: 2px solid #95ff68;
 }
-
 #network {
-    font-family: Lexend Deca;
+    font-family: Atkinson Hyperlegible Next;
     font-size: 16px;
     font-weight: 800;
     color: #95ff68;

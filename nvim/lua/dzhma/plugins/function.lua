@@ -236,6 +236,59 @@ return {
                 WARN = { icon = " ", color = "warning", alt = { "WARNING", "XXX" } },
             },
             merge_keywords = true, -- if true, extends the existing keywords instead of replacing them
+
+            -- BLOCKER:
+                -- STOP:
+                -- PREVENT:
+            -- DEBUG:
+                -- TRACE:
+                -- LOG:
+                -- DEBUGGING:
+            -- DEPRECATED:
+                -- REMOVE:
+                -- OLD:
+                -- OBSOLETE:
+            -- DOCS:
+                -- DOCUMENTATION:
+                -- REFERENCE:
+           -- FIX:
+                --FIXME:
+                --BUG:
+                --FIXIT:
+                --ISSUE:
+            -- HACK:
+            -- IDEA:
+                -- INSPIRATION:
+                -- SUGGESTION:
+            -- IMPORTANT:
+                -- CRITICAL:
+                -- ATTENTION:
+            -- NOTE:
+                -- INFO:
+            -- PERF:
+                -- OPTIM:
+                -- PERFORMANCE:
+                -- OPTIMIZE:
+            -- QUESTION:
+                -- QUERY:
+                -- ASK:
+                -- HELP:
+            -- REFACTOR:
+                -- REWRITE:
+                -- IMPROVE:
+                -- CLEANUP:
+            -- REVIEW:
+                -- CHECK:
+                -- INSPECT:
+                -- VALIDATE:
+            -- TEST:
+                -- TESTING:
+                -- PASSED:
+                -- FAILED:
+            -- TODO:
+            -- WARN:
+                -- WARNING:
+                -- XXX:
         }
     },
 

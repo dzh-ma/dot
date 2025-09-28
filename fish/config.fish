@@ -15,7 +15,8 @@ if status is-interactive
     # alias clear="clear && fastfetch"
     alias za="zathura"
     alias img="kitty +kitten icat"
-    alias r="ranger"
+    # alias r="ranger"
+    alias r="Rscript"
     alias ck="clockify-cli"
     alias ckn="clockify-cli in --interactive=1"
     alias ckr="clockify-cli report"
@@ -87,6 +88,8 @@ if status is-interactive
     alias vms1="sudo systemctl start vmware-networks-configuration.service"
     alias vms2="sudo systemctl start vmware-networks.service"
     alias vms3="sudo systemctl start vmware-usbarbitrator.service"
+    alias prf="sh ~/dot/scripts/mode_performance.sh"
+    alias pow="sh ~/dot/scripts/mode_powersave.sh"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
