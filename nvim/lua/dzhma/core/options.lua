@@ -53,12 +53,12 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 
 -- spellchecking enabled only during note taking & documentation
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "markdown", "md" },
-    callback = function ()
-        vim.opt_local.spell = true
-    end,
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--     pattern = { "markdown", "md" },
+--     callback = function ()
+--         vim.opt_local.spell = true
+--     end,
+-- })
 
 -- Save the original vim.ui.open
 local orig_ui_open = vim.ui.open

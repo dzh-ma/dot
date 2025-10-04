@@ -53,6 +53,12 @@ return {
                 }
             }
 
+            vim.lsp.config.r_language_server = {
+                filetypes = { "r", "rmd" },  -- Add this line
+                on_attach = on_attach,
+                -- other settings...
+            }
+
             -- Enable the configured LSP servers
             for _, server in ipairs(default_servers) do
                 vim.lsp.enable(server)

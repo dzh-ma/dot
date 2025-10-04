@@ -1,5 +1,5 @@
 # Font configuration
-set font "JetBrainsMono Nerd Font 16"
+set font "SpaceMono Nerd Font 16"
 
 # Clipboard yanking
 set selection-clipboard clipboard
@@ -13,49 +13,49 @@ set recolor-keephue false
 # Use SQLite for the database
 set database sqlite
 
-# Base colors - Ghostty
-set default-bg                rgba(30,29,40,1)
-set default-fg                rgba(255,255,255,1)
+# Base colors - Ghostty theme
+set default-bg                rgba(30,29,40,1)      # background
+set default-fg                rgba(139,167,167,1)   # foreground
 
-# Completions - Styled with Ghostty palette
-set completion-bg             rgba(19,18,24,1)
-set completion-fg             rgba(255,255,255,1)
-set completion-highlight-bg   rgba(131,104,255,1)
-set completion-highlight-fg   rgba(30,29,40,1)
-set completion-group-bg       rgba(19,18,24,1)
-set completion-group-fg       rgba(224,104,255,1)
+# Completions
+set completion-bg             rgba(36,27,47,1)      # palette 0 (darker)
+set completion-fg             rgba(139,167,167,1)   # foreground
+set completion-highlight-bg   rgba(255,104,176,1)   # cursor-color
+set completion-highlight-fg   rgba(30,29,40,1)      # background for contrast
+set completion-group-bg       rgba(36,27,47,1)      # palette 0
+set completion-group-fg       rgba(175,109,249,1)   # palette 5 (magenta)
 
 # Statusbar
-set statusbar-fg              rgba(255,255,255,1)
-set statusbar-bg              rgba(19,18,24,1)
+set statusbar-fg              rgba(139,167,167,1)   # foreground
+set statusbar-bg              rgba(36,27,47,1)      # palette 0
 
 # Notifications
-set notification-bg           rgba(19,18,24,1)
-set notification-fg           rgba(255,255,255,1)
-set notification-error-bg     rgba(19,18,24,1)
-set notification-error-fg     rgba(255,131,104,1)
-set notification-warning-bg   rgba(19,18,24,1)
-set notification-warning-fg   rgba(255,204,194,1)
+set notification-bg           rgba(36,27,47,1)      # palette 0
+set notification-fg           rgba(139,167,167,1)   # foreground
+set notification-error-bg     rgba(36,27,47,1)      # palette 0
+set notification-error-fg     rgba(254,68,80,1)     # palette 1 (red)
+set notification-warning-bg   rgba(36,27,47,1)      # palette 0
+set notification-warning-fg   rgba(255,204,0,1)     # palette 3 (yellow)
 
 # Input bar
-set inputbar-fg               rgba(255,255,255,1)
-set inputbar-bg               rgba(19,18,24,1)
+set inputbar-fg               rgba(139,167,167,1)   # foreground
+set inputbar-bg               rgba(36,27,47,1)      # palette 0
 
 # Recoloring (light = page, dark = text)
-set recolor-lightcolor        rgba(30,29,40,1)
-set recolor-darkcolor         rgba(255,255,255,1)
+set recolor-lightcolor        rgba(30,29,40,1)      # background
+set recolor-darkcolor         rgba(139,167,167,1)   # foreground
 
 # Index
-set index-fg                  rgba(255,255,255,1)
-set index-bg                  rgba(30,29,40,1)
-set index-active-fg           rgba(30,29,40,1)
-set index-active-bg           rgba(255,255,255,1)
+set index-fg                  rgba(139,167,167,1)   # foreground
+set index-bg                  rgba(30,29,40,1)      # background
+set index-active-fg           rgba(30,29,40,1)      # background
+set index-active-bg           rgba(255,104,176,1)   # cursor-color
 
 # Loading indicator
-set render-loading-bg         rgba(30,29,40,1)
-set render-loading-fg         rgba(255,255,255,1)
+set render-loading-bg         rgba(30,29,40,1)      # background
+set render-loading-fg         rgba(139,167,167,1)   # foreground
 
-# Highlights - using Ghostty bright colors
-set highlight-color           rgba(255,204,194,0.5)
-set highlight-fg              rgba(255,104,176,0.5)
-set highlight-active-color    rgba(255,104,176,0.5)
+# Highlights
+set highlight-color           rgba(255,204,0,0.5)   # palette 3 (yellow)
+set highlight-fg              rgba(255,104,176,0.5) # cursor-color
+set highlight-active-color    rgba(255,104,176,0.5) # cursor-color

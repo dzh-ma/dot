@@ -71,7 +71,7 @@ palette = 14=#94f0ff
 palette = 15=#ffffff
 
 # DOCS: Font
-font-family = "JetBrainsMono Nerd Font"
+font-family = "SpaceMono Nerd Font"
 font-size = 18
 
 # DOCS: Hiding dimensions information pop-up
