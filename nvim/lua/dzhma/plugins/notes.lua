@@ -47,7 +47,7 @@ return {
                     enabled = false,
                 },
                 indent = {
-                    enabled = true,
+                    enabled = false,
                     render_modes = true,
                 },
                 heading = {

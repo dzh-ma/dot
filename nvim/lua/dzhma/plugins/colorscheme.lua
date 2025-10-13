@@ -1,20 +1,26 @@
 return {
     -- DOCS: Main color-scheme
+    -- {
+    --     "csgn/nolife.nvim",
+    --     -- dependencies = "rktjmp/lush.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     config = function()
+    --      vim.cmd.colorscheme 'nolife-dark'
+    --     end
+    -- },
+
     {
-        'maxmx03/fluoromachine.nvim',
+        'Verf/deepwhite.nvim',
         lazy = false,
         priority = 1000,
-        config = function ()
-         local fm = require 'fluoromachine'
+        config = function()
+            require("deepwhite").setup({
+                low_blue_light = true
+            })
 
-         fm.setup {
-            glow = false,
-            theme = 'fluoromachine',
-            transparent = true,
-         }
-
-         vim.cmd.colorscheme 'fluoromachine'
-        end
+            vim.cmd.colorscheme "deepwhite"
+        end,
     },
 
     -- DOCS: Distinctly colored parentheses

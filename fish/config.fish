@@ -12,7 +12,7 @@ if status is-interactive
     alias z="zoxide"
     alias E="exa --long --icons --all --no-quotes --across --modified --total-size --grid --group-directories-first"
     alias e="exa --long --icons --all --no-quotes --across --modified --grid --group-directories-first"
-    # alias clear="clear && fastfetch"
+    alias clear="clear && fastfetch"
     alias za="zathura"
     alias img="kitty +kitten icat"
     # alias r="ranger"
@@ -90,6 +90,7 @@ if status is-interactive
     alias vms3="sudo systemctl start vmware-usbarbitrator.service"
     alias prf="sh ~/dot/scripts/mode_performance.sh"
     alias pow="sh ~/dot/scripts/mode_powersave.sh"
+    alias balatro="~/Downloads/balatro-multiplayer-launcher.AppImage"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
@@ -97,7 +98,7 @@ if status is-interactive
     set -x PATH $PATH $HOME/.cargo/bin
 
     # Display system info
-    # fastfetch
+    fastfetch
 
     # Initialize starship prompt
     starship init fish | source
