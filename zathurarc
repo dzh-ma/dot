@@ -1,5 +1,5 @@
 # Font configuration
-set font "Lexend Deca 20"
+set font "Atkinson Hyperlegible Next 20"
 
 # Clipboard yanking
 set selection-clipboard clipboard
@@ -7,55 +7,58 @@ set selection-clipboard clipboard
 # Enable recoloring
 set recolor true
 
-# Adjusted for light theme
+# Keep hue for better color preservation
 set recolor-keephue true
 
 # Use SQLite for the database
 set database sqlite
 
-# Base colors - Deepwhite (white background, black text)
-set default-bg                rgba(255,255,255,1)     # white background
-set default-fg                rgba(26,25,24,1)        # black text (base0)
+# Base colors - AMOLED black background with red text theme
+set default-bg                rgba(0,0,0,1)           # AMOLED black background
+set default-fg                rgba(255,0,0,1)         # Red text to match Kitty
 
 # Completions
-set completion-bg             rgba(250,242,235,1)     # off-white (base7)
-set completion-fg             rgba(26,25,24,1)        # black text (base0)
-set completion-highlight-bg   rgba(230,228,223,1)     # light gray highlight (base6)
-set completion-highlight-fg   rgba(26,25,24,1)        # black text on highlight
-set completion-group-bg       rgba(250,242,235,1)     # off-white (base7)
-set completion-group-fg       rgba(89,88,85,1)        # dark gray (base1)
+set completion-bg             rgba(0,0,0,1)           # AMOLED black
+set completion-fg             rgba(255,0,0,1)         # Red text
+set completion-highlight-bg   rgba(65,72,104,1)       # Using color0 from Kitty for subtle highlight
+set completion-highlight-fg   rgba(255,255,255,1)     # White text on highlight for contrast
+set completion-group-bg       rgba(0,0,0,1)           # AMOLED black
+set completion-group-fg       rgba(199,162,139,1)     # Using a muted color for groups
 
 # Statusbar
-set statusbar-fg              rgba(26,25,24,1)        # black text
-set statusbar-bg              rgba(250,242,235,1)     # off-white (base7)
+set statusbar-fg              rgba(255,0,0,1)         # Red text
+set statusbar-bg              rgba(0,0,0,1)           # AMOLED black
 
-# Notifications
-set notification-bg           rgba(212,250,212,1)     # light green (success)
-set notification-fg           rgba(26,25,24,1)        # black text
-set notification-error-bg     rgba(250,212,212,1)     # light red (error)
-set notification-error-fg     rgba(26,25,24,1)        # black text
-set notification-warning-bg   rgba(250,225,200,1)     # light orange (warning)
-set notification-warning-fg   rgba(26,25,24,1)        # black text
+# Notifications (using Kitty terminal colors for consistency)
+set notification-bg           rgba(195,232,141,1)     # Green from Kitty (color2)
+set notification-fg           rgba(0,0,0,1)           # Black text on light background
+set notification-error-bg     rgba(240,113,120,1)     # Red from Kitty (color1)
+set notification-error-fg     rgba(255,255,255,1)     # White text
+set notification-warning-bg   rgba(255,203,107,1)     # Yellow from Kitty (color3)
+set notification-warning-fg   rgba(0,0,0,1)           # Black text
 
 # Input bar
-set inputbar-fg               rgba(26,25,24,1)        # black text
-set inputbar-bg               rgba(250,242,235,1)     # off-white (base7)
+set inputbar-fg               rgba(255,0,0,1)         # Red text
+set inputbar-bg               rgba(0,0,0,1)           # AMOLED black
 
-# Recoloring (light = page background, dark = text)
-set recolor-lightcolor        rgba(255,255,255,1)     # white page background
-set recolor-darkcolor         rgba(26,25,24,1)        # black text
+# Recoloring (this is what affects the document content)
+set recolor-lightcolor        rgba(0,0,0,1)           # AMOLED black for page background
+set recolor-darkcolor         rgba(255,0,0,1)         # Red for text
 
-# Index
-set index-fg                  rgba(26,25,24,1)        # black text
-set index-bg                  rgba(255,255,255,1)     # white background
-set index-active-fg           rgba(26,25,24,1)        # black text
-set index-active-bg           rgba(230,228,223,1)     # light gray highlight (base6)
+# Index (file browser/table of contents)
+set index-fg                  rgba(255,0,0,1)         # Red text
+set index-bg                  rgba(0,0,0,1)           # AMOLED black
+set index-active-fg           rgba(255,255,255,1)     # White for active item
+set index-active-bg           rgba(65,72,104,1)       # Subtle highlight using color0
 
 # Loading indicator
-set render-loading-bg         rgba(255,255,255,1)     # white
-set render-loading-fg         rgba(153,151,145,1)     # gray (base3)
+set render-loading-bg         rgba(0,0,0,1)           # AMOLED black
+set render-loading-fg         rgba(255,0,0,1)         # Red
 
-# Highlights
-set highlight-color           rgba(250,225,200,0.6)   # light orange with transparency
-set highlight-fg              rgba(26,25,24,0.8)      # black text with slight transparency
-set highlight-active-color    rgba(212,212,250,0.7)   # light blue for active highlight
+# Highlights (for search results and selections)
+set highlight-color           rgba(130,170,255,0.4)   # Blue from Kitty with transparency
+set highlight-fg              rgba(255,255,255,0.9)   # White text on highlight
+set highlight-active-color    rgba(199,146,234,0.5)   # Magenta from Kitty for active
+
+# Page padding (ensures the area around the document is also black)
+set page-padding 1

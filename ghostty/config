@@ -71,7 +71,7 @@ palette = 15=#E6E4DF
 
 # DOCS: Font
 font-family = "M+CodeLat50 Nerd Font"
-font-size = 18
+font-size = 28
 
 # DOCS: Hiding dimensions information pop-up
 resize-overlay = never
