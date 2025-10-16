@@ -1,12 +1,12 @@
 :root {
-  --vimium-foreground: #FFFFFF; /* Universal foreground */
-  --vimium-background: #1e1d28; /* Universal background */
-  --vimium-accent1:    #95ff68; /* Green */
-  --vimium-accent2:    #68ffeb; /* Cyan/blue */
-  --vimium-accent3:    #FFFFFF; /* Changed from yellow to white */
-  --vimium-alt:        #e068ff; /* Magenta */
-  --vimium-muted:      #272535; /* Muted background */
-  --vimium-cursor:     #FFFFFF; /* Same as foreground */
+  --vimium-foreground: #FF0000; /* Red foreground to match Kitty */
+  --vimium-background: #000000; /* AMOLED black background */
+  --vimium-accent1:    #C3E88D; /* Green from Kitty (color2) */
+  --vimium-accent2:    #89DDFF; /* Cyan from Kitty (color6) */
+  --vimium-accent3:    #82AAFF; /* Blue from Kitty (color4) */
+  --vimium-alt:        #C792EA; /* Magenta from Kitty (color5) */
+  --vimium-muted:      #414868; /* Dark muted from Kitty (color0/8) */
+  --vimium-cursor:     #FF0000; /* Red cursor to match foreground */
 }
 
 #vimium-hint-marker-container div.internal-vimium-hint-marker,
