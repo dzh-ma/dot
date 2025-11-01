@@ -90,4 +90,35 @@ return {
         end,
         opts = {},
     },
+
+    {
+
+        "luk400/vim-jukit",
+        ft = { "python", "jupyter" }, -- Only load for these filetypes
+        config = function()
+            -- Your jukit settings here
+            vim.g.jukit_terminal = "kitty"
+            vim.g.jukit_auto_output_hist = 0
+            vim.g.jukit_use_tcomment = 0
+
+            -- Set up keymaps only for these filetypes
+            -- local function setup_jukit_keymaps()
+                -- local opts = { buffer = true, silent = true }
+
+                -- Example keymaps (adjust to your preferences)
+                -- vim.keymap.set('n', '<leader>js', '<cmd>call jukit#send#section(0)<cr>', opts)
+                -- vim.keymap.set('n', '<leader>jl', '<cmd>call jukit#send#line()<cr>', opts)
+                -- vim.keymap.set('n', '<leader>jo', '<cmd>call jukit#cells#create_below(0)<cr>', opts)
+                -- vim.keymap.set('n', '<leader>jO', '<cmd>call jukit#cells#create_above(0)<cr>', opts)
+                -- vim.keymap.set('n', '<leader>jd', '<cmd>call jukit#cells#delete()<cr>', opts)
+                -- vim.keymap.set('n', '<leader>jx', '<cmd>call jukit#splits#close_output_split()<cr>', opts)
+            -- end
+
+            -- Auto-create keymaps for these filetypes
+            -- vim.api.nvim_create_autocmd("FileType", {
+            --     pattern = { "python", "jupyter" },
+            --     callback = setup_jukit_keymaps,
+            -- })
+        end,
+    },
 }
