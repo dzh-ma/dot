@@ -3,12 +3,22 @@ return {
         "nvim-neorg/neorg",
         ft = 'norg',
         event = "VeryLazy",
-        lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
-        version = "*", -- Pin Neorg to the latest stable release
+        lazy = false,
+        version = "*",
         config = function ()
             require('neorg').setup {
                 load = {
-                    ['core.concealer'] = {                      -- UI devicon support
+                    ['core.autocommands'] = {},
+                    ['core.esupports.indent'] = {
+                        config = {
+                            format_on_enter = true,
+                            format_on_escape = true,
+                            indents = {
+                                horizontal_line = { indent = 0 },
+                            },
+                        },
+                    },
+                    ['core.concealer'] = {
                         config = {
                             icon_preset = "basic",
                             folds = false,
@@ -34,14 +44,13 @@ return {
                             },
                         },
                     },
-                    ['core.autocommands'] = {},                 -- required to support other modules
-                    ['core.integrations.treesitter'] = {},      -- treesitter highlighting support
-                    ['core.esupports.metagen'] = {              -- document metadata generation
+                    ['core.integrations.treesitter'] = {},
+                    ['core.esupports.metagen'] = {
                         config = {
                             type = "auto",
                         },
                     },
-                    ['core.keybinds'] = {                       -- general keybind support
+                    ['core.keybinds'] = {
                         config = {
                             default_keybinds = true,
                             hook = function (keybinds)
@@ -49,10 +58,10 @@ return {
                             end
                         },
                     },
-                    ['core.dirman.utils'] = {},                 -- ??
-                    ['core.ui'] = {},                           -- general UI support
-                    ['core.esupports.hop'] = {},                -- link jumping support
-                    ['core.qol.todo_items'] = {                 -- todo list automatic creation
+                    ['core.dirman.utils'] = {},
+                    ['core.ui'] = {},
+                    ['core.esupports.hop'] = {},
+                    ['core.qol.todo_items'] = {
                         config = {
                             create_todo_parents = true,
                             order = {
@@ -61,35 +70,14 @@ return {
                             },
                         },
                     },
-                    ['core.promo'] = {},                        -- <C-t> indent; <C-d> for dedent
-                    ['core.itero'] = {},                        -- list continuation with <A-CR>
-                    ['core.tangle'] = {},                       -- creates files for code blocks
-                    ['core.esupports.indent'] = {
-                        config = {
-                            indents = {
-                                -- heading2 = {
-                                --     indent = 4,
-                                -- },
-                                -- heading3 = {
-                                --     indent = 8,
-                                -- },
-                                -- heading4 = {
-                                --     indent = 12,
-                                -- },
-                                -- heading5 = {
-                                --     indent = 16,
-                                -- },
-                                -- heading6 = {
-                                --     indent = 20,
-                                -- },
-                            },
-                        }
-                    },             -- automatic indentation
+                    ['core.promo'] = {},
+                    ['core.itero'] = {},
+                    ['core.tangle'] = {},
                     ['core.completion'] = {
                         config = {
                             engine = "nvim-cmp"
                         }
-                    },                   -- autocompletion
+                    },
                     ['core.todo-introspector'] = {
                         config = {
                             highlight_group = "@neorg.markup.superscript.norg",
