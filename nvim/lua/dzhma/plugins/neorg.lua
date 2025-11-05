@@ -20,7 +20,7 @@ return {
                     },
                     ['core.concealer'] = {
                         config = {
-                            icon_preset = "basic",
+                            icon_preset = "diamond",
                             folds = false,
                             icons = {
                                 code_block = {
