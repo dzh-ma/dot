@@ -13,20 +13,21 @@ set recolor-keephue true
 # Use SQLite for the database
 set database sqlite
 
-# Base colors - AMOLED black background with red text theme
+# Base colors - AMOLED black background with white text theme
 set default-bg                rgba(0,0,0,1)           # AMOLED black background
-set default-fg                rgba(255,0,0,1)         # Red text to match Kitty
+set default-fg                rgba(255,255,255,1)         # White text
+# Note: You originally had a comment here about "Red text to match Kitty". I changed the color and updated the comment to reflect the new white text.
 
 # Completions
 set completion-bg             rgba(0,0,0,1)           # AMOLED black
-set completion-fg             rgba(255,0,0,1)         # Red text
+set completion-fg             rgba(255,255,255,1)         # White text
 set completion-highlight-bg   rgba(65,72,104,1)       # Using color0 from Kitty for subtle highlight
 set completion-highlight-fg   rgba(255,255,255,1)     # White text on highlight for contrast
 set completion-group-bg       rgba(0,0,0,1)           # AMOLED black
 set completion-group-fg       rgba(199,162,139,1)     # Using a muted color for groups
 
 # Statusbar
-set statusbar-fg              rgba(255,0,0,1)         # Red text
+set statusbar-fg              rgba(255,255,255,1)         # White text
 set statusbar-bg              rgba(0,0,0,1)           # AMOLED black
 
 # Notifications (using Kitty terminal colors for consistency)
@@ -38,22 +39,22 @@ set notification-warning-bg   rgba(255,203,107,1)     # Yellow from Kitty (color
 set notification-warning-fg   rgba(0,0,0,1)           # Black text
 
 # Input bar
-set inputbar-fg               rgba(255,0,0,1)         # Red text
+set inputbar-fg               rgba(255,255,255,1)         # White text
 set inputbar-bg               rgba(0,0,0,1)           # AMOLED black
 
 # Recoloring (this is what affects the document content)
 set recolor-lightcolor        rgba(0,0,0,1)           # AMOLED black for page background
-set recolor-darkcolor         rgba(255,0,0,1)         # Red for text
+set recolor-darkcolor         rgba(255,255,255,1)         # White for text
 
 # Index (file browser/table of contents)
-set index-fg                  rgba(255,0,0,1)         # Red text
+set index-fg                  rgba(255,255,255,1)         # White text
 set index-bg                  rgba(0,0,0,1)           # AMOLED black
 set index-active-fg           rgba(255,255,255,1)     # White for active item
 set index-active-bg           rgba(65,72,104,1)       # Subtle highlight using color0
 
 # Loading indicator
 set render-loading-bg         rgba(0,0,0,1)           # AMOLED black
-set render-loading-fg         rgba(255,0,0,1)         # Red
+set render-loading-fg         rgba(255,255,255,1)         # White
 
 # Highlights (for search results and selections)
 set highlight-color           rgba(130,170,255,0.4)   # Blue from Kitty with transparency

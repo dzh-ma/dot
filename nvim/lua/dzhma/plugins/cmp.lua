@@ -4,8 +4,8 @@ return {
         "neovim/nvim-lspconfig",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",
             "williamboman/mason-lspconfig.nvim",
+            "saghen/blink.cmp", -- Add blink.cmp as dependency for LSP capabilities
         },
         config = function()
             local default_servers = {
@@ -26,7 +26,9 @@ return {
                 "zls",
             }
 
-            local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+            -- Get capabilities from blink.cmp
+            local capabilities = require('blink.cmp').get_lsp_capabilities()
+            
             local on_attach = function(client)
                 -- Preventing LSP rewriting highlights
                 client.server_capabilities.semanticTokensProvider = false
@@ -56,6 +58,7 @@ return {
             vim.lsp.config.r_language_server = {
                 filetypes = { "r", "rmd" },  -- Add this line
                 on_attach = on_attach,
+                capabilities = capabilities,
                 -- other settings...
             }
 
@@ -64,6 +67,7 @@ return {
                 vim.lsp.enable(server)
             end
             vim.lsp.enable('lua_ls')
+            vim.lsp.enable('r_language_server')
 
             vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)
             vim.keymap.set('n', '<Leader>p', vim.diagnostic.goto_prev)
@@ -73,127 +77,155 @@ return {
         end,
     },
 
-    -- DOCS: Auto-completion
+    -- DOCS: nvim-cmp compatibility layer for blink.cmp
     {
-        "hrsh7th/nvim-cmp",
-        event = { "InsertEnter", "CmdlineEnter" },
+        'saghen/blink.compat',
+        version = 'v2.*',
+        lazy = true,
+        opts = {},
+    },
+
+    -- DOCS: Auto-completion with blink.cmp
+    {
+        'saghen/blink.cmp',
+        lazy = false, -- lazy loading handled internally
         dependencies = {
-            "hrsh7th/cmp-nvim-lsp",				            -- autocomplete integration
-            "hrsh7th/cmp-buffer",				            -- source of coding information for autocomplete to pull
-            -- "hrsh7th/cmp-path",				                -- source of file path information for autocomplete to pull
-            "FelipeLema/cmp-async-path",                    -- general improvement on path
-            "hrsh7th/cmp-cmdline",				            -- autocomplete integration inside cmdline
-            "saadparwaiz1/cmp_luasnip",			            -- linker between autocomplete & LuaSnip
-            "L3MON4D3/LuaSnip",				                -- code snippets to give code information from LSP
-            "rafamadriz/friendly-snippets",			        -- snippet collection for a range of programming languages
-            "onsails/lspkind.nvim",				            -- devicon integration into LSP autocomplete
-            "roobert/tailwindcss-colorizer-cmp.nvim",
+            'rafamadriz/friendly-snippets',
+            'L3MON4D3/LuaSnip',
+            'saghen/blink.compat',
         },
-        config = function()
-            require("luasnip.loaders.from_vscode").lazy_load()
+        version = 'v0.*',
+        opts = {
+            keymap = {
+                preset = 'default',
+                ['<C-A-Space>'] = { 'show', 'show_documentation', 'hide_documentation' },
+                ['<C-n>'] = { 'select_next', 'fallback' },
+                ['<C-p>'] = { 'select_prev', 'fallback' },
+                ['<C-e>'] = { 'hide', 'fallback' },
+                ['<C-Space>'] = { 'accept', 'fallback' },
+                ['<A-Tab>'] = { 'snippet_forward', 'fallback' },
+                ['<S-Tab>'] = { 'snippet_backward', 'fallback' },
+                ['<C-u>'] = { 'scroll_documentation_up', 'fallback' },
+                ['<C-d>'] = { 'scroll_documentation_down', 'fallback' },
+            },
 
-            local cmp = require("cmp")
-            local luasnip = require("luasnip")
-            local lspkind = require("lspkind")
-            local tailwindcss_colorizer_cmp = require("tailwindcss-colorizer-cmp")
+            appearance = {
+                use_nvim_cmp_as_default = true,
+                nerd_font_variant = 'mono'
+            },
 
-            vim.keymap.set({"s"}, "<Tab>", function() require('luasnip').jump(1) end, { silent = true })
-            vim.keymap.set({"s"}, "<S-Tab>", function() require('luasnip').jump(-1) end, { silent = true })
+            sources = {
+                default = { 'lsp', 'path', 'snippets', 'buffer'},
+            },
 
-            cmp.setup({
-                window = {
-                    completion = {
-                        border = "rounded",     -- single|rounded|none
-                        -- custom colors
-                        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLineBG,Search:None", -- BorderBG|FloatBorder
-                        side_padding = 0, -- padding at sides
-                        col_offset = -4, -- move floating box left or right
+            snippets = {
+                expand = function(snippet) require('luasnip').lsp_expand(snippet) end,
+                active = function(filter)
+                    if filter and filter.direction then
+                        return require('luasnip').jumpable(filter.direction)
+                    end
+                    return require('luasnip').in_snippet()
+                end,
+                jump = function(direction) require('luasnip').jump(direction) end,
+            },
+
+            cmdline = {
+                enabled = true,
+                sources = {
+                    ['/'] = { 'buffer' },
+                    ['?'] = { 'buffer' },
+                    [':'] = { 'cmdline', 'path' },
+                },
+            },
+
+            completion = {
+                accept = {
+                    auto_brackets = {
+                        enabled = true,
                     },
-                    documentation = {
-                        border = "rounded", -- single|rounded|none
-                        -- custom colors
-                        winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLineBG,Search:None", -- BorderBG|FloatBorder
+                },
+                list = {
+                    selection = {
+                        preselect = true,
+                        auto_insert = false,
+                    },
+                    cycle = {
+                        from_bottom = true,
+                        from_top = true,
                     },
                 },
-                snippet = {
-                    expand = function(args)
-                        luasnip.lsp_expand(args.body)
-                    end,
-                },
-                mapping = cmp.mapping.preset.insert({
-                    ["<C-Space>"] = cmp.mapping.confirm({ select = true }),
-
-                    ["<C-n>"] = cmp.mapping.select_next_item(), -- select next suggestion
-                    ["<C-p>"] = cmp.mapping.select_prev_item(), -- select previous suggestion
-
-                    ["<C-d>"] = cmp.mapping.scroll_docs(4), -- scroll docs up
-                    ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- scroll docs down
-
-                    ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-                }),
-                experimental = {
-                    ghost_text = true,
-                },
-                view = {
-                    entries = "wild",
-                },
-                sources = cmp.config.sources({
-                    { name = "nvim_lsp" }, -- lsp
-                    { name = "luasnip" }, -- luasnips
-                    { name = "buffer" }, -- text within the current buffer
-                    -- { name = "path" }, -- file system paths
-                    { name = "async_path" },
-                    { name = "neorg" },
-                    {
-                        name = "spell",
-                        option = {
-                            keep_all_entries = false,
-                            enable_in_context = function ()
-                                return true
-                            end,
-                            preselect_correct_word = true,
+                menu = {
+                    enabled = true,
+                    min_width = 15,
+                    max_height = 10,
+                    border = 'rounded',
+                    winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLineBG,Search:None',
+                    draw = {
+                        align_to = 'label',
+                        padding = 1,
+                        gap = 1,
+                        columns = { 
+                            { 'kind_icon' }, 
+                            { 'label', 'label_description', gap = 1 }, 
+                            { 'kind' } 
                         },
                     },
-                    { name = "render-markdown" },
-                }),
-                formatting = {
-                    fields = { "kind", "abbr", "menu" },
-                    format = function(entry, item)
-                        -- VSCode like icons for cmp autocompletion
-                        local fmt = lspkind.cmp_format({
-                            mode = "symbol_text",
-                            maxwidth = 50,
-                            ellipsis_char = "...",
-                            before = tailwindcss_colorizer_cmp.formatter, -- prepend tailwindcss-colorizer
-                        })(entry, item)
-
-                        -- customize lspkind format
-                        local strings = vim.split(fmt.kind, "%s", { trimempty = true })
-
-                        -- append customized kind text
-                        fmt.kind = fmt.kind .. " " -- just an extra space at the end
-                        fmt.menu = strings[2] ~= nil and ("  " .. (strings[2] or "")) or ""
-
-                        return fmt
-                    end,
                 },
-            })
-
-            cmp.setup.cmdline({ "/", "?" }, {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = {
-                    { name = "buffer" }, -- for searching text in the buffer
+                documentation = {
+                    auto_show = true,
+                    auto_show_delay_ms = 200,
+                    update_delay_ms = 50,
+                    treesitter_highlighting = true,
+                    window = {
+                        min_width = 10,
+                        max_width = 80,
+                        max_height = 20,
+                        border = 'rounded',
+                        winhighlight = 'Normal:Normal,FloatBorder:FloatBorder,CursorLine:CursorLineBG,Search:None',
+                    },
                 },
-            })
+                ghost_text = {
+                    enabled = true,
+                },
+            },
 
-            cmp.setup.cmdline(":", {
-                mapping = cmp.mapping.preset.cmdline(),
-                sources = cmp.config.sources({
-                    { name = "path" }, -- file system paths
-                }, {
-                        { name = "cmdline" }, -- Neovim's command-line suggestions
-                    }),
-            })
+            signature = {
+                enabled = true,
+                window = {
+                    min_width = 1,
+                    max_width = 100,
+                    max_height = 10,
+                    border = 'rounded',
+                    winhighlight = 'Normal:Normal,FloatBorder:FloatBorder',
+                },
+            },
+        },
+        config = function(_, opts)
+            require('blink.cmp').setup(opts)
+
+            -- Additional LuaSnip keymaps for snippet navigation in select mode
+            -- These work alongside the Tab/S-Tab mappings in blink's keymap
+            vim.keymap.set({"i", "s"}, "<C-j>", function()
+                local ls = require('luasnip')
+                if ls.expand_or_jumpable() then
+                    ls.expand_or_jump()
+                end
+            end, { silent = true })
+            
+            vim.keymap.set({"i", "s"}, "<C-k>", function()
+                local ls = require('luasnip')
+                if ls.jumpable(-1) then
+                    ls.jump(-1)
+                end
+            end, { silent = true })
+
+            -- Choice node navigation
+            vim.keymap.set({"i", "s"}, "<C-l>", function()
+                local ls = require('luasnip')
+                if ls.choice_active() then
+                    ls.change_choice(1)
+                end
+            end, { silent = true })
         end,
     },
 }

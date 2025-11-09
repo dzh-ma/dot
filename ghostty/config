@@ -1,79 +1,44 @@
-# This is the configuration file for Ghostty.
-#
-# This template file has been automatically created at the following
-# path since Ghostty couldn't find any existing config files on your system:
-#
-#   /home/dzh-ma/.config/ghostty/config
-#
-# The template does not set any default options, since Ghostty ships
-# with sensible defaults for all options. Users should only need to set
-# options that they want to change from the default.
-#
-# Run `ghostty +show-config --default --docs` to view a list of
-# all available config options and their default values.
-#
-# Additionally, each config option is also explained in detail
-# on Ghostty's website, at https://ghostty.org/docs/config.
+# Font
+font-family = "SpaceMono Nerd Font"
+font-size = 20
 
-# Config syntax crash course
-# ==========================
-# # The config file consists of simple key-value pairs,
-# # separated by equals signs.
-# font-family = Iosevka
-# window-padding-x = 2
-#
-# # Spacing around the equals sign does not matter.
-# # All of these are identical:
-# key=value
-# key= value
-# key =value
-# key = value
-#
-# # Any line beginning with a # is a comment. It's not possible to put
-# # a comment after a config option, since it would be interpreted as a
-# # part of the value. For example, this will have a value of "#123abc":
-# background = #123abc
-#
-# # Empty values are used to reset config keys to default.
-# key =
-#
-# # Some config options have unique syntaxes for their value,
-# # which is explained in the docs for that config option.
-# # Just for example:
-# resize-overlay-duration = 4s 200ms
+# Keybinds (scroll controls)
+# keybind = shift+alt+j=scroll_page_lines:1
+# keybind = shift+alt+k=scroll_page_lines:-1
+# keybind = shift+alt+backslash=scroll_to_top
+# keybind = shift+alt+slash=scroll_to_bottom
 
-# DOCS: Colorscheme
-# Base colors
-background = #FFFFFF
-foreground = #1A1918
-cursor-color = #1A1918
-selection-background = #E6E4DF
+# Colorscheme (Dark theme)
+background = #000000
+foreground = #FFFFFF
 
 # Color Palette (ANSI Colors 0-7)
-palette = 0=#1A1918
-palette = 1=#A60000
-palette = 2=#00A600
-palette = 3=#F27900
-palette = 4=#0000A6
-palette = 5=#6F00A6
-palette = 6=#00A6A6
-palette = 7=#B3B1AD
+palette = 0=#241b2f
+palette = 1=#fe4450
+palette = 2=#72f1b8
+palette = 3=#ffcc00
+palette = 4=#61e2ff
+palette = 5=#af6df9
+palette = 6=#61e2ff
+palette = 7=#8ba7a7
 
 # Bright Colors (ANSI Colors 8-15)
-palette = 8=#595855
-palette = 9=#FAD4D4
-palette = 10=#D4FAD4
-palette = 11=#FAE1C8
-palette = 12=#D4D4FA
-palette = 13=#EDD4FA
-palette = 14=#C8FAFA
-palette = 15=#E6E4DF
+palette = 8=#495495
+palette = 9=#ff6b7d
+palette = 10=#9bffcc
+palette = 11=#ffd633
+palette = 12=#7de8ff
+palette = 13=#fc199a
+palette = 14=#94f0ff
+palette = 15=#ffffff
 
-# DOCS: Font
-font-family = "M+CodeLat50 Nerd Font"
-font-size = 28
+# Cursor
+cursor-color = #c0caf5
+cursor-text = #1a1b26
 
-# DOCS: Hiding dimensions information pop-up
+# Selection highlight
+selection-background = #c0caf5
+# Note: selection-foreground set to "none" in Kitty means use default text color
+
+# Resize overlay (from your existing config)
 resize-overlay = never
-
-# NOTE: `CTRL+SHIFT+,` to reload config

@@ -26,22 +26,22 @@ return {
                 "zls",
             }
 
-            local lsp = require("lspconfig")
-            -- local capabilities = require('cmp_nvim_lsp').default_capabilities()
             local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
             local on_attach = function(client)
                 -- Preventing LSP rewriting highlights
                 client.server_capabilities.semanticTokensProvider = false
             end
 
+            -- Set up default servers using the new vim.lsp.config API
             for _, server in ipairs(default_servers) do
-                lsp[server].setup {
+                vim.lsp.config[server] = {
                     capabilities = capabilities,
                     on_attach = on_attach,
                 }
             end
 
-            lsp.lua_ls.setup {
+            -- Set up lua_ls with specific settings
+            vim.lsp.config.lua_ls = {
                 capabilities = capabilities,
                 on_attach = on_attach,
                 settings = {
@@ -52,6 +52,18 @@ return {
                     }
                 }
             }
+
+            vim.lsp.config.r_language_server = {
+                filetypes = { "r", "rmd" },  -- Add this line
+                on_attach = on_attach,
+                -- other settings...
+            }
+
+            -- Enable the configured LSP servers
+            for _, server in ipairs(default_servers) do
+                vim.lsp.enable(server)
+            end
+            vim.lsp.enable('lua_ls')
 
             vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float)
             vim.keymap.set('n', '<Leader>p', vim.diagnostic.goto_prev)
@@ -114,8 +126,8 @@ return {
                     ["<C-n>"] = cmp.mapping.select_next_item(), -- select next suggestion
                     ["<C-p>"] = cmp.mapping.select_prev_item(), -- select previous suggestion
 
-                    ["<C-d>"] = cmp.mapping.scroll_docs(4), -- scroll docs up
-                    ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- scroll docs down
+                    -- ["<C-d>"] = cmp.mapping.scroll_docs(4), -- scroll docs up
+                    -- ["<C-u>"] = cmp.mapping.scroll_docs(-4), -- scroll docs down
 
                     ["<C-e>"] = cmp.mapping.abort(), -- close completion window
                 }),

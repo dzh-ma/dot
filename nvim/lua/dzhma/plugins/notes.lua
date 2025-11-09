@@ -92,7 +92,6 @@ return {
     },
 
     -- {
-    --
     --     "luk400/vim-jukit",
     --     config = function()
     --         -- Your jukit settings here

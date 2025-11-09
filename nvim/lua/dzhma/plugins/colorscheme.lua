@@ -9,9 +9,10 @@ return {
                 transparent = true,
                 themes = function (colors)
                     return {
+                        ["Normal"] = { fg = "#FFFFFF" },
                         ["@markup.strong"] = { fg = colors.dark_red, bold = true },
                         ["@markup.italic"] = { fg = colors.light_yellow, italic = true },
-                        ["@neorg.markup.underline.norg"] = { fg = colors.green, bold = true, underline = true },
+                        ["@neorg.markup.underline.norg"] = { fg = "#BBDF32", bold = true, underline = true },
                         ["@neorg.markup.strikethrough.norg"] = { fg = colors.aqua, bold = true },
                         ["@neorg.markup.subscript.norg"] = { bg = colors.dark_gray, fg = colors.red, italic = true },
                         ["@neorg.markup.superscript.norg"] = { bg = colors.dark_gray, fg = colors.dark_cyan, italic = true },
@@ -26,6 +27,7 @@ return {
                         ["@markup.heading.5.markdown"] = { fg = "#FF8C00", bg = "#B03608", bold = true },
                         ["@markup.heading.6.markdown"] = { fg = "#9370DB", bg = "#301934", bold = true },
                         ["@variable"] = { fg = "#41FDFE", bold = true },
+                        -- ["@spell"] = { fg = "#FFFFFF", undercurl = true },
                         ["Structure"] = { fg = colors.dark_cyan },
                         ["Function"] = { fg = "#0ADD08", underline = true },
                         ["LineNr"] = { fg = "#FF0000" },
