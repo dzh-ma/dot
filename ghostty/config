@@ -1,12 +1,8 @@
 # Font
-font-family = "SpaceMono Nerd Font"
-font-size = 20
-
-# Keybinds (scroll controls)
-# keybind = shift+alt+j=scroll_page_lines:1
-# keybind = shift+alt+k=scroll_page_lines:-1
-# keybind = shift+alt+backslash=scroll_to_top
-# keybind = shift+alt+slash=scroll_to_bottom
+font-family = "M+1Code Nerd Font"
+font-size = 10
+# font-style = italic
+# font-style-bold = bold italic
 
 # Colorscheme (Dark theme)
 background = #000000

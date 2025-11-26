@@ -1,13 +1,13 @@
 -- UI essentials
 vim.cmd[["syntax enable"]]
-vim.o.number = true                 -- numbered columns (effective on current line)
-vim.o.relativenumber = true         -- relative numbered columns
+vim.o.number = false                 -- numbered columns (effective on current line)
+vim.o.relativenumber = false         -- relative numbered columns
 vim.o.termguicolors = true
 vim.opt.cursorline = false
 vim.opt.wrap = false                -- disables ugly screen wrapping
 vim.opt.signcolumn = "yes"          -- prevents screen jumping right when LSP issue is raised
 vim.opt.conceallevel = 3
--- vim.opt.concealcursor = "cn"
+vim.opt.concealcursor = "cni"
 vim.opt.spell = false
 vim.opt.spelllang = { "en_us" }
 
@@ -109,3 +109,19 @@ vim.api.nvim_create_autocmd("FileType", {
     })
   end,
 })
+
+-- Toggle line numbers (both regular and relative)
+vim.keymap.set('n', '<leader>L', function()
+    vim.o.number = not vim.o.number
+    vim.o.relativenumber = not vim.o.relativenumber
+end, { desc = 'Toggle line numbers' })
+
+
+-- Toggle conceallevel
+vim.keymap.set('n', '<leader>C', function()
+    if vim.o.conceallevel == 0 then
+        vim.o.conceallevel = 3
+    else
+        vim.o.conceallevel = 0
+    end
+end, { desc = 'Toggle conceallevel' })

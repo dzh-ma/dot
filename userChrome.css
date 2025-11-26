@@ -1,10 +1,20 @@
-:root {
-  --custom-font: "Lekend Deca";
-}
-
-* {
-  font-family: var(--custom-font), sans-serif !important;
-}
+/* :root { */
+/*   --custom-font: "JetBrainsMono Nerd Font"; */
+/* } */
+/**/
+/* * { */
+/*   font-family: var(--custom-font), sans-serif !important; */
+/*   /* font-style: italic !important; */ */
+/* } */
+/**/
+/* * { */
+/*   /* font-style: italic !important; */ */
+/*   font-family: "JetBrainsMono Nerd Font" !important; */
+/* } */
+/**/
+/* body, p, div, span, a, h1, h2, h3, h4, h5, h6, li, td, th, input, textarea, button { */
+/*   font-style: italic !important; */
+/* } */
 
 :root{
   --uc-autohide-toolbox-delay: 200ms; /* Wait 0.1s before hiding toolbars */
@@ -59,10 +69,10 @@
   opacity: 1;
 }
 /* This makes things like OS menubar/taskbar show the toolbox when hovered in maximized windows.
- * Unfortunately it also means that other OS native surfaces (such as context menu on macos)
- * and other always-on-top applications will trigger toolbox to show up. */
+* Unfortunately it also means that other OS native surfaces (such as context menu on macos)
+* and other always-on-top applications will trigger toolbox to show up. */
 @media (-moz-bool-pref: "userchrome.autohide-toolbox.unhide-by-native-ui.enabled"),
-       -moz-pref("userchrome.autohide-toolbox.unhide-by-native-ui.enabled"){
+-moz-pref("userchrome.autohide-toolbox.unhide-by-native-ui.enabled"){
   :root[sizemode="maximized"]:not(:hover){
     #navigator-toolbox:not(:-moz-window-inactive),
     #urlbar[popover]:not(:-moz-window-inactive){

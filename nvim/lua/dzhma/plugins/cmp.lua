@@ -28,7 +28,7 @@ return {
 
             -- Get capabilities from blink.cmp
             local capabilities = require('blink.cmp').get_lsp_capabilities()
-            
+
             local on_attach = function(client)
                 -- Preventing LSP rewriting highlights
                 client.server_capabilities.semanticTokensProvider = false
@@ -115,7 +115,8 @@ return {
             },
 
             sources = {
-                default = { 'lsp', 'path', 'snippets', 'buffer'},
+                default = { 'lsp', 'path', 'snippets' },
+                -- default = { 'lsp', 'path', 'snippets', 'buffer'},
             },
 
             snippets = {
@@ -130,11 +131,13 @@ return {
             },
 
             cmdline = {
-                enabled = true,
-                sources = {
-                    ['/'] = { 'buffer' },
-                    ['?'] = { 'buffer' },
-                    [':'] = { 'cmdline', 'path' },
+                keymap = {
+                    preset = "inherit",
+                },
+                completion = {
+                    menu = {
+                        auto_show = true
+                    },
                 },
             },
 
@@ -185,7 +188,7 @@ return {
                     },
                 },
                 ghost_text = {
-                    enabled = true,
+                    enabled = false,
                 },
             },
 

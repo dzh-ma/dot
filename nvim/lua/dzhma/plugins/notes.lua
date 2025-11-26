@@ -21,7 +21,7 @@ return {
     -- DOCS: Code-block containerization
     {
         'AckslD/nvim-FeMaco.lua',
-        ft = "markdown",
+        ft = { "markdown", "norg" },
         config = function ()
             require("femaco").setup()
 

@@ -17,9 +17,10 @@ return {
                         ["@neorg.markup.subscript.norg"] = { bg = colors.dark_gray, fg = colors.red, italic = true },
                         ["@neorg.markup.superscript.norg"] = { bg = colors.dark_gray, fg = colors.dark_cyan, italic = true },
                         ["@neorg.markup.verbatim.norg"] = { fg = colors.peanut, bg = colors.dark_gray },
-                        ["@neorg.markup.variable.norg"] = { fg = colors.white, bold = true, underline = true },
-                        ["@neorg.markup.inline_math.norg"] = { fg = colors.dark_pink, bg = colors.gray, bold = true },
-                        ["@operator.latex"] = { fg = colors.dark_pink },
+                        ["@neorg.markup.variable.norg"] = { fg = "#FFFF00", bold = true },
+                        ["@neorg.markup.inline_math.norg"] = { fg = colors.dark_white, bg = colors.gray, bold = true },
+                        -- ["@operator.latex"] = { fg = colors.dark_white },
+                        ["@neorg.anchors.declaration.norg"] = { bold = true, underline = true },
                         ["@markup.heading.1.markdown"] = { fg = "#FF0000", bg = "#400000", bold = true },
                         ["@markup.heading.2.markdown"] = { fg = "#FFD700", bg = "#5B4A08", bold = true },
                         ["@markup.heading.3.markdown"] = { fg = "#7CFC00", bg = "#013220", bold = true },
@@ -105,4 +106,12 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
+
+    -- {
+    --     "ecthelionvi/NeoColumn.nvim",
+    --     opts = {
+    --         NeoColumn = "101",
+    --         always_on = true,
+    --     },
+    -- },
 }

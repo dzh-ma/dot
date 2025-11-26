@@ -391,6 +391,6 @@ Inherits={self.cursor_theme_name}"""
 
 if __name__ == "__main__":
     theme_switcher = GTKThemeManager(
-        theme_name="dark_flat",
+        theme_name="catppuccin-mocha-mauve-standard+default-xhdpi",
     )
     theme_switcher.apply_theme()

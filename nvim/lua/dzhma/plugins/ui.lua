@@ -36,7 +36,7 @@ return {
                 stages = "static",       -- fade_in_slide_out/fade/slide/static
                 timeout = 1000,
                 max_width = 100,
-                top_down = false,
+                top_down = true,
             })
         end,
     },

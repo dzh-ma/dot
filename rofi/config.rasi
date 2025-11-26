@@ -1,1 +1,3 @@
-@theme "~/.config/rofi/themes/dark_flat.rasi"
+//@theme "~/.config/rofi/themes/dark_flat.rasi"
+
+@theme "/home/dzh-ma/.config/rofi/themes/catpuccin.rasi"

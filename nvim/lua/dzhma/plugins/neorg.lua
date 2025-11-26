@@ -2,8 +2,8 @@ return {
     {
         "nvim-neorg/neorg",
         ft = 'norg',
-        event = "VeryLazy",
-        lazy = false,
+        -- event = "VeryLazy",
+        -- lazy = false,
         version = "*",
         dependencies = {
             "benlubas/neorg-interim-ls"
@@ -14,12 +14,17 @@ return {
                     ['core.autocommands'] = {},
                     ['core.esupports.indent'] = {
                         config = {
-                            format_on_enter = true,
-                            format_on_escape = true,
+                            dedent_excess = true,
                             indents = {
                                 horizontal_line = { indent = 0 },
+                                _ = {
+                                    indent = 0,
+                                    modifiers = "none"
+                                },
+                                },
                             },
-                        },
+                            -- This is the key setting - it controls indentation for content under headings
+                            tweaks = {},
                     },
                     ['core.concealer'] = {
                         config = {
@@ -91,7 +96,7 @@ return {
                     ['core.qol.toc'] = {
                         config = {
                             close_after_use = true,
-                            max_width = 400,
+                            max_width = 800,
                         }
                     },
                     ["external.interim-ls"] = {
@@ -122,7 +127,18 @@ return {
                             }
                         }
                     },
-                },
+                    ["core.export"] = {},
+                    ['core.dirman'] = {
+                        config = {
+                            -- Set your workspace names and their root paths here.
+                            -- Replace '~/neorg' with the actual path to your Neorg files.
+                            workspaces = {
+                                main = '~/Documents/neorg/',
+                            },
+                            default_workspace = 'main',
+                        },
+                    },
+                }
             }
 
             vim.keymap.set("n", "<A-O>", "<cmd>Neorg toc right<CR>", { noremap = true, silent = true })

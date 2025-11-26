@@ -293,14 +293,14 @@ return {
     },
 
     -- DOCS: Spell correction
-    {
-        "kungfusheep/snipe-spell.nvim",
-        dependencies = { "leath-dub/snipe.nvim" },
-        config = true,
-        keys = {
-            { "<A-s>", "<cmd>SnipeSpell<cr>", desc = "Snipe Spellchecker" },
-        }
-    },
+    -- {
+    --     "kungfusheep/snipe-spell.nvim",
+    --     dependencies = { "leath-dub/snipe.nvim" },
+    --     config = true,
+    --     keys = {
+    --         { "<A-s>", "<cmd>SnipeSpell<cr>", desc = "Snipe Spellchecker" },
+    --     }
+    -- },
 
     -- DOCS: Buffer navigator
     {

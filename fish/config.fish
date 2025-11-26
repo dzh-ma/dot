@@ -91,6 +91,8 @@ if status is-interactive
     alias prf="sh ~/dot/scripts/mode_performance.sh"
     alias pow="sh ~/dot/scripts/mode_powersave.sh"
     alias balatro="~/Downloads/balatro-multiplayer-launcher.AppImage"
+    alias r120="hyprctl keyword monitor 'eDP-1,2800x1800@120,0x0,1'"
+    alias r60="hyprctl keyword monitor 'eDP-1,2800x1800@60,0x0,1'"
 
     # ENVIRONMENT VARIABLES
     set -x PATH $PATH $HOME/.local/bin
