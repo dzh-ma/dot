@@ -9,7 +9,7 @@ return {
             configs.setup({
                 ensure_installed = {
                     "asm", "bash", "c", "c_sharp", "cpp", "css", "dockerfile", "fish",
-                    "go", "html", "java", "javascript", "julia", "json", "latex", "lua",
+                    "go", "html", "java", "javascript", "julia", "json", "lua",
                     "markdown", "markdown_inline", "mermaid", "ocaml", "ocaml_interface",
                     "php", "python", "query", "regex", "ruby", "rust", "sql", "ssh_config",
                     "typescript", "typst", "vim", "vimdoc", "vue", "xml", "yaml", "zig",

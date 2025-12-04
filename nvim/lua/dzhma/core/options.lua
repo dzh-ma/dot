@@ -10,6 +10,7 @@ vim.opt.conceallevel = 3
 vim.opt.concealcursor = "cni"
 vim.opt.spell = false
 vim.opt.spelllang = { "en_us" }
+vim.opt.linespace = 40
 
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4                   -- consistent tabbing
@@ -19,7 +20,7 @@ vim.o.clipboard = "unnamedplus"     -- copy/paste support
 
 -- cursor lock
 vim.opt.scrolloff = 999
--- vim.opt.sidescrolloff = 999
+vim.opt.sidescrolloff = 999
 
 -- menu line appearance
 vim.opt.laststatus = 0

@@ -55,13 +55,6 @@ return {
                 }
             }
 
-            vim.lsp.config.r_language_server = {
-                filetypes = { "r", "rmd" },  -- Add this line
-                on_attach = on_attach,
-                capabilities = capabilities,
-                -- other settings...
-            }
-
             -- Enable the configured LSP servers
             for _, server in ipairs(default_servers) do
                 vim.lsp.enable(server)
@@ -214,7 +207,7 @@ return {
                     ls.expand_or_jump()
                 end
             end, { silent = true })
-            
+
             vim.keymap.set({"i", "s"}, "<C-k>", function()
                 local ls = require('luasnip')
                 if ls.jumpable(-1) then

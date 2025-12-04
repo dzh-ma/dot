@@ -23,3 +23,5 @@ vim.keymap.set('t', '<C-l>', '<C-\\><C-N><C-l>', { noremap = true, silent = true
 -- word search and buffer deletion
 vim.keymap.set('n', '<Leader>c', '<cmd>noh<CR>', { noremap = true, silent = true})          -- cancels search highlighting
 vim.keymap.set('n', '<Leader>k', '<cmd>bdelete<CR>', { noremap = true, silent = true})          -- regular buffer deletion
+
+vim.keymap.set('n', '<Leader>x', '<cmd>highlight clear @operator.latex<CR>', { noremap = true, silent = true })

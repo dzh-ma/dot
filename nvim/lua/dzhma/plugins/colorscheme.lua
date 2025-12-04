@@ -1,104 +1,46 @@
 return {
+    -- DOCS: Main color-scheme
     {
-        'uncleTen276/dark_flat.nvim',
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
         dependencies = {
-            "b0o/incline.nvim",
+            "nvim-lualine/lualine.nvim",
         },
         config = function ()
-            require("dark_flat").setup({
-                transparent = true,
-                themes = function (colors)
+            require("catppuccin").setup({
+                flavour = "mocha",      -- latte, frappe, macchiato, mocha
+                styles = {
+                    variables = { "italic" },
+                },
+                integrations = {
+                    notify = true,
+                    aerial = true,
+                    mason = true,
+                    noice = true,
+                    hop = true,
+                    markdown = true,
+                    indent_blankline = {
+                        enabled = true,
+                        scope_color = "mauve",
+                        colored_indetn_levels = true,
+                    }
+                },
+                custom_highlights = function(colors)
                     return {
-                        ["Normal"] = { fg = "#FFFFFF" },
-                        ["@markup.strong"] = { fg = colors.dark_red, bold = true },
-                        ["@markup.italic"] = { fg = colors.light_yellow, italic = true },
-                        ["@neorg.markup.underline.norg"] = { fg = "#BBDF32", bold = true, underline = true },
-                        ["@neorg.markup.strikethrough.norg"] = { fg = colors.aqua, bold = true },
-                        ["@neorg.markup.subscript.norg"] = { bg = colors.dark_gray, fg = colors.red, italic = true },
-                        ["@neorg.markup.superscript.norg"] = { bg = colors.dark_gray, fg = colors.dark_cyan, italic = true },
-                        ["@neorg.markup.verbatim.norg"] = { fg = colors.peanut, bg = colors.dark_gray },
-                        ["@neorg.markup.variable.norg"] = { fg = "#FFFF00", bold = true },
-                        ["@neorg.markup.inline_math.norg"] = { fg = colors.dark_white, bg = colors.gray, bold = true },
-                        -- ["@operator.latex"] = { fg = colors.dark_white },
-                        ["@neorg.anchors.declaration.norg"] = { bold = true, underline = true },
-                        ["@markup.heading.1.markdown"] = { fg = "#FF0000", bg = "#400000", bold = true },
-                        ["@markup.heading.2.markdown"] = { fg = "#FFD700", bg = "#5B4A08", bold = true },
-                        ["@markup.heading.3.markdown"] = { fg = "#7CFC00", bg = "#013220", bold = true },
-                        ["@markup.heading.4.markdown"] = { fg = "#40E0D0", bg = "#065465", bold = true },
-                        ["@markup.heading.5.markdown"] = { fg = "#FF8C00", bg = "#B03608", bold = true },
-                        ["@markup.heading.6.markdown"] = { fg = "#9370DB", bg = "#301934", bold = true },
-                        ["@variable"] = { fg = "#41FDFE", bold = true },
-                        -- ["@spell"] = { fg = "#FFFFFF", undercurl = true },
-                        ["Structure"] = { fg = colors.dark_cyan },
-                        ["Function"] = { fg = "#0ADD08", underline = true },
-                        ["LineNr"] = { fg = "#FF0000" },
-                        ["String"] = { fg = "#FFFF00" },
-                        ["Keyword"] = { fg = "#FF0000" },
-                        ["GitSignsAdd"] = { fg = "#FF0000" },
-                        ["GitSignsChange"] = { fg = "#FF0000" },
-                        ["GitSignsDelete"] = { fg = "#FF0000" },
-                        ["GitSignsTopdelete"] = { fg = "#FF0000" },
-                        ["GitSignsChangedelete"] = { fg = "#FF0000" },
-                        ["GitSignsUntracked"] = { fg = "#FF0000" },
+                        ["@neorg.markup.inline_math.norg"] = { fg = colors.flamingo },
+                        ["@markup.quote.markdown"] = { fg = colors.mauve },
                     }
                 end,
             })
 
-            local devicons = require 'nvim-web-devicons'
-            require('incline').setup {
-                render = function(props)
-                    local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
-                    if filename == '' then
-                        filename = '[No Name]'
-                    end
-                    local ft_icon, ft_color = devicons.get_icon_color(filename)
+            require("lualine").setup({
+               themes = "catpuccin"
+            })
 
-                    local function get_git_diff()
-                        local icons = { removed = '', changed = '', added = '' }
-                        local signs = vim.b[props.buf].gitsigns_status_dict
-                        local labels = {}
-                        if signs == nil then
-                            return labels
-                        end
-                        for name, icon in pairs(icons) do
-                            if tonumber(signs[name]) and signs[name] > 0 then
-                                table.insert(labels, { icon .. signs[name] .. ' ', group = 'Diff' .. name })
-                            end
-                        end
-                        if #labels > 0 then
-                            table.insert(labels, { '┊ ' })
-                        end
-                        return labels
-                    end
-
-                    local function get_diagnostic_label()
-                        local icons = { error = '', warn = '', info = '', hint = '' }
-                        local label = {}
-
-                        for severity, icon in pairs(icons) do
-                            local n = #vim.diagnostic.get(props.buf, { severity = vim.diagnostic.severity[string.upper(severity)] })
-                            if n > 0 then
-                                table.insert(label, { icon .. n .. ' ', group = 'DiagnosticSign' .. severity })
-                            end
-                        end
-                        if #label > 0 then
-                            table.insert(label, { '┊ ' })
-                        end
-                        return label
-                    end
-
-                    return {
-                        { get_diagnostic_label() },
-                        { get_git_diff() },
-                        { (ft_icon or '') .. ' ', guifg = ft_color, guibg = 'none' },
-                        { filename .. ' ', gui = vim.bo[props.buf].modified and 'bold,italic' or 'bold' },
-                        { '┊  ' .. vim.api.nvim_win_get_number(props.win), group = 'DevIconWindows' },
-                    }
-                end,
-            }
-
-            vim.cmd.colorscheme('dark_flat')
-        end,
+            vim.cmd.colorscheme("catppuccin")
+            vim.cmd("highlight clear @operator.latex")
+        end
     },
 
     {
@@ -106,12 +48,4 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = { "nvim-treesitter/nvim-treesitter" },
     },
-
-    -- {
-    --     "ecthelionvi/NeoColumn.nvim",
-    --     opts = {
-    --         NeoColumn = "101",
-    --         always_on = true,
-    --     },
-    -- },
 }
