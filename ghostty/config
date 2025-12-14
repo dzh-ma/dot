@@ -1,40 +1,32 @@
 # Font
-font-family = "M+1Code Nerd Font"
-font-size = 10
+font-family = "JetBrainsMono Nerd Font"
+font-size = 9.8
 # font-style = italic
 # font-style-bold = bold italic
 
-# Colorscheme (Dark theme)
-background = #000000
-foreground = #FFFFFF
-
-# Color Palette (ANSI Colors 0-7)
-palette = 0=#241b2f
-palette = 1=#fe4450
-palette = 2=#72f1b8
-palette = 3=#ffcc00
-palette = 4=#61e2ff
-palette = 5=#af6df9
-palette = 6=#61e2ff
-palette = 7=#8ba7a7
-
-# Bright Colors (ANSI Colors 8-15)
-palette = 8=#495495
-palette = 9=#ff6b7d
-palette = 10=#9bffcc
-palette = 11=#ffd633
-palette = 12=#7de8ff
-palette = 13=#fc199a
-palette = 14=#94f0ff
-palette = 15=#ffffff
-
-# Cursor
-cursor-color = #c0caf5
-cursor-text = #1a1b26
-
-# Selection highlight
-selection-background = #c0caf5
-# Note: selection-foreground set to "none" in Kitty means use default text color
+palette = 0=#45475a
+palette = 1=#f38ba8
+palette = 2=#a6e3a1
+palette = 3=#f9e2af
+palette = 4=#89b4fa
+palette = 5=#f5c2e7
+palette = 6=#94e2d5
+palette = 7=#a6adc8
+palette = 8=#585b70
+palette = 9=#f38ba8
+palette = 10=#a6e3a1
+palette = 11=#f9e2af
+palette = 12=#89b4fa
+palette = 13=#f5c2e7
+palette = 14=#94e2d5
+palette = 15=#bac2de
+background = 1e1e2e
+foreground = cdd6f4
+cursor-color = f5e0dc
+cursor-text = 11111b
+selection-background = 353749
+selection-foreground = cdd6f4
+split-divider-color = 313244
 
 # Resize overlay (from your existing config)
 resize-overlay = never

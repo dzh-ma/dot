@@ -10,7 +10,7 @@ vim.opt.conceallevel = 3
 vim.opt.concealcursor = "cni"
 vim.opt.spell = false
 vim.opt.spelllang = { "en_us" }
-vim.opt.linespace = 40
+vim.opt.linespace = 0
 
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4                   -- consistent tabbing
