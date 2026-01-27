@@ -30,7 +30,7 @@ vim.g.loaded_perl_provider = 0
 
 -- changing indentation rules
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "css", "javascript", "javascriptreact", "ruby", "typescriptreact" },
+    pattern = { "css", "javascript", "javascriptreact", "ruby", "typescriptreact", "lua" },
     callback = function()
         vim.bo.shiftwidth = 2
         vim.bo.tabstop = 2
