@@ -11,7 +11,7 @@ return {
 
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "asm_lsp",
+          -- "asm_lsp",
           "clangd",
           "cssls",
           "gopls",

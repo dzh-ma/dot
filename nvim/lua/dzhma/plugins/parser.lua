@@ -1,24 +1,29 @@
 return {
   -- DOCS: Parser
   {
-    "nvim-treesitter/nvim-treesitter", -- parser
-    event = "VeryLazy",
+    "nvim-treesitter/nvim-treesitter",
+    event = { "BufReadPost", "BufNewFile" }, -- "VeryLazy" can sometimes delay highlighting too long
     build = ":TSUpdate",
-    config = function()
-      local configs = require("nvim-treesitter.configs")
-      configs.setup({
-        ensure_installed = {
-          "asm", "bash", "c", "c_sharp", "cpp", "css", "dockerfile", "fish",
-          "go", "html", "java", "javascript", "julia", "json", "lua",
-          "markdown", "markdown_inline", "mermaid", "ocaml", "ocaml_interface",
-          "php", "python", "query", "regex", "ruby", "rust", "sql", "ssh_config",
-          "typescript", "typst", "vim", "vimdoc", "vue", "xml", "yaml", "zig",
-        },
-        sync_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
-      })
-    end,
+    -- config = function()
+    --   -- On version 1.0+, we use the main module's setup or direct registration
+    --   local configs = require("nvim-treesitter.configs")
+    --
+    --   configs.setup({
+    --     ensure_installed = {
+    --       "asm", "bash", "c", "c_sharp", "cpp", "css", "dockerfile", "fish",
+    --       "go", "html", "java", "javascript", "julia", "json", "lua",
+    --       "markdown", "markdown_inline", "mermaid", "ocaml", "ocaml_interface",
+    --       "php", "python", "query", "regex", "ruby", "rust", "sql", "ssh_config",
+    --       "typescript", "typst", "vim", "vimdoc", "vue", "xml", "yaml", "zig",
+    --     },
+    --     sync_install = true,
+    --     highlight = {
+    --       enable = true,
+    --       additional_vim_regex_highlighting = false,
+    --     },
+    --     indent = { enable = true },
+    --   })
+    -- end,
   },
 
   -- DOCS: Executes code
@@ -100,15 +105,15 @@ return {
 
       -- 3. CONFIGURE LINTERS BY FILETYPE
       lint.linters_by_ft = {
-        python = {"pylint",},
-        cpp = {"cpplint",},
-        c = {"cpplint",},
+        python = { "pylint", },
+        cpp = { "cpplint", },
+        c = { "cpplint", },
         json = { "jsonlint" },
-        ruby = {"rubocop",},
-        html = {"markuplint",},
-        js = {"oxlint",},
-        ts = {"oxlint",},
-        go = {"staticcheck",},
+        ruby = { "rubocop", },
+        html = { "markuplint", },
+        js = { "oxlint", },
+        ts = { "oxlint", },
+        go = { "staticcheck", },
       }
 
       -- 4. SETUP AUTO-LINTING
