@@ -323,3 +323,7 @@ unknown_msg = '[◌](bold dimmed ellow)'
 [spack]
 symbol = "◇ "
 format = " spack [$symbol$environment]($style)"
+
+[status]
+disabled = true
+scan_timeout = 500
